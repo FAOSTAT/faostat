@@ -1,0 +1,48 @@
+{
+  "name": "fenix-ui-map",
+  "version": "1.0.0",
+  "description": "FENIX map component",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FENIX-Platform/fenix-ui-map.git"
+  },
+  "keywords": [
+    "FENIX"
+  ],
+  "author": "FENIX Development Team",
+  "license": "GPL3",
+  "bugs": {
+    "url": "https://github.com/FENIX-Platform/fenix-ui-map/issues"
+  },
+  "homepage": "https://github.com/FENIX-Platform/fenix-ui-map",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-cli": "~0.1.11",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-jsonlint": "~1.0.4",
+    "grunt-sftp-deploy": "^0.2.4"
+  },
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "bootstrap": "~3.2.0",
+    "requirejs": "~2.1.14",
+    "handlebars": "~2.0.0",
+    "underscore": "~1.7.0",
+    "leaflet": "~0.7.3",
+    "leaflet.markercluster": "~0.4.0",
+    "chosen-jquery": "~0.1.1",
+    "text": "https://github.com/requirejs/text/tarball/master",
+    "i18n": "https://github.com/requirejs/i18n/tarball/master",
+    "domReady": "https://github.com/requirejs/domReady/tarball/master"
+  }
+}

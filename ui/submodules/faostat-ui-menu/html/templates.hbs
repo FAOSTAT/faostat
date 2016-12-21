@@ -1,0 +1,82 @@
+<script type='text/x-handlebars-template' id='faostat_ui_menu_structure'>
+
+    <nav class='navbar navbar-default' role='navigation'>
+        <div class='navbar-header'>
+            <button type='button' class='navbar-toggle collapsed' data-toggle='collapse'
+                    data-target='#navbar-collapse'>
+                <span class='sr-only'>{{toggle_navigation}}</span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+
+            <a data-role="fs-menu-home" class='navbar-brand hidden-xs' href='{{home_link}}'>
+                <img src="src/images/home.png" class="home-ico">
+                <img src="src/images/home-h.png" class="home-h-ico">
+            </a>
+            
+            <a class='navbar-brand visible-xs' href="{{home_link}}">
+                {{{faostat}}}
+            </a>
+
+        </div>
+        <div class='collapse navbar-collapse' id='navbar-collapse'>
+
+            <ul class='nav navbar-nav navbar-left fs-nav-link flip'>
+
+                <li data-role="fs-menu-home" class="visible-xs">
+                    <a class="fs-nav-link" href='{{home_link}}'>{{home}}</a>
+                </li>
+
+                <li data-role="fs-menu-data">
+                    <a class="fs-nav-link" href='{{data_link}}'>{{data}}</a>
+                </li>
+                <li data-role="fs-menu-country-indicators">
+                    <a class="fs-nav-link" href='{{country_indicators_link}}'>{{country_indicators}}</a>
+                </li>
+                <li data-role="fs-menu-compare">
+                    <a class="fs-nav-link" href='{{compare_link}}'>{{compare}}</a>
+                </li>
+                <li data-role="fs-menu-definitions">
+                    <a class="fs-nav-link" href='{{definitions_and_standards_link}}'>{{definitions_and_standards}}</a>
+                </li>
+                <li data-role="fs-menu-faq">
+                    <a class="fs-nav-link" href='{{faq_link}}'>{{faq}}</a>
+                </li>
+            </ul>
+
+            <!-- search visible large -->
+            <ul class='nav navbar-nav navbar-right flip hidden-sm hidden-md'>
+
+                <li data-role="fs-search" class="fs-menu-search-container">
+                    <span class="icojam_search pull-left fs-search-icon"></span>
+                    <input data-role="search" class="typeahead" type="text" placeholder="{{search_placeholder}}">
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- search visible small -->
+    <div class="row visible-sm visible-md">
+        <div class="col-md-12">
+            <ul class='nav navbar-nav navbar-right flip'>
+                <li data-role="fs-search" class="fs-menu-search-container fs-menu-search-container-sm">
+                    <span class="icojam_search pull-left fs-search-icon"></span>
+                    <input data-role="search" class="typeahead" type="text" placeholder="{{search_placeholder}}">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</script>
+
+<script type='text/x-handlebars-template' id='faostat_ui_menu_item'>
+    {{#each group}}
+        <li>
+            <a href='{{item_link}}'>
+                {{item_title}}
+            </a>
+        </li>
+    {{/each}}
+</script>

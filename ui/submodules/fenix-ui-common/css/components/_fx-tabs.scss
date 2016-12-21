@@ -1,0 +1,89 @@
+/* Tabs component */
+
+.fx-tabs{
+
+  .nav-tabs {
+
+    border: 0;
+
+
+
+    >li {
+
+
+      >a {
+
+
+
+        &:hover,
+        &:focus{
+          border-color: transparent;
+          background-color: transparent;
+          color: $fx-cool-blue;
+        }
+
+
+        color: $fenix-text;
+
+
+        border-color: transparent;
+
+        &:before {
+          @include animate;
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: $fx-cool-blue;
+          left: 0;
+          bottom: 5px;
+          pointer-events: none;
+          @include fx-transfor-me(scaleX(0));
+        }
+
+      }
+
+
+
+      &.active {
+
+        >a {
+          color: $fx-cool-blue;
+
+          &:before{
+            @include animate;
+            @include fx-transfor-me(scaleX(0.8));
+
+          }
+
+
+          &:hover,
+          &:focus{
+            border-color: transparent;
+            background-color: transparent;
+            color: $fx-cool-blue;
+          }
+
+
+        }
+
+      }
+
+
+    }
+  }
+
+  .tab-content {
+
+    }
+
+
+
+  li{
+    margin: 12px 0;
+
+  }
+
+
+
+}

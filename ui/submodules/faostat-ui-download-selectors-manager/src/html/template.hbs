@@ -1,0 +1,13 @@
+<script type='text/x-handlebars-template' id='selector_manager_container'>
+        <div data-role="selectors_grid" class="row"></div>
+</script>
+
+<script type='text/x-handlebars-template' id='single_selector' >
+    <div class='col-md-6 faostat-download-selector-single'>
+        <div data-role='selector' id='{{id}}'></div>
+    </div>
+    <!--TODO: check the best way to add the clearFix -->
+    {{#if addClearFix}}
+        <div class="clearfix"></div>
+    {{/if}}
+</script>

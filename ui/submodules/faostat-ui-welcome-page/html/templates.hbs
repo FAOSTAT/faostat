@@ -1,0 +1,29 @@
+<script type='text/x-handlebars-template' id='faostat_ui_welcome_page_structure'>
+    <br>
+    <div class='row'>
+        <div class='col-xs-12'>
+            <p id='welcome_text'></p>
+        </div>
+    </div>
+    <br>
+    <div class='row'>
+        <div class='col-xs-12'>
+            <h3>
+                {{related_documents}}
+            </h3>
+            {{#if hasDocuments}}
+                <ul style="list-style-type: none; padding: 0; margin: 0;">
+                    {{#each documents}}
+                        <li style="margin-top:15px;">
+                            <a target='_blank' href='{{base_url}}{{FileName}}'><i class="fa fa-file-pdf-o"></i> {{FileTitle}}</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p>{{no_docs_available}} {{domain_name}}.</p>
+            {{/if}}
+        </div>
+    </div>
+    <br>
+    <div id="welcome_section"></div>
+</script>

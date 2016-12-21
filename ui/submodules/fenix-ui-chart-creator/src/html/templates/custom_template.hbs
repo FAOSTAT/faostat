@@ -1,0 +1,34 @@
+<div class="fs-chart panel panel-default hoverable {{#if class}}{{class}}{{/if}}" {{#if style}}style="{{style}}"{{/if}}>
+    <div class="panel-heading clearfix">
+        {{#if addExport}}
+            <div class="pull-right flip">
+                <a class="btn-floating waves-effect waves-light btn-default" data-role="export">
+                    <i class="material-icons">file_download</i>
+                </a>
+            </div>
+        {{/if}}
+        {{#if switchChart}}
+            <div class="pull-right flip dropdown">
+                <button class="btn-floating waves-effect waves-light btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span>
+                        <i class="material-icons">build</i>
+                    </span>
+                </button>
+                <ul class="dropdown-menu" data-role="chart-switch">
+                    <li><a data-type='line' href="#"><i class="fs-icons left chart-line"></i>Line</a></li>
+                    <li><a data-type='column' href="#"><i class="fs-icons left chart-bar"></i>Column</a></li>
+                    <li><a data-type='bar' href="#"><i class="fs-icons left chart-gantt"></i>Bar</a></li>
+                    <li><a data-type='area' href="#"><i class="fs-icons left chart-areaspline"></i>Area</a></li>
+                </ul>
+            </div>
+        {{/if}}
+        <h5 class="truncate">{{{title}}}</h5>
+        <h6 class="truncate">{{{subtitle}}}</h6>
+    </div>
+    <div class="panel-body" style="direction:ltr;" >
+        <div data-role="content" {{#if height}}style="height:{{height}}"{{/if}}></div>
+    </div>
+    {{#if footer}}
+        <div class="panel-footer">{{{footer}}}</div>
+    {{/if}}
+</div>

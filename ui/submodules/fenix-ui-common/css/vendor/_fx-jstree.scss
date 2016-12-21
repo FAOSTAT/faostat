@@ -1,0 +1,98 @@
+/* Fenix - Js tree */
+//$fx-ui-common: '../submodules/fenix-ui-common';
+
+.jstree-default {
+
+  .jstree-search{
+    color: $fenix-text;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+
+
+  .jstree-node:not(.jstree-open){
+    position: relative;
+
+    .jstree-wholerow{
+      height: 100%;
+    }
+
+  }
+
+
+}
+
+.jstree-default .jstree-themeicon{
+  display: none; /* It hides folder icon */
+}
+
+.jstree-default .jstree-node,
+.jstree-default .jstree-icon{
+  background-image: url("#{$fx-ui-common}/css/img/treejs-32px.svg");
+}
+
+
+.jstree-default .jstree-wholerow-clicked{
+  background: none;
+  background-color: $fx-main-color-light;
+}
+
+.jstree-default .jstree-wholerow-hovered{
+  background: none;
+  background-color: $fx-main-color-lighter;
+}
+
+.jstree-default > .jstree-wholerow-ul .jstree-hovered, .jstree-default > .jstree-wholerow-ul .jstree-clicked {
+
+}
+
+.jstree-default .jstree-disabled.jstree-clicked{
+  background: none;
+  background-color: $fx-main-color-light;
+}
+
+
+.jstree-container-ul{
+
+  .jstree-anchor {
+    white-space: normal;
+    height: auto;
+    width: 90%;
+
+  }
+
+  [role="group"].jstree-children{
+    .jstree-icon{
+      //width: 15px;
+    }
+    [role='treeitem'] {
+      position: relative;
+    }
+    [role='treeitem'] .jstree-wholerow {
+      //height: 100%;
+    }
+    [role='treeitem'] .jstree-wholerow-clicked {
+      //height: 100%;
+    }
+
+  }
+
+}
+
+li[role="treeitem"]{
+
+  &:nth-child(odd){
+    background-color: $superlight-gray !important;
+  }
+
+}
+
+ul[role="group"]{
+  background-color: white;
+}
+
+
+//.jstree-default .jstree-icon.jstree-ocl{
+//  width: 15px; //Reduce the indentation
+//}

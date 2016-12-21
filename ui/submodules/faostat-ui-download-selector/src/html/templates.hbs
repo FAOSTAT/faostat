@@ -1,0 +1,104 @@
+
+<script type='text/x-handlebars-template' id='main_structure'>
+
+    <div class="panel-border">
+        <div class="panel-heading">
+            <div role='tabpanel'>
+
+                <div class='row'>
+                    <div class='col-xs-12 col-sm-10 col-md-10 col-lg-11'>
+                        <div class="fs-tab-holder">
+                            <ul class='nav nav-tabs' role='tablist' data-role="tabs-list"></ul>
+                        </div>
+                    </div>
+                    <div class='col-xs-12 col-sm-2 col-md-2 col-lg-1'>
+                        {{#if coding_systems}}
+                            <div class='btn-group pull-right' style='padding-top: 2px;'>
+                                <div class="pull-right flip dropdown">
+                                    <button type='button' class='btn btn-link btn-xs dropdown-toggle waves-effect' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                                        <i class="material-icons">settings</i>
+                                        <span class='caret'></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-header">{{coding_system}}</li>
+                                        <li role='separator' class='divider'></li>
+                                        {{#each coding_systems}}
+                                            <li data-role="coding-systems" style="padding-bottom:3px;">
+                                                <a>
+                                                    <input type='radio' id='coding_system_{{this.id}}_{{this.code}}' name='coding_system_{{this.id}}' value='{{this.code}}' {{#if @first}}checked='checked'{{/if}}>
+                                                    <label for="coding_system_{{this.id}}_{{this.code}}">{{this.label}}</label>
+                                                </a>
+                                            </li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="fs-download-selector-search">
+                <span class="icojam_search pull-left fs-search-icon"></span>
+                <input class='form-control fs-download-selector-filter' data-role="tree-filter" placeholder='{{filter_results}}'>
+            </div>
+            <div class='tab-content fs-download-selector-panel' data-role="tabs-content"></div>
+        </div>
+
+        <div class="panel-footer">
+
+            <div class="row">
+
+                {{#if is_multiple_selection}}
+                    <div class='col-xs-12'>
+                        <div class="btn-group">
+                            <button class='btn btn-sm btn-link waves-effect' type='submit' data-role="select-all">
+                                {{select_all}}
+                            </button>
+                            <button class='btn btn-sm btn-link waves-effect' type='submit' data-role="deselect-all">
+                                {{clear_all}}
+                            </button>
+                        </div>
+                    </div>
+                {{/if}}
+            </div>
+
+            <div class='row'>
+                <div class='col-xs-12 faostat-download-selector-resume-holder'>
+                    <div class='faostat-summary-item' data-role="summary"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</script>
+
+
+<script type='text/x-handlebars-template' id='tab_header_structure'>
+    <li role='presentation'>
+        <a href='#{{id}}' data-tab='{{id}}' aria-controls='{{id}}' role='tab' data-toggle='tab'>
+            {{tab_header_label}}
+        </a>
+    </li>
+</script>
+
+<script type='text/x-handlebars-template' id='tab_content_structure'>
+    <div role='tabpanel' class='tab-pane fade' id='{{id}}' style='height: 150px; width: 100%; overflow-y: auto; overflow-x: hidden;'>
+        <div data-role="tree"></div>
+        <!-- TODO: move style to css -->
+    </div>
+</script>
+
+<script type='text/x-handlebars-template' id='summary_item'>
+    {{#each items}}
+        <div class='summary-item'
+             data-role='summary-item'
+             data-id='{{id}}'
+             data-code='{{code}}'>
+            {{label}}
+        </div>
+    {{/each}}
+</script>

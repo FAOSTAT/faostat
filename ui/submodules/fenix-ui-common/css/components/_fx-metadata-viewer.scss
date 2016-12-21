@@ -1,0 +1,83 @@
+/* Metadata Viewer */
+
+
+.fx-md-viewer-wrapper{
+  font-size: 12px;
+
+  .fx-md-viewer-title{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+
+  .fx-md-viewer-container{
+    width: 100%;
+  }
+
+  th, td{
+    border-bottom:1px solid #e5e5e5;
+    height: 25px;
+    padding: 5px 0;
+  }
+
+  .treegrid-expander{
+    top: 3px;
+    cursor: pointer;
+  }
+
+
+
+  .metadata-viewer-title{
+    width: 30%;
+    font-size: 12px;
+    font: $standard-text;
+    font-weight: 500;
+    padding-right: 25px;
+    cursor: pointer;
+
+
+    .fx-md-viewer-description{
+      top: 3px;
+      cursor: pointer;
+      opacity: 0;
+      @include animate();
+    }
+
+    &:hover{
+
+      .fx-md-viewer-description{
+        opacity: 1;
+        @include animate();
+      }
+
+
+    }
+
+
+  }
+
+
+  .metadata-viewer-value{
+    width: 70%;
+    font: $standard-text;
+    font-size: 12px;
+  }
+
+  .popover-title{
+    background-color: transparent;
+
+    .text-info{
+      color: $fx-cool-blue;
+    }
+    //border-bottom-color: transparent ;
+    font: $standard-text;
+  }
+
+  .popover-content{
+    font: $standard-text;
+  }
+
+}
+
+

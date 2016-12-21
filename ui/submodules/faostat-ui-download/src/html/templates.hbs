@@ -1,0 +1,52 @@
+<template id="main_structure">
+    <div class="panel panel-default hoverable">
+        <div class="panel-body">
+
+            <div style="min-height:300px;" data-role="selectors"></div>
+
+            <div class="fs-download-options">
+
+                <div class="panel-body">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div data-role="options"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="row fs-download-options-buttons">
+
+                        <div class="hidden-xs col-sm-4"></div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <button class="btn btn-primary btn-block waves-effect truncate" data-role="preview">
+                                <i class="material-icons left">search</i>
+                                {{show_data}}
+                            </button>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <button class="btn btn-default btn-block waves-effect waves-light truncate" data-role="export">
+                                <i class="material-icons left">file_download</i>
+                                {{download_data}}
+                            </button>
+                            <!--<p class="pull-right"><small>Download in CSV with English formatting</small></p>-->
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--<div data-role="output-area"></div>-->
+</template>
+
+<template id="onboarding">
+    <a class="btn btn-info btn-block waves-effect truncate" data-role="onboarding">
+        <i class="material-icons left">help_outline</i>
+        <span data-role="text">{{onboarding_text}}</span>
+    </a>
+</template>

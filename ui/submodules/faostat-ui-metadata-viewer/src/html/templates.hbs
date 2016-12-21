@@ -1,0 +1,79 @@
+
+<!-- TODO: remove inline style -->
+
+<template id='content'>
+
+    <div class="fs-metadata">
+        {{#if addHeader}}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="pull-right" >
+                        <a class="btn-floating waves-effect waves-light btn-default" data-role="export">
+                            <i class="material-icons">file_download</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+        {{#each data}}
+            <div class="fs-metadata-content" data-aos="fade-up">
+                <h4 class="fs-metadata-title">{{this.code}}) {{this.label}}</h4>
+                {{#each subsections}}
+                    <div class="row fs-metadata-row">
+                        <div class="col-sm-3">
+                            <p class="fs-metadata-code">{{this.label}}</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="fs-metadata-description">{{{this.text}}}</p>
+                        </div>
+                    </div>
+                {{/each}}
+                {{#unless @last }}
+                    <hr>
+                {{/unless}}
+
+            </div>
+        {{/each}}
+    </div>
+
+</template>
+
+<template id='modal'>
+
+    <!-- Modal -->
+    <div id="fs-metadata-modal" style="display:none;" class="modal modal-fullscreen fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <a class="btn-floating pull-right waves-effect waves-light btn-default fs-metadata-modal-export-button" data-role="export">
+                            <i class="material-icons">file_download</i>
+                        </a>
+                    <h4 class="fs-metadata-modal-title">
+                        <i class="material-icons left">info_outline</i>
+                        {{metadata}} {{domain_label}}
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="fs-metadata-modal-content" data-role="metadata"></div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-link waves-effect" target="_blank" data-dismiss="modal">
+                        <i class="material-icons left">close</i>{{close}}
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</template>
+
+<template id='no_data_available'>
+
+    <h4 class='fs-metadata-no-data-available'style='padding-top:35px;text-align: center;'>{{{no_metadata_available}}}</h4>
+
+</template>
+

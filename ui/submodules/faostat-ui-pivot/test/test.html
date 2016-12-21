@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+    <!--
+
+    Copyright 2013, 2013 Jordi Baylina. (jordi@baylina.cat)
+
+    This file is part of jbPivot.
+
+     jbPivot is free software: you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+     the Free Software Foundation, either version 3 of the License, or
+     (at your option) any later version.
+
+     jbPivot is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with jbPivot.  If not, see <http://www.gnu.org/licenses/>.
+
+    -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.string/3.3.4/underscore.string.min.js"></script>
+    <link rel="stylesheet" href="../css/jbPivot.css">
+
+    <style>
+        body {
+            padding: 30px;
+        }
+    </style>
+
+</head>
+
+<body onload="test()">
+
+<div data-role="pivot" class="bootstrap-content-box-reset"><table id="myTable" border="0px" cellspacing="0" cellpadding="0" class="pivot"><tbody><tr><th colspan="4" rowspan="3" class=" line_bottom_4 line_right_4"></th><th colspan="9&quot;" class="dropable toptitle targetY0 line_top_4 line_left_4 line_right_4" rel="Y,0"><a href="#" class="collapse_button" rel="y">-</a>All</th></tr>
+<tr><th draggable="true" class="draggable dropable toptitle  line_left_4  line_right_1 targetY1" rel="Y,1" colspan="3" rowspan="1">2010 [2010]</th><th draggable="true" class="draggable dropable toptitle  line_left_1  line_right_1 targetY1" rel="Y,1" colspan="3" rowspan="1">2012 [2012]</th><th draggable="true" class="draggable dropable toptitle  line_left_1  line_right_4 targetY1" rel="Y,1" colspan="3" rowspan="1">2013 [2013]</th></tr>
+<tr><th draggable="true" class="draggable dropable ztitle line_top_0 targetZ1 line_top_4  line_left_4 line_right_0" rel="Z,1">Flag Description</th><th draggable="true" class="draggable dropable ztitle line_top_0 targetZ2 line_top_4 line_left_0 line_right_0" rel="Z,2">Unit</th><th draggable="true" class="draggable dropable ztitle line_top_0 targetZ3 line_top_4 line_left_0  line_right_1" rel="Z,3">Value</th><th draggable="true" class="draggable dropable ztitle line_top_0 targetZ1 line_top_4  line_left_1 line_right_0" rel="Z,1">Flag Description</th><th draggable="true" class="draggable dropable ztitle line_top_0 targetZ2 line_top_4 line_left_0 line_right_0" rel="Z,2">Unit</th><th draggable="true" class="draggable dropable ztitle line_top_0 targetZ3 line_top_4 line_left_0  line_right_1" rel="Z,3">Value</th><th draggable="true" class="draggable dropable ztitle line_top_0 targetZ1 line_top_4  line_left_1 line_right_0" rel="Z,1">Flag Description</th><th draggable="true" class="draggable dropable ztitle line_top_0 targetZ2 line_top_4 line_left_0 line_right_0" rel="Z,2">Unit</th><th draggable="true" class="draggable dropable ztitle line_top_0 targetZ3 line_top_4 line_left_0  line_right_4" rel="Z,3">Value</th></tr><tr><th rowspan="18" class="lefttitle dropable line_left_4  line_top_4  line_bottom_4 targetX0" "="" rel="X,0"><a href="#" class="collapse_button" rel="x">-</a>All</th><th rowspan="6" class="lefttitle dropable draggable  line_top_4  line_bottom_3 targetX1" "="" rel="X,1" draggable="true"><a href="#" class="collapse_button" rel="-1,-1,-1,-1,0,-1,-1,-1">-</a>Afghanistan [2]</th><th rowspan="2" class="lefttitle dropable draggable  line_top_4  line_bottom_2 targetX2" "="" rel="X,2" draggable="true"><a href="#" class="collapse_button" rel="-1,-1,-1,-1,0,0,-1,-1">-</a>Area harvested [5312]</th><th class="lefttitle dropable draggable  line_top_4  line_bottom_1 targetX3" "="" rel="X,3" draggable="true">Apples [515]</th><td class="  line_top_4  line_bottom_1  line_left_4 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_4  line_bottom_1 line_left_0 line_right_0">Ha</td><td class="  line_top_4  line_bottom_1 line_left_0  line_right_1">8550.00</td><td class="  line_top_4  line_bottom_1  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_4  line_bottom_1 line_left_0 line_right_0">Ha</td><td class="  line_top_4  line_bottom_1 line_left_0  line_right_1">9148.00</td><td class="  line_top_4  line_bottom_1  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_4  line_bottom_1 line_left_0 line_right_0">Ha</td><td class="  line_top_4  line_bottom_1 line_left_0  line_right_4">10341.00</td></tr><tr><th class="lefttitle dropable draggable  line_top_1  line_bottom_2 targetX3" "="" rel="X,3" draggable="true">Apricots [526]</th><td class="  line_top_1  line_bottom_2  line_left_4 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">Ha</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_1">8320.00</td><td class="  line_top_1  line_bottom_2  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">Ha</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_1">8350.00</td><td class="  line_top_1  line_bottom_2  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">Ha</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_4">9005.00</td></tr><tr><th rowspan="2" class="lefttitle dropable draggable  line_top_2  line_bottom_2 targetX2" "="" rel="X,2" draggable="true"><a href="#" class="collapse_button" rel="-1,-1,-1,-1,0,2,-1,-1">-</a>Production [5510]</th><th class="lefttitle dropable draggable  line_top_2  line_bottom_1 targetX3" "="" rel="X,3" draggable="true">Apples [515]</th><td class="  line_top_2  line_bottom_1  line_left_4 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">tonnes</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_1">59850.00</td><td class="  line_top_2  line_bottom_1  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">tonnes</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_1">70000.00</td><td class="  line_top_2  line_bottom_1  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">tonnes</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_4">78597.00</td></tr><tr><th class="lefttitle dropable draggable  line_top_1  line_bottom_2 targetX3" "="" rel="X,3" draggable="true">Apricots [526]</th><td class="  line_top_1  line_bottom_2  line_left_4 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">tonnes</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_1">66560.00</td><td class="  line_top_1  line_bottom_2  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">tonnes</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_1">83500.00</td><td class="  line_top_1  line_bottom_2  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">tonnes</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_4">90000.00</td></tr><tr><th rowspan="2" class="lefttitle dropable draggable  line_top_2  line_bottom_3 targetX2" "="" rel="X,2" draggable="true"><a href="#" class="collapse_button" rel="-1,-1,-1,-1,0,1,-1,-1">-</a>Yield [5419]</th><th class="lefttitle dropable draggable  line_top_2  line_bottom_1 targetX3" "="" rel="X,3" draggable="true">Apples [515]</th><td class="  line_top_2  line_bottom_1  line_left_4 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_1">70000.00</td><td class="  line_top_2  line_bottom_1  line_left_1 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_1">76519.00</td><td class="  line_top_2  line_bottom_1  line_left_1 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_4">76005.00</td></tr><tr><th class="lefttitle dropable draggable  line_top_1  line_bottom_3 targetX3" "="" rel="X,3" draggable="true">Apricots [526]</th><td class="  line_top_1  line_bottom_3  line_left_4 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_1  line_bottom_3 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_1  line_bottom_3 line_left_0  line_right_1">80000.00</td><td class="  line_top_1  line_bottom_3  line_left_1 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_1  line_bottom_3 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_1  line_bottom_3 line_left_0  line_right_1">100000.00</td><td class="  line_top_1  line_bottom_3  line_left_1 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_1  line_bottom_3 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_1  line_bottom_3 line_left_0  line_right_4">99944.00</td></tr><tr><th rowspan="6" class="lefttitle dropable draggable  line_top_3  line_bottom_3 targetX1" "="" rel="X,1" draggable="true"><a href="#" class="collapse_button" rel="-1,-1,-1,-1,1,-1,-1,-1">-</a>Albania [3]</th><th rowspan="2" class="lefttitle dropable draggable  line_top_3  line_bottom_2 targetX2" "="" rel="X,2" draggable="true"><a href="#" class="collapse_button" rel="-1,-1,-1,-1,1,0,-1,-1">-</a>Area harvested [5312]</th><th class="lefttitle dropable draggable  line_top_3  line_bottom_1 targetX3" "="" rel="X,3" draggable="true">Apples [515]</th><td class="  line_top_3  line_bottom_1  line_left_4 line_right_0">FAO estimate<span class="FAO_estimate"> [F ]</span></td><td class="  line_top_3  line_bottom_1 line_left_0 line_right_0">Ha</td><td class="  line_top_3  line_bottom_1 line_left_0  line_right_1">4000.00</td><td class="  line_top_3  line_bottom_1  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_3  line_bottom_1 line_left_0 line_right_0">Ha</td><td class="  line_top_3  line_bottom_1 line_left_0  line_right_1">4500.00</td><td class="  line_top_3  line_bottom_1  line_left_1 line_right_0">FAO estimate<span class="FAO_estimate"> [F ]</span></td><td class="  line_top_3  line_bottom_1 line_left_0 line_right_0">Ha</td><td class="  line_top_3  line_bottom_1 line_left_0  line_right_4">4000.00</td></tr><tr><th class="lefttitle dropable draggable  line_top_1  line_bottom_2 targetX3" "="" rel="X,3" draggable="true">Apricots [526]</th><td class="  line_top_1  line_bottom_2  line_left_4 line_right_0">FAO estimate<span class="FAO_estimate"> [F ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">Ha</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_1">280.00</td><td class="  line_top_1  line_bottom_2  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">Ha</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_1">300.00</td><td class="  line_top_1  line_bottom_2  line_left_1 line_right_0">FAO estimate<span class="FAO_estimate"> [F ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">Ha</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_4">300.00</td></tr><tr><th rowspan="2" class="lefttitle dropable draggable  line_top_2  line_bottom_2 targetX2" "="" rel="X,2" draggable="true"><a href="#" class="collapse_button" rel="-1,-1,-1,-1,1,2,-1,-1">-</a>Production [5510]</th><th class="lefttitle dropable draggable  line_top_2  line_bottom_1 targetX3" "="" rel="X,3" draggable="true">Apples [515]</th><td class="  line_top_2  line_bottom_1  line_left_4 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">tonnes</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_1">54604.00</td><td class="  line_top_2  line_bottom_1  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">tonnes</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_1">71300.00</td><td class="  line_top_2  line_bottom_1  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">tonnes</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_4">62065.00</td></tr><tr><th class="lefttitle dropable draggable  line_top_1  line_bottom_2 targetX3" "="" rel="X,3" draggable="true">Apricots [526]</th><td class="  line_top_1  line_bottom_2  line_left_4 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">tonnes</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_1">3471.00</td><td class="  line_top_1  line_bottom_2  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">tonnes</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_1">4300.00</td><td class="  line_top_1  line_bottom_2  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">tonnes</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_4">3328.00</td></tr><tr><th rowspan="2" class="lefttitle dropable draggable  line_top_2  line_bottom_3 targetX2" "="" rel="X,2" draggable="true"><a href="#" class="collapse_button" rel="-1,-1,-1,-1,1,1,-1,-1">-</a>Yield [5419]</th><th class="lefttitle dropable draggable  line_top_2  line_bottom_1 targetX3" "="" rel="X,3" draggable="true">Apples [515]</th><td class="  line_top_2  line_bottom_1  line_left_4 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_1">136510.00</td><td class="  line_top_2  line_bottom_1  line_left_1 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_1">158444.00</td><td class="  line_top_2  line_bottom_1  line_left_1 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_4">155163.00</td></tr><tr><th class="lefttitle dropable draggable  line_top_1  line_bottom_3 targetX3" "="" rel="X,3" draggable="true">Apricots [526]</th><td class="  line_top_1  line_bottom_3  line_left_4 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_1  line_bottom_3 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_1  line_bottom_3 line_left_0  line_right_1">123964.00</td><td class="  line_top_1  line_bottom_3  line_left_1 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_1  line_bottom_3 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_1  line_bottom_3 line_left_0  line_right_1">143333.00</td><td class="  line_top_1  line_bottom_3  line_left_1 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_1  line_bottom_3 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_1  line_bottom_3 line_left_0  line_right_4">110933.00</td></tr><tr><th rowspan="6" class="lefttitle dropable draggable  line_top_3  line_bottom_4 targetX1" "="" rel="X,1" draggable="true"><a href="#" class="collapse_button" rel="-1,-1,-1,-1,2,-1,-1,-1">-</a>Algeria [4]</th><th rowspan="2" class="lefttitle dropable draggable  line_top_3  line_bottom_2 targetX2" "="" rel="X,2" draggable="true"><a href="#" class="collapse_button" rel="-1,-1,-1,-1,2,0,-1,-1">-</a>Area harvested [5312]</th><th class="lefttitle dropable draggable  line_top_3  line_bottom_1 targetX3" "="" rel="X,3" draggable="true">Apples [515]</th><td class="  line_top_3  line_bottom_1  line_left_4 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_3  line_bottom_1 line_left_0 line_right_0">Ha</td><td class="  line_top_3  line_bottom_1 line_left_0  line_right_1">39852.00</td><td class="  line_top_3  line_bottom_1  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_3  line_bottom_1 line_left_0 line_right_0">Ha</td><td class="  line_top_3  line_bottom_1 line_left_0  line_right_1">40858.00</td><td class="  line_top_3  line_bottom_1  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_3  line_bottom_1 line_left_0 line_right_0">Ha</td><td class="  line_top_3  line_bottom_1 line_left_0  line_right_4">41030.00</td></tr><tr><th class="lefttitle dropable draggable  line_top_1  line_bottom_2 targetX3" "="" rel="X,3" draggable="true">Apricots [526]</th><td class="  line_top_1  line_bottom_2  line_left_4 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">Ha</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_1">37190.00</td><td class="  line_top_1  line_bottom_2  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">Ha</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_1">37889.00</td><td class="  line_top_1  line_bottom_2  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">Ha</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_4">38828.00</td></tr><tr><th rowspan="2" class="lefttitle dropable draggable  line_top_2  line_bottom_2 targetX2" "="" rel="X,2" draggable="true"><a href="#" class="collapse_button" rel="-1,-1,-1,-1,2,2,-1,-1">-</a>Production [5510]</th><th class="lefttitle dropable draggable  line_top_2  line_bottom_1 targetX3" "="" rel="X,3" draggable="true">Apples [515]</th><td class="  line_top_2  line_bottom_1  line_left_4 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">tonnes</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_1">378637.00</td><td class="  line_top_2  line_bottom_1  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">tonnes</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_1">397529.00</td><td class="  line_top_2  line_bottom_1  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">tonnes</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_4">455937.00</td></tr><tr><th class="lefttitle dropable draggable  line_top_1  line_bottom_2 targetX3" "="" rel="X,3" draggable="true">Apricots [526]</th><td class="  line_top_1  line_bottom_2  line_left_4 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">tonnes</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_1">198467.00</td><td class="  line_top_1  line_bottom_2  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">tonnes</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_1">269308.00</td><td class="  line_top_1  line_bottom_2  line_left_1 line_right_0">Official data<span class="Official_data"> [  ]</span></td><td class="  line_top_1  line_bottom_2 line_left_0 line_right_0">tonnes</td><td class="  line_top_1  line_bottom_2 line_left_0  line_right_4">319784.00</td></tr><tr><th rowspan="2" class="lefttitle dropable draggable  line_top_2  line_bottom_4 targetX2" "="" rel="X,2" draggable="true"><a href="#" class="collapse_button" rel="-1,-1,-1,-1,2,1,-1,-1">-</a>Yield [5419]</th><th class="lefttitle dropable draggable  line_top_2  line_bottom_1 targetX3" "="" rel="X,3" draggable="true">Apples [515]</th><td class="  line_top_2  line_bottom_1  line_left_4 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_1">95011.00</td><td class="  line_top_2  line_bottom_1  line_left_1 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_1">97295.00</td><td class="  line_top_2  line_bottom_1  line_left_1 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_2  line_bottom_1 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_2  line_bottom_1 line_left_0  line_right_4">111123.00</td></tr><tr><th class="lefttitle dropable draggable  line_top_1  line_bottom_4 targetX3" "="" rel="X,3" draggable="true">Apricots [526]</th><td class="  line_top_1  line_bottom_4  line_left_4 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_1  line_bottom_4 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_1  line_bottom_4 line_left_0  line_right_1">53366.00</td><td class="  line_top_1  line_bottom_4  line_left_1 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_1  line_bottom_4 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_1  line_bottom_4 line_left_0  line_right_1">71078.00</td><td class="  line_top_1  line_bottom_4  line_left_1 line_right_0">Calculated data<span class="Calculated_data"> [Fc]</span></td><td class="  line_top_1  line_bottom_4 line_left_0 line_right_0">Hg/Ha</td><td class="  line_top_1  line_bottom_4 line_left_0  line_right_4">82359.00</td></tr><tr><td colspan="13 class=" line_right_4="" line_left_4="" line_top_4'=""></td></tr><tr><td class="bordermark"></td><td class="bordermark"></td><td class="bordermark"></td><td class="bordermark"></td><td class="bordermark"></td><td class="bordermark"></td><td class="bordermark"></td><td class="bordermark"></td><td class="bordermark"></td><td class="bordermark"></td><td class="bordermark"></td><td class="bordermark"></td><td class="bordermark"></td></tr></tbody></table></div>
+
+
+</body>
+
+<script>
+
+    test = function() {
+
+       var $tr = $('#myTable tbody tr'),
+            size = $tr.length;
+
+        var matrix = new Array(size);
+        for (var i = 0; i < size; i++) {
+            matrix[i] = new Array(size);
+        }
+        console.log(matrix);
+
+        _.each($tr, function($row, trIndex) {
+            console.log("-------------", $row);
+            var $th = $($row).find('th');
+
+            var colSpanOffset = 0;
+
+            _.each(matrix[trIndex], function(m, index) {
+
+                //console.log("m", m);
+
+                if(m !== undefined) {
+                    console.log("HERE -", m, "-", index);
+                    colSpanOffset = index +1;
+                }
+
+            });
+
+            console.log("trIndex", trIndex);
+            console.log("colSpanOffset", colSpanOffset);
+
+            var rowSpanOffset = 0;
+
+            // check if there is already a value in the matrix
+//            _.each(matrix[trIndex]
+            //var offsetColSpan = 0;
+
+            _.each($th, function(th) {
+
+                var $v = $(th),
+                    text = $v.context.innerText,
+                    rowSpan = $v[0].rowSpan || 1,
+                    colSpan = $v[0].colSpan || 1,
+                    classes = $($v).attr('class');
+
+                for(var colIndex=colSpanOffset; colIndex< colSpanOffset+colSpan; colIndex++) {
+                    for(var rowIndex=rowSpanOffset; rowIndex< rowSpanOffset+rowSpan; rowIndex++) {
+                        //for(var rowIndex=0; rowIndex< rowSpan; rowIndex++) {
+                        //matrix[trIndex + colIndex][colOffset] = text;
+                        console.log((trIndex + rowIndex), colIndex, text, colSpan, rowSpan);
+                        matrix[trIndex + rowIndex][colIndex] = text;
+                    }
+                }
+
+                colSpanOffset += colSpan;
+
+
+
+
+            });
+            var $td = $($row).find('td');
+             _.each($td, function(td) {
+                 var $v = $(td),
+                         text = $v.context.innerText,
+                         rowSpan = $v[0].rowSpan || 1,
+                         colSpan = $v[0].colSpan || 1,
+                         classes = $($v).attr('class');
+
+                 for(var colIndex=colSpanOffset; colIndex< colSpanOffset+colSpan; colIndex++) {
+                     for(var rowIndex=rowSpanOffset; rowIndex< rowSpanOffset+rowSpan; rowIndex++) {
+                         //for(var rowIndex=0; rowIndex< rowSpan; rowIndex++) {
+                         //matrix[trIndex + colIndex][colOffset] = text;
+                         console.log((trIndex + rowIndex), colIndex, text, colSpan, rowSpan);
+                         matrix[trIndex + rowIndex][colIndex] = text;
+                     }
+                 }
+
+                 colSpanOffset += colSpan;
+
+             });
+
+        });
+
+        console.log("MATRIX");
+        console.log(matrix);
+
+
+      /*  $('#myTable tbody tr').map(function() {
+
+            console.log("------------");
+            var $row = $(this);
+
+            var $th = $row.find('th');
+
+
+            _.each($th, function(d) {
+               console.log(d);
+            });
+            //console.log($th);
+
+        });*/
+
+
+    }
+
+</script>

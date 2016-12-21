@@ -1,0 +1,357 @@
+/* Fenix - Panel Component */
+
+.well{
+    background-color: transparent !important;
+    background-image: none;
+    border: 0 none;
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+/* Font Awesome */
+/*!
+ *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/* It is a CDN - Read the readme file in sources directory */
+/* It is a CDN - Read the readme file in sources directory */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+    font-family: 'FontAwesome';
+    src: url("//netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?v=4.2.0");
+    src: url("//netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0") format("embedded-opentype"), url("//netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.woff?v=4.2.0") format("woff"), url("//netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.ttf?v=4.2.0") format("truetype"), url("//netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular") format("svg");
+    font-weight: normal;
+    font-style: normal; }
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+
+/* makes the font 33% larger relative to the icon container */
+.fa-lg {
+    font-size: 1.33333em;
+    line-height: 0.75em;
+    vertical-align: -15%; }
+
+.fa-2x {
+    font-size: 2em; }
+
+.fa-3x {
+    font-size: 3em; }
+
+.fa-4x {
+    font-size: 4em; }
+
+.fa-5x {
+    font-size: 5em; }
+
+.fa-fw {
+    width: 1.28571em;
+    text-align: center; }
+
+.fa-ul {
+    padding-left: 0;
+    margin-left: 2.14286em;
+    list-style-type: none; }
+.fa-ul > li {
+    position: relative; }
+
+.fa-li {
+    position: absolute;
+    left: -2.14286em;
+    width: 2.14286em;
+    top: 0.14286em;
+    text-align: center; }
+.fa-li.fa-lg {
+    left: -1.85714em; }
+
+.fa-border {
+    padding: .2em .25em .15em;
+    border: solid 0.08em #eeeeee;
+    border-radius: .1em; }
+
+.pull-right {
+    float: right; }
+
+.pull-left {
+    float: left; }
+
+.fa.pull-left {
+    margin-right: .3em; }
+.fa.pull-right {
+    margin-left: .3em; }
+
+.fa-spin {
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear; }
+
+@-webkit-keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg); }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg); } }
+@keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg); }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg); } }
+.fa-rotate-90 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg); }
+
+.fa-rotate-180 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg); }
+
+.fa-rotate-270 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg); }
+
+.fa-flip-horizontal {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+    -webkit-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1); }
+
+.fa-flip-vertical {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    -webkit-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1); }
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+    filter: none; }
+
+.fa-stack {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle; }
+
+.fa-stack-1x, .fa-stack-2x {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center; }
+
+.fa-stack-1x {
+    line-height: inherit; }
+
+.fa-stack-2x {
+    font-size: 2em; }
+
+.fa-inverse {
+    color: white; }
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+.fa-search:before {
+    content: "\f002"; }
+
+.fa-th:before {
+    content: "\f00a"; }
+
+.fa-th-list:before {
+    content: "\f00b"; }
+
+.fa-home:before {
+    content: "\f015"; }
+
+.fa-clock-o:before {
+    content: "\f017"; }
+
+.fa-refresh:before {
+    content: "\f021"; }
+
+.fa-lock:before {
+    content: "\f023"; }
+
+.fa-barcode:before {
+    content: "\f02a"; }
+
+.fa-map-marker:before {
+    content: "\f041"; }
+
+.fa-calendar:before {
+    content: "\f073"; }
+
+.fa-twitter-square:before {
+    content: "\f081"; }
+
+.fa-facebook-square:before {
+    content: "\f082"; }
+
+.fa-globe:before {
+    content: "\f0ac"; }
+
+.fa-wrench:before {
+    content: "\f0ad"; }
+
+.fa-google-plus-square:before {
+    content: "\f0d4"; }
+
+.fa-google-plus:before {
+    content: "\f0d5"; }
+
+.fa-caret-down:before {
+    content: "\f0d7"; }
+
+.fa-caret-up:before {
+    content: "\f0d8"; }
+
+.fa-caret-left:before {
+    content: "\f0d9"; }
+
+.fa-caret-right:before {
+    content: "\f0da"; }
+
+.fa-rss-square:before {
+    content: "\f143"; }
+
+.fa-slack:before {
+    content: "\f198"; }
+
+.fa-database:before {
+    content: "\f1c0"; }
+
+.fx-button-reset {
+    background-color: transparent;
+    color: #666666;
+    border-color: transparent;
+    font: normal normal 300 14px/normal "Roboto Condensed"; }
+.fx-button-reset:hover {
+    background-color: transparent;
+    color: #666666;
+    border-color: transparent; }
+.fx-button-reset:active {
+    background-color: transparent;
+    color: #666666;
+    border-color: transparent;
+    -webkit-box-shadow: 0 0 0 white;
+    -moz-box-shadow: 0 0 0 white;
+    box-shadow: 0 0 0 white; }
+
+.panel-group {
+    margin-bottom: 0px; }
+.panel-group .panel {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #d8d8d8; }
+.panel-group .panel-default {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none; }
+.panel-group .panel-default:last-child {
+    border-bottom-width: 0px; }
+.panel-group .panel-heading {
+    background-color: transparent;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    padding: 10px; }
+.panel-group .panel-heading .panel-title {
+    font: normal normal 300 16px/normal "Roboto Condensed"; }
+.panel-group .panel-heading .panel-title a {
+    color: #666666;
+    text-transform: uppercase; }
+.panel-group .panel-heading .panel-title a:hover {
+    text-decoration: none; }
+.panel-group .panel-heading .panel-title a:active {
+    text-decoration: none; }
+.panel-group .panel-heading .panel-title a:focus {
+    text-decoration: none; }
+
+.panel-group .panel-body .btn {
+    background-color: transparent;
+    color: #666666;
+    border-color: transparent;
+    font: normal normal 300 14px/normal "Roboto Condensed";
+    text-align: left;
+    position: relative; }
+.panel-group .panel-body .btn:hover {
+    background-color: transparent;
+    color: #666666;
+    border-color: transparent; }
+.panel-group .panel-body .btn:active {
+    background-color: transparent;
+    color: #666666;
+    border-color: transparent;
+    -webkit-box-shadow: 0 0 0 white;
+    -moz-box-shadow: 0 0 0 white;
+    box-shadow: 0 0 0 white; }
+.panel-group .panel-body .btn span.fa {
+    margin-right: 10px; }
+
+.fx-panel-plus, .fx-panel-minus, .fx-panel-required {
+    display: inline-block;
+    margin-right: 25px; }
+
+.fx-panel-plus {
+    height: 15px;
+    width: 15px;
+    background: url("img/fenix-catalog-sprite-small.svg") no-repeat -90px 0;
+    background-size: 150px 30px; }
+
+.fx-panel-minus {
+    height: 15px;
+    width: 15px;
+    background: url("img/fenix-catalog-sprite-small.svg") no-repeat -90px -15px;
+    background-size: 150px 30px; }
+
+.fx-panel-info {
+    height: 15px;
+    width: 15px;
+    background: url("img/fenix-catalog-sprite-small.svg") no-repeat 0 0;
+    background-size: 150px 30px;
+    float: right; }
+
+.fx-panel-required {
+    height: 15px;
+    width: 15px;
+    background: url("img/fenix-catalog-sprite-small.svg") no-repeat -15px -15px;
+    background-size: 150px 30px; }
+
+.fx-panel-ok {
+    height: 15px;
+    width: 15px;
+    background: url("img/fenix-catalog-sprite-small.svg") no-repeat -45px -15px;
+    background-size: 150px 30px; }
+
+.fx-panel-remove {
+    height: 15px;
+    width: 15px;
+    background: url("img/fenix-catalog-sprite-small.svg") no-repeat -60px -15px;
+    background-size: 150px 30px; }
+
+.fx-panel-refresh {
+    height: 15px;
+    width: 15px;
+    background: url("img/fenix-catalog-sprite-small.svg") no-repeat -75px -15px;
+    background-size: 150px 30px; }

@@ -1,0 +1,74 @@
+<script type='text/x-handlebars-template' id='options_panel'>
+    <div class='row'>
+        {{#if output_type}}
+            <div class='col-sm-3 col-md-3'>
+                <h5 class="fs-download-option-title truncate">{{output_type_label}}</h5>
+                <hr>
+
+                <ul class="list-unstyled list-inline">
+                    <li>
+                        <input type='radio' value='Table' name='{{prefix}}output_type' id='{{prefix}}output_type' {{output_type_table_checked}}>
+                        <label for="{{prefix}}output_type">{{table_label}}</label>
+                    </li>
+                    <li>
+                        <input type='radio' value='Pivot' name='{{prefix}}output_type' id='{{prefix}}output_type_pivot' {{output_type_pivot_checked}}>
+                        <label for="{{prefix}}output_type_pivot">{{pivot_label}}</label>
+                    </li>
+                </ul>
+            </div>
+        {{/if}}
+        {{#if decimal_separators}}
+
+            {{#if thousand_separators}}
+                <div class='col-sm-4 col-md-4'>
+                    <h5 class="fs-download-option-title truncate">{{thousand_separator_label}}</h5>
+                    <hr>
+
+                    <ul class="list-unstyled list-inline">
+                        <li>
+                            <input type='radio' value='' name='{{prefix}}thousand_separator' id='{{prefix}}thousand_separator_none' {{thousand_separator_none_checked}}>
+                            <label for="{{prefix}}thousand_separator_none">{{none}}</label>
+                        </li>
+                        <li>
+                            <input type='radio' value=',' name='{{prefix}}thousand_separator' id='{{prefix}}thousand_separator_comma' {{thousand_separator_comma_checked}}>
+                            <label for="{{prefix}}thousand_separator_comma">{{comma_label}}</label>
+                        </li>
+                        <li>
+                            <input type='radio' value='.' name='{{prefix}}thousand_separator' id='{{prefix}}thousand_separator_period' {{thousand_separator_period_checked}}>
+                            <label for="{{prefix}}thousand_separator_period">{{period_label}}</label>
+                        </li>
+                    </ul>
+
+                </div>
+            {{/if}}
+
+        {{/if}}
+
+        {{#if show_options}}
+            <div class='col-sm-5 col-md-5'>
+                <h5 class="fs-download-option-title truncate">{{show_label}}</h5>
+                <hr>
+                <ul class="list-unstyled list-inline">
+                    <li>
+                        <input type='checkbox' id='{{prefix}}flags' {{flags_checked}}>
+                        <label for="{{prefix}}flags">{{flags_label}}</label>
+                    </li>
+                    <li>
+                        <input type='checkbox' id='{{prefix}}codes' {{codes_checked}}>
+                        <label for="{{prefix}}codes">{{codes_label}}</label>
+                    </li>
+                    <li>
+                        <input type='checkbox' id='{{prefix}}unit' {{units_checked}}>
+                        <label for="{{prefix}}unit">{{units_label}}</label>
+                    </li>
+                    <li>
+                        <input type='checkbox' id='{{prefix}}null_values' {{null_values_checked}}>
+                        <label for="{{prefix}}null_values">{{null_values_label}}</label>
+                    </li>
+                </ul>
+
+            </div>
+        {{/if}}
+    </div>
+</script>
+

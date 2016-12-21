@@ -1,0 +1,70 @@
+/* Fenix Filter Tab */
+
+[data-plugin="filter"] {
+
+  .btn {
+    width: 150px;
+  }
+
+  .fx-catalog-modular-form-holder {
+    border-color: transparent;
+    position: relative;
+
+    &:before {
+      content: '';
+      height: 1px;
+      width: calc(100% + 30px);
+      display: block;
+      background-color: $fenix-light-gray;
+      position: relative;
+      top: -13px;
+      left: -23px;
+    }
+
+    //&:first-child:before{
+    //  display: none;
+    //}
+
+  }
+
+  .jstree-holder {
+    height: 100px;
+  }
+
+  .fx-catalog-modular-form-label {
+    font-size: 14px;
+    left: 0;
+  }
+
+  input[type="search"] {
+    @include fx-no-border-radius;
+    height: 20px;
+    margin-bottom: 3px;
+    position: absolute;
+    top: -27px;
+    width: 70%;
+    right: 25px;
+    background-color: transparent;
+    border: 1px solid $fenix-hr;
+  }
+  form {
+    position: relative;
+    &:before {
+      content: "\e003";
+      font-family: 'Glyphicons Halflings';
+      position: absolute;
+      top: -23px;
+      left: calc(100% - 17px);
+      display: inline-block;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      color: $fenix-hr;
+    }
+  }
+
+  .fx-filter-form-module.fit{
+    width: 100%;
+  }
+}
