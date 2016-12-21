@@ -1,0 +1,54 @@
+<h1 class="text-capitalized">{{compare_data}}</h1>
+<div class="row">
+    <div class='col-xs-12'>
+        <ul class='nav nav-tabs' role='tablist'>
+            <li class="active" role='presentation'>
+                <a role='tab' data-toggle='tab'>{{compare_data}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-8 col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <h5>{{select_a_timerange}}</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div data-role="timerange"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-6">
+        <br><br class="hidden-xs">
+        <button type="button" data-role="add_filter" class="btn btn-default waves-effect waves-light pull-right">
+            <i class="material-icons left">playlist_add</i>{{add_filter}}
+        </button>
+    </div>
+</div>
+<div class="row fs-content-padding">
+    <div class="col-xs-12">
+        <div data-role="filters_container" class="fs-compare-filter-box"></div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <button type="button" data-role="compare_data" class="btn btn-primary waves-effect waves-light pull-right">
+            <i class="material-icons left">compare_arrows</i>{{compare_data}}
+        </button>
+    </div>
+</div>
+
+<br><br>
+
+<div data-role="output" style="display:none">
+    <h1>{{results}}</h1>
+    <hr>
+    <div data-role="chart"></div>
+    <br>
+    <div data-role="tables_container"></div>
+</div>

@@ -1,0 +1,125 @@
+.fs-map {
+
+  .btn-floating {
+
+    margin:10px 0px 10px 10px;
+
+  }
+
+}
+
+.leaflet-container {
+
+  font-family: $standard-text;
+
+  .leaflet-control-attribution {
+    opacity: 0.7;
+  }
+
+}
+
+.fm-controller-box-icons-container {
+  display:none;
+}
+
+.leaflet-popup {
+
+  .leaflet-popup-content-wrapper {
+
+    box-shadow: none;
+    border-radius: 7px;
+
+    .leaflet-popup-content {
+      line-height: 1.4;
+
+      .fm-popup {
+
+        //font-size: 18px;
+
+        .fm-popup-join-content {
+
+          color: $fx-cool-blue;
+          font-size: 22px;
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+.leaflet-container {
+  background: white;
+}
+
+
+.leaflet-control {
+  opacity: 0.9;
+}
+
+.leaflet-control-zoom-in:before {
+  color: $fenix-text;
+}
+
+.leaflet-control-zoom-out:before {
+  color: $fenix-text;
+}
+
+.leaflet-control-fullscreen a {
+  color: $fenix-text;
+
+  &:hover {
+    background-position: -90px 0; // this is to avoid the blue hover because it is not an svg
+  }
+
+}
+
+
+
+/* zoom control */
+/* to keep */
+
+/*
+.leaflet-control-zoom-in {
+  font: bold 0 'Lucida Console', Monaco, monospace;
+  width:31px !important;
+  height: 30px !important;
+  background-image: url(images/fenix-map-sprite.png);
+  background-position: -120px 0 !important;
+}
+
+.leaflet-control-zoom-in:hover {
+  background-position: -120px -30px !important;
+}
+
+!* to keep *!
+.leaflet-control-zoom-out {
+  font: bold 0 'Lucida Console', Monaco, monospace;
+  width:31px !important;
+  height: 30px !important;
+  background-image: url(images/fenix-map-sprite.png);
+  background-position: -150px 0 !important;
+}
+
+.leaflet-control-zoom-out:hover {
+  background-position: -150px -30px !important;
+}
+
+!* to keep *!
+.leaflet-control-zoom-reset {
+  font: bold 0 'Lucida Console', Monaco, monospace;
+  width:31px !important;
+  height: 30px !important;
+  background-image: url(images/fenix-map-sprite.png);
+  background-position: -210px 0 !important;
+}
+
+.leaflet-control-zoom-reset:hover {
+  cursor: pointer;
+  background-position: -210px -30px !important;
+}
+*/
+

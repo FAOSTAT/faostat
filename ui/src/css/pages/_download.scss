@@ -1,0 +1,290 @@
+/* Download */
+
+// jstree modela
+.fs-data-tree-domain-modal {
+
+  @media (min-width: 768px) {
+    .modal-dialog {
+      width: 500px !important;
+    }
+
+    .jstree-wholerow-ul {
+      max-width: 400px !important;
+    }
+
+    .jstree-anchor {
+      max-width: 400px !important;
+    }
+  }
+
+  // dirty fix on mobile/tablet
+  @media (max-width: 768px) {
+    .modal-dialog {
+      width: 100vw !important;
+    }
+
+    .jstree-wholerow-ul {
+      max-width: 75vw !important;
+    }
+
+    .jstree-anchor {
+      max-width: 75vw !important;
+    }
+  }
+
+
+  .jstree-anchor {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .modal-header {
+    background-color: $fx-container-bg;
+    padding-top: 0px;
+    padding-bottom: 8px;
+
+    button {
+      padding-top: 23px;
+    }
+  }
+
+}
+
+/* To remove */
+.inline-icon {
+  display: inline-block;
+  font-size: 20px;
+  position: relative;
+  top: 3px;
+  margin-right: 8px;
+}
+
+.fs-download-domain-tree {
+
+  max-height: 750px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+.fs-download-domain-title {
+  .domain-icon {
+    display: inline-block;
+  }
+}
+
+.faostat-download-selector-single {
+
+  .nav-tabs > li {
+    margin-left: -10px;
+  }
+
+  .panel-heading {
+    // padding: 5px 0;
+  }
+
+  .panel-body {
+    padding: 0;
+  }
+
+  .panel-footer {
+
+    .btn-group {
+      width: 100%;
+
+      .btn {
+        width: 50%;
+      }
+    }
+
+  }
+
+}
+
+.fs-download-selector-filter {
+  @include fx-no-border-radius;
+  @include fx-no-border;
+  @include fx-noshadow;
+  padding-left: 15px;
+  border-bottom: 1px solid $fenix-light-hr;
+}
+
+.faostat-download-selector-resume-holder {
+  margin-top: 5px;
+
+  .faostat-summary-item {
+    max-height: 115px;
+    overflow-y: auto;
+  }
+
+  .summary-item {
+    display: inline-block;
+    margin: 3px 0;
+
+    cursor: pointer;
+    border: 1px solid $fenix-hr;
+    @include fx-border-radius(3px);
+    padding: 0 3px;
+
+    &:after {
+
+      content: '';
+      @include fx-small-icons($locX: 0, $locY: -15px);
+      display: inline-block;
+      position: relative;
+      top: 3px;
+    }
+  }
+
+}
+
+.fs-tab-holder {
+  overflow: hidden;
+  .nav {
+    // TODO: fix it. The width is used for tabs in the download-selector component that are longer than the component itself
+    //width: 1000px;
+    border-color: transparent;
+  }
+}
+
+.fs-table-holder {
+  overflow-x: auto;
+  overflow-y: auto;
+  padding: 5px;
+  font-size: 12px;
+
+  // TODO: check better height
+  max-height: 700px;
+  //text-overflow: ellipsis;
+
+  // TODO: do it nicer? probably directly with the table functionality
+  /*.fixed-table-container {
+
+    border: 0px;
+
+  }
+
+  .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+
+    border-left: 0px;
+
+  }*/
+
+}
+
+.pagination {
+  //float: left;
+}
+
+.fs-page-number {
+  //float: left;
+  font-weight: bold;
+  padding: 25px;
+}
+
+/* Pivot Style */
+
+.pivot .lefttitle, .pivot .toptitle {
+  background: none;
+  background-color: transparent;
+  border-bottom-width: 1px;
+  border-bottom-color: #bbb;
+}
+
+.pivot .ztitle {
+  background: none;
+  background-color: $fx-cool-blue;
+}
+
+.pivot .collapse_button {
+  background-color: transparent;
+  border: 1px solid $fenix-hr;
+  font-family: $standard-text;
+  font-weight: normal;
+  color: $fenix-hr;
+}
+
+[data-role="output-area"] {
+  margin-top: 50px;
+}
+
+.list-download {
+  li {
+    margin: 5px 0px;
+  }
+}
+
+.fs-btn-tree {
+  margin-left: 0;
+  margin-top: 15px;
+}
+
+.fs-output-preview {
+  min-height: 200px;
+  position: relative;
+
+  .fs-output-preview-message {
+    position: absolute;
+    top: 45%;
+    width: calc(100% - 30px);
+    @include fx-transfor-me(translateY(-50%));
+    margin: 0;
+  }
+
+  .fs-icojam-icon {
+    font-size: 45px;
+  }
+
+}
+
+.fs-download-options {
+
+  margin-bottom: 0;
+
+  .fs-download-option-title {
+
+    margin-top: 0;
+
+    // in some language the font is too big
+    font-size:13px;
+
+  }
+
+  button {
+    margin-bottom: 0;
+  }
+
+  [data-role="options"] {
+    margin-bottom: 15px;
+  }
+
+  hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .list-inline > li {
+    padding: 0;
+  }
+
+  input[type="checkbox"] + label, input[type="radio"] + label {
+    font-size: 12px;
+    margin: 0 6px;
+  }
+
+  input[type="checkbox"] + label:before {
+    @include fx-border-radius(0);
+  }
+
+}
+
+.fs-preview-container {
+  .btn-floating {
+    margin: 0;
+  }
+}
+
+.fs-download-output-area {
+
+}

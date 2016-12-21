@@ -1,0 +1,78 @@
+/* Variables */
+@import '../../src/css/theme/variables';
+
+/* Fenix Utils*/
+@import '../../submodules/fenix-ui-common/css/utils/fx-utils';
+@import '../../submodules/fenix-ui-common/css/utils/fx-mixins';
+@import '../../submodules/fenix-ui-common/css/components/fx-preload';
+//@import '../../submodules/fenix-ui-common/css/components/fx-radio-checkbox';
+@import '../../submodules/fenix-ui-common/css/components/fx-fixed-height';
+@import '../../submodules/fenix-ui-common/css/components/fx-icons';
+
+/* Material Theme */
+@import '../../src/css/theme/material-theme';
+@import '../../src/css/theme/material-colors';
+
+/* Base */
+@import '../../src/css/theme/default';
+
+/* Arabic */
+@import '../../src/css/theme/arabic';
+
+/* Eldorado */
+@import '../../src/css/fonts/eldorado/font-eldorado-main';
+
+/* Mixin */
+@import '../../src/css/base/mixin';
+
+/* Third parties */
+//@import '../../submodules/fenix-ui-common/css/vendor/fx-jstree';
+@import '../../src/css/third_party/typeahead';
+@import '../../src/css/third_party/fx-jstree';
+@import '../../src/css/third_party/highcharts';
+@import '../../src/css/third_party/jquery-bootstrap-scrolling-tabs';
+
+/* Components */
+@import '../../src/css/components/bootstrap_table';
+@import '../../src/css/components/buttons';
+@import '../../src/css/components/fao-footer';
+@import '../../src/css/components/fao-navigation';
+@import '../../src/css/components/faostat-tabs';
+@import '../../src/css/components/highlight-text';
+@import '../../src/css/components/icons';
+@import '../../src/css/components/left-sidebar-modal';
+@import '../../src/css/components/range-slider';
+@import '../../src/css/components/scroll-up';
+@import '../../src/css/components/toastr';
+@import '../../src/css/components/definitions-domain';
+@import '../../src/css/components/modal-fullscreen';
+@import '../../src/css/components/metadata';
+@import '../../src/css/components/loading';
+@import '../../src/css/components/report-table';
+@import '../../src/css/components/map';
+@import '../../src/css/components/chart';
+@import '../../src/css/components/fx-radio-checkbox';
+@import '../../src/css/components/introjs';
+@import '../../src/css/components/icons_stack';
+@import '../../src/css/components/tooltip';
+@import '../../src/css/components/download-selector';
+
+/* Pages */
+@import '../../src/css/pages/browse';
+@import '../../src/css/pages/compare';
+@import '../../src/css/pages/data';
+@import '../../src/css/pages/download';
+@import '../../src/css/pages/faq';
+@import '../../src/css/pages/home';
+@import '../../src/css/pages/country_profiles';
+@import '../../src/css/pages/search';
+@import '../../src/css/pages/rankings';
+
+/* Menu and some Header stuff TODO: remove the header related css from here */
+//@import '../../submodules/faostat-ui-menu/css/faostat-ui-menu';
+
+/* Modules. */
+//@import '../../submodules/faostat-ui-metadata-viewer/css/fenix-ui-metadata-viewer';
+//@import '../../submodules/faostat-ui-download-selector/css/faostat-download-selector';
+//@import '../../submodules/faostat-ui-download-options/css/fenix-ui-download-options';
+//@import '../../submodules/faostat-ui-table/css/faostat-ui-table';

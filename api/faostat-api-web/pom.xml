@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.fao.faostat</groupId>
+    <artifactId>faostat-api-web</artifactId>
+    <version>1.6-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <name>FAOSTAT Web</name>
+    <parent>
+        <groupId>org.fao.faostat</groupId>
+        <artifactId>faostat-api</artifactId>
+        <version>1.6-SNAPSHOT</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-json</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.fao.faostat</groupId>
+            <artifactId>faostat-api-core</artifactId>
+            <version>1.6-SNAPSHOT</version>
+        </dependency>
+
+        <!-- Test dependencies. -->
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>${jersey.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-test-framework</artifactId>
+            <!--<version>1.1.5.2</version>-->
+            <version>1.1.5.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

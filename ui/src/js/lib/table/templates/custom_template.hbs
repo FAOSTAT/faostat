@@ -1,0 +1,32 @@
+{{#if addPanel}}
+    <div class="panel panel-default hoverable {{#if class}}{{class}}{{/if}}" {{#if style}}style="{{style}}"{{/if}}>
+        <div class="fs-table-heading panel-heading clearfix">
+            {{#if addExport}}
+                <div class="pull-right flip">
+                    <a class="btn-floating waves-effect waves-light btn-default" data-role="export">
+                        <i class="material-icons">file_download</i>
+                    </a>
+                </div>
+            {{/if}}
+            {{#if removable}}
+                <div class="pull-right flip">
+                    <a class="btn-floating waves-effect waves-light btn-link" data-role="close">
+                        <i class="material-icons">close</i>
+                    </a>
+                </div>
+            {{/if}}
+            <h5>{{{title}}}</h5>
+            <h6>{{{subtitle}}}</h6>
+        </div>
+        <div class="panel-body">
+            <div data-role="content" {{#if height}}style="height:{{height}}"{{/if}}></div>
+        </div>
+        {{#if footer}}
+            <div class="panel-footer clearfix">{{{footer}}}</div>
+        {{/if}}
+    </div>
+{{else}}
+
+    <div data-role="content"></div>
+
+{{/if}}

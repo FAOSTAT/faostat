@@ -1,0 +1,7 @@
+<select data-role="dd" {{#if ddOptions.multiple}}multiple{{/if}} class="js-example-responsive" style="width: 100%">
+    <option></option>
+    {{#each data}}
+        <option value="{{code}}">{{label}}</option>
+    {{/each}}
+</select>
+<span class="label label-danger" data-role="validation" style="margin-top:5px;">* {{please_select_an_option}}</span>

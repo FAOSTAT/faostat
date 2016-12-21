@@ -1,0 +1,16 @@
+
+<template id='list'>
+
+    <h3 class="text-capitalized">{{title}}</h3>
+
+    <ul class="list-unstyled">
+        {{#each data}}
+            <li>
+                <h5>
+                    <a data-role='definition' data-code='{{this.code}}' data-label='{{this.label}}' href="#">{{this.label}}</a>
+                </h5>
+            </li>
+        {{/each}}
+    </ul>
+
+</template>

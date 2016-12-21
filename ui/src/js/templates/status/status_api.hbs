@@ -1,0 +1,88 @@
+
+<script type='text/x-handlebars-template' id='groups'>
+
+    <h4><span><a href="#"><i data-role='show-details' class="fa fa-search-plus"></i></a></span> Total Groups {{total}} </h4>
+    <ul data-role='details' class="hidden">
+        {{#each data}}
+            <li>({{this.code}}) {{this.label}} </li>
+        {{/each}}
+    </ul>
+
+</script>
+
+<script type='text/x-handlebars-template' id='domains'>
+
+    <h4><span><a href="#"><i data-role='show-details' class="fa fa-search-plus"></i></a></span> Total Domains {{total}} </h4>
+    <ul data-role='details' class="hidden">
+        {{#each data}}
+            <li>({{this.group_code}}) {{this.group_name}} - ({{this.domain_code}}) {{this.domain_name}} </li>
+        {{/each}}
+    </ul>
+
+</script>
+
+<script type='text/x-handlebars-template' id='domain-details'>
+
+    <div data-role="{{domain_code}}">
+        <h3>({{domain_code}}) {{domain_name}} </h3>
+
+        <h4><a href="#"><i data-role='dimensions-show-details'></i></a>Dimensions</h4>
+        <div style="padding-left:25px;" data-role="dimensions-details"></div>
+
+        <h4><a href="#"><i data-role='codes-show-details'></i></a>Codes for each dimension</h4>
+        <div style="padding-left:25;" data-role="codes-details"></div>
+
+        <h4><a href="#"><i data-role='data-show-details'></i></a>Data</h4>
+        <div style="padding-left:25px;" data-role="data-details"></div>
+
+    </div>
+    <hr>
+
+</script>
+
+
+<script type='text/x-handlebars-template' id='dimensions'>
+    <p>Number of dimensions: {{total}}</p>
+    <p>Dimensions and subdimensions list</p>
+    <ul>
+    {{#each data}}
+        <li>{{this.id}} </li>
+        {{#if subdimensions}}
+        <ul>
+            {{#each subdimensions}}
+                <li>{{this.id}}</li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    {{/each}}
+    </ul>
+</script>
+
+<script type='text/x-handlebars-template' id='codes'>
+    <div class="row">
+        <div class="col-md-2">
+            <h5>{{this.id}} </h5>
+        </div>
+        <div class="col-md-2">
+            <p>{{this.total}}</p>
+        </div>
+    </div>
+</script>
+
+
+<script type='text/x-handlebars-template' id='data'>
+    <h5 {{#if this.color}}style='color: {{this.color}}'{{/if}}>Rows {{this.rows}}</h5>
+    <h5 {{#if this.status}}style='color: {{this.color}}'>Status {{this.status}}{{/if}}</h5>
+</script>
+
+<script type='text/x-handlebars-template' id='warning'>
+        <div class="row">
+            <div class="col-md-12">
+                <h4 {{#if this.color}}style='color: {{this.color}}'{{/if}}>({{this.domain_code}}) {{this.domain_name}} rows from getData: {{this.rows}}</h4>
+            </div>
+        </div>
+</script>
+
+<script type='text/x-handlebars-template' id='databean'>
+
+</script>

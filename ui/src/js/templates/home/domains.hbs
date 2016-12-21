@@ -1,0 +1,30 @@
+
+<!--TODO: legacy not used anymore -->
+{{#each groups}}
+
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+
+        <div class="fs-domain-holder">
+
+            <!-- TODO: remove style inline -->
+            <span style="cursor: pointer;"
+                  data-code="{{this.group_code}}"
+                  data-role="go_to_download"
+                  class="pull-left domain-icon icojam_{{this.group_code}}">
+            </span>
+            
+            <h5>{{this.group_name}}</h5>
+
+            <!-- ../download is the outer scope of Handlebars http://stackoverflow.com/questions/13645084/access-a-variable-outside-the-scope-of-a-handlebars-js-each-loop-->
+            <a href="#" data-code="{{this.group_code}}" data-role="go_to_download">{{../download}}</a>
+
+            <!-- TODO: add an handlebars check if is valid for browse and download -->
+            {{#if addBrowse}}
+                <a href="#" data-code="{{this.group_code}}" data-role="go_to_browse">{{../browse}}</a>
+            {{/if}}
+
+        </div>
+
+    </div>
+
+{{/each}}

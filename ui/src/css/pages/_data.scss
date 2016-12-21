@@ -1,0 +1,81 @@
+/* Data Page */
+
+.groups-list{
+
+  li{
+    border-bottom: 1px solid $fenix-light-hr;
+  }
+
+}
+
+.domain-group-list {
+
+  border-bottom: 1px solid $fenix-light-hr;
+  padding-bottom: 15px;
+
+  .domain-list {
+    padding-left: 50px;
+    margin-bottom: 10px;
+  }
+
+}
+
+
+[data-role="groups-list"]{
+  padding-top: 25px;
+}
+
+/* Masonry-like patch for columns */
+.domain-list-container {
+  .row-mason {
+    -moz-column-width: 20em;
+    -webkit-column-width: 20em;
+    -moz-column-gap: 2em;
+    -webkit-column-gap: 2em;
+    column-width: 20em;
+    column-gap: 2em;
+  }
+
+  .menu-category {
+    display: inline-block;
+    margin: 0.25rem;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .fs-data-group-title {
+
+    position: relative;
+    padding-left: 47px;
+
+    span {
+      position: absolute;
+      left: 0;
+      //top: 50%;
+      top: 45%;
+      @include fx-transfor-me(translateY(-50%));
+    }
+
+  }
+}
+
+// Arabix fix
+.ar {
+
+  .fs-data-group-title {
+
+    position: relative;
+    padding-left: 0px;
+    padding-right: 47px;
+
+    span {
+      position: absolute;
+      //left: 0;
+      right: 0;
+      //top: 50%;
+      top: 45%;
+      @include fx-transfor-me(translateY(-50%));
+    }
+
+  }
+}

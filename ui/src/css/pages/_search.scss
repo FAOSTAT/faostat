@@ -1,0 +1,40 @@
+
+.fs-search-box {
+
+  .fs-search-icon {
+    margin-left: 0px;
+  }
+
+  .typeahead {
+    border-bottom: 1px solid #eee;
+  }
+
+}
+
+.fs-search-results {
+
+  .subtitle {
+    font-size:16px;
+
+    i {
+       cursor:pointer;
+
+      &:hover {
+        color: $fx-cool-blue;
+      }
+    }
+
+  }
+
+  .fs-search-output {
+    padding-top:15px;
+
+    .fs-table-heading {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+
+  }
+
+}
+

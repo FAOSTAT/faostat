@@ -1,0 +1,38 @@
+
+//$tooltip-text-color: unquote("rgb(#{$color-white})") !default;
+//$tooltip-background-color: unquote("rgba(#{$palette-grey-700}, 0.9)") !default;
+$tooltip-text-color: #FFFFFF;
+$tooltip-background-color: rgba(#616161, 0.95);
+
+.tooltip {
+
+  color: $tooltip-text-color;
+
+  .tooltip-inner {
+    padding: 10px 10px 10px 10px;
+    background-color: $tooltip-background-color;
+    opacity: 0.9;
+  }
+
+  .tooltip-arrow {
+    display:none;
+  }
+
+  &.fade {
+    /*-webkit-transition: opacity 0.25s cubic-bezier(.98,0,1,.28);
+    -moz-transition: opacity 0.25s cubic-bezier(.98,0,1,.28);
+    -ms-transition: opacity 0.25s cubic-bezier(.98,0,1,.28);
+    -o-transition: opacity 0.25s cubic-bezier(.98,0,1,.28);
+    transition: opacity 0.25s cubic-bezier(.98,0,1,.28);*/
+
+    -webkit-transition: opacity 0.3s ease-in;
+    -moz-transition: opacity 0.3s ease-in;
+    -ms-transition: opacity 0.3s ease-in;
+    -o-transition: opacity 0.3s ease-in;
+    transition: opacity 0.3s ease-in;
+
+    //animation: pulse 200ms  cubic-bezier(0, 0, 0.2, 1) forwards;
+
+  }
+
+}

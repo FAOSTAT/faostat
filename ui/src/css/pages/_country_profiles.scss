@@ -1,0 +1,54 @@
+/* Country Profile Page */
+
+/* Masonry-like patch for columns */
+.country-list-container {
+
+  .row-mason {
+    -moz-column-width: 18em;
+    -webkit-column-width: 18em;
+    -moz-column-gap: 2em;
+    -webkit-column-gap: 2em;
+
+    column-width: 18em;
+    //column-count: 4;
+    column-gap: 2em;
+    //column-rule: 1px solid #ff0000;
+
+    li {
+      overflow: hidden;
+    }
+
+  }
+
+  .menu-category {
+    display: inline-block;
+    margin: 0rem;
+    //padding: 1rem;
+    padding: 0;
+    //padding: 0.5rem 0.5rem 0.5rem 0;
+    width: 100%;
+  }
+
+  .country-list {
+      margin-bottom: 10px;
+  }
+
+}
+
+.country-profile-topic {
+
+  margin: 5px 0px 5px 0px;
+  font-size: 13px;
+
+}
+
+.country-dashboard-title {
+
+  margin-top: 5px;
+  margin-bottom: 0px;
+
+}
+
+.country-profile-map {
+  height: 524px;
+}

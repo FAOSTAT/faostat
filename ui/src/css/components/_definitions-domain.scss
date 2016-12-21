@@ -1,0 +1,27 @@
+
+.definitions-domain {
+
+  .row-mason {
+
+    -moz-column-width: 18em;
+    -webkit-column-width: 18em;
+    -moz-column-gap: 2em;
+    -webkit-column-gap: 2em;
+    column-width: 18em;
+    column-gap: 2em;
+
+    li {
+      overflow: hidden;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+
+  }
+
+}
+
+.definitions-domain-output {
+
+  padding-top:25px;
+
+}

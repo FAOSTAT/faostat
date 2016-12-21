@@ -1,0 +1,4 @@
+/target/
+resources/
+*.log
+*bk.xml

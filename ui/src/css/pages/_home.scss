@@ -1,0 +1,364 @@
+/* Homepage */
+
+
+.faostat-intro{
+
+   background-color:#f9f9f9;
+   background-image: url(../../src/images/homepage/home-intro.jpg);
+   background-size: cover;
+   color: white;
+   text-align: center;
+
+
+   &.jumbotron {
+      @include fx-no-border-radius;
+      padding-top: 24px; //check why 0 doesn't work
+     // padding-bottom: 24px;
+   }
+
+   h2{
+      margin-bottom: 25px;
+   }
+
+   p{
+      font-size: 18px;
+      margin-bottom: 30px;
+   }
+
+}
+
+
+.home-content{
+   margin-top: 40px;
+}
+
+.fs-home-swiper{
+   margin-top: 5px;
+}
+
+.fs-domain-holder{
+  //height: 80px;
+
+   .domain-icon{
+      margin-right: 10px;
+      margin-top: 10px;
+   }
+
+   a{
+      font-size: 12px;
+      margin-right: 10px;
+
+      &:after{
+
+         content: '';
+         //@include fx-small-icons($locX: -135px, $locY: -15px);
+         @include fx-small-icons($locX: -120px, $locY: -15px);
+         display: inline-block;
+         position: relative;
+         top: 4px;
+
+      }
+
+   }
+
+   h5{
+      margin-bottom: 0;
+   }
+
+   padding: 10px 0;
+   border-bottom: 1px solid $superlight-gray;
+
+}
+
+
+.domain-icon{
+   font-size: 32px;
+}
+
+.fs-home-domains {
+   min-height:250px;
+}
+
+.fao-logo-home {
+   //margin: 0px 0px 0px -15px;
+   //margin-left: -15px;
+}
+
+.fs-home-contacts {
+
+   background-color: #D5E4EB;
+
+   h1 {
+      margin-bottom: 5px;
+      margin-left:0px;
+      margin-top:10px;
+   }
+
+   .contacts-details {
+      font-size: 13px;
+   }
+
+}
+
+
+//.btn-home-domain{
+//   border-color: transparent !important;
+//}
+
+/* Home Slider */
+
+.swiper-container {
+   width: 100%;
+
+   //position: relative;
+   //left: -15px;
+   //width: calc(100% + 30px);
+
+   height: 400px;
+   background: white;
+
+}
+.swiper-slide {
+   position: relative;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   //padding: 40px 60px;
+}
+.parallax-bg {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   -webkit-background-size: cover;
+   background-size: cover;
+   background-position: center center;
+   z-index: -1;
+}
+
+
+.swiper-slide .title{
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+
+   .white-stripe{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(white, .85);
+      z-index:1;
+   }
+
+
+}
+
+.swiper-slide .title h1, .swiper-slide .title h2 {
+   position: relative;
+   z-index: 2;
+   color: $fenix-text;
+   margin: 0;
+}
+
+
+.swiper-slide .title h1 {
+   padding: 20px 15px 20px 15px;
+   font-size: 18px;
+
+   @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 20px;
+      padding: 40px 60px 10px 60px;
+   }
+
+   @media (min-width: 992px) {
+      font-size: 23px;
+      padding: 40px 60px 10px 60px;
+   }
+
+
+}
+
+.swiper-slide .title h2{
+   padding: 10px 55px 30px 55px;
+   font-size: 14px;
+
+   @media (min-width: 768px) and (max-width: 991px) {
+      padding: 10px 60px 40px 60px;
+
+      font-size: 14px;
+   }
+
+   @media (min-width: 992px) {
+      padding: 10px 60px 40px 60px;
+      font-size: 14px;
+   }
+
+}
+
+.swiper-slide .text {
+   font-size: 14px;
+   max-width: 400px;
+   line-height: 1.3;
+}
+
+.swiper-pagination{
+   text-align: right;
+}
+
+.swiper-button-next, .swiper-button-prev{
+   background: none;
+   .btn-floating{
+      margin: 0;
+      position: relative;
+   }
+
+}
+
+.swiper-button-next{
+   .btn-floating{
+      left: -10px;
+   }
+}
+
+// The pagination goes in contrast with links apparently
+.swiper-pagination-bullet-active{
+   background-color: $material-default;
+}
+
+/*
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+   top: 10px;
+   left: auto;
+   right: 15px;
+}*/
+
+.feature-bar{
+   margin-top: 20px;
+
+
+   a.feature-panel{
+      position: relative;
+      text-decoration: none !important;
+      color: rgba($fenix-text, .7);
+
+      &:hover, &:active, &:visited{
+         color: rgba($fenix-text, .85);
+      }
+
+   }
+
+   .feature-icon{
+      display: block;
+      position: absolute;
+      background-color: white;
+      top: 0;left: 0;
+      width: 80px;
+      height: 100%;
+
+      &:before{
+         position: absolute;
+         font-size: 45px;
+         top: 50%;
+         left: 50%;
+         @include fx-transfor-me(translate(-50%, -50%))
+      }
+
+   }
+
+   .feature-title{
+      font-size: 15px;
+      margin-top: 10px;
+      padding-left: 90px;
+   }
+
+   .feature-subtitle{
+      padding-left: 90px;
+      font-size: 12px;
+   }
+
+
+}
+
+.swiper-container-updates {
+   width: 100%;
+   height: 170px;
+   //height: 100px;
+   position: relative;
+   overflow: hidden;
+
+   hr{
+      margin-top: 10px;
+      margin-bottom: 10px;
+   }
+
+   .swiper-wrapper{
+      width: 100%;
+   }
+
+   .swiper-slide {
+      height: auto;
+      color: $fenix-text;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 0 15px 0 0;
+   }
+
+   &:hover {
+      .swiper-scrollbar {
+         opacity: 1 !important;
+      }
+   }
+
+}
+
+// overrides by language
+.es {
+
+   .swiper-container-updates {
+      height: 190px;
+   }
+
+}
+
+.fr {
+
+   .swiper-container-updates {
+      height: 210px;
+   }
+
+   .fs-home-card-3 {
+      //height: 210px;
+   }
+
+   .fs-home-card-4 {
+      //height: 210px;
+   }
+
+}
+
+.zh {
+
+   .swiper-container-updates {
+      height: 110px;
+   }
+
+   .fs-home-card2 {
+
+      .card-content {
+         height: 222px;
+      }
+
+   }
+
+}
+
+.ru {
+
+   .swiper-container-updates {
+      height: 215px;
+   }
+
+}

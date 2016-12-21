@@ -1,0 +1,142 @@
+<template id='template'>
+
+    <div class="row">
+        <div class="col-sm-12">
+
+            <ul class="nav nav-tabs" role="tablist">
+
+                <li role="presentation" class="active">
+                    <a href="#domains" data-section="domains" role="tab" data-toggle="tab"
+                       aria-expanded="true">
+                        {{domains}}
+                    </a>
+                </li>
+            </ul>
+            <br>
+
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <input data-role="search" type="text" class="form-control" placeholder="{{search_for_a_domain}}">
+                    </div>
+                </div>
+            </form>
+
+            <div class="domain-list-container" data-role="groups"></div>
+            <div style="display:none" data-role="no-data">{{no_data_available}}</div>
+
+        </div>
+        <!--<div class="col-sm-3 hidden-xs">-->
+            <!--<div data-role="groups-list"></div>-->
+        <!--</div>-->
+    </div>
+
+</template>
+
+<template id='domains'>
+
+</template>
+
+<template id='groups-list'>
+    <p class="label label-default label-aligned">Groups List</p>
+    <br>
+    <ul class="list-unstyled groups-list">
+        {{#each this}}
+            <li><h5><a data-section="{{this.group_code}}" href="#">{{this.group_name}}</a></h5></li>
+        {{/each}}
+    </ul>
+</template>
+
+<template id='groups'>
+
+    <div class="menu row-mason">
+
+        {{#each this}}
+
+            <div class="menu-category instafilta-section domain-group-list" data-section="{{this.group_code}}">
+
+                <h1 class="fs-data-group-title">
+                    <span data-role="go_to_download"
+                          class="domain-icon icojam_{{this.group_code}}">
+                   </span>
+                    {{this.title}}
+                </h1>
+                <ul class="list-unstyled">
+                    {{#each this.data}}
+                        <li class="domain-list">
+                            <a class="instafilta-target"
+                               data-link="domain"
+                               data-domain="{{this.domain_code}}"
+                               href="{{this.link}}">{{this.domain_name}}
+                                <span style="display:none">{{../title}}</span>
+                                <span style="display:none">{{this.domain_code}} </span>
+                                <span style="display:none">{{../group_code}} </span>
+                            </a>
+                        </li>
+                    {{/each}}
+                </ul>
+
+            </div>
+
+        {{/each}}
+
+    </div>
+
+</template>
+
+
+<template id='groups-card'>
+
+    <br>
+    <br>
+
+    <div class="menu row-mason">
+
+        {{#each this}}
+
+            <div class="menu-category instafilta-section" data-section="{{this.group_code}}">
+
+                <div class="elegant-card z-depth-1 hoverable">
+
+                    <!-- Button -->
+                    <a target="_blank" class="btn-floating btn-primary btn-large waves-effect waves-light">
+                        <i style="font-size:30px;" class="icojam_{{this.group_code}}"></i>
+                    </a>
+
+                    <!-- Content -->
+                    <div class="card-content">
+                        <h3 class="truncate">{{this.title}}</h3>
+
+                        <!--                        <div class="swiper-container-updates">
+                                                    <div class="swiper-wrapper">
+                                                        <div class="swiper-slide">-->
+                        <ul class="list-unstyled" style="height:100px; overflow-y:auto;">
+                            {{#each this.data}}
+                                <li class="domain-list">
+                                    <a class="instafilta-target"
+                                       href="{{this.link}}">{{this.domain_name}}
+                                        <span style="display:none">{{../title}}</span>
+                                    </a>
+                                </li>
+                            {{/each}}
+
+                        </ul>
+                <!--                              </div>
+                                          </div>
+                                          <div class="swiper-scrollbar"></div>
+                                      </div>-->
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        {{/each}}
+
+    </div>
+
+</template>
+
+

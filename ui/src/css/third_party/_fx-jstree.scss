@@ -1,0 +1,129 @@
+/* Js tree */
+
+.fs-tree.nostripes {
+
+  .jstree-striped {
+    background: transparent !important;
+  }
+
+}
+
+.jstree-anchor {
+
+  height: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  //width: inherit;
+  width: 100%;
+  //max-width: 100%;
+
+/*
+  &:hover {
+    background-color: $fx-main-color-lighter !important;
+  }*/
+}
+
+.jstree-anchor.jstree-clicked {
+
+  background-color: $fx-main-color-light !important;
+
+}
+
+.jstree-anchor.jstree-hovered {
+
+  background-color: $fx-main-color-lighter !important;
+
+}
+
+.jstree-anchor.jstree-clicked.jstree-hovered {
+
+  background-color: lighten($fx-main-color-lighter, 5%) !important;
+
+}
+
+
+.jstree-default {
+
+  .jstree-search{
+    color: $fenix-text;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .jstree-striped {
+    width: 100%;
+    padding-right: 24px;
+  }
+
+
+}
+
+.jstree-default .jstree-themeicon{
+  display: none; /* It hides folder icon */
+}
+
+.jstree-default .jstree-node,
+.jstree-default .jstree-icon{
+  //background-image: url("#{$fx-ui-common}/css/img/treejs-32px.svg");
+  //background-image: url("../../src/images/treejs-32px.svg");
+  // TODO: check if there is a better way to access the image
+  background-image: url("#{$fs-images}/treejs-32px.svg");
+}
+
+
+.jstree-default .jstree-wholerow-clicked{
+  background: none;
+
+  .jstree-anchor {
+    //background-color: $fx-main-color-light;
+  }
+
+}
+
+.jstree-default .jstree-wholerow-hovered {
+  background: none;
+  //background-color: $fx-main-color-lighter;
+  .jstree-anchor {
+    //background-color: $fx-main-color-lighter;
+  }
+}
+
+.jstree-default > .jstree-wholerow-ul .jstree-hovered, .jstree-default > .jstree-wholerow-ul .jstree-clicked {
+
+}
+
+.jstree-wholerow-clicked.jstree-wholerow-hovered{
+  background: none;
+  //background-color: lighten($fx-main-color-lighter, 5%);
+}
+
+.jstree-icon.jstree-ocl{
+  //width: 10px !important;
+/*  margin-left: 5px;
+  margin-right: -5px;*/
+  margin-left: 8px;
+  margin-right: -2px;
+}
+
+.jstree-container-ul {
+
+  [role="group"].jstree-children {
+    .jstree-icon {
+      //width: 15px;
+    }
+    [role='treeitem'] {
+      position: relative;
+    }
+    [role='treeitem'] .jstree-wholerow {
+      height: 100%;
+    }
+    [role='treeitem'] .jstree-wholerow-clicked {
+      height: 100%;
+    }
+
+  }
+
+}
+
+

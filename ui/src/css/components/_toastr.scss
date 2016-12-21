@@ -1,0 +1,38 @@
+#toast-container > div {
+  opacity: 0.9;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  filter: alpha(opacity=90);
+
+  @include fx-box-shadow(0, 0, 0, white);
+  opacity: 0.95;
+
+  .toast-title {
+    font-size: 15px;
+  }
+
+  .toast-message {
+    font-size: 12px;
+  }
+
+  @media (max-width: 767px) {
+    .toast-title {
+      font-size: 12px;
+    }
+
+    .toast-message {
+      font-size: 10px;
+    }
+  }
+
+}
+
+#toast-container > div:hover {
+  @include fx-box-shadow(0, 0, 0, white);
+}
+
+.toast-top-center {
+  top: 25px;
+  //top: 40%;
+  right: 0;
+  width: 100%;
+}

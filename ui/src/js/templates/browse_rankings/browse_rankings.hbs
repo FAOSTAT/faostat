@@ -1,0 +1,35 @@
+
+<h1 id="fs-browse-rankings-view-title"></h1>
+
+<div class="row">
+    <div class='col-md-12'>
+        <ul class="nav nav-tabs" role="tablist">
+
+            <li role="presentation" class="active">
+                <a href="#country_list" data-section="country_list" role="tab" data-toggle="tab"
+                   aria-expanded="true">
+                    {{rankings}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+
+    <div class='col-md-3 fs-tree-holder'>
+        <input class='form-control' placeholder='{{search_ranking}}' id='fs-browse-rankings-search'>
+        <br>
+        <div id="fs-browse-rankings-tree" class="fs-tree nostripes"></div>
+    </div>
+    <div class="col-md-9">
+        <div id="fs-browse-rankings-view-not-available" style="display:none">
+            <h1 class="text-center" style="padding-top:100px;">{{select_a_node}}</h1>
+        </div>
+        <div id="fs-browse-rankings-view-container" style="display:none;">
+            <div data-role='dashboard-compose'></div>
+        </div>
+    </div>
+</div>

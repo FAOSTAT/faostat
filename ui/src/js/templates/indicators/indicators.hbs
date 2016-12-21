@@ -1,0 +1,76 @@
+
+
+
+<style>
+   #sigma {
+        background-color: #455660;
+    }
+    .sigma-edge {
+        stroke: #14191C;
+    }
+    .sigma-node {
+        fill: green;
+        stroke: #14191C;
+        stroke-width: 2px;
+    }
+    .sigma-node:hover {
+        fill: blue;
+    }
+    .muted {
+        fill-opacity: 0.1;
+        stroke-opacity: 0.1;
+    }
+</style>
+
+
+<div id="sigma" style="height: 800px; margin: auto;"></div>
+<div id="sigma2" style="height: 500px; margin: auto;"></div>
+
+<div class="row">
+    <div class='col-lg-12'>
+        <ul class='nav nav-tabs' role='tablist'>
+            <li class="active" role='presentation'>
+                <a role='tab' data-toggle='tab'>{{indicators}}Indicators</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="row" style="padding-top:25px;">
+    <div class='col-md-4'>
+        <div id="fs-search-box">
+            <h5 role='tab' data-toggle='tab'>{{filter_indicators}}Find an indicator</h5>
+            <input class='form-control' placeholder='{{search_indicators}}e.g. Rice production' id='fs-indicators-search'>
+        </div>
+    </div>
+</div>
+
+<div style="padding-top: 25px;">
+    {{#each data as |d dIndex|}}
+        <h3>{{{this.topic}}}</h3>
+        <ul>
+            {{#each indicators as |i iIndex|}}
+                <li>
+                    <a href="#" id="fs-indicator-{{dIndex}}{{iIndex}}">{{i.text}}</a>
+                </li>
+            {{/each}}
+        </ul>
+    {{/each}}
+</div>
+
+
+<!-- TABLE -->
+<!--<table id="example" class="display nowrap" cellspacing="0" width="100%">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>ZIP / Post code</th>
+        <th>Country</th>
+    </tr>
+    </thead>
+</table>-->
+<div id="example"></div>
+
+
