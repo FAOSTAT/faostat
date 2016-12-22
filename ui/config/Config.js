@@ -23,8 +23,11 @@ define(['jquery'], function ($) {
         CHAPLINJS_SCROLL_TO: true,
         CHAPLINJS_APPLICATION_TITLE: "FAOSTAT",
 
+        // enable all 6 languages. If false use only english/spanish/french
+        ALL_LANGUAGES: true,
+
         DATE_UPDATE: "@@date_update",
-        VERSION: "@@version"
+        VERSION: "@@version",
     };
 
 });
