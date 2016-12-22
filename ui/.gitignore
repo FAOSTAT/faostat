@@ -1,4 +1,4 @@
-node_modules
+/node_modules/
 npm.log
 npm-debug.log
 *.iml
@@ -9,6 +9,6 @@ Web.config
 /node_modules/
 /resources/
 /build/
-Config*
+/Config*
 /backup/
 main-all.js
