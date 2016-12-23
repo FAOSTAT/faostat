@@ -34,6 +34,37 @@
             <id>dev</id>
             <properties>
                 <rp.build.warname>api-dev</rp.build.warname>
+
+                <faostat_db3_dbname>${faostat_db3_dbname}</faostat_db3_dbname>
+                <faostat_db3_driver>${faostat_db3_driver}</faostat_db3_driver>
+                <faostat_db3_pwd>${faostat_db3_pwd}</faostat_db3_pwd>
+                <faostat_db3_url>${faostat_db3_url}</faostat_db3_url>
+                <faostat_db3_user>${faostat_db3_user}</faostat_db3_user>
+
+                <faostat_db4_dbname>${faostat_db4_dbname}</faostat_db4_dbname>
+                <faostat_db4_driver>${faostat_db4_driver}</faostat_db4_driver>
+                <faostat_db4_pwd>${faostat_db4_pwd}</faostat_db4_pwd>
+                <faostat_db4_url>${faostat_db4_url}</faostat_db4_url>
+                <faostat_db4_user>${faostat_db4_user}</faostat_db4_user>
+
+                <faostat_qa_dbname>${faostat_qa_dbname}</faostat_qa_dbname>
+                <faostat_qa_driver>${faostat_qa_driver}</faostat_qa_driver>
+                <faostat_qa_pwd>${faostat_qa_pwd}</faostat_qa_pwd>
+                <faostat_qa_url>${faostat_qa_url}</faostat_qa_url>
+                <faostat_qa_user>${faostat_qa_user}</faostat_qa_user>
+
+                <faostat_internal_dbname>${faostat_internal_dbname}</faostat_internal_dbname>
+                <faostat_internal_driver>${faostat_internal_driver}</faostat_internal_driver>
+                <faostat_internal_pwd>${faostat_internal_pwd}</faostat_internal_pwd>
+                <faostat_internal_url>${faostat_internal_url}</faostat_internal_url>
+                <faostat_internal_user>${faostat_internal_user}</faostat_internal_user>
+
+                <faostat_dev_dbname>${faostat_dev_dbname}</faostat_dev_dbname>
+                <faostat_dev_driver>${faostat_dev_driver}</faostat_dev_driver>
+                <faostat_dev_pwd>${faostat_dev_pwd}</faostat_dev_pwd>
+                <faostat_dev_url>${faostat_dev_url}</faostat_dev_url>
+                <faostat_dev_user>${faostat_dev_user}</faostat_dev_user>
+
             </properties>
             <build>
                 <plugins>
@@ -46,6 +77,7 @@
                             <webResources>
                                 <resource>
                                     <directory>resources/default</directory>
+                                    <filtering>true</filtering>
                                     <targetPath>WEB-INF/classes</targetPath>
                                     <includes>
                                         <include>*.properties</include>
@@ -61,6 +93,43 @@
             <id>internal</id>
             <properties>
                 <rp.build.warname>api-internal</rp.build.warname>
+
+                <faostat_production_dbname>${faostat_db3_dbname}</faostat_production_dbname>
+                <faostat_production_driver>${faostat_db3_driver}</faostat_production_driver>
+                <faostat_production_pwd>${faostat_db3_pwd}</faostat_production_pwd>
+                <faostat_production_url>${faostat_db3_url}</faostat_production_url>
+                <faostat_production_user>${faostat_db3_user}</faostat_production_user>
+
+                <faostat_db3_dbname>${faostat_db3_dbname}</faostat_db3_dbname>
+                <faostat_db3_driver>${faostat_db3_driver}</faostat_db3_driver>
+                <faostat_db3_pwd>${faostat_db3_pwd}</faostat_db3_pwd>
+                <faostat_db3_url>${faostat_db3_url}</faostat_db3_url>
+                <faostat_db3_user>${faostat_db3_user}</faostat_db3_user>
+
+                <faostat_db4_dbname>${faostat_db4_dbname}</faostat_db4_dbname>
+                <faostat_db4_driver>${faostat_db4_driver}</faostat_db4_driver>
+                <faostat_db4_pwd>${faostat_db4_pwd}</faostat_db4_pwd>
+                <faostat_db4_url>${faostat_db4_url}</faostat_db4_url>
+                <faostat_db4_user>${faostat_db4_user}</faostat_db4_user>
+
+                <faostat_qa_dbname>${faostat_qa_dbname}</faostat_qa_dbname>
+                <faostat_qa_driver>${faostat_qa_driver}</faostat_qa_driver>
+                <faostat_qa_pwd>${faostat_qa_pwd}</faostat_qa_pwd>
+                <faostat_qa_url>${faostat_qa_url}</faostat_qa_url>
+                <faostat_qa_user>${faostat_qa_user}</faostat_qa_user>
+
+                <faostat_internal_dbname>${faostat_internal_dbname}</faostat_internal_dbname>
+                <faostat_internal_driver>${faostat_internal_driver}</faostat_internal_driver>
+                <faostat_internal_pwd>${faostat_internal_pwd}</faostat_internal_pwd>
+                <faostat_internal_url>${faostat_internal_url}</faostat_internal_url>
+                <faostat_internal_user>${faostat_internal_user}</faostat_internal_user>
+
+                <faostat_dev_dbname>${faostat_dev_dbname}</faostat_dev_dbname>
+                <faostat_dev_driver>${faostat_dev_driver}</faostat_dev_driver>
+                <faostat_dev_pwd>${faostat_dev_pwd}</faostat_dev_pwd>
+                <faostat_dev_url>${faostat_dev_url}</faostat_dev_url>
+                <faostat_dev_user>${faostat_dev_user}</faostat_dev_user>
+
             </properties>
             <build>
                 <plugins>
@@ -74,6 +143,7 @@
                                 <resource>
                                     <directory>resources/default</directory>
                                     <targetPath>WEB-INF/classes</targetPath>
+                                    <filtering>true</filtering>
                                     <includes>
                                         <include>*.properties</include>
                                     </includes>
@@ -88,6 +158,37 @@
             <id>qa</id>
             <properties>
                 <rp.build.warname>api-qa</rp.build.warname>
+
+
+                <faostat_db3_dbname>${faostat_db3_dbname}</faostat_db3_dbname>
+                <faostat_db3_driver>${faostat_db3_driver}</faostat_db3_driver>
+                <faostat_db3_pwd>${faostat_db3_pwd}</faostat_db3_pwd>
+                <faostat_db3_url>${faostat_db3_url}</faostat_db3_url>
+                <faostat_db3_user>${faostat_db3_user}</faostat_db3_user>
+
+                <faostat_db4_dbname>${faostat_db4_dbname}</faostat_db4_dbname>
+                <faostat_db4_driver>${faostat_db4_driver}</faostat_db4_driver>
+                <faostat_db4_pwd>${faostat_db4_pwd}</faostat_db4_pwd>
+                <faostat_db4_url>${faostat_db4_url}</faostat_db4_url>
+                <faostat_db4_user>${faostat_db4_user}</faostat_db4_user>
+
+                <faostat_qa_dbname>${faostat_qa_dbname}</faostat_qa_dbname>
+                <faostat_qa_driver>${faostat_qa_driver}</faostat_qa_driver>
+                <faostat_qa_pwd>${faostat_qa_pwd}</faostat_qa_pwd>
+                <faostat_qa_url>${faostat_qa_url}</faostat_qa_url>
+                <faostat_qa_user>${faostat_qa_user}</faostat_qa_user>
+
+                <faostat_internal_dbname>${faostat_internal_dbname}</faostat_internal_dbname>
+                <faostat_internal_driver>${faostat_internal_driver}</faostat_internal_driver>
+                <faostat_internal_pwd>${faostat_internal_pwd}</faostat_internal_pwd>
+                <faostat_internal_url>${faostat_internal_url}</faostat_internal_url>
+                <faostat_internal_user>${faostat_internal_user}</faostat_internal_user>
+
+                <faostat_dev_dbname>${faostat_dev_dbname}</faostat_dev_dbname>
+                <faostat_dev_driver>${faostat_dev_driver}</faostat_dev_driver>
+                <faostat_dev_pwd>${faostat_dev_pwd}</faostat_dev_pwd>
+                <faostat_dev_url>${faostat_dev_url}</faostat_dev_url>
+                <faostat_dev_user>${faostat_dev_user}</faostat_dev_user>
             </properties>
             <build>
                 <plugins>
@@ -101,6 +202,7 @@
                                 <resource>
                                     <directory>resources/default</directory>
                                     <targetPath>WEB-INF/classes</targetPath>
+                                    <filtering>true</filtering>
                                     <includes>
                                         <include>*.properties</include>
                                     </includes>
@@ -115,6 +217,13 @@
             <id>prod-db3</id>
             <properties>
                 <rp.build.warname>api-db3</rp.build.warname>
+
+                <faostat_db3_dbname>${faostat_db3_dbname}</faostat_db3_dbname>
+                <faostat_db3_driver>${faostat_db3_driver}</faostat_db3_driver>
+                <faostat_db3_pwd>${faostat_db3_pwd}</faostat_db3_pwd>
+                <faostat_db3_url>${faostat_db3_url}</faostat_db3_url>
+                <faostat_db3_user>${faostat_db3_user}</faostat_db3_user>
+
             </properties>
             <build>
                 <plugins>
@@ -128,6 +237,7 @@
                                 <resource>
                                     <directory>resources/prod/db3</directory>
                                     <targetPath>WEB-INF/classes</targetPath>
+                                    <filtering>true</filtering>
                                     <includes>
                                         <include>*.properties</include>
                                     </includes>
@@ -142,6 +252,13 @@
             <id>prod-db4</id>
             <properties>
                 <rp.build.warname>api-db4</rp.build.warname>
+
+                <faostat_db4_dbname>${faostat_db4_dbname}</faostat_db4_dbname>
+                <faostat_db4_driver>${faostat_db4_driver}</faostat_db4_driver>
+                <faostat_db4_pwd>${faostat_db4_pwd}</faostat_db4_pwd>
+                <faostat_db4_url>${faostat_db4_url}</faostat_db4_url>
+                <faostat_db4_user>${faostat_db4_user}</faostat_db4_user>
+
             </properties>
             <build>
                 <plugins>
@@ -155,6 +272,7 @@
                                 <resource>
                                     <directory>resources/prod/db4</directory>
                                     <targetPath>WEB-INF/classes</targetPath>
+                                    <filtering>true</filtering>
                                     <includes>
                                         <include>*.properties</include>
                                     </includes>
