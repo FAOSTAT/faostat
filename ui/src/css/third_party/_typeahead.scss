@@ -15,9 +15,15 @@
 
   &:focus{
     outline: 0;
-    outline-width: 0;
   }
 
+}
+
+.ar {
+
+  .typeahead, .tt-query, .tt-hint {
+    padding: 11px 10px 11px 10px;
+  }
 }
 
 
@@ -107,8 +113,6 @@
     display: none !important;
   }
 
-
-
 }
 
 .tt-suggestion {
@@ -119,16 +123,11 @@
   padding: 5px 10px;
   font-size: 12px;
 
-
-
   strong{
     background-color: #FFFF33;
   }
 
-
-
 }
-
 
 
 
@@ -168,4 +167,17 @@
 
 #rtl-support .tt-menu {
   text-align: right;
+}
+
+.ar {
+
+  .typeahead.tt-hint {
+   // max-height: 18px;
+  }
+
+  .typeahead.tt-menu {
+   // height: 18px;
+   // max-height: 18px;
+  }
+
 }
