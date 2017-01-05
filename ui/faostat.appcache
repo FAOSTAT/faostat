@@ -82,7 +82,7 @@ CACHE MANIFEST
 //fenixrepo.fao.org/cdn/faostat/js/DataTables/1.10.12/media/css/dataTables.bootstrap.min.css
 //fenixrepo.fao.org/cdn/faostat/js/DataTables/1.10.12/extensions/FixedColumns/css/fixedColumns.bootstrap.min.css
 ./submodules/fenix-ui-map/dist/fenix-ui-map.min.css
-//fast.fonts.com/cssapi/0ad75cee-12a6-49a0-a922-c4ecad41ec44.css
+https://fonts.googleapis.com/css?family=Cairo|Open+Sans|Roboto
 //fonts.googleapis.com/icon?family=Material+Icons
 dist/css/index.min.css
 

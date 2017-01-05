@@ -1,0 +1,75 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@3.3.12
+3 info using node@v5.4.1
+4 verbose config Skipping project config: /home/vortex/.npmrc. (matches userconfig)
+5 silly loadCurrentTree Starting
+6 silly install loadCurrentTree
+7 silly install readLocalPackageData
+8 silly install normalizeTree
+9 silly loadCurrentTree Finishing
+10 silly loadIdealTree Starting
+11 silly install loadIdealTree
+12 silly cloneCurrentTree Starting
+13 silly install cloneCurrentTreeToIdealTree
+14 silly cloneCurrentTree Finishing
+15 silly loadShrinkwrap Starting
+16 silly install loadShrinkwrap
+17 silly loadShrinkwrap Finishing
+18 silly loadAllDepsIntoIdealTree Starting
+19 silly install loadAllDepsIntoIdealTree
+20 silly loadAllDepsIntoIdealTree Finishing
+21 silly idealTree:prePrune vortex
+21 silly idealTree:prePrune ├── foreachasync@3.0.0
+21 silly idealTree:prePrune ├── line-reader@0.4.0
+21 silly idealTree:prePrune └── walk@2.3.9
+22 silly loadIdealTree Finishing
+23 silly currentTree vortex
+23 silly currentTree ├── foreachasync@3.0.0
+23 silly currentTree ├── line-reader@0.4.0
+23 silly currentTree └── walk@2.3.9
+24 silly idealTree vortex
+24 silly idealTree ├── foreachasync@3.0.0
+24 silly idealTree ├── line-reader@0.4.0
+24 silly idealTree └── walk@2.3.9
+25 silly generateActionsToTake Starting
+26 silly install generateActionsToTake
+27 silly generateActionsToTake Finishing
+28 silly diffTrees action count 0
+29 silly decomposeActions action count 0
+30 silly executeActions Starting
+31 silly install executeActions
+32 silly doSerial global-install 0
+33 silly doParallel fetch 0
+34 verbose lock using /home/vortex/.npm/_locks/staging-e996e2f37a35bfe7.lock for /home/vortex/node_modules/.staging
+35 verbose unlock done using /home/vortex/.npm/_locks/staging-e996e2f37a35bfe7.lock for /home/vortex/node_modules/.staging
+36 silly rollbackFailedOptional Starting
+37 silly rollbackFailedOptional Finishing
+38 silly runTopLevelLifecycles Starting
+39 silly runTopLevelLifecycles Finishing
+40 silly install printInstalled
+41 warn ENOENT ENOENT: no such file or directory, open '/home/vortex/package.json'
+42 warn EPACKAGEJSON vortex No description
+43 warn EPACKAGEJSON vortex No repository field.
+44 warn EPACKAGEJSON vortex No README data
+45 warn EPACKAGEJSON vortex No license field.
+46 verbose stack Error: EACCES: permission denied, mkdir '/home/vortex/node_modules/.staging'
+46 verbose stack     at Error (native)
+47 verbose cwd /home/vortex/repos/fao_bitbucket/faostat
+48 error Linux 3.13.0-101-generic
+49 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+50 error node v5.4.1
+51 error npm  v3.3.12
+52 error path /home/vortex/node_modules/.staging
+53 error code EACCES
+54 error errno -13
+55 error syscall mkdir
+56 error Error: EACCES: permission denied, mkdir '/home/vortex/node_modules/.staging'
+56 error     at Error (native)
+56 error  { [Error: EACCES: permission denied, mkdir '/home/vortex/node_modules/.staging']
+56 error   errno: -13,
+56 error   code: 'EACCES',
+56 error   syscall: 'mkdir',
+56 error   path: '/home/vortex/node_modules/.staging' }
+57 error Please try running this command again as root/Administrator.
+58 verbose exit [ -13, true ]
