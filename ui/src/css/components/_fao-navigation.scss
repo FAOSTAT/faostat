@@ -1,6 +1,6 @@
 /* ################ NAVIGATION ############## */
 
-$navbar-height: 44px;
+$navbar-height: 46px;
 $border-menu-color: #D2D0D0;
 
 // from fao.org css
@@ -171,6 +171,10 @@ h1#logo-ltr {
 
   @media (min-width: 768px) {
 
+    .fs-menu-search-container {
+      height:46px;
+    }
+
     min-height: $navbar-height;
     @include fx-no-border-radius;
 
@@ -222,8 +226,9 @@ h1#logo-ltr {
       }
 
       a {
-        padding-top: 12px;
-        padding-bottom: 12px;
+
+        padding-top: 13px;
+        padding-bottom: 13px;
 
         @include animate();
 
@@ -315,11 +320,6 @@ h1#logo-ltr {
 
       }
 
-    }
-
-    .fs-menu-search-container {
-      // TODO: dirty fix on height. check a better solution.
-      height: 44px;
     }
 
   }

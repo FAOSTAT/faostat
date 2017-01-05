@@ -7,7 +7,7 @@
                 <a style="display:none; margin-left: 0; margin-top: 15px;" data-toggle="modal" data-target="#fs-country-indicators-list-modal" class="pull-left btn-floating waves-effect waves-light btn-primary" data-role="select-country">
                     <i class="material-icons">add</i>
                 </a>
-            <h1 class="truncate">{{country_name}}</h1>
+            <h1 class="truncate" style="line-height: normal;">{{country_name}}</h1>
         </div>
         <div class="col-xs-3 col-sm-4 col-md-3 clearfix">
             <a type="button" class="btn btn-link pull-right fs-section-back waves-effect"
@@ -68,7 +68,7 @@
 
     {{#each sections}}
          <div class="panel-footer">
-            <h5 class="country-profile-topic truncate">
+            <h5 style="line-height: normal;" class="country-profile-topic truncate">
                 {{#if href}}
                     <a href="{{href}}" target="_blank">
                         {{{title}}}

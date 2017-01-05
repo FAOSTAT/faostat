@@ -1,6 +1,12 @@
 
 .fs-table-heading {
 
+  // override of the truncate class
+  // TODO: make it better
+  .truncate {
+    line-height: normal;
+  }
+
   .btn-floating {
 
     margin:10px 0px 10px 10px;
