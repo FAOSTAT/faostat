@@ -69,21 +69,35 @@
             <build>
                 <plugins>
                     <plugin>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-resources</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>faostat-api-web/src/main/resources</outputDirectory>
+                                    <resources>
+                                        <resource>
+                                            <directory>faostat-api-web/resources/default</directory>
+                                            <filtering>true</filtering>
+                                            <includes>
+                                                <include>*.properties</include>
+                                            </includes>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-war-plugin</artifactId>
                         <version>2.3</version>
                         <configuration>
                             <warName>${rp.build.warname}</warName>
-                            <webResources>
-                                <resource>
-                                    <directory>resources/default</directory>
-                                    <filtering>true</filtering>
-                                    <targetPath>WEB-INF/classes</targetPath>
-                                    <includes>
-                                        <include>*.properties</include>
-                                    </includes>
-                                </resource>
-                            </webResources>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -134,21 +148,35 @@
             <build>
                 <plugins>
                     <plugin>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-resources</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>faostat-api-web/src/main/resources</outputDirectory>
+                                    <resources>
+                                        <resource>
+                                            <directory>faostat-api-web/resources/default</directory>
+                                            <filtering>true</filtering>
+                                            <includes>
+                                                <include>*.properties</include>
+                                            </includes>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-war-plugin</artifactId>
                         <version>2.3</version>
                         <configuration>
                             <warName>${rp.build.warname}</warName>
-                            <webResources>
-                                <resource>
-                                    <directory>resources/default</directory>
-                                    <targetPath>WEB-INF/classes</targetPath>
-                                    <filtering>true</filtering>
-                                    <includes>
-                                        <include>*.properties</include>
-                                    </includes>
-                                </resource>
-                            </webResources>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -228,21 +256,35 @@
             <build>
                 <plugins>
                     <plugin>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-resources</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>faostat-api-web/src/main/resources</outputDirectory>
+                                    <resources>
+                                        <resource>
+                                            <directory>faostat-api-web/resources/prod/db3</directory>
+                                            <filtering>true</filtering>
+                                            <includes>
+                                                <include>*.properties</include>
+                                            </includes>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-war-plugin</artifactId>
                         <version>2.3</version>
                         <configuration>
                             <warName>${rp.build.warname}</warName>
-                            <webResources>
-                                <resource>
-                                    <directory>resources/prod/db3</directory>
-                                    <targetPath>WEB-INF/classes</targetPath>
-                                    <filtering>true</filtering>
-                                    <includes>
-                                        <include>*.properties</include>
-                                    </includes>
-                                </resource>
-                            </webResources>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -263,21 +305,35 @@
             <build>
                 <plugins>
                     <plugin>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-resources</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>faostat-api-web/src/main/resources</outputDirectory>
+                                    <resources>
+                                        <resource>
+                                            <directory>faostat-api-web/resources/prod/db4</directory>
+                                            <filtering>true</filtering>
+                                            <includes>
+                                                <include>*.properties</include>
+                                            </includes>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-war-plugin</artifactId>
                         <version>2.3</version>
                         <configuration>
                             <warName>${rp.build.warname}</warName>
-                            <webResources>
-                                <resource>
-                                    <directory>resources/prod/db4</directory>
-                                    <targetPath>WEB-INF/classes</targetPath>
-                                    <filtering>true</filtering>
-                                    <includes>
-                                        <include>*.properties</include>
-                                    </includes>
-                                </resource>
-                            </webResources>
                         </configuration>
                     </plugin>
                 </plugins>
