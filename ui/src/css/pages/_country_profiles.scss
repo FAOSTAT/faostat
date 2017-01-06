@@ -39,6 +39,9 @@
 
   margin: 5px 0px 5px 0px;
   font-size: 13px;
+  // TODO: workaround to cut text . http://stackoverflow.com/questions/10182336/text-cropping-when-using-overflow-hidden
+  // TODO: check if it it always work
+  //line-height: normal;
 
 }
 

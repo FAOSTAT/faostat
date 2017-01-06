@@ -5,7 +5,7 @@
   //font-size: 13px;
   //line-height: 24px;
 
-  padding: 13px 10px 14px 10px;
+  padding: 14px 10px 14px 10px;
 
   background-color: #f8f8f8;
   border: none;
@@ -15,9 +15,15 @@
 
   &:focus{
     outline: 0;
-    outline-width: 0;
   }
 
+}
+
+.ar {
+
+  .typeahead, .tt-query, .tt-hint {
+    padding: 11px 10px 11px 10px;
+  }
 }
 
 
@@ -25,6 +31,9 @@
   pre{
     height: 0 !important;
     display: none !important;
+  }
+
+  .typeahead.tt-hint {
   }
 
 }
@@ -104,8 +113,6 @@
     display: none !important;
   }
 
-
-
 }
 
 .tt-suggestion {
@@ -116,16 +123,11 @@
   padding: 5px 10px;
   font-size: 12px;
 
-
-
   strong{
     background-color: #FFFF33;
   }
 
-
-
 }
-
 
 
 
@@ -165,4 +167,17 @@
 
 #rtl-support .tt-menu {
   text-align: right;
+}
+
+.ar {
+
+  .typeahead.tt-hint {
+   // max-height: 18px;
+  }
+
+  .typeahead.tt-menu {
+   // height: 18px;
+   // max-height: 18px;
+  }
+
 }

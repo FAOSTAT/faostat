@@ -13,10 +13,27 @@
 //}
 
 body {
-  font-family: $standard-text;
   background-color: $fenix-light-bg;
   color: $fenix-text;
+  font-size: 13px;
 }
+
+body.en, body.es, body.fr {
+  font-family: $standard-text-default;
+}
+
+body.ar {
+  font-family: $standard-text-ar;
+}
+
+body.ru {
+  font-family: $standard-text-ru;
+}
+
+body.zh {
+  font-family: $standard-text-zh;
+}
+
 
 @mixin fs-box-shadow($value){
   -webkit-box-shadow:$value;
@@ -41,6 +58,9 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  // TODO: check if the usedful and is the "perfect" line-height in all the case?
+  // TODO: check if it should be move to the element line-height
+  //line-height: inherit;
 }
 
 .upper {

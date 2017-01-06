@@ -60,6 +60,13 @@
   margin-right: 8px;
 }
 
+.fs-download-page-title {
+  // Workaround for "truncate" overflow: hidden
+  h1 {
+    line-height: normal;
+  }
+}
+
 .fs-download-domain-tree {
 
   max-height: 750px;
@@ -200,7 +207,8 @@
 .pivot .collapse_button {
   background-color: transparent;
   border: 1px solid $fenix-hr;
-  font-family: $standard-text;
+  //font-family: $standard-text;
+  font-family: $standard-text-default;
   font-weight: normal;
   color: $fenix-hr;
 }

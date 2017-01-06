@@ -1,5 +1,11 @@
 .fs-map {
 
+  // override of the truncate class
+  // TODO: make it better
+  .truncate {
+    line-height: normal;
+  }
+
   .btn-floating {
 
     margin:10px 0px 10px 10px;
@@ -8,14 +14,33 @@
 
 }
 
+
 .leaflet-container {
 
-  font-family: $standard-text;
+  font-family: $standard-text-default;
 
   .leaflet-control-attribution {
     opacity: 0.7;
   }
 
+}
+
+.ar {
+  .leaflet-container {
+    font-family: $standard-text-ar;
+  }
+}
+
+.ru {
+  .leaflet-container {
+    font-family: $standard-text-ru;
+  }
+}
+
+.zh {
+  .leaflet-container {
+    font-family: $standard-text-zh;
+  }
 }
 
 .fm-controller-box-icons-container {
