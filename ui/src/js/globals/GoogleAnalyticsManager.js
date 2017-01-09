@@ -81,11 +81,14 @@ define([
         });
         */
 
-        var self = this;
+        //var self = this;
+        var pageToSet = C.GOOGLE_ANALYTICS_TRACKER + Common.getLocale() + "/#" + this.CURRENT_PAGE;
         _.each(ga.getAll(), function(tracker) {
             tracker.set({
-                page: self.CURRENT_PAGE,
-                title: self.CURRENT_PAGE
+                page: pageToSet,
+                title: pageToSet
+                //page: self.CURRENT_PAGE,
+                //title: self.CURRENT_PAGE
             });
         });
 

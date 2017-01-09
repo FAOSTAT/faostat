@@ -36,6 +36,8 @@ define([
 
         ],
 
+        "GOOGLE_ANALYTICS_TRACKER":"/faostat/",
+
         // URLs
         "URL_FAOSTAT_DOCUMENTS_BASEPATH": 'http://fenixservices.fao.org/faostat/static/documents/',
         "URL_RELEASE_CALENDAR": 'http://fenixservices.fao.org/faostat/static/releasecalendar/Default.aspx',
