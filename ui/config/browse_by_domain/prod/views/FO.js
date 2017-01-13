@@ -26,7 +26,7 @@ define([
                     },
                     "config": {
                         "dimension_id": "item",
-                        "defaultCodes": ["1663"],
+                        "defaultCodes": ["1865"],
                         "filter": {
                         }
                     }
