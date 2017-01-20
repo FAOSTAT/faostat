@@ -38,7 +38,7 @@ define([
                     },
                     "config": {
                         "dimension_id": "item",
-                        "defaultCodes": ["1717"],
+                        "defaultCodes": ["867"],
                         "filter": {}
                     }
                 },
@@ -50,7 +50,7 @@ define([
                     "componentType": {
                         "class": "col-xs-4 col-sx-4 col-md-4",
                         "type": "dropDownList",
-                        //"multiple": true
+                        "multiple": false
                     },
                     "config": {
                         "dimension_id": "area",
