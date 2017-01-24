@@ -64,26 +64,33 @@ define([
                     "parameter": "year",
                     "componentType": {
                         "class": "col-xs-4 col-sx-4 col-md-2",
-                        "type": "dropDownList"
-                    },
-                    "config": {
-                        "dimension_id": "year",
-                        "filter": {}
-                    }
-                },
-                {
-                    "id": "yearTimeserie",
-                    "type": "codelist",
-                    "parameter": "year",
-                    "componentType": {
-                        "class": "hidden",
                         "type": "dropDownList-timerange"
                     },
                     "config": {
                         "dimension_id": "year",
                         "filter": {}
                     }
-                }
+                },
+                //C.filter.aggregation
+                 {
+                    "id": "aggregation",
+                        "type": "static",
+                        // TODO: check data parameter
+                        "parameter": "operator",
+                        "componentType": {
+                            "class": "hidden",
+                            "type": "dropDownList"
+                    },
+                    "config": {
+                        "defaultCodes": ["AVG"],
+                            "data": [
+                            {"code": "AVG", "label": i18n.average},
+
+                        ]
+                    }
+    }
+
+
             ]
         },
 
