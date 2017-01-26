@@ -68,6 +68,7 @@ define([
                     },
                     "config": {
                         "dimension_id": "year",
+                        "defaultCodes": ['1980'],
                         "filter": {}
                     }
                 },
@@ -142,7 +143,7 @@ define([
                                 fr: "Intensité des émissions (en kg de CO2 équivalent par kg de {{item}})",
                                 es: "Intensidad de emisiones (en kg de CO2 equivalente por kg de {{item}})"
                             },
-                            subtitle: "{{yearTimeserie}}"
+                            subtitle: "{{year}}"
                         }
                     },
 
@@ -159,7 +160,7 @@ define([
                         template: {},
                         creator: {}
                     },
-                    allowedFilter: ['area', 'yearTimeserie', 'item', 'element'],
+                    allowedFilter: ['area', 'year', 'item'],
                     deniedOnLoadFilter: ['area'],
                     filter: {
                         area: ["5000", "5848", "5849"]
