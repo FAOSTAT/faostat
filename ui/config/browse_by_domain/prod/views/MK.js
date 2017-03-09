@@ -55,9 +55,9 @@ define([
                     },
                     "config": {
                         "dimension_id": "element",
-                        "defaultCodes": ["6110"],
+                        "defaultCodes": ["6108"],
                         "filter": {
-                            whitelist: [6110, 6108]
+                            whitelist: [6108,6117]
                         }
                     }
                 },
