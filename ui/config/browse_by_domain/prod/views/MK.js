@@ -154,7 +154,7 @@ define([
                                 fr: "{{item}}, {{element}} en {{area}}",
                                 es: "{{item}}, {{element}} en {{area}}"
                             },
-                            subtitle: "{{year}}",
+                            subtitle: "{{year}}"
                         }
                     },
 
@@ -207,7 +207,6 @@ define([
                             height:'250px'
                             // default labels to be applied
                         },
-
                         creator: {
                             chartObj: {
                                 chart: {
