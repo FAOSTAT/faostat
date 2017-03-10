@@ -57,7 +57,7 @@ define([
                         "dimension_id": "element",
                         "defaultCodes": ["6108"],
                         "filter": {
-                            whitelist: [6108,6117]
+                            whitelist: [6108]
                         }
                     }
                 },
@@ -154,7 +154,7 @@ define([
                                 fr: "{{item}}, {{element}} en {{area}}",
                                 es: "{{item}}, {{element}} en {{area}}"
                             },
-                            subtitle: "{{year}}"
+                            subtitle: "{{year}}",
                         }
                     },
 
@@ -207,6 +207,7 @@ define([
                             height:'250px'
                             // default labels to be applied
                         },
+
                         creator: {
                             chartObj: {
                                 chart: {
