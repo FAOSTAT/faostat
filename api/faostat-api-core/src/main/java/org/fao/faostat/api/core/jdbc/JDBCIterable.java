@@ -578,14 +578,16 @@ public class JDBCIterable implements Iterator<List<String>> {
                     try {
                         columnType = this.getResultSet().getMetaData().getColumnClassName(i);
                         value = this.getResultSet().getString(i).trim();
-                        if (columnType.endsWith("Double")) {
-                           // sb.append(Double.parseDouble(value));
 
-                            sb.append(String.format("%.0f", Double.parseDouble(value.toString())));
+                        if (columnType.endsWith("Double")) {
+                           // double d = Double.parseDouble(value);
+                           java.text.DecimalFormat decimalFormat = new java.text.DecimalFormat("###.##########");
+                           sb.append(decimalFormat.format(new Double(value)));
                         } else if (columnType.endsWith("Integer")) {
-                            sb.append(String.format("%.0f", Integer.parseInt(value)));
+                            sb.append(Integer.parseInt(value));
                         } else if (columnType.endsWith("Long")) {
-                           sb.append(String.format("%.0f", Long.parseLong(value)));
+                          // sb.append(String.format("%.0f", Long.parseLong(value)));
+                            sb.append( Long.parseLong(value));
                         } else if (columnType.endsWith("Date")) {
                             sb.append(StringEscapeUtils.escapeCsv(value));
                             //sb.append("\"").append(new Date(value).toString()).append("\"");
