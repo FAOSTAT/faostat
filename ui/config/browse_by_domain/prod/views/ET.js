@@ -117,11 +117,7 @@ define([
                     },
                     config: {
                         layer: {
-                            // colorramp: "YlOrRd",
-                            //intervals: 7,
-                            //classificationtype: "percentiles"
-                            colors: ['#F61414', '#FF4242','#FF8A8A','#FDB6BA','#95CAD9', '#5A9FDD', '#0886D1'],
-                            //ranges: [-1.50000,-10000,-0.5000,0,0.5000,10000,1.5000],
+                            colors: ['#0886D1','#5A9FDD', '#95CAD9','#FDB6BA','#FF8A8A','#FF4242', '#F61414'],
                             ranges: [-1.5,-1,-0.5,0,0.50,1.50],
                             classification: "custom"
 
