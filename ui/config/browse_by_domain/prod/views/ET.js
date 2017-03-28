@@ -44,7 +44,7 @@ define([
                     },
                     "config": {
                         "dimension_id": "area",
-                      //  "defaultCodes": ["5000"],
+                        "defaultCodes": ["5000"],
                         "filter": {}
                     }
                 },
@@ -116,6 +116,19 @@ define([
                         }
                     },
                     config: {
+                        layer: {
+                            // colorramp: "YlOrRd",
+                            //intervals: 7,
+                            //classificationtype: "percentiles"
+                            colors: ['#F61414', '#FF4242','#FF8A8A','#FDB6BA','#95CAD9', '#5A9FDD', '#0886D1'],
+                            //ranges: [-1.50000,-10000,-0.5000,0,0.5000,10000,1.5000],
+                            ranges: [-1.5,-1,-0.5,0,0.50,1.50],
+                            classification: "custom"
+
+                            //colors: "004529,238B45,74C476,E1E1E1,FFD34A,FF9400,DE0000",
+                            //ranges: "-20000,-10000,-1,1,10000,100000"
+                            // intervals: 3,
+                        },
                         template: {}
                     },
                     allowedFilter: ['item','year'],
