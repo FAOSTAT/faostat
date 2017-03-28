@@ -117,7 +117,7 @@ define([
                     },
                     config: {
                         layer: {
-                            colors: ['#0886D1','#5A9FDD', '#95CAD9','#cce6ff','#FF8A8A','#FF4242', '#F61414'],
+                            colors: ['#0886D1','#5A9FDD', '#95CAD9','#cce6ff','#FFD34A', '#FF9400', '#DE0000'],
                             ranges: [-1.5,-1,-0.5,0,0.50,1.50],
                             classification: "custom"
 
