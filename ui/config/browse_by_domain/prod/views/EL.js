@@ -46,6 +46,21 @@ define([
                     }
                 },
                 {
+                    "id": "area",
+                    "type": "codelist",
+                    "parameter": "area",
+                    "componentType": {
+                        "class": "col-xs-6 col-sm-6 col-md-3",
+                        "type": "dropDownList",
+                        "multiple": false
+                    },
+                    "config": {
+                        "dimension_id": "area",
+                        "defaultCodes": ["5000"],
+                        "filter": {}
+                    }
+                },
+                {
                     "id": "year",
                     "type": "codelist",
                     "parameter": "year",
@@ -139,7 +154,7 @@ define([
                         template: {},
                         creator: {}
                     },
-                    allowedFilter: ['year', 'item', 'element'],
+                    allowedFilter: ['year', 'item', 'element','area'],
                     filter: {
                         area: ["5000", "5100", "5200", "5300", "5400", "5500"],
                         "order_by": 'area, year'
@@ -193,8 +208,56 @@ define([
                         "order_by": 'value DESC',
                         "limit": '10'
                     }
-                }
+                },
+                {
+                    type: 'chart',
+                    class: "col-xs-12",
 
+                    // labels
+                    labels: {
+
+                        // template to be applied to the config.template for the custom object
+                        template: {
+                            title: {
+                                "en":"{{item}} {{element}} (Bottom 10 Countries)",
+                                "fr":"{{item}} {{element}} (10 pays principaux)",
+                                "es":"{{item}} {{element}} (los 10 países principales)"
+                            },
+                            subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
+                        }
+                    },
+
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "standard",
+                            xDimensions: ['area'],
+                            yDimensions: 'unit',
+                            valueDimensions: 'value',
+                            seriesDimensions: ['element'],
+                            decimalPlaces: 2
+                        },
+                        template: {
+                            height:'250px'
+                            // default labels to be applied
+                        },
+                        creator: {
+                            chartObj: {
+                                chart: {
+                                    type: "column"
+                                }
+                            }
+                        }
+                    },
+                    allowedFilter: ['year', 'item', 'element', 'aggregation'],
+                    deniedTemplateFilter: [],
+                    filter: {
+                        area: ["5000>"],
+                        "group_by": 'year, item',
+                        "order_by": 'value ASC',
+                        "limit": '10'
+                    }
+                }
             ]
         }
 
