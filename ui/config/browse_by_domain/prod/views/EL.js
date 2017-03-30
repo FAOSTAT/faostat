@@ -102,9 +102,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Distribution of {{item}} {{element}} by country (%)",
-                                fr: "Répartition de {{item}} {{element}} par pays (%)",
-                                es: "Distribución de {{item}} {{element}} por países (%)"
+                                en: "{{item}} - {{element}} by country (%)",
+                                fr: "{{item}} - {{element}} par pays (%)",
+                                es: "{{item}} - {{element}} por países (%)"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -132,9 +132,9 @@ define([
                         // temp[late to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Trend of fertilizer nutrient use on arable and permanent crop area by continent",
-                                fr: "Evolution de l'utilisation des engrais nutritif sur la zone des cultures arables et cultures permanentes par continent",
-                                es: "Tendencia del uso de nutrientes de fertilizantes en el área de los cultivos herbáceos y permanente por continente"
+                                en: "{{item}} - {{element}} (%)",
+                                fr: "{{item}} - {{element}} (%)",
+                                es: "{{item}} - {{element}} (%)"
                             },
                             subtitle: "{{year}}"
                         }
@@ -148,7 +148,7 @@ define([
                             xDimensions: "year",
                             yDimensions: "unit",
                             valueDimensions: 'value',
-                            seriesDimensions: ['area', 'item', 'element'],
+                            seriesDimensions: ['area'],
                             decimalPlaces: 2
                         },
                         template: {},
@@ -156,7 +156,6 @@ define([
                     },
                     allowedFilter: ['year', 'item', 'element','area'],
                     filter: {
-                        area: ["5000", "5100", "5200", "5300", "5400", "5500"],
                         "order_by": 'area, year'
                     }
                 },
@@ -170,9 +169,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                "en":"{{item}} {{element}} (Top 10 Countries)",
-                                "fr":"{{item}} {{element}} (10 pays principaux)",
-                                "es":"{{item}} {{element}} (los 10 países principales)"
+                                "en":"{{item}} - {{element}} (Top 10 Countries)",
+                                "fr":"{{item}} - {{element}} (10 pays principaux)",
+                                "es":"{{item}} - {{element}} (los 10 países principales)"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -219,9 +218,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                "en":"{{item}} {{element}} (Bottom 10 Countries)",
-                                "fr":"{{item}} {{element}} (10 pays principaux)",
-                                "es":"{{item}} {{element}} (los 10 países principales)"
+                                "en":"{{item}} - {{element}} (Bottom 10 Countries)",
+                                "fr":"{{item}} - {{element}} (10 pays principaux)",
+                                "es":"{{item}} - {{element}} (los 10 países principales)"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
