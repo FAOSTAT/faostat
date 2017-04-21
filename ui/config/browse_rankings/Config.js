@@ -133,6 +133,14 @@ define([
                                 "fr": "Principaux importateurs des produits"
                             },
                             "id": "major_commodities_imports"
+                        },
+                        {
+                            title: {
+                                "en": "Major partners by country",
+                                "es": "Major partners by country",
+                                "fr": "Major partners by country"
+                            },
+                            "id": "major_partners_imports"
                         }
                     ]
                 },
@@ -167,6 +175,14 @@ define([
                                 "fr": "Principaux exportateurs des produits"
                             },
                             "id": "major_commodities_exports"
+                        },
+                        {
+                            title: {
+                                "en": "Major partners by country",
+                                "es": "Major partners by country",
+                                "fr": "Major partners by country"
+                            },
+                            "id": "major_partners_exports"
                         }
                     ]
                 }
