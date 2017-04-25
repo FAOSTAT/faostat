@@ -136,9 +136,9 @@ define([
                         },
                         {
                             title: {
-                                "en": "Major partners by country",
-                                "es": "Major partners by country",
-                                "fr": "Major partners by country"
+                                "en": "Major partners importers",
+                                "es": "Principales importadores de países socios",
+                                "fr": "Principaux importateurs partenaires"
                             },
                             "id": "major_partners_imports"
                         }
@@ -178,9 +178,9 @@ define([
                         },
                         {
                             title: {
-                                "en": "Major partners by country",
-                                "es": "Major partners by country",
-                                "fr": "Major partners by country"
+                                "en": "Major partners exporters",
+                                "es": "Principales exportadores de países socios",
+                                "fr": "Principaux importateurs exportateurs"
                             },
                             "id": "major_partners_exports"
                         }
