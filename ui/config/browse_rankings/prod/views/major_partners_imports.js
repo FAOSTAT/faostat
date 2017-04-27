@@ -94,7 +94,7 @@ define(function () {
                             title: {
                                 en: "Top 10 Partners, Imports to {{area}}",
                                 fr: "Les 10 Premiers Partenaires, Importations vers {{area}}",
-                                es: "Los Mejores 10 Socios Importan a {{area}}"
+                                es: "Los Mejores 10 Países Socios Importan a {{area}}"
                             },
                             subtitle: "{{year}}"
                         }

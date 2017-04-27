@@ -9,7 +9,7 @@ define(function () {
         "filter": {
 
             defaultFilter: {
-                "domain_code": ["QC"],
+                "domain_code": ["TP"],
                 "show_lists": false
             },
 
@@ -93,9 +93,9 @@ define(function () {
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Top 10 Country Production of {{item}}",
-                                fr: "Top 10 Country Production of {{item}}",
-                                es: "Top 10 Country Production of {{item}}"
+                                en: "Top 10 Country, Export quantity of {{item}}",
+                                fr: "Top 10 Country, Export quantity of {{item}}",
+                                es: "Top 10 Country, Export quantity of {{item}}"
                             },
                             subtitle: "{{year}}"
                         }
@@ -125,13 +125,11 @@ define(function () {
                     allowedFilter: ['area', 'year', 'item', 'aggregation'],
                     deniedTemplateFilter: [],
                     filter: {
-                        domain_codes: ['QA', 'QC', 'QD', 'QL', 'QP'],
-                        List2Codes: ["5510"],
+                        domain_codes: ['TP'],
+                        List2Codes: ["5910"],
                         limit: "10"
                     }
                 },
-
-
 
                 {
                     type: 'chart',
@@ -139,11 +137,12 @@ define(function () {
 
                     // labels
                     labels: {
+                        // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Top 10 Commodities, Net Production Value of {{area}}",
-                                fr: "Top 10 Commodities, Net Production Value of {{area}}",
-                                es: "Top 10 Commodities, Net Production Value of {{area}}"
+                                en: "Top 10 Country, Export Value of {{item}}",
+                                fr: "Top 10 Country, Export Value of {{item}}",
+                                es: "Top 10 Country, Export Value of {{item}}"
                             },
                             subtitle: "{{year}}"
                         }
@@ -160,6 +159,7 @@ define(function () {
                         },
                         template: {
                             height:'275px'
+                            // default labels to be applied
                         },
                         creator: {
                             chartObj: {
@@ -172,11 +172,12 @@ define(function () {
                     allowedFilter: ['area', 'year', 'item', 'aggregation'],
                     deniedTemplateFilter: [],
                     filter: {
-                        domain_codes: ['QV'],
-                        List2Codes: ["154"],
+                        domain_codes: ['TP'],
+                        List2Codes: ["5922"],
                         limit: "10"
                     }
                 },
+
 
                 // FORCE SPACING
                 {
@@ -196,9 +197,9 @@ define(function () {
                     labels: {
                         template: {
                             title: {
-                                en: "Top 20 Countries Production of {{item}}",
-                                fr: "Top 20 Countries Production of {{item}}",
-                                es: "Top 20 Countries Production of {{item}}"
+                                en: "Top 20 Country, Export quantity of {{item}}",
+                                fr: "Top 20 Country, Export quantity of {{item}}",
+                                es: "Top 20 Country, Export quantity of {{item}}"
                             },
                             subtitle: "{{year}}"
                         }
@@ -220,24 +221,23 @@ define(function () {
                     allowedFilter: ['area', 'year', 'item', 'aggregation'],
                     deniedTemplateFilter: [],
                     filter: {
-                        domain_codes: ['QA', 'QC', 'QD', 'QL', 'QP'],
-                        List2Codes: ["5510"],
+                        domain_codes: ['TP'],
+                        List2Codes: ["5910"],
                         limit: "20"
                     }
                 },
-
 
                 {
                     type: 'table',
                     class: "col-md-12",
 
-                    // labels?
+                    // labels
                     labels: {
                         template: {
                             title: {
-                                en: "Top 20 Countries, Net Production Value of {{item}}",
-                                fr: "Top 20 Countries, Net Production Value of {{item}}",
-                                es: "Top 20 Countries, Net Production Value of {{item}}"
+                                en: "Top 20 Country, Export Value of {{item}}",
+                                fr: "Top 20 Country, Export Value of {{item}}",
+                                es: "Top 20 Country, Export Value of {{item}}"
                             },
                             subtitle: "{{year}}"
                         }
@@ -259,8 +259,8 @@ define(function () {
                     allowedFilter: ['area', 'year', 'item', 'aggregation'],
                     deniedTemplateFilter: [],
                     filter: {
-                        domain_codes: ['QV'],
-                        List2Codes: ["154"],
+                        domain_codes: ['TP'],
+                        List2Codes: ["5922"],
                         limit: "20"
                     }
                 }

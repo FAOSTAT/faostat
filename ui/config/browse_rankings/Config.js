@@ -71,9 +71,9 @@ define([
                 {
                     "id": "1",
                     "title": {
-                        "en": "Food and Agricultural commodities production",
-                        "es": "Producción de productos alimentarios y agrícolas",
-                        "fr": "Alimentation et production agricole"
+                        "en": "Production",
+                        "es": "Producción",
+                        "fr": "Production"
                     },
                     "views": [
                        /* {
@@ -126,6 +126,17 @@ define([
                             },
                             "id": "commodities_by_country_imports"
                         },
+
+                        {
+                            title: {
+                                "en": "Countries by commodity",
+                                "es": "Países por producto",
+                                "fr": "Pays par produits"
+                            },
+                            "id": "countries_by_commodity_imports"
+                        },
+
+
                         {
                             title: {
                                 "en": "Major commodities importers",
@@ -168,6 +179,16 @@ define([
                             },
                             "id": "commodities_by_country_exports"
                         },
+
+                        {
+                            title: {
+                                "en": "Countries by commodity",
+                                "es": "Países por producto",
+                                "fr": "Pays par produits"
+                            },
+                            "id": "countries_by_commodity_exports"
+                        },
+
                         {
                             title: {
                                 "en": "Major commodities exporters",
