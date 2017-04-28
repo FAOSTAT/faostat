@@ -93,9 +93,9 @@ define(function () {
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Top 10 Country Importers, import quantity of {{item}}",
-                                fr: "Top 10 Country importateurs, import quantity of {{item}}",
-                                es: "Top 10 Country importadores, import quantity of {{item}}"
+                                en: "Top 10 Country Importers, Import Quantity of {{item}}",
+                                fr: "Top 10 Country importateurs, Import Quantity of {{item}}",
+                                es: "Top 10 Country importadores, Import Quantity of {{item}}"
                             },
                             subtitle: "{{year}}"
                         }
@@ -140,9 +140,9 @@ define(function () {
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Top 10 Country Importers, import Value of {{item}}",
-                                fr: "Top 10 Country importateurs, import Value of  {{item}}",
-                                es: "Top 10 Country importadores, import Value of  {{item}}"
+                                en: "Top 10 Country Importers, Import Value of {{item}}",
+                                fr: "Top 10 Country importateurs, Import Value of  {{item}}",
+                                es: "Top 10 Country importadores, Import Value of  {{item}}"
                             },
                             subtitle: "{{year}}"
                         }
@@ -197,9 +197,9 @@ define(function () {
                     labels: {
                         template: {
                             title: {
-                                en: "Top 20 Country Importers, import Value of  {{item}}",
-                                fr: "Top 20 Country Importers, import Value of {{item}}",
-                                es: "Top 20 Country Importers, import Value of {{item}}"
+                                en: "Top 20 Country Importers, Import Quantity of  {{item}}",
+                                fr: "Top 20 Country Importers, Import Quantity of {{item}}",
+                                es: "Top 20 Country Importers, Import Quantity of {{item}}"
                             },
                             subtitle: "{{year}}"
                         }
@@ -235,9 +235,9 @@ define(function () {
                     labels: {
                         template: {
                             title: {
-                                en: "Top 20 Country Importers, import Value of {{item}}",
-                                fr: "Top 20 Country Importers, import Value of {{item}}",
-                                es: "Top 20 Country Importers, import Value of {{item}}"
+                                en: "Top 20 Country Importers, Import Value of {{item}}",
+                                fr: "Top 20 Country Importers, Import Value of {{item}}",
+                                es: "Top 20 Country Importers, Import Value of {{item}}"
                             },
                             subtitle: "{{year}}"
                         }

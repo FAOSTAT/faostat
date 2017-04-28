@@ -128,8 +128,55 @@ define(function () {
                         List3Codes: ["5622"],
                         limit: "10"
                     }
-                }
+                },
 
+                // FORCE SPACING
+                {
+                    type: 'custom',
+                    class: 'clearfix',
+                    config: {
+                        template: {},
+                        model: {}
+                    }
+                },
+
+                {
+                    type: 'table',
+                    class: "col-md-12",
+
+                    // labels
+                    labels: {
+                        template: {
+                            title: {
+                                en: "Top 20 Partners, Imports to {{area}}",
+                                fr: "Les 20 Premiers Partenaires, Importations vers {{area}}",
+                                es: "Los Mejores 20 Países Socios Importan a {{area}}"
+                            },
+                            subtitle: "{{year}}"
+                        }
+                    },
+
+                    config: {
+                        adapter: {
+                            columns: ['area', 'partnerarea', 'year', 'value', 'unit'],
+                            showCodes: false
+                        },
+                        template: {
+                            tableOptions: {
+                                'data-search': true,
+                                'data-show-header': false
+                            }
+                            // height: '300'
+                        }
+                    },
+                    allowedFilter: ['area', 'year', 'item', 'aggregation'],
+                    deniedTemplateFilter: [],
+                    filter: {
+                        domain_codes: ['TM'],
+                        List3Codes: ["5622"],
+                        limit: "20"
+                    }
+                }
 
             ]
         }

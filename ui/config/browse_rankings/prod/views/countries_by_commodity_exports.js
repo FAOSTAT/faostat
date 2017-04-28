@@ -93,9 +93,9 @@ define(function () {
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Top 10 Country, Export quantity of {{item}}",
-                                fr: "Top 10 Country, Export quantity of {{item}}",
-                                es: "Top 10 Country, Export quantity of {{item}}"
+                                en: "Top 10 Country, Export Quantity of {{item}}",
+                                fr: "Top 10 Country, Export Quantity of {{item}}",
+                                es: "Top 10 Country, Export Quantity of {{item}}"
                             },
                             subtitle: "{{year}}"
                         }
