@@ -139,6 +139,46 @@ define([
                 },
 
 
+                {
+                    type: 'chart',
+                    class: "col-xs-12",
+
+                    // labels
+                    labels: {
+                        // template to be applied to the config.template for the custom object
+                        template: {
+                            title: {
+                                en: "Mean Temperature Change of {{item}}",
+                                fr: "Mean Temperature Change of {{item}}",
+                                es: "Mean Temperature Change of {{item}}"
+                            },
+                            subtitle: "1961 – 2016"
+                        }
+                    },
+
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "timeserie",
+                            xDimensions: 'year',
+                            yDimensions: 'unit',
+                            valueDimensions: 'value',
+                            seriesDimensions: ['area']
+                        },
+                        template: {
+                            height:'550px'
+                            // default labels to be applied
+                        },
+                        creator: {}
+                    },
+                    allowedFilter: ['item'],
+                    deniedOnLoadFilter: ['area'],
+                    filter: {
+                        year:['1961','1962','1963','1964','1965'],
+                        area: ['5000', '5848', '5849'],
+                        element: ['7271']
+                    }
+                },
 
 
                 {
