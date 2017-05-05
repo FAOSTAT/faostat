@@ -141,7 +141,7 @@ define([
 
                 {
                     type: 'chart',
-                    class: "col-xs-12",
+                    class: "col-md-12",
 
                     // labels
                     labels: {
@@ -163,7 +163,7 @@ define([
                             xDimensions: 'year',
                             yDimensions: 'unit',
                             valueDimensions: 'value',
-                            seriesDimensions: ['area']
+                            seriesDimensions: ['area', 'item', 'element']
                         },
                         template: {
                             height:'550px'
