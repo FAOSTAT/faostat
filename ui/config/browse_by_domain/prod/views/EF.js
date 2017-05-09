@@ -81,9 +81,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Fertilizer nutrient use on arable and permanent crop area by country",
-                                fr: "Engrais utilisation des éléments nutritifs sur la zone des cultures arables et cultures permanentes par pays",
-                                es: "El uso de nutrientes de fertilizantes en el área de los cultivos herbáceos y permanente por país"
+                                en: "{{item}} - Application rate by country (%)",
+                                fr: "{{item}} - Application rate by country (%)",
+                                es: "{{item}} - Application rate by country (%)"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -112,9 +112,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Trend of fertilizer nutrient use on arable and permanent crop area by continent",
-                                fr: "Evolution de l'utilisation des engrais nutritif sur la zone des cultures arables et cultures permanentes par continent",
-                                es: "Tendencia del uso de nutrientes de fertilizantes en el área de los cultivos herbáceos y permanente por continente"
+                                en: "{{item}} - Application rate",
+                                fr: "{{item}} - Application rate",
+                                es: "{{item}} - Application rate"
                             },
                             subtitle: "{{year}}"
                         }
@@ -134,7 +134,8 @@ define([
                         template: {},
                         creator: {}
                     },
-                    allowedFilter: ['year', 'item'],
+                    allowedFilter: ['year', 'item','area'],
+                    deniedOnLoadFilter: ['area'],
                     filter: {
                         area: ["5100", "5200", "5300", "5400", "5500"],
                         "order_by": 'area'
@@ -149,9 +150,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Fertilizer nutrient use on arable and permanent crop area (Top 10 Countries)",
-                                fr: "Engrais utilisation des éléments nutritifs sur la zone des cultures arables et cultures permanentes (10 pays principaux)",
-                                es: "El uso de nutrientes de fertilizantes en el área de los cultivos herbáceos y permanente (los 10 países principales)"
+                                en: "{{item}} - Application rate (Top 10 Countries)",
+                                fr: "{{item}} - Application rate (10 pays principaux)",
+                                es: "{{item}} - Application rate (los 10 países principales)"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -183,6 +184,53 @@ define([
                         area: ["5000>"],
                         "group_by": 'year, item',
                         "order_by": 'value DESC',
+                        "limit": '10'
+                    }
+                },
+
+                {
+                    type: 'chart',
+                    class: "col-xs-12",
+
+                    // labels
+                    labels: {
+                        // template to be applied to the config.template for the custom object
+                        template: {
+                            title: {
+                                en: "{{item}} - Application rate (Bottom 10 Countries)",
+                                fr: "{{item}} - Application rate (10 pays principaux)",
+                                es: "{{item}} - Application rate (los 10 países principales)"
+                            },
+                            subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
+                        }
+                    },
+
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "standard",
+                            xDimensions: ['area'],
+                            yDimensions: 'unit',
+                            valueDimensions: 'value',
+                            seriesDimensions: ['element']
+                        },
+                        template: {
+                            height:'250px'
+                        },
+                        creator: {
+                            chartObj: {
+                                chart: {
+                                    type: "column"
+                                }
+                            }
+                        }
+                    },
+                    allowedFilter: ['year', 'item', 'aggregation'],
+                    deniedTemplateFilter: [],
+                    filter: {
+                        area: ["5000>"],
+                        "group_by": 'year, item',
+                        "order_by": 'value ASC',
                         "limit": '10'
                     }
                 }
