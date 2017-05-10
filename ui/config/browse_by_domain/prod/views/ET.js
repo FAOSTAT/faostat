@@ -109,8 +109,8 @@ define([
                         template: {
                             title: {
                                 en: "Mean Temperature Change",
-                                fr: "Mean Temperature Change",
-                                es: "Mean Temperature Change"
+                                fr: "Variation moyenne de température",
+                                es: "Variación medida de temperatura "
                             },
                            // subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -149,8 +149,8 @@ define([
                         template: {
                             title: {
                                 en: "Mean Temperature Change of {{item}}",
-                                fr: "Mean Temperature Change of {{item}}",
-                                es: "Mean Temperature Change of {{item}}"
+                                fr: "Variation moyenne de température de {{item}}",
+                                es: "Variación medida de temperatura de {{item}}"
                             },
                             subtitle: "1961 – 2016"
                         }
@@ -190,9 +190,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Top 10 countries by temperature change in {{item}}",
-                                fr: "Top 10 countries by temperature change in {{item}}",
-                                es: "Top 10 countries by temperature change in {{item}}"
+                                en: "Top 10 values by {{item}}",
+                                fr: "Les 10 premières valeurs par {{item}}",
+                                es: "Los 10 valores más importantes según {{item}}"
                             },
                             subtitle: "{{year}}"
                         }
@@ -237,9 +237,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Bottom 10 countries by temperature change in {{item}}",
-                                fr: "Bottom 10 countries by temperature change in {{item}}",
-                                es: "Bottom 10 countries by temperature change in {{item}}"
+                                en: "Bottom 10 values by {{item}}",
+                                fr: "Les 10 dernières valeurs par {{item}}",
+                                es: "Les 10 valores mínimos según {{item}}"
                             },
                             subtitle: "{{year}}"
                             //subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
