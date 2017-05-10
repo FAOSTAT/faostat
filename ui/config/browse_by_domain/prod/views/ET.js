@@ -110,7 +110,7 @@ define([
                             title: {
                                 en: "Mean Temperature Change",
                                 fr: "Variation moyenne de température",
-                                es: "Variación medida de temperatura "
+                                es: "Variación media de temperatura "
                             },
                            // subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -150,7 +150,7 @@ define([
                             title: {
                                 en: "Mean Temperature Change of {{item}}",
                                 fr: "Variation moyenne de température de {{item}}",
-                                es: "Variación medida de temperatura de {{item}}"
+                                es: "Variación media de temperatura de {{item}}"
                             },
                             subtitle: "1961 – 2016"
                         }
