@@ -13,11 +13,14 @@ define([
         viewsBasePath: 'config/browse_by_country/prod/',
 
         syb: {
-            url: 'http://fenixservices.fao.org/faostat/static/syb/syb_{{code}}.pdf',
-            url_world: 'http://fenixservices.fao.org/faostat/static/syb/syb_5000.pdf'
+            //url: 'http://fenixservices.fao.org/faostat/static/syb/syb_{{code}}.pdf',
+            url: 'http://faostat.fao.org/static/syb/syb_{{code}}.pdf',
+            //url_world: 'http://fenixservices.fao.org/faostat/static/syb/syb_5000.pdf'
+            url_world: 'http://faostat.fao.org/static/syb/syb_5000.pdf'
         },
 
-        // default Domain Code used to retrieve the country lists
+        // default Domain Code used to cmd
+        // the country lists
         countriesDomainCode: 'QC',
         countriesDimensionID: 'countries',
         countriesBlacklist: [
