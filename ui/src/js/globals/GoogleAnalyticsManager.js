@@ -19,7 +19,12 @@ define([
         // GA trackers. This will handle multiple GOOGLE ANALYTICS instances
         //https://developers.google.com/analytics/devguides/collection/analyticsjs/creating-trackers#working_with_multiple_trackers
         _.each(C.GOOGLE_ANALYTICS, function(analytics) {
-            ga('create', analytics.ID, "auto", analytics.NAME);
+            try {
+                ga('create', analytics.ID, "auto", analytics.NAME);
+            }catch (error) {
+                // Handle lack of GA if needed
+            }
+
         });
         // ga('create', C.GOOGLE_ANALYTICS_ID, "auto");
 
@@ -32,7 +37,7 @@ define([
 
         // set the current pageView (it could be different i.e. using different browser tabs)
         this.checkAndSetCurrentPage();
-        
+
         // add section to object
         data.label = data.label || "";
 
@@ -52,12 +57,17 @@ define([
         if (data.hasOwnProperty("value")) {
             event.eventValue = data.value;
         }
-        
+
         if (data.category !== undefined && data.action !== undefined) {
             //ga('send', event);
-            _.each(ga.getAll(), function(tracker) {
-                tracker.send(event);
-            });
+            try {
+                _.each(ga.getAll(), function(tracker) {
+                    tracker.send(event);
+                });
+            }catch (error) {
+                // Handle lack of GA if needed
+            }
+
 
         }
         else {
@@ -84,12 +94,17 @@ define([
         //var self = this;
         var pageToSet = C.GOOGLE_ANALYTICS_TRACKER + Common.getLocale() + "/#" + this.CURRENT_PAGE;
         _.each(ga.getAll(), function(tracker) {
-            tracker.set({
-                page: pageToSet,
-                title: pageToSet
-                //page: self.CURRENT_PAGE,
-                //title: self.CURRENT_PAGE
-            });
+            try {
+                tracker.set({
+                    page: pageToSet,
+                    title: pageToSet
+                    //page: self.CURRENT_PAGE,
+                    //title: self.CURRENT_PAGE
+                });
+            }catch (error) {
+                // Handle lack of GA if needed
+            }
+
         });
 
         return countPageView;
@@ -101,7 +116,12 @@ define([
        if (this.checkAndSetCurrentPage()) {
           // ga('send', 'pageview');
            _.each(ga.getAll(), function(tracker) {
-               tracker.send('pageview');
+               try {
+                   tracker.send('pageview');
+               }catch (error) {
+                   // Handle lack of GA if needed
+               }
+
            });
        }
 
@@ -125,12 +145,17 @@ define([
         });*/
 
         _.each(ga.getAll(), function(tracker) {
-            tracker.send({
-                hitType: 'timing',
-                timingCategory: category,
-                timingVar: action,
-                timingValue: value
-            });
+            try {
+                tracker.send({
+                    hitType: 'timing',
+                    timingCategory: category,
+                    timingVar: action,
+                    timingValue: value
+                });
+            }catch (error) {
+                // Handle lack of GA if needed
+            }
+
         });
 
     };
