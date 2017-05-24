@@ -63,7 +63,7 @@ define([
                 'OA',
                 'CS', 'RM', 'RY', 'IC', 'EA',
                 'MK', 'EC',
-                'EE', 'EF', 'EL', 'EK', 'EP', 'ES', 'EW', 'EM', 'EI','ET',
+                'EE', 'EF', 'EL','LC', 'EK', 'EP', 'ES', 'EW', 'EM', 'EI','ET',
                 'GT', 'GE', 'GM', 'GR', 'GY', 'GU', 'GP', 'GA', 'GV', 'GH', 'GB', 'GN',
                 'GL', 'GF', 'GC', 'GG', 'GI',
                 'FO',
