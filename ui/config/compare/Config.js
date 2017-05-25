@@ -59,7 +59,7 @@ define([
                 'TP', 'TA', 'TI',
                 'FBS', 'BC', 'BL', 'CC', 'CL',
                 'PP', 'PI', 'PA', 'CP', 'PD',
-                'RV', 'RP', 'RT', 'RL', 'OE',
+                'RV', 'RP', 'RT', 'RL', 'OE','RF',
                 'OA',
                 'CS', 'RM', 'RY', 'IC', 'EA',
                 'MK', 'EC',
