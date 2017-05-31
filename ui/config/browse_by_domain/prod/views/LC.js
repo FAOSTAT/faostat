@@ -108,8 +108,8 @@ define([
                         template: {
                             title: {
                                 en: "Area (1000 ha) of, {{item}}",
-                                fr: "Area (1000 ha) of, {{item}}",
-                                es: "Area (1000 ha) of, {{item}}"
+                                fr: "Superficie (1000 ha) de, {{item}}",
+                                es: "Superficie (1000 ha) de, {{item}}"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -144,8 +144,8 @@ define([
                         template: {
                             title: {
                                 en: "Area (1000 ha) of, {{item}}",
-                                fr: "Area (1000 ha) of, {{item}}",
-                                es: "Area (1000 ha) of, {{item}}"
+                                fr: "Superficie (1000 ha) de, {{item}}",
+                                es: "Superficie (1000 ha) de, {{item}}"
                             },
                             subtitle: "{{year}}"
                         }
@@ -176,9 +176,9 @@ define([
                     labels: {
                         template: {
                             title: {
-                                en: "Area of [{{item}}] by continent ",
-                                fr: "Area of [{{item}}] by continent ",
-                                es: "Area of [{{item}}] by continent "
+                                en: "Area of [{{item}}] by continent",
+                                fr: "Superficie de [{{item}}] par continent",
+                                es: "Superficie de [{{item}}] por continente"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -214,8 +214,8 @@ define([
                         template: {
                             title: {
                                 en: "[{{area}}] area by land cover class",
-                                fr: "[{{area}}] area by land cover class",
-                                es: "[{{area}}] area by land cover class"
+                                fr: "Superficie du [{{area}}] par catégorie d’occupation des sols",
+                                es: "Superficie de [{{area}}] por categoría de cobertura de la tierra"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -264,8 +264,8 @@ define([
                         template: {
                             title: {
                                 en: "Top 10 areas (1000 ha) of, {{item}}",
-                                fr: "Top 10 areas (1000 ha) of, {{item}}",
-                                es: "Top 10 areas (1000 ha) of, {{item}}"
+                                fr: "Les 10 majeures superficies (1000 ha) de, {{item}}",
+                                es: "Las 10 principales superficies (1000 ha) de, {{item}}"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
