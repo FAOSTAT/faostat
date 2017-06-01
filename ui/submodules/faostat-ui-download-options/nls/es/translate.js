@@ -6,7 +6,7 @@ define({
     comma: 'Coma',
     none: 'Ninguno',
     show: 'Campos a incluir en la salida de datos',
-    flags: 'Señalizadores',
+    flags: 'Símbolos',
     codes: 'Códigos',
     units: 'Unidades',
     null_values: 'Datos no disponibles',
