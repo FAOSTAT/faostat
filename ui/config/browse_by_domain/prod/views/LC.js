@@ -9,8 +9,6 @@ define([
 
     return {
 
-
-
         "comment": {
             "text": {
               "en": "Area of SEEA land cover classes as derived from global maps of land cover of the Climate Change Initiative of the European Spatial Agency",
