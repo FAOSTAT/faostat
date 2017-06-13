@@ -13,9 +13,9 @@ define([
 
         "comment": {
             "text": {
-              "en": "Area of SEEA land cover classes as derived from the Climate Change Initiative (CCI) Global Maps of Land Cover",
-              "es": "Area of SEEA land cover classes as derived from the Climate Change Initiative (CCI) Global Maps of Land Cover",
-              "fr": "Area of SEEA land cover classes as derived from the Climate Change Initiative (CCI) Global Maps of Land Cover"
+              "en": "Area of SEEA land cover classes as derived from global maps of land cover of the Climate Change Initiative of the European Spatial Agency",
+              "es": "Superficie de las categorías SCAE de cobertura de la tierra, calculada a partir de los mapas mundiales de cobertura de la tierra de la iniciativa sobre el cambio climático de la Agencia Espacial Europea",
+              "fr": "Superficie des catégories SCEE d’occupation des sols depuis les cartes globales d’occupation du sol de l’initiative sur le changement climatique de l’Agence spatiale européenne"
             }
             //,pdf: "GT.pdf"
         },
