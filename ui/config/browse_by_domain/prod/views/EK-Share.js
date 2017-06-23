@@ -117,9 +117,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Share of {{item}} in total livestock ([%]",
-                                fr: "Part de  {{item}} dans le montant total des animaux ([%]) ",
-                                es: "Cuota de {{item}} en el total de ganado ([%])"
+                                en: "Share of {{item}} in total livestock %",
+                                fr: "Part de  {{item}} dans le montant total des animaux %",
+                                es: "Cuota de {{item}} en el total de ganado %"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -148,9 +148,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Share of {{item}} in total livestock ([%]) ",
-                                fr: "Part de {{item}} dans le montant total des animaux ([%])",
-                                es: "Cuota de {{item}} en el total de ganado ([%])"
+                                en: "Share of {{item}} in total livestock % ",
+                                fr: "Part de {{item}} dans le montant total des animaux %",
+                                es: "Cuota de {{item}} en el total de ganado %"
                             },
                             subtitle: "{{year}}"
                         }
@@ -184,9 +184,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Top 10 countries by share of {{item}} in total livestock ([%])",
-                                fr: "Les 10 principaux pays par part de {{item}}] dans le montant total des animaux ([%])",
-                                es: "Los 10 países principales según la cuota de  {{item}} en el total de ganado ([%])"
+                                en: "Top 10 countries by share of {{item}} in total livestock %",
+                                fr: "Les 10 principaux pays par part de {{item}}] dans le montant total des animaux %",
+                                es: "Los 10 países principales según la cuota de  {{item}} en el total de ganado %"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -231,9 +231,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Bottom 10 countries by share of {{item}} in total livestock ([%])",
-                                fr: "Les 10 derniers pays par part de {{item}} dans le montant total des animaux ([%])",
-                                es: "Los 10 últimos países según la cuota de {{item}} en el total de ganado ([%])"
+                                en: "Bottom 10 countries by share of {{item}} in total livestock %",
+                                fr: "Les 10 derniers pays par part de {{item}} dans le montant total des animaux %",
+                                es: "Los 10 últimos países según la cuota de {{item}} en el total de ganado %"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }

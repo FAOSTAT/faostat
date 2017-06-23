@@ -117,9 +117,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Density of {{item}} in the agricultural area ([LSU/ha]) ",
-                                fr: "Densité de {{item}} dans la superficie agricole ([UGB/ha])",
-                                es: "Densidad de {{item}} en la superficie agrícola ([UGM/ha]) "
+                                en: "Density of {{item}} in the agricultural area LSU/ha ",
+                                fr: "Densité de {{item}} dans la superficie agricole UGB/ha",
+                                es: "Densidad de {{item}} en la superficie agrícola UGM/ha "
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -147,9 +147,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Density of  {{item}} in the agricultural area]([LSU/ha])",
-                                fr: "Densité de {{item}} dans la superficie agricole ([UGB/ha])",
-                                es: "Densidad de {{item}} en la superficie agrícola ([UGM/ha])"
+                                en: "Density of  {{item}} in the agricultural area] LSU/ha",
+                                fr: "Densité de {{item}} dans la superficie agricole UGB/ha",
+                                es: "Densidad de {{item}} en la superficie agrícola UGM/ha"
                             },
                             subtitle: "{{year}}"
                         }
@@ -183,9 +183,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Top 10 countries by density of {{item}} ([LSU/ha])",
-                                fr: "Les 10 principaux pays par densité de {{item}} dans la superficie agricole ([UGB/ha])",
-                                es: "Los 10 países principales según la densidad de {{item}} ([UGM/ha])"
+                                en: "Top 10 countries by density of {{item}} LSU/ha",
+                                fr: "Les 10 principaux pays par densité de {{item}} dans la superficie agricole UGB/ha",
+                                es: "Los 10 países principales según la densidad de {{item}} UGM/ha"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -230,9 +230,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Bottom 10 countries by density of {{item}}([LSU/ha])",
-                                fr: "Les 10 derniers pays par densité de {{item}} Les 10 derniers pays par densité de ",
-                                es: "Los 10 últimos países según la densidad de {{item}} ([UGM/ha])"
+                                en: "Bottom 10 countries by density of {{item}} LSU/ha",
+                                fr: "Les 10 derniers pays par densité de {{item}} Ldans la superficie agricole UGB/ha",
+                                es: "Los 10 últimos países según la densidad de {{item}} UGM/ha"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
