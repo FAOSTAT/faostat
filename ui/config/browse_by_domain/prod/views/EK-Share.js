@@ -13,8 +13,7 @@ define([
                     fr: "DENSITY **",
                     es: "DENSITY ***"
                 },
-                id: 'EK',
-                selected: true
+                id: 'EK'
             },
             {
                 title: {

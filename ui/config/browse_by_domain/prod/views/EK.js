@@ -22,8 +22,7 @@ define([
                     fr: "SHARE **",
                     es: "SHARE ***"
                 },
-                id: 'EK-Share',
-                selected: true
+                id: 'EK-Share'
             }
         ],
         filter: {
