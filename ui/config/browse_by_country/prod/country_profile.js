@@ -83,7 +83,7 @@ define([
                                 title: {
                                     en: "Rural and urban population",
                                     fr: "Populations rurale et urbaine",
-                                    es: "Poplación rural y urbana"
+                                    es: "Población rural y urbana"
                                 },
                                 subtitle: "{{yearTimeserie}}"
                             }
@@ -141,7 +141,7 @@ define([
                                 title: {
                                     en: "Rural and urban population",
                                     fr: "Populations rurale et urbaine",
-                                    es: "Poplación rural y urbana"
+                                    es: "Población rural y urbana"
                                 },
                                 "subtitle": "{{yearLatest}}"
                             }
