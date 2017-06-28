@@ -16,7 +16,7 @@ define([
             },
 
             items: [
-                {
+                /*{
                     "id": "item",
                     "type": "codelist",
                     "parameter": "item",
@@ -26,10 +26,25 @@ define([
                     },
                     "config": {
                         "dimension_id": "item",
-                        "defaultCodes": ["5195"],
+                        "defaultCodes": ["1357"],
                         "filter": {
-                            whitelist: ["5195"]
+                            whitelist: ["1357"]//5195
                         }
+                    }
+                },*/
+                {
+                    "id": "area",
+                    "type": "codelist",
+                    "parameter": "area",
+                    "componentType": {
+                        "class": "col-lg-3",
+                        "type": "dropDownList",
+                        "multiple": false
+                    },
+                    "config": {
+                        "dimension_id": "area",
+                        "defaultCodes": ["1"],
+                        "filter": {}
                     }
                 },
                 {
@@ -47,12 +62,7 @@ define([
                         }
                     }
                 },
-                $.extend(true, {}, C.filter.aggregation, {
-                    "componentType": {
-                        "class": "hidden"
-                    },
-                    "defaultCodes": ["AVG"]
-                })
+                C.filter.aggregation
             ]
         },
 
@@ -60,7 +70,9 @@ define([
 
             //data base filter
             defaultFilter: {
-                domain_code: ['EP']
+                domain_code: ['EP'],
+                element: ["5159"],
+                item:["1357"]
             },
 
             items: [
@@ -76,9 +88,9 @@ define([
                         // temp[late to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Pesticide use in active ingredient on arable land and permanent crops (tonnes per 1000 Ha) by country",
-                                fr: "Uutilisation de pesticides dans l'ingrédient actif sur les terres arables et cultures permanentes (tonnes pour 1000 ha) par pays",
-                                es: "Uso de pesticidas en el ingrediente activo en tierras de cultivo y los cultivos permanentes (1.000 toneladas por Ha) por país"
+                                en: "Pesticides - {{aggregation}} use per area of cropland (kg/ha)",
+                                fr: "Pesticides - {{aggregation}} use per area of cropland (kg/ha)",
+                                es: "Plaguicidas - {{aggregation}} use per area of cropland (kg/ha)"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -93,12 +105,141 @@ define([
                     deniedTemplateFilter: [],
                     filter: {
                         area: ["5000>", "351"],
-                        element: ["5160"],
+                        element: ["5159"],
+                        item: ["1357"],
                         "group_by": 'year',
                         "order_by": 'area'
                     }
-                }
+                },
+                {
+                    type: 'chart',
+                    class: "col-xs-12",
 
+                    // labels
+                    labels: {
+                        // template to be applied to the config.template for the custom object
+                        template: {
+                            title: {
+                                en: "Pesticides - {{aggregation}} use per area of cropland",
+                                fr: "Pesticides - {{aggregation}} use per area of cropland",
+                                es: "Plaguicidas - {{aggregation}} use per area of cropland"
+                            },
+                            subtitle: "{{year}}"
+                        }
+
+                    },
+
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "timeserie",
+                            xDimensions: "year",
+                            yDimensions: "unit",
+                            valueDimensions: 'value',
+                            seriesDimensions: ['area'],
+                            decimalPlaces: 2
+                        },
+                        template: {},
+                        creator: {}
+                    },
+                    allowedFilter: ['year', 'item','element','area', 'aggregation'],
+                    deniedOnLoadFilter: [],
+                    filter: {
+
+                    }
+                },
+                {
+                    type: 'chart',
+                    class: "col-xs-12",
+
+                    // labels
+                    labels: {
+                        // template to be applied to the config.template for the custom object
+                        template: {
+                            title: {
+                                en: "Pesticides - {{aggregation}} use per area of cropland (Top 10 Countries)",
+                                fr: "Pesticides - {{aggregation}} use per area of cropland (10 pays principaux)",
+                                es: "Plaguicidas - {{aggregation}} use per area of cropland (los 10 países principales)"
+                            },
+                            subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
+                        }
+                    },
+
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "standard",
+                            xDimensions: ['area'],
+                            yDimensions: 'unit',
+                            valueDimensions: 'value',
+                            seriesDimensions: ['element']
+                        },
+                        template: {
+                            height:'250px'
+                        },
+                        creator: {
+                            chartObj: {
+                                chart: {
+                                    type: "column"
+                                }
+                            }
+                        }
+                    },
+                    allowedFilter: ['year', 'item','element', 'aggregation'],
+                    deniedTemplateFilter: [],
+                    filter: {
+                        area: ["5000>"],
+                        "group_by": 'year, item',
+                        "order_by": 'value DESC',
+                        "limit": '10'
+                    }
+                },
+                {
+                    type: 'chart',
+                    class: "col-xs-12",
+
+                    // labels
+                    labels: {
+                        // template to be applied to the config.template for the custom object
+                        template: {
+                            title: {
+                                en: "Pesticides - {{aggregation}} use per area of cropland (Bottom 10 Countries)",
+                                fr: "Pesticides - {{aggregation}} use per area of cropland (10 pays principaux)",
+                                es: "Plaguicidas - {{aggregation}} use per area of cropland (los 10 países principales)"
+                            },
+                            subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
+                        }
+                    },
+
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "standard",
+                            xDimensions: ['area'],
+                            yDimensions: 'unit',
+                            valueDimensions: 'value',
+                            seriesDimensions: ['element']
+                        },
+                        template: {
+                            height:'250px'
+                        },
+                        creator: {
+                            chartObj: {
+                                chart: {
+                                    type: "column"
+                                }
+                            }
+                        }
+                    },
+                    allowedFilter: ['year', 'item','element', 'aggregation'],
+                    deniedTemplateFilter: [],
+                    filter: {
+                        area: ["5000>"],
+                        "group_by": 'year, item',
+                        "order_by": 'value ASC',
+                        "limit": '10'
+                    }
+                }
             ]
         }
     };

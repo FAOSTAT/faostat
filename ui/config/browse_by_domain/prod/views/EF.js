@@ -81,9 +81,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "{{item}} - Application rate by country (%)",
-                                fr: "{{item}} - Application rate by country (%)",
-                                es: "{{item}} - Application rate by country (%)"
+                                en: "{{item}} - {{aggregation}} use per area of cropland (kg/ha)",
+                                fr: "{{item}} - {{aggregation}} use per area of cropland (kg/ha)",
+                                es: "{{item}} - {{aggregation}} use per area of cropland (kg/ha)"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -112,9 +112,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "{{item}} - Application rate",
-                                fr: "{{item}} - Application rate",
-                                es: "{{item}} - Application rate"
+                                en: "{{item}} - {{aggregation}} use per area of cropland",
+                                fr: "{{item}} - {{aggregation}} use per area of cropland",
+                                es: "{{item}} - {{aggregation}} use per area of cropland"
                             },
                             subtitle: "{{year}}"
                         }
@@ -150,9 +150,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "{{item}} - Application rate (Top 10 Countries)",
-                                fr: "{{item}} - Application rate (10 pays principaux)",
-                                es: "{{item}} - Application rate (los 10 países principales)"
+                                en: "{{item}} - {{aggregation}} use per area of cropland (Top 10 Countries)",
+                                fr: "{{item}} - {{aggregation}} use per area of cropland (10 pays principaux)",
+                                es: "{{item}} - {{aggregation}} use per area of cropland (los 10 países principales)"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -187,7 +187,6 @@ define([
                         "limit": '10'
                     }
                 },
-
                 {
                     type: 'chart',
                     class: "col-xs-12",
@@ -197,9 +196,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "{{item}} - Application rate (Bottom 10 Countries)",
-                                fr: "{{item}} - Application rate (10 pays principaux)",
-                                es: "{{item}} - Application rate (los 10 países principales)"
+                                en: "{{item}} - {{aggregation}} use per area of cropland (Bottom 10 Countries)",
+                                fr: "{{item}} - {{aggregation}} use per area of cropland (10 pays principaux)",
+                                es: "{{item}} - {{aggregation}} use per area of cropland (los 10 países principales)"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
