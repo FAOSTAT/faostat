@@ -70,7 +70,7 @@ define([
                     },
                     "config": {
                         "dimension_id": "year",
-                        "defaultCodes": ['2001'],
+                        "defaultCodes": ['1994','2014'],
                         "filter": {
                         }
                     }
@@ -219,8 +219,8 @@ define([
                         template: {
                             title: {
                                 "en":"{{item}} - {{element}} (Bottom 10 Countries)",
-                                "fr":"{{item}} - {{element}} (10 pays principaux)",
-                                "es":"{{item}} - {{element}} (los 10 países principales)"
+                                "fr":"{{item}} - {{element}} ((Bottom 10 Countries)",
+                                "es":"{{item}} - {{element}} ((Bottom 10 Countries)"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }

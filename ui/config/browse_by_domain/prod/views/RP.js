@@ -99,7 +99,7 @@ define([
                     allowedFilter: ['area', 'year'],
                     filter: {
                         element: [5161],
-                        item: [1309, 1320, 1331]
+                        item: [1309, 1320, 1331,1357]
                     }
                 }
             ]
