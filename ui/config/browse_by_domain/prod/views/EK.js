@@ -146,7 +146,7 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Density of  {{item}} in the agricultural area] LSU/ha",
+                                en: "Density of  {{item}} in the agricultural area LSU/ha",
                                 fr: "Densité de {{item}} dans la superficie agricole UGB/ha",
                                 es: "Densidad de {{item}} en la superficie agrícola UGM/ha"
                             },
