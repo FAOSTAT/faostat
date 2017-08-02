@@ -139,7 +139,7 @@ define([
                             subtitle: "{{year}}"
                         }
                     },
-                    
+
                     config: {
                         adapter: {
                             adapterType: 'faostat',
@@ -158,6 +158,44 @@ define([
                     allowedFilter: ['area', 'year', 'item'],
                     filter: {
                         element: ["2312", "2510" ]
+                    }
+                },
+
+                {
+                    type: 'chart',
+                    class: "col-md-12",
+
+                    // labels
+                    labels: {
+                        // template to be applied to the config.template for the custom object
+                        template: {
+                            title: {
+                                en: "Seed of {{item}} in {{area}}",
+                                fr: "Semences de {{item}} en {{area}}",
+                                es: "Semillas de {{item}} en {{area}}"
+                            },
+                            subtitle: "{{year}}"
+                        }
+                    },
+                    
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "timeserie",
+                            xDimensions: 'year',
+                            yDimensions: 'unit',
+                            valueDimensions: 'value',
+                            seriesDimensions: ['area', 'item', 'element']
+                        },
+                        template: {
+                            // height:'350px'
+                            // default labels to be applied
+                        },
+                        creator: {}
+                    },
+                    allowedFilter: ['area', 'year', 'item'],
+                    filter: {
+                        element: ["2525"]
                     }
                 },
                 {
@@ -200,6 +238,49 @@ define([
                         "order_by": 'area'
                     }
                 },
+
+                {
+                    type: 'chart',
+                    class: "col-md-12",
+
+                    // labels
+                    labels: {
+                        // temp[late to be applied to the config.template for the custom object
+                        template: {
+                            title: {
+                                en: "Seed of {{item}} by region",
+                                fr: "Semences de {{item}} par région",
+                                es: "Semillas de {{item}} por región"
+                            },
+                            subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
+                        }
+
+                    },
+
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "pie",
+                            xDimensions: null,
+                            yDimensions: null,
+                            valueDimensions: 'value',
+                            seriesDimensions: ['area']
+                        },
+                        template: {
+                            height: '250px'
+                        },
+                        creator: {}
+                    },
+                    allowedFilter: ['year', 'item', 'aggregation'],
+                    filter: {
+                        // TODO: remove the area (in theory should be automatically detected from the domain dimensions/schema)
+                        area: ["5100", "5200", "5300", "5400", "5500"],
+                        element: ["2525"],
+                        "group_by": 'year, item',
+                        "order_by": 'area'
+                    }
+                },
+
                 {
                     type: 'chart',
                     class: "col-sm-6",
@@ -290,6 +371,104 @@ define([
                     filter: {
                         //area: ["5000>"],
                         item: ["_1"],
+                        "group_by": 'year, area',
+                        "order_by": 'value DESC',
+                        "limit": '10'
+                    }
+                },
+
+                {
+                    type: 'chart',
+                    class: "col-sm-6",
+
+                    // labels
+                    labels: {
+                        // template to be applied to the config.template for the custom object
+                        template: {
+                            title: {
+                                en: "Seed of {{item}}: top 10 producers",
+                                fr: "Semences de {{item}}: 10 principaux producteurs",
+                                es: "Semillas de {{item}}: los 10 productores principales"
+                            },
+                            subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
+                        }
+                    },
+
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "standard",
+                            xDimensions: ['area'],
+                            yDimensions: 'unit',
+                            valueDimensions: 'value',
+                            seriesDimensions: ['element']
+                        },
+                        template: {
+                            height:'250px'
+                            // default labels to be applied
+                        },
+                        creator: {
+                            chartObj: {
+                                chart: {
+                                    type: "column"
+                                }
+                            }
+                        }
+                    },
+                    allowedFilter: ['year', 'item', 'aggregation'],
+                    deniedTemplateFilter: [],
+                    filter: {
+                        area: ["5000>"],
+                        element: ["2525"],
+                        "group_by": 'year, item',
+                        "order_by": 'value DESC',
+                        "limit": '10'
+                    }
+                },
+                {
+                    type: 'chart',
+                    class: "col-sm-6",
+
+                    // labels
+                    labels: {
+                        // template to be applied to the config.template for the custom object
+                        template: {
+                            title: {
+                                en: "Most produced Seed, {{area}}",
+                                fr: "Semences plus fabriqués, {{area}}",
+                                es: "Semillas más producidos, {{area}}"
+                            },
+                            subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
+                        }
+                    },
+
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "standard",
+                            xDimensions: ['item'],
+                            yDimensions: 'unit',
+                            valueDimensions: 'value',
+                            seriesDimensions: ['element']
+                        },
+                        template: {
+                            height:'250px'
+                            // default labels to be applied
+                        },
+                        creator: {
+                            chartObj: {
+                                chart: {
+                                    type: "column"
+                                }
+                            }
+                        }
+                    },
+                    allowedFilter: ['area', 'year', 'aggregation'],
+                    deniedTemplateFilter: [],
+                    filter: {
+                        //area: ["5000>"],
+                        item: ["_1"],
+                        element: ["2525"],
                         "group_by": 'year, area',
                         "order_by": 'value DESC',
                         "limit": '10'
