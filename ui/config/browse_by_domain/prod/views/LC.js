@@ -271,12 +271,19 @@ define([
 
                     config: {
                         adapter: {
-                            adapterType: 'faostat',
+                           /* adapterType: 'faostat',
                             type: "standard",
                             xDimensions: ['element'],
                             yDimensions: 'unit',
                             valueDimensions: 'value',
                             seriesDimensions: ['area']
+                            */
+                            adapterType: 'faostat',
+                            type: "standard",
+                            xDimensions: ['area'],
+                            yDimensions: 'unit',
+                            valueDimensions: 'value',
+                            seriesDimensions: ['element']
                         },
                         template: {
                             height:'250px'
