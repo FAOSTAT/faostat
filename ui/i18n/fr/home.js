@@ -35,7 +35,12 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
 
         explore_data: "Exploration des données",
         explore_data_title: "Données de l’alimentation et de l’agriculture",
-        explore_data_text: "FAOSTAT fournit un accès libre aux données concernant l’alimentation et l’agriculture pour plus de 245 pays et 35 régions depuis 1961 jusqu’à l’année disponible la plus récente."
+        explore_data_text: "FAOSTAT fournit un accès libre aux données concernant l’alimentation et l’agriculture pour plus de 245 pays et 35 régions depuis 1961 jusqu’à l’année disponible la plus récente.",
+
+        //Food Security
+
+        fao_food_security: "L’État de la sécurité alimentaire et de la nutrition dans le monde 2017",
+        fao_food_security_text: "La communauté internationale s’est engagée à éliminer la faim et toute forme de malnutrition dans le monde d’ici à 2030."
 
     });
 
