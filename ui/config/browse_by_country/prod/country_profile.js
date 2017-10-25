@@ -614,54 +614,6 @@ define([
                         }
                     },
 
-                    // FORCE SPACING
-                    {
-                        type: 'custom',
-                        class: 'clearfix',
-                        config: {
-                            template: {},
-                            model: {}
-                        }
-                    },
-
-                    {
-                        type: 'chart',
-                        class: "col-xs-12 col-md-6",
-
-                        // labels?
-                        labels: {
-                            // template to be applied to the config.template for the custom object
-                            template: {
-                                title: {
-                                    en: "Share of dietary energy supply derived from cereals, roots and tubers (%) (3-year average)",
-                                    fr: "Part des céréales, des racines et des tubercules dans les apports énergétiques alimentaires (%) (moyenne sur 3 ans)",
-                                    es: "Proporción del suministro de energía alimentaria derivada de cereales, raíces y tubérculos (%) (promedio de 3 años)",
-                                },
-                                subtitle: "{{year}}"
-                            }
-                        },
-                        config: {
-                            adapter: {
-                                adapterType: 'faostat',
-                                type: "standard",
-                                xDimensions: 'year',
-                                yDimensions: 'unit',
-                                valueDimensions: 'value',
-                                seriesDimensions: ['area', 'item']
-                            },
-                            template: {
-                                height: '300px'
-                            }
-                        },
-                        allowedFilter: ['area', 'year'],
-                        filter: {
-                            "domain_code": "FS",
-                            "element": [6120],
-                            "item": [21012],
-                            'order_by': 'year'
-                        }
-                    },
-
                     {
                         type: 'chart',
                         class: "col-xs-12 col-md-6",
@@ -696,16 +648,6 @@ define([
                             "element": [6120],
                             "item": [21010],
                             'order_by': 'year3'
-                        }
-                    },
-
-                    // FORCE SPACING
-                    {
-                        type: 'custom',
-                        class: 'clearfix',
-                        config: {
-                            template: {},
-                            model: {}
                         }
                     },
 
