@@ -430,8 +430,7 @@ define([
                                     en: "Number of people undernourished (millions) (3-year average)",
                                     fr: "Nombre de personnes sous-alimentées (millions) (moyenne sur 3 ans)",
                                     es: "Número de personas subnutridas (millones) (promedio de 3 años)"
-                                },
-                                subtitle: "{{year3}}"
+                                }
                             }
                         },
                         config: {
@@ -468,8 +467,7 @@ define([
                                     en: "Prevalence of undernourishment (%) (3-year average)",
                                     fr: "Prévalence de la sous-alimentation (%) (moyenne sur 3 ans)",
                                     es: "Prevalencia de la subalimentación (%) (promedio de 3 años)"
-                                },
-                                subtitle: "{{year3}}"
+                                }
                             }
                         },
                         config: {
@@ -553,8 +551,7 @@ define([
                                     en: "Average protein supply (g/capita/day) (3-year average)",
                                     fr: "Disponibilités protéiques moyennes (g/personne/jour) (moyenne sur 3 ans)",
                                     es: "Suministro medio de proteínas (g/persona/día) (promedio de 3 años)",
-                                },
-                                subtitle: "{{year3}}"
+                                }
                             }
                         },
                         config: {
@@ -808,8 +805,7 @@ define([
                                     en: "Depth of the food deficit (kcal/capita/day) (3-year average)",
                                     fr: "Ampleur du déficit alimentaire (Kcal/personne/jour) (moyenne sur 3 ans)",
                                     es: "Alcance del déficit de alimentos (Kcal/persona/día) (promedio de 3 años)"
-                                },
-                                subtitle: "{{year3}}"
+                                }
                             }
                         },
                         config: {
@@ -1015,8 +1011,7 @@ define([
                                     en: "Percentage of children under 5 years of age who are underweight, stunted, affected by wasting (%)",
                                     fr: "Pourcentage des enfants de moins de 5 ans présentant un retard de croissance, émaciés, présentant une insuffisance pondérale (%)",
                                     es: "Porcentaje de niños menores de 5 años aquejados de retraso del crecimiento, de emaciación, de insuciencia ponderal (%)"
-                                },
-                                subtitle: "{{year3}}"
+                                }
                             }
                         },
                         config: {
