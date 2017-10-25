@@ -29,7 +29,7 @@ define(function () {
                     }
                 },
                 {
-                    "id": "year",
+                    "id": "year3",
                     "type": "codelist",
                     "parameter": "year3",
                     "componentType": {
