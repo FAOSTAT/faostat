@@ -69,7 +69,7 @@ define(function () {
                                 fr: "Prévalence de la sous-alimentation (%) (moyenne sur 3 ans)",
                                 es: "Prevalencia de la subalimentación (%) (promedio de 3 años)"
                             },
-                            subtitle: "{{year3}}"
+
                         }
                     },
 
@@ -114,10 +114,9 @@ define(function () {
                                 fr: "Suffisance des apports énergétiques alimentaires moyens (%) (moyenne sur 3 ans)",
                                 es: "Suficiencia del suministro medio de energía alimentaria (%) (promedio de 3 años)"
                             },
-                            subtitle: "{{year3}}"
+
                         }
                     },
-
                     config: {
                         adapter: {
                             adapterType: 'faostat',
