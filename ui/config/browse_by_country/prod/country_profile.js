@@ -375,9 +375,9 @@ define([
                 },
                 items: [
                     {
-                        "id": "year",
+                        /*"id": "year3",
                         "type": "codelist",
-                        "parameter": "year",
+                        "parameter": "year3",
                         "componentType": {
                             "class": "hidden",
                             "type": "dropDownList-timerange"
@@ -385,6 +385,19 @@ define([
                         "config": {
                             "dimension_id": "years",
                             "defaultCodes": [],
+                            "filter": {}
+                        }*/
+                        "id": "year3",
+                        "type": "codelist",
+                        "parameter": "year3",
+                        "componentType": {
+                            "class": "hidden",
+                            "type": "dropDownList-timerange"
+                            ////"class": "col-xs-4 col-sm-4 col-md-2",
+                            //"type": "dropDownList-timerange"
+                        },
+                        "config": {
+                            "dimension_id": "year3",
                             "filter": {}
                         }
                     }
@@ -418,14 +431,14 @@ define([
                                     fr: "Nombre de personnes sous-alimentées (millions) (moyenne sur 3 ans)",
                                     es: "Número de personas subnutridas (millones) (promedio de 3 años)"
                                 },
-                                subtitle: "{{year}}"
+                                subtitle: "{{year3}}"
                             }
                         },
                         config: {
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "standard",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -434,12 +447,12 @@ define([
                                 height: '300px'
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21001],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     },
 
@@ -456,14 +469,14 @@ define([
                                     fr: "Prévalence de la sous-alimentation (%) (moyenne sur 3 ans)",
                                     es: "Prevalencia de la subalimentación (%) (promedio de 3 años)"
                                 },
-                                subtitle: "{{year}}"
+                                subtitle: "{{year3}}"
                             }
                         },
                         config: {
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "standard",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -472,12 +485,12 @@ define([
                                 height: '300px'
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21004],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     }
 
@@ -498,15 +511,15 @@ define([
                 },
                 items: [
                     {
-                        "id": "year",
+                        "id": "year3",
                         "type": "codelist",
-                        "parameter": "year",
+                        "parameter": "year3",
                         "componentType": {
                             "class": "hidden",
                             "type": "dropDownList-timerange"
                         },
                         "config": {
-                            "dimension_id": "years",
+                            "dimension_id": "year3",
                             "defaultCodes": [],
                             "filter": {}
                         }
@@ -541,14 +554,14 @@ define([
                                     fr: "Disponibilités protéiques moyennes (g/personne/jour) (moyenne sur 3 ans)",
                                     es: "Suministro medio de proteínas (g/persona/día) (promedio de 3 años)",
                                 },
-                                subtitle: "{{year}}"
+                                subtitle: "{{year3}}"
                             }
                         },
                         config: {
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "standard",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -562,7 +575,7 @@ define([
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21013],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     },
 
@@ -586,7 +599,7 @@ define([
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "standard",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -595,12 +608,12 @@ define([
                                 height: '300px'
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21014],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     },
 
@@ -664,15 +677,14 @@ define([
                                     en: "Average dietary energy supply adequacy (%) (3-year average)",
                                     fr: "Suffisance des apports énergétiques alimentaires moyens (%) (moyenne sur 3 ans)",
                                     es: "Suficiencia del suministro medio de energía alimentaria (%) (promedio de 3 años)"
-                                },
-                                subtitle: "{{year}}"
+                                }
                             }
                         },
                         config: {
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "standard",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -681,12 +693,12 @@ define([
                                 height: '300px'
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21010],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     },
 
@@ -720,7 +732,7 @@ define([
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "standard",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -729,12 +741,12 @@ define([
                                 height: '300px'
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21011],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     }
                 ]
@@ -753,15 +765,15 @@ define([
                 },
                 items: [
                     {
-                        "id": "year",
+                        "id": "year3",
                         "type": "codelist",
-                        "parameter": "year",
+                        "parameter": "year3",
                         "componentType": {
                             "class": "hidden",
                             "type": "dropDownList-timerange"
                         },
                         "config": {
-                            "dimension_id": "years",
+                            "dimension_id": "year3",
                             "defaultCodes": [],
                             "filter": {}
                         }
@@ -797,14 +809,14 @@ define([
                                     fr: "Ampleur du déficit alimentaire (Kcal/personne/jour) (moyenne sur 3 ans)",
                                     es: "Alcance del déficit de alimentos (Kcal/persona/día) (promedio de 3 años)"
                                 },
-                                subtitle: "{{year}}"
+                                subtitle: "{{year3}}"
                             }
                         },
                         config: {
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "standard",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -813,12 +825,12 @@ define([
                                 height: '300px'
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21023],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     },
 
@@ -834,15 +846,14 @@ define([
                                     en: "Domestic food price index (index)",
                                     fr: "Indice national des prix des aliments (indice)",
                                     es: "Índice nacional de precios de los alimentos (índice)",
-                                },
-                                subtitle: "{{year}}"
+                                }
                             }
                         },
                         config: {
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "timeserie",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -851,12 +862,12 @@ define([
                                 height: '300px'
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21018],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     },
 
@@ -883,15 +894,14 @@ define([
                                     en: "Gross domestic product per capita, PPP (constant 2011 international $)",
                                     fr: "Produit intérieur brut par habitant, ($ PPA internationaux constants de 2011)",
                                     es: "Producto interno bruto per cápita, PPA ($ a precios internacionales constantes de 2011)",
-                                },
-                                subtitle: "{{year}}"
+                                }
                             }
                         },
                         config: {
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "timeserie",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -900,12 +910,12 @@ define([
                                 height: '300px'
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [22013],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     },
 
@@ -921,15 +931,14 @@ define([
                                     en: "Road density (per 100 square km of land area)",
                                     fr: "Densité du réseau routier (pour 100 km carrés de surface totale du pays)",
                                     es: "Densidad de carreteras (por cada 100 km cuadrados de la superficie terrestre)"
-                                },
-                                subtitle: "{{year}}"
+                                }
                             }
                         },
                         config: {
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "timeserie",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -938,12 +947,12 @@ define([
                                 height: '300px'
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21017],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     }
 
@@ -963,15 +972,15 @@ define([
                 },
                 items: [
                     {
-                        "id": "year",
+                        "id": "year3",
                         "type": "codelist",
-                        "parameter": "year",
+                        "parameter": "year3",
                         "componentType": {
                             "class": "hidden",
                             "type": "dropDownList-timerange"
                         },
                         "config": {
-                            "dimension_id": "years",
+                            "dimension_id": "year3",
                             "defaultCodes": [],
                             "filter": {}
                         }
@@ -1007,14 +1016,14 @@ define([
                                     fr: "Pourcentage des enfants de moins de 5 ans présentant un retard de croissance, émaciés, présentant une insuffisance pondérale (%)",
                                     es: "Porcentaje de niños menores de 5 años aquejados de retraso del crecimiento, de emaciación, de insuciencia ponderal (%)"
                                 },
-                                subtitle: "{{year}}"
+                                subtitle: "{{year3}}"
                             }
                         },
                         config: {
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "timeserie",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -1030,12 +1039,12 @@ define([
                                  }*/
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21025, 21026, 21027],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     },
 
@@ -1051,15 +1060,14 @@ define([
                                     en: "Access to improved water sources (%)",
                                     fr: "Accès à des sources d'eau améliorées (%)",
                                     es: "Acceso a fuentes de agua mejoradas (%)"
-                                },
-                                subtitle: "{{year}}"
+                                }
                             }
                         },
                         config: {
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "standard",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -1068,12 +1076,12 @@ define([
                                 height: '300px'
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21019],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     }
 
@@ -1258,15 +1266,15 @@ define([
                 },
                 items: [
                     {
-                        "id": "year",
+                        "id": "year3",
                         "type": "codelist",
-                        "parameter": "year",
+                        "parameter": "year3",
                         "componentType": {
                             "class": "hidden",
                             "type": "dropDownList-timerange"
                         },
                         "config": {
-                            "dimension_id": "years",
+                            "dimension_id": "year3",
                             "defaultCodes": [],
                             "filter": {}
                         }
@@ -1300,15 +1308,14 @@ define([
                                     en: "Per capita food production variability (I$ per person constant 2004-06)",
                                     fr: "Variabilité de la production alimentaire par habitant ($I par personne constant 2004-06)",
                                     es: "Valor de las importaciones de alimentos respecto de las exportaciones totales de mercancías (%) (promedio de 3 años)"
-                                },
-                                subtitle: "{{year}}"
+                                }
                             }
                         },
                         config: {
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "standard",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -1317,12 +1324,12 @@ define([
 
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21030],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     },
 
@@ -1338,15 +1345,14 @@ define([
                                     en: "Value of food imports over total merchandise exports (%) (3-year average)",
                                     fr: "Valeur des importations alimentaires par rapport aux exportations totales de marchandises (%) (moyenne sur 3 ans)",
                                     es: "Valor de las importaciones de alimentos respecto de las exportaciones totales de mercancías (%) (promedio de 3 años)"
-                                },
-                                subtitle: "{{year}}"
+                                }
                             }
                         },
                         config: {
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "standard",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -1355,12 +1361,12 @@ define([
 
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21033],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     },
 
@@ -1387,15 +1393,14 @@ define([
                                     en: "Per capita food supply variability (kcal/capita/day)",
                                     fr: "Variabilité des disponibilités alimentaires par habitant (Kcal/personne/jour)",
                                     es: "Variabilidad del suministro de alimentos per cápita (kcal/persona/día)"
-                                },
-                                subtitle: "{{year}}"
+                                }
                             }
                         },
                         config: {
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "standard",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -1404,12 +1409,12 @@ define([
 
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21031],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     },
 
@@ -1425,15 +1430,14 @@ define([
                                     en: "Political stability and absence of violence/terrorism (index)",
                                     fr: "Stabilité politique et absence de violence/terrorisme (indice)",
                                     es: "Estabilidad política y ausencia de violencia o terrorismo (índice)"
-                                },
-                                subtitle: "{{year}}"
+                                }
                             }
                         },
                         config: {
                             adapter: {
                                 adapterType: 'faostat',
                                 type: "standard",
-                                xDimensions: 'year',
+                                xDimensions: 'year3',
                                 yDimensions: 'unit',
                                 valueDimensions: 'value',
                                 seriesDimensions: ['area', 'item']
@@ -1442,12 +1446,12 @@ define([
 
                             }
                         },
-                        allowedFilter: ['area', 'year'],
+                        allowedFilter: ['area', 'year3'],
                         filter: {
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21032],
-                            'order_by': 'year'
+                            'order_by': 'year3'
                         }
                     }
 
