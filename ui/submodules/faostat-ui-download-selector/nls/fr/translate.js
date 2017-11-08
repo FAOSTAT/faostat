@@ -1,6 +1,6 @@
 /*global define*/
 define({
-    select_all: 'Tout Sélectionner',
+    select_all: 'Tout sélectionner',
     clear_all: 'Tout effacer',
     filter_results: 'Filtrer les résultats',
     filter_results_eg: 'Filtrer les résultats par ex.',
