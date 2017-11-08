@@ -34,7 +34,8 @@ define(['jquery', 'loglevel', 'q' , 'amplify'], function ($, log, Q) {
 
         // if advanced
         var data = $.extend(true, {}, c, {
-    "output_type": config.output_type, "domain_codes": config.domain_codes, "List1Codes": config.List1Codes, "List2Codes": config.List2Codes, "List3Codes": config.List3Codes, "List4Codes": config.List4Codes, "List5Codes": config.List5Codes, "List6Codes": config.List6Codes, "List7Codes": config.List7Codes, "filter_list": config.filter_list, "rank_type": config.rank_type, "limit": config.limit
+            "datasource": config.datasource,
+            "output_type": config.output_type, "domain_codes": config.domain_codes, "List1Codes": config.List1Codes, "List2Codes": config.List2Codes, "List3Codes": config.List3Codes, "List4Codes": config.List4Codes, "List5Codes": config.List5Codes, "List6Codes": config.List6Codes, "List7Codes": config.List7Codes, "filter_list": config.filter_list, "rank_type": config.rank_type, "limit": config.limit
 });
 
         for(var i=0; i < url_data.length; i++) {
