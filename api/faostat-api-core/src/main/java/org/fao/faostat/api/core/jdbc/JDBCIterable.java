@@ -576,9 +576,9 @@ public class JDBCIterable implements Iterator<List<String>> {
             try {
                 for (int i = 1 ; i <= this.getResultSet().getMetaData().getColumnCount() ; i++) {
                     try {
+                        sb.append('"');
                         columnType = this.getResultSet().getMetaData().getColumnClassName(i);
-                        value = this.getResultSet().getString(i).trim();
-
+                        value =  this.getResultSet().getString(i).trim();
                         if (columnType.endsWith("Double")) {
                            // double d = Double.parseDouble(value);
                            java.text.DecimalFormat decimalFormat = new java.text.DecimalFormat("###.##########");
@@ -593,8 +593,12 @@ public class JDBCIterable implements Iterator<List<String>> {
                             //sb.append("\"").append(new Date(value).toString()).append("\"");
                         } else {
                             // TODO: check if there are "" in the string
-                            sb.append(StringEscapeUtils.escapeCsv(value));
+                           // sb.append(StringEscapeUtils.escapeCsv(value));
+                            //sb.append(StringEscapeUtils.escapeCsv(value));
+
+                            sb.append(String.valueOf(value));
                         }
+                        sb.append('"');
                         if (i <= this.getResultSet().getMetaData().getColumnCount() - 1) {
                             sb.append(",");
                         }else{
