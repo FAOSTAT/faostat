@@ -480,15 +480,15 @@ public class TestData extends JerseyTest {
         String response =  ws.get(String.class);
 
         if (language.equals("en")) {
-            String r = "Domain Code,Domain,Area Code,Area,Element Code,Element,Item Code,Item,Year Code,Year,Unit,Value,Flag,Flag Description\nQC,Crops,2,Afghanistan,5510,Production,27,\"Rice, paddy\",2010,2010,tonnes,672000,,Official data\n";
+            String r = "Domain Code,Domain,Area Code,Area,Element Code,Element,Item Code,Item,Year Code,Year,Unit,Value,Flag,Flag Description\n\"QC\",\"Crops\",\"2\",\"Afghanistan\",\"5510\",\"Production\",\"27\",\"Rice, paddy\",\"2010\",\"2010\",\"tonnes\",\"672000\",\"\",\"Official data\"\n";
             assertEquals(response, r);
         }
         else if(language.equals("es")) {
-            String r = "Código Ámbito,Ámbito,Código área,Área,Código Elemento,Elemento,Código Producto,Producto,Código año,Año,Unidad,Valor,Símbolo,Descripción del Símbolo\nQC,Cultivos,2,Afganistán,5510,Producción,27,\"Arroz, cascara\",2010,2010,toneladas,672000,,Datos oficiales\n";
+            String r = "Código Ámbito,Ámbito,Código área,Área,Código Elemento,Elemento,Código Producto,Producto,Código año,Año,Unidad,Valor,Símbolo,Descripción del Símbolo\n\"QC\",\"Cultivos\",\"2\",\"Afganistán\",\"5510\",\"Producción\",\"27\",\"Arroz, cascara\",\"2010\",\"2010\",\"toneladas\",\"672000\",\"\",\"Datos oficiales\"\n";
             assertEquals(response, r);
         }
         else if(language.equals("fr")) {
-            String r = "Code Domaine,Domaine,Code zone,Zone,Code Élément,Élément,Code Produit,Produit,Code année,Année,Unité,Valeur,Symbole,Description du Symbole\nQC,Cultures,2,Afghanistan,5510,Production,27,\"Riz, paddy\",2010,2010,tonnes,672000,,Donnée officielle\n";
+            String r = "Code Domaine,Domaine,Code zone,Zone,Code Élément,Élément,Code Produit,Produit,Code année,Année,Unité,Valeur,Symbole,Description du Symbole\n\"QC\",\"Cultures\",\"2\",\"Afghanistan\",\"5510\",\"Production\",\"27\",\"Riz, paddy\",\"2010\",\"2010\",\"tonnes\",\"672000\",\"\",\"Donnée officielle\"\n";
             assertEquals(response, r);
         }
 
