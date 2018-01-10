@@ -503,7 +503,7 @@ define([
                 });
 
                 // added dirty baselayer
-                this.m.map.addLayer(Esri_WorldPhysical);
+                ///////this.m.map.addLayer(Esri_WorldPhysical);
 
                 var boundary = $.extend(true, {}, MapConfig.layers.boundary);
                 this.m.addLayer(new FM.layer(boundary));
