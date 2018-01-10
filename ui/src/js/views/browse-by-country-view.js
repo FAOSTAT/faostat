@@ -515,7 +515,9 @@ define([
                 this.m.addLayer(new FM.layer(highlight));
 
                 // added dirty label layer
-                this.m.map.addLayer(CartoDB_PositronOnlyLabels);
+
+
+               // this.m.map.addLayer(CartoDB_PositronOnlyLabels);
 
                 // highlight country
                 // TODO: how to check for old countries (i.e. USSR) or new (i.e. south sudan)?
