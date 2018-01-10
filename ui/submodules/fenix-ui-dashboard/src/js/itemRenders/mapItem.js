@@ -150,7 +150,7 @@ define([
         });
 
         // added dirty labels
-        this.mapCreator.adapter.fenixMap.map.addLayer(CartoDB_PositronOnlyLabels);
+        //this.mapCreator.adapter.fenixMap.map.addLayer(CartoDB_PositronOnlyLabels);
 
         this.enableExport();
     };
