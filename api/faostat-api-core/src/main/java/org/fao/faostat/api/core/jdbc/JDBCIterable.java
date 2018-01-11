@@ -571,14 +571,40 @@ public class JDBCIterable implements Iterator<List<String>> {
         StringBuilder sb= new StringBuilder();
         String columnType;
         String value;
-
+        Object itemValue;
         if (this.isHasNext()) {
             try {
                 for (int i = 1 ; i <= this.getResultSet().getMetaData().getColumnCount() ; i++) {
                     try {
                         sb.append('"');
                         columnType = this.getResultSet().getMetaData().getColumnClassName(i);
-                        value =  this.getResultSet().getString(i).trim();
+                        itemValue=this.getResultSet().getObject(i);
+
+                        if (itemValue==null){
+                            value="";
+                            sb.append(String.valueOf(value));
+                        }else{
+                            value = this.getResultSet().getString(i).trim();
+
+                            if (columnType.endsWith("Double")) {
+                                java.text.DecimalFormat decimalFormat = new java.text.DecimalFormat("###.##########");
+                                sb.append(decimalFormat.format(new Double(value)));
+                            } else if (columnType.endsWith("Integer")) {
+                                sb.append(Integer.parseInt(value));
+                            } else if (columnType.endsWith("Long")) {
+                                sb.append( Long.parseLong(value));
+                            } else if (columnType.endsWith("Date")) {
+                                sb.append(StringEscapeUtils.escapeCsv(value));
+                            } else {
+                                // TODO: check if there are "" in the string
+                                sb.append(String.valueOf(value));
+                            }
+                        }
+
+                        /////////value = (itemValue == null ? null : this.getResultSet().getString(i).trim());
+                       // value =  this.getResultSet().getString(i).trim();
+
+                       /*
                         if (columnType.endsWith("Double")) {
                            // double d = Double.parseDouble(value);
                            java.text.DecimalFormat decimalFormat = new java.text.DecimalFormat("###.##########");
@@ -594,10 +620,12 @@ public class JDBCIterable implements Iterator<List<String>> {
                         } else {
                             // TODO: check if there are "" in the string
                            // sb.append(StringEscapeUtils.escapeCsv(value));
-                            //sb.append(StringEscapeUtils.escapeCsv(value));
+
+                            //sb.append(StringEscapeUtils.escapeCsv((value.replace('"',' '))));
 
                             sb.append(String.valueOf(value));
                         }
+                        */
                         sb.append('"');
                         if (i <= this.getResultSet().getMetaData().getColumnCount() - 1) {
                             sb.append(",");
