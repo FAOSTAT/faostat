@@ -440,6 +440,8 @@ define([
 
             },
 
+            /*
+
             initializeMap: function(code) {
 
                 this.$COUNTRY_PROFILE_MAP.empty();
@@ -503,7 +505,7 @@ define([
                 });
 
                 // added dirty baselayer
-                ///////this.m.map.addLayer(Esri_WorldPhysical);
+               this.m.map.addLayer(Esri_WorldPhysical);
 
                 var boundary = $.extend(true, {}, MapConfig.layers.boundary);
                 this.m.addLayer(new FM.layer(boundary));
@@ -517,7 +519,112 @@ define([
                 // added dirty label layer
 
 
-               // this.m.map.addLayer(CartoDB_PositronOnlyLabels);
+               ///////////////////// this.m.map.addLayer(CartoDB_PositronOnlyLabels);
+
+                // highlight country
+                // TODO: how to check for old countries (i.e. USSR) or new (i.e. south sudan)?
+                // TODO: FIX IT. in the zoom to remove workspace if needed
+                // TODO: Use a GeoJSON with the correct boundaries.
+                this.m.zoomTo(MapConfig.layers.highlight.layers.replace("faostat:", ""), "faost_code", code);
+
+
+            },
+
+            */
+
+
+            initializeMap: function(code) {
+
+                this.$COUNTRY_PROFILE_MAP.empty();
+
+                this.m = new FM.Map(this.$COUNTRY_PROFILE_MAP, CM.map.fenix_ui_map, CM.map.leaflet);
+                this.m.createMap();
+
+                // TODO: this could be config in map configuration file, or in the module configuration.
+                var CartoDB_Positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+                    subdomains: 'abcd',
+                    maxZoom: 19,
+                    zIndex: 0
+                });
+
+                var Esri_WorldPhysical = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
+                    attribution: 'Tiles &copy; Esri &mdash; Source: US National Park Service',
+                    maxZoom: 19,
+                    zIndex: 0
+                });
+
+                var MapQuestOpen_Aerial = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.{ext}', {
+                    type: 'sat',
+                    ext: 'jpg',
+                    attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency',
+                    subdomains: '1234'
+                });
+
+                var Esri_OceanBasemap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}', {
+                    attribution: 'Tiles &copy; Esri &mdash; Sources: GEBCO, NOAA, CHS, OSU, UNH, CSUMB, National Geographic, DeLorme, NAVTEQ, and Esri',
+                    maxZoom: 13
+                });
+
+                var Esri_WorldGrayCanvas = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+                    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+                    maxZoom: 16
+                });
+
+                var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+                });
+
+                var CartoDB_DarkMatterNoLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+                    subdomains: 'abcd',
+                    maxZoom: 19
+                });
+
+                var CartoDB_DarkMatterOnlyLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+                    subdomains: 'abcd',
+                    maxZoom: 19
+                });
+
+                var CartoDB_PositronOnlyLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+                    subdomains: 'abcd',
+                    maxZoom: 19,
+                    zIndex: 1000,
+                    opacity: 0.9
+                });
+
+                var Stamen_TonerLabels = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.{ext}', {
+                    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                    subdomains: 'abcd',
+                    minZoom: 0,
+                    maxZoom: 20,
+                    ext: 'png'
+                });
+
+                var CartoDB_PositronNoLabels = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+                    subdomains: 'abcd',
+                    maxZoom: 19
+                });
+
+                // added dirty baselayer
+                //this.m.map.addLayer(Esri_WorldPhysical);
+                this.m.map.addLayer(CartoDB_PositronNoLabels);
+
+                var boundary = $.extend(true, {}, MapConfig.layers.boundary);
+                this.m.addLayer(new FM.layer(boundary));
+
+                // layer to highlight the selected country
+                var highlight = $.extend(true, {}, MapConfig.layers.highlight, {
+                    cql_filter: "faost_code IN ('" + code.join("','") +"')"
+                });
+                this.m.addLayer(new FM.layer(highlight));
+
+                // added dirty label layer
+                // this.m.map.addLayer(CartoDB_PositronOnlyLabels);
+                this.m.map.addLayer(Stamen_TonerLabels);
 
                 // highlight country
                 // TODO: how to check for old countries (i.e. USSR) or new (i.e. south sudan)?
