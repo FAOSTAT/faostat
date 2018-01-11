@@ -357,6 +357,9 @@ import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Component;
 import org.apache.log4j.Logger;
 
+import org.fao.faostat.api.legacy.V10CSV2Excel;
+//import org.fao.faostat.api.core.ExcelExporter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.ws.rs.*;
@@ -479,6 +482,10 @@ public class V10Data {
 
                     /* Generate an array of objects of arrays. */
                     switch (metadataBean.getOutputType()) {
+                        case EXCEL:
+                            writeExcel(it, writer);
+
+                            break;
                         case CSV:
 
                             writeCSV(it, writer);
@@ -591,6 +598,13 @@ public class V10Data {
         while (it.hasNext()) {
             writer.write(it.nextCSV());
         }
+
+    }
+
+    private void writeExcel(JDBCIterable it, Writer writer) throws IOException {
+        byte[] bytes =V10CSV2Excel.writeXLSFile();
+        String s = new String(bytes);
+        writer.write(s);//V10CSV2Excel.writeXLSFile()
 
     }
 
