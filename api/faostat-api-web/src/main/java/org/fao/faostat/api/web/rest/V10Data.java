@@ -483,7 +483,7 @@ public class V10Data {
                     /* Generate an array of objects of arrays. */
                     switch (metadataBean.getOutputType()) {
                         case EXCEL:
-                            writeExcel(it, writer);
+                           // writeExcel(it, writer);
 
                             break;
                         case CSV:
