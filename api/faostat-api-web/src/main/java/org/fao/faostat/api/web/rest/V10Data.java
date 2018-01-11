@@ -601,12 +601,12 @@ public class V10Data {
 
     }
 
-    private void writeExcel(JDBCIterable it, Writer writer) throws IOException {
+  /*  private void writeExcel(JDBCIterable it, Writer writer) throws IOException {
         byte[] bytes =V10CSV2Excel.writeXLSFile();
         String s = new String(bytes);
         writer.write(s);//V10CSV2Excel.writeXLSFile()
 
-    }
+    }*/
 
     private void writeJSON(StreamBuilder sb, MetadataBean metadataBean, List<Map<String, Object>> dsd, JDBCIterable it, Writer writer) throws IOException {
 
