@@ -346,6 +346,6 @@ package org.fao.faostat.api.core.constants;
  */
 public enum OUTPUTTYPE {
 
-    ARRAYS, CSV, JSON, OBJECTS;
+    ARRAYS, CSV, EXCEL, JSON, OBJECTS;
 
 }
