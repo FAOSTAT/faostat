@@ -144,7 +144,7 @@ define([
         var CartoDB_PositronOnlyLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
             subdomains: 'abcd',
-            maxZoom:5,
+            maxZoom:6,
             zIndex: 100000,
             opacity: 0.9
         });
@@ -160,8 +160,8 @@ define([
 
 
         // added dirty labels
-        ///this.mapCreator.adapter.fenixMap.map.addLayer(CartoDB_PositronOnlyLabels);
-       this.mapCreator.adapter.fenixMap.map.addLayer(Stamen_TonerLabels);
+        this.mapCreator.adapter.fenixMap.map.addLayer(CartoDB_PositronOnlyLabels);
+       //this.mapCreator.adapter.fenixMap.map.addLayer(Stamen_TonerLabels);
         this.enableExport();
     };
 
