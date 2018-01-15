@@ -144,7 +144,7 @@ define([
         var CartoDB_PositronOnlyLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
             subdomains: 'abcd',
-            maxZoom: 19,
+            maxZoom:5,
             zIndex: 100000,
             opacity: 0.9
         });
@@ -152,15 +152,16 @@ define([
         var Stamen_TonerLabels = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.{ext}', {
             attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
             subdomains: 'abcd',
-            minZoom: 0,
+            minZoom: 1,
             maxZoom: 20,
             ext: 'png'
+
         });
 
 
         // added dirty labels
-       ///////// this.mapCreator.adapter.fenixMap.map.addLayer(CartoDB_PositronOnlyLabels);
-        this.mapCreator.adapter.fenixMap.map.addLayer(Stamen_TonerLabels);
+        this.mapCreator.adapter.fenixMap.map.addLayer(CartoDB_PositronOnlyLabels);
+       ///this.mapCreator.adapter.fenixMap.map.addLayer(Stamen_TonerLabels);
         this.enableExport();
     };
 
