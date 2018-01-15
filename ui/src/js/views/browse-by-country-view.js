@@ -610,9 +610,20 @@ define([
 
                 });
 
+                var Esri_WorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+                    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
+                    subdomains: 'abcd',
+                    minZoom: 1,
+                    maxZoom: 7,
+                    opacity: 0.75
+
+                });
+
                 // added dirty baselayer
                 //this.m.map.addLayer(Esri_WorldPhysical);
-                this.m.map.addLayer(CartoDB_PositronNoLabels);
+                ///this.m.map.addLayer(CartoDB_PositronNoLabels);
+                this.m.map.addLayer(Esri_WorldTopoMap);
+
 
                 var boundary = $.extend(true, {}, MapConfig.layers.boundary);
                 this.m.addLayer(new FM.layer(boundary));
@@ -625,7 +636,7 @@ define([
 
                 // added dirty label layer
                 // this.m.map.addLayer(CartoDB_PositronOnlyLabels);
-                this.m.map.addLayer(Stamen_TonerLabels);
+               // this.m.map.addLayer(Stamen_TonerLabels);
 
                 // highlight country
                 // TODO: how to check for old countries (i.e. USSR) or new (i.e. south sudan)?
