@@ -160,8 +160,8 @@ define([
 
 
         // added dirty labels
-        this.mapCreator.adapter.fenixMap.map.addLayer(CartoDB_PositronOnlyLabels);
-       ///this.mapCreator.adapter.fenixMap.map.addLayer(Stamen_TonerLabels);
+        ///this.mapCreator.adapter.fenixMap.map.addLayer(CartoDB_PositronOnlyLabels);
+       this.mapCreator.adapter.fenixMap.map.addLayer(Stamen_TonerLabels);
         this.enableExport();
     };
 
