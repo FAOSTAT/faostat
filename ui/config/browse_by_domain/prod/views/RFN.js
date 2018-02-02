@@ -5,11 +5,7 @@ define([
 
     'use strict';
 
-    var i18n = C.i18n || {};
-
     return {
-
-
 
         "filter": {
 
@@ -20,16 +16,32 @@ define([
 
             items: [
                 {
+                    "id": "item",
+                    "type": "codelist",
+                    // TODO: in theory that should come from the dimensions schema!!
+                    "parameter": "item",
+                    "componentType": {
+                        "class": "col-sm-4",
+                        "type": "dropDownList"
+                    },
+                    "config": {
+                        "dimension_id": "item",
+                        "defaultCodes": ["3102"],
+                        "filter": {
+                        }
+                    }
+                },
+                {
                     "id": "element",
                     "type": "codelist",
                     "parameter": "element",
                     "componentType": {
-                        "class": "col-md-3",
+                        "class": "col-sm-4",
                         "type": "dropDownList"
                     },
                     "config": {
                         "dimension_id": "element",
-                        "defaultCodes": ["5850"],
+                        "defaultCodes": ["5157"],
                         "filter": {
                         }
                     }
@@ -40,8 +52,8 @@ define([
                     "type": "codelist",
                     "parameter": "area",
                     "componentType": {
-                        "class": "col-md-3",
-                        "type": "dropDownList"
+                        "class": "col-sm-4",
+                        "type": "dropDownList",
                         //"multiple": true
                     },
                     "config": {
@@ -56,11 +68,11 @@ define([
                     "type": "codelist",
                     "parameter": "year",
                     "componentType": {
-                        "class": "col-md-2",
+                        "class": "col-sm-2",
                         "type": "dropDownList-timerange"
                     },
                     "config": {
-                        "dimension_id": "years",
+                        "dimension_id": "year",
                         "defaultCodes": ['2002'],
                         "filter": {
                         }
@@ -72,7 +84,6 @@ define([
                     },
                     "defaultCodes": ["AVG"]
                 })
-
             ]
         },
 
@@ -80,8 +91,7 @@ define([
 
             //data base filter
             defaultFilter: {
-                domain_code: ['RFN'],
-                item: ["3102"]
+                domain_code: ['RFN']
             },
 
             items: [
@@ -94,12 +104,12 @@ define([
                         // labels to dynamically substitute the title and subtitle
                         default: {},
 
-                        // temp[late to be applied to the config.template for the custom object
+                        // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Nutrient nitrogen N (total), {{element}}",
-                                fr: "Élément nutritif azote N (total), {{element}}",
-                                es: "Nutriente nitrógeno N (total), {{element}}"
+                                en: "{{item}} {{element}} by country",
+                                fr: "{{item}} {{element}} par pays",
+                                es: "{{item}} {{element}} por país"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -107,10 +117,7 @@ define([
 
                     //height:'250px',
                     config: {
-                        layer: {
-                            colorramp: "YlOrRd",
-                            intervals: 7
-                        },
+                        layer: {},
                         template: {
 
                         }
@@ -133,9 +140,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Nutrient nitrogen N (total), {{element}}",
-                                fr: "Élément nutritif azote N (total), {{element}}",
-                                es: "Nutriente nitrógeno N (total), {{element}}"
+                                en: "{{item}} {{element}} in {{area}}",
+                                fr: "{{item}} {{element}} en {{area}}",
+                                es: "{{item}} {{element}} en {{area}}"
                             },
                             subtitle: "{{year}}"
                         }
@@ -153,10 +160,9 @@ define([
                         template: {},
                         creator: {}
                     },
-                    allowedFilter: ['area', 'year', 'item'],
-                    deniedOnLoadFilter: ['area'],
+                    allowedFilter: ['item', 'year', 'element', 'area'],
+                    //deniedOnLoadFilter: ['area'],
                     filter: {
-                        area: ["5000", "5848", "5849"]
                     }
                 },
                 {
@@ -166,9 +172,9 @@ define([
                     labels: {
                         template: {
                             title: {
-                                en: "{{element}}",
-                                fr: "{{element}}",
-                                es: "{{element}}"
+                                en: "{{item}} {{element}} share by region",
+                                fr: "{{item}} {{element}} part par région",
+                                es: "{{item}} {{element}} cuota por región"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -188,15 +194,13 @@ define([
                         },
                         creator: {}
                     },
-                    allowedFilter: ['year', 'item', 'aggregation'],
+                    allowedFilter: ['item', 'year', 'element', 'aggregation'],
                     filter: {
-                        // TODO: remove the area (in theory should be automatically detected from the domain dimensions/schema)
                         area: ["5100", "5200", "5300", "5400", "5500"],
                         "group_by": 'year',
                         "order_by": 'area'
                     }
                 },
-
                 {
                     type: 'chart',
                     class: "col-xs-12",
@@ -206,9 +210,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Top 10 Element",
-                                fr: "10 émetteurs principaux Éléments",
-                                es: "Los 10 Elementos"
+                                en: "Top 10 countries - {{item}} {{element}}",
+                                fr: "10 pays principaux - {{item}} {{element}}",
+                                es: "Los 10 países principales - {{item}} {{element}}"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -218,13 +222,13 @@ define([
                         adapter: {
                             adapterType: 'faostat',
                             type: "standard",
-                            xDimensions: ['element'],
+                            xDimensions: ['area'],
                             yDimensions: 'unit',
                             valueDimensions: 'value',
-                            seriesDimensions: ['area']
+                            seriesDimensions: ['item', 'element']
                         },
                         template: {
-                            height:'250px'
+                            //height:'250px'
                             // default labels to be applied
                         },
                         creator: {
@@ -235,7 +239,7 @@ define([
                             }
                         }
                     },
-                    allowedFilter: ['year', 'item', 'aggregation'],
+                    allowedFilter: ['item', 'year', 'element', 'aggregation'],
                     deniedTemplateFilter: [],
                     filter: {
                         area: ["5000>"],
