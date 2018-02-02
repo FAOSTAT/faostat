@@ -41,7 +41,7 @@ define([
                     },
                     "config": {
                         "dimension_id": "element",
-                        "defaultCodes": ["5157"],
+                        "defaultCodes": ["2515"],
                         "filter": {
                         }
                     }
