@@ -1656,7 +1656,8 @@ define([
         syb: {
             // TODO: Refactor it and make it decent.
             title: i18n.fao_statistical_yearbook_summary, // "FAO Statistical Yearbook Summary",
-            href: CM.syb.url, //"http://fenixservices.fao.org/faostat/static/syb/syb_{{code}}.pdf",
+            //href: CM.syb.url, //"http://fenixservices.fao.org/faostat/static/syb/syb_{{code}}.pdf",
+            href: "http://fenixservices.fao.org/faostat/static/documents/CountryProfile/pdf/syb_{{code}}.pdf"
             /*icon: 'icojam_book_3',
             show_details: true,
             details: {
