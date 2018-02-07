@@ -15,8 +15,8 @@ define([
         syb: {
             //url: 'http://fenixservices.fao.org/faostat/static/syb/syb_{{code}}.pdf',
             url: 'http://faostat.fao.org/static/syb/syb_{{code}}.pdf',
-            //url_world: 'http://fenixservices.fao.org/faostat/static/syb/syb_5000.pdf'
-            url_world: 'http://faostat.fao.org/static/syb/syb_5000.pdf'
+            url_world: 'http://fenixservices.fao.org/faostat/static/documents/CountryProfile/pdf/syb_5000.pdf'
+            // url_world: 'http://faostat.fao.org/static/syb/syb_5000.pdf'
         },
 
         // default Domain Code used to cmd
