@@ -5,45 +5,37 @@ define([
 
     'use strict';
 
+
+
     return {
+
 
         "filter": {
 
             defaultFilter: {
-                "domain_code": ["RFB"],
+                "domain_code": ["EMN"],
                 "show_lists": false
             },
 
             items: [
                 {
+                    // id to be applied on the getData request
                     "id": "item",
                     "type": "codelist",
-                    // TODO: in theory that should come from the dimensions schema!!
                     "parameter": "item",
-                    "componentType": {
-                        "class": "col-sm-4",
-                        "type": "dropDownList"
+                    "title": {
+                        "en": "Sector"
                     },
-                    "config": {
-                        "dimension_id": "item",
-                        "defaultCodes": ["4001"],
-                        "filter": {
-                        }
-                    }
-                },
-                {
-                    // id to be applied on the getData request
-                    "id": "area",
-                    "type": "codelist",
-                    "parameter": "area",
                     "componentType": {
-                        "class": "col-sm-4",
-                        "type": "dropDownList",
+                        "class": "col-xs-4 col-sx-4 col-md-4",
+                        "type": "dropDownList"
                         //"multiple": true
                     },
                     "config": {
-                        "dimension_id": "area",
+                        "dimension_id": "item",
+                        "defaultCodes": ["1107"],
                         "filter": {
+                            //whitelist: [1711, 6822]
                         }
                     }
                 },
@@ -57,12 +49,29 @@ define([
                     },
                     "config": {
                         "dimension_id": "element",
-                        "defaultCodes": ["2515"],
+                        "defaultCodes": ["72380"],
                         "filter": {
+                            whitelist: [72538, 72381, 72380, 72386]
                         }
                     }
                 },
 
+                {
+                    // id to be applied on the getData request
+                    "id": "area",
+                    "type": "codelist",
+                    "parameter": "area",
+                    "componentType": {
+                        "class": "col-xs-4 col-sx-4 col-md-4",
+                        "type": "dropDownList"
+                        //"multiple": true
+                    },
+                    "config": {
+                        "dimension_id": "area",
+                        "defaultCodes": ["5000"],
+                        "filter": {}
+                    }
+                },
                 {
                     "id": "year",
                     "type": "codelist",
@@ -72,8 +81,8 @@ define([
                         "type": "dropDownList-timerange"
                     },
                     "config": {
-                        "dimension_id": "year",
-                        "defaultCodes": ['2002'],
+                        "dimension_id": "years",
+                        "defaultCodes": ['1961'],
                         "filter": {
                         }
                     }
@@ -91,58 +100,49 @@ define([
 
             //data base filter
             defaultFilter: {
-                domain_code: ['RFB']
+                domain_code: ['EMN']
+               // element: ["72538"]
             },
 
             items: [
                 {
                     type: 'map',
-                    class: "col-xs-12",
+                    class: "col-md-12",
 
                     // labels
                     labels: {
-                        // labels to dynamically substitute the title and subtitle
-                        default: {},
 
-                        // template to be applied to the config.template for the custom object
+                        // temp[late to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "{{item}} {{element}} by country",
-                                fr: "{{item}} {{element}} par pays",
-                                es: "{{item}} {{element}} por país"
+                                en: "Shares by country of sector {{item}} for {{element}}",
+                                fr: "Parts par pays du secteur {{item}} pour {{element}}",
+                                es: "Cuotas por país del sector {{item}} par {{element}}"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
                     },
-
-                    //height:'250px',
                     config: {
-                        layer: {},
-                        template: {
-
-                        }
+                        template: {}
                     },
-                    allowedFilter: ['item', 'year', 'element', 'aggregation'],
+                    allowedFilter: ['item', 'year', 'element'],
                     deniedTemplateFilter: [],
                     filter: {
-                        // TODO: remove the area (in theory should be automatically detected from the domain dimensions/schema)
-                        area: ["5000>", "351"],
-                        "group_by": 'year',
-                        "order_by": 'area'
+                        area: ["5000>", "351"]
                     }
                 },
                 {
                     type: 'chart',
                     class: "col-xs-12",
 
-                    // labels
+                    // labels?
                     labels: {
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "{{item}} {{element}}",
-                                fr: "{{item}} {{element}}",
-                                es: "{{item}} {{element}}"
+                                en: "xxxxxx, {{item}}",
+                                fr: "xxxxxx, {{item}}",
+                                es: "xxxxxx, {{item}}",
                             },
                             subtitle: "{{year}}"
                         }
@@ -155,28 +155,27 @@ define([
                             xDimensions: 'year',
                             yDimensions: 'unit',
                             valueDimensions: 'value',
-                            seriesDimensions: ['item', 'element']
+                            seriesDimensions: ['area', 'item', 'element']
                         },
                         template: {},
                         creator: {}
                     },
-                    allowedFilter: ['item', 'year', 'element', 'area'],
-                    //deniedOnLoadFilter: ['area'],
+                    allowedFilter: ['area', 'year', 'item', 'element'],
+                    deniedOnLoadFilter: ['area'],
                     filter: {
+                        area: ["5000", "5848", "5849"]
                     }
                 },
                 {
                     type: 'chart',
                     class: "col-xs-12",
 
-                    // labels
                     labels: {
-                        // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Top 10 items -  {{element}}",
-                                fr: "10 items principaux -  {{element}}",
-                                es: "Los 10 items principales -  {{element}}"
+                                en: "Emissions by continent, {{item}}",
+                                fr: "Émissions par continent, {{item}}",
+                                es: "Emisiones por continente, {{item}}"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -185,46 +184,82 @@ define([
                     config: {
                         adapter: {
                             adapterType: 'faostat',
-                            type: "standard",
-                            xDimensions: ['item'],
-                            yDimensions: 'unit',
+                            type: "pie",
+                            xDimensions: null,
+                            yDimensions: null,
                             valueDimensions: 'value',
-                            seriesDimensions: ['element']
+                            seriesDimensions: ['area']
                         },
                         template: {
-                            //height:'250px'
-                            // default labels to be applied
+                            height: '250px'
                         },
-                        creator: {
-                            chartObj: {
-                                chart: {
-                                    type: "column"
-                                }
-                            }
-                        }
+                        creator: {}
                     },
-                    allowedFilter: ['area', 'year', 'element', 'aggregation'],
-                    //allowedFilter: ['item', 'year', 'element', 'aggregation'],
-                    deniedTemplateFilter: [],
+                    allowedFilter: ['year', 'item', 'aggregation'],
                     filter: {
-                        area: ["5000>"],
+                        // TODO: remove the area (in theory should be automatically detected from the domain dimensions/schema)
+                        area: ["5100", "5200", "5300", "5400", "5500"],
                         "group_by": 'year',
-                        "order_by": 'value DESC',
-                        "limit": '10'
+                        "order_by": 'area'
                     }
                 },
                 {
                     type: 'chart',
                     class: "col-xs-12",
 
-                    // labels
+                    labels: {
+                        template: {
+                            title: {
+                                en: "****, {{area}}",
+                                fr: "*****, {{area}}",
+                                es: "*****, {{area}}"
+                            },
+                            subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
+                        }
+                    },
+
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "pie",
+                            xDimensions: null,
+                            yDimensions: null,
+                            valueDimensions: 'value',
+                            seriesDimensions: ['item']
+                        },
+                        template: {
+                            height: '250px'
+                        },
+                        creator: {
+                            /*chartObj: {
+                             legend: {
+                             layout: 'vertical',
+                             align: 'right',
+                             verticalAlign: 'middle'
+                             }
+                             }*/
+                        }
+                    },
+                    allowedFilter: ['area', 'year', 'aggregation'],
+                    filter: {
+                        //item: [1757, 1759, 1749, 1048],
+                        item: ["1755>"],
+                        "group_by": 'year',
+                        "order_by": 'item'
+                    }
+                },
+                {
+                    type: 'chart',
+                    class: "col-xs-12",
+
+                    // labels?
                     labels: {
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Top 10 countries - {{item}} {{element}}",
-                                fr: "10 pays principaux - {{item}} {{element}}",
-                                es: "Los 10 países principales - {{item}} {{element}}"
+                                en: "Top 10 ****, {{item}}",
+                                fr: "10 ****, {{item}}",
+                                es: "Los 10 ****, {{item}}"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -234,13 +269,13 @@ define([
                         adapter: {
                             adapterType: 'faostat',
                             type: "standard",
-                            xDimensions: ['area'],
+                            xDimensions: ['element'],
                             yDimensions: 'unit',
                             valueDimensions: 'value',
-                            seriesDimensions: ['item', 'element']
+                            seriesDimensions: ['area']
                         },
                         template: {
-                            //height:'250px'
+                            height:'250px'
                             // default labels to be applied
                         },
                         creator: {
@@ -251,7 +286,7 @@ define([
                             }
                         }
                     },
-                    allowedFilter: ['item', 'year', 'element', 'aggregation'],
+                    allowedFilter: ['year', 'item', 'element', 'aggregation'],
                     deniedTemplateFilter: [],
                     filter: {
                         area: ["5000>"],
