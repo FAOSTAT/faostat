@@ -33,7 +33,7 @@ define([
                     },
                     "config": {
                         "dimension_id": "item",
-                        "defaultCodes": ["1107"],
+                        "defaultCodes": ["1757"],
                         "filter": {
                             //whitelist: [1711, 6822]
                         }
@@ -173,9 +173,9 @@ define([
                     labels: {
                         template: {
                             title: {
-                                en: "Emissions by continent, {{item}}",
-                                fr: "Émissions par continent, {{item}}",
-                                es: "Emisiones por continente, {{item}}"
+                                en: "*****, {{item}}",
+                                fr: "*****, {{item}}",
+                                es: "*****, {{item}}"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -248,18 +248,19 @@ define([
                         "order_by": 'item'
                     }
                 },
+
                 {
                     type: 'chart',
                     class: "col-xs-12",
 
-                    // labels?
+                    // labels
                     labels: {
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Top 10 ****, {{item}}",
-                                fr: "10 ****, {{item}}",
-                                es: "Los 10 ****, {{item}}"
+                                en: "Top 10 countries - {{item}} {{element}}",
+                                fr: "10 pays principaux - {{item}} {{element}}",
+                                es: "Los 10 países principales - {{item}} {{element}}"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -269,13 +270,13 @@ define([
                         adapter: {
                             adapterType: 'faostat',
                             type: "standard",
-                            xDimensions: ['element'],
+                            xDimensions: ['area'],
                             yDimensions: 'unit',
                             valueDimensions: 'value',
-                            seriesDimensions: ['area']
+                            seriesDimensions: ['item', 'element']
                         },
                         template: {
-                            height:'250px'
+                            //height:'250px'
                             // default labels to be applied
                         },
                         creator: {
@@ -286,7 +287,7 @@ define([
                             }
                         }
                     },
-                    allowedFilter: ['year', 'item', 'element', 'aggregation'],
+                    allowedFilter: ['item', 'year', 'element', 'aggregation'],
                     deniedTemplateFilter: [],
                     filter: {
                         area: ["5000>"],
