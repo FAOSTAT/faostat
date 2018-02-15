@@ -192,7 +192,17 @@ define([
                         template: {
                             height: '250px'
                         },
-                        creator: {}
+                        creator: {
+                            chartObj: {
+                                plotOptions: {
+                                    pie: {
+                                        showInLegend: false
+                                    }
+                                }
+                            }
+
+                        }
+
                     },
                     allowedFilter: ['year', 'item', 'element', 'aggregation'],
                     //allowedFilter: ['area', 'year', 'element','aggregation'],
@@ -228,14 +238,21 @@ define([
                             yDimensions: null,
                             valueDimensions: 'value',
                             seriesDimensions: ['item'],
+
                             decimalPlaces: 2
                         },
 
-                    ////showInLegend: false,
                         template: {
                             height: '300px'
                         },
                         creator: {
+                            chartObj: {
+                                plotOptions: {
+                                    pie: {
+                                        showInLegend: false
+                                    }
+                                }
+                            }
                         }
                     },
                     //'area',
