@@ -23,9 +23,7 @@ define([
                     "id": "item",
                     "type": "codelist",
                     "parameter": "item",
-                    "title": {
-                        "en": "Item"
-                    },
+
                     "componentType": {
                         "class": "col-xs-4 col-sx-4 col-md-4",
                         "type": "dropDownList"
