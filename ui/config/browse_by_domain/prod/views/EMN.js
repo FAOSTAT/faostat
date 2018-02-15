@@ -115,9 +115,9 @@ define([
                         // temp[late to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Shares by country of sector {{item}} for {{element}}",
-                                fr: "Parts par pays du secteur {{item}} pour {{element}}",
-                                es: "Cuotas por país del sector {{item}} par {{element}}"
+                                en: "{{element}} by {{item}}",
+                                fr: "{{element}} par {{item}}",
+                                es: "{{element}} de {{item}}"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -140,9 +140,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "xxxxxx, {{item}}",
-                                fr: "xxxxxx, {{item}}",
-                                es: "xxxxxx, {{item}}",
+                                en: "{{element}} by {{item}}",
+                                fr: "{{element}} par {{item}}",
+                                es: "{{element}} de {{item}}"
                             },
                             subtitle: "{{year}}"
                         }
@@ -173,9 +173,9 @@ define([
                     labels: {
                         template: {
                             title: {
-                                en: "*****, {{item}}",
-                                fr: "*****, {{item}}",
-                                es: "*****, {{item}}"
+                                en: "{{element}}, {{item}} by continent",
+                                fr: "{{element}}, {{item}} par continent",
+                                es: "{{element}}, {{item}} por continent"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -203,19 +203,21 @@ define([
                         "order_by": 'area'
                     }
                 },
+
                 {
                     type: 'chart',
-                    class: "col-xs-12",
+                    class: "col-md-12",
 
                     labels: {
                         template: {
                             title: {
-                                en: "****, {{area}}",
-                                fr: "*****, {{area}}",
-                                es: "*****, {{area}}"
+                                en: "{{element}}, {{area}}",
+                                fr: "{{element}}, {{area}}",
+                                es: "{{element}}, {{area}}"
                             },
-                            subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
+                            subtitle: "{{area}}, {{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
+
                     },
 
                     config: {
@@ -225,29 +227,47 @@ define([
                             xDimensions: null,
                             yDimensions: null,
                             valueDimensions: 'value',
-                            seriesDimensions: ['item']
+                            seriesDimensions: ['item'],
+                            decimalPlaces: 2
                         },
                         template: {
-                            height: '250px'
+                            height: '300px'
                         },
                         creator: {
-                            /*chartObj: {
-                             legend: {
-                             layout: 'vertical',
-                             align: 'right',
-                             verticalAlign: 'middle'
-                             }
-                             }*/
                         }
                     },
-                    allowedFilter: ['area', 'year', 'aggregation'],
+                    //'area',
+                    allowedFilter: ['area', 'year', 'element','aggregation'],
+
                     filter: {
-                        //item: [1757, 1759, 1749, 1048],
-                        item: ["1755>"],
+                        //area: ["5100", "5200", "5300", "5400", "5500"],
+
+                        item: [
+                            946,
+                            960,
+                            961,
+                            976,
+                            1016,
+                            1048,
+                            1049,
+                            1051,
+                            1052,
+                            1053,
+                            1054,
+                            1068,
+                            1079,
+                            1096,
+                            1107,
+                            1110,
+                            1126,
+                            1177
+                        ],
+                        area: ["5000>", "351"],
                         "group_by": 'year',
-                        "order_by": 'item'
+                        "order_by": 'area'
                     }
                 },
+
 
                 {
                     type: 'chart',
@@ -258,9 +278,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Top 10 countries - {{item}} {{element}}",
-                                fr: "10 pays principaux - {{item}} {{element}}",
-                                es: "Los 10 países principales - {{item}} {{element}}"
+                                en: "Top 10 areas by {{element}}, {{item}}",
+                                fr: "Les 10 pays principaux par {{element}}, {{item}}",
+                                es: "Los 10 países principals segun  {{element}}, {{item}}",
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
