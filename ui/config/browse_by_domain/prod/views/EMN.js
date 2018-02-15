@@ -24,7 +24,7 @@ define([
                     "type": "codelist",
                     "parameter": "item",
                     "title": {
-                        "en": "Sector"
+                        "en": "Item"
                     },
                     "componentType": {
                         "class": "col-xs-4 col-sx-4 col-md-4",
@@ -55,7 +55,6 @@ define([
                         }
                     }
                 },
-
                 {
                     // id to be applied on the getData request
                     "id": "area",
@@ -195,7 +194,8 @@ define([
                         },
                         creator: {}
                     },
-                    allowedFilter: ['year', 'item', 'aggregation'],
+                    allowedFilter: ['year', 'item', 'element', 'aggregation'],
+                    //allowedFilter: ['area', 'year', 'element','aggregation'],
                     filter: {
                         // TODO: remove the area (in theory should be automatically detected from the domain dimensions/schema)
                         area: ["5100", "5200", "5300", "5400", "5500"],
@@ -230,6 +230,8 @@ define([
                             seriesDimensions: ['item'],
                             decimalPlaces: 2
                         },
+
+                    ////showInLegend: false,
                         template: {
                             height: '300px'
                         },
