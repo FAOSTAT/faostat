@@ -211,7 +211,6 @@ define([
                         "order_by": 'area'
                     }
                 },
-
                 {
                     type: 'chart',
                     class: "col-md-12",
@@ -284,8 +283,6 @@ define([
                         "order_by": 'area'
                     }
                 },
-
-
                 {
                     type: 'chart',
                     class: "col-xs-12",
@@ -297,7 +294,7 @@ define([
                             title: {
                                 en: "Top 10 areas by {{element}}, {{item}}",
                                 fr: "Les 10 pays principaux par {{element}}, {{item}}",
-                                es: "Los 10 países principals segun  {{element}}, {{item}}",
+                                es: "Los 10 países principales según {{element}}, {{item}}",
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
