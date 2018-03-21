@@ -1,4 +1,55 @@
 <template id="main_structure">
+    <div id="infoForm_modal" style="display: none;width:400px; ">
+        <div class="modal" data-backdrop="static" data-keyboard="false" id="infoForm_modal_contentBody" style="background-color: white; opacity: 1.0; top: 15%;">
+
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <br><br>
+                    <label for="name"> Please fill in the following form before downloading the data</label>
+
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <label for="name">Full Name</label>
+                    <input type="name" class="form-control" id="name" placeholder="Enter full name" name="name">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <label for="email">Email Addres</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email address" name="email">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <label for="institution">Institution</label>
+                    <input type="institution" class="form-control" id="institution" placeholder="Enter Institution" name="institution">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-xs-3 col-xs-offset-2">
+                    <div id="captcha_element"></div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-xs-3 col-xs-offset-5">
+                    <button type="button" class="btn btn-default" id="infoFormSubmit">Submit</button>
+                </div>
+            </div>
+            <div class="row">
+                <div id ='infoFormError' class="col-xs-11 col-xs-offset-2" style="display: none; color: red">
+                    <h5>userInfoFormErrorMsg</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <div class="panel panel-default hoverable">
         <div class="panel-body">
 
@@ -50,3 +101,5 @@
         <span data-role="text">{{onboarding_text}}</span>
     </a>
 </template>
+
+
