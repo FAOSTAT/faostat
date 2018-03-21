@@ -32,6 +32,8 @@ define(['jquery',
             decimal_numbers: false,
             show_options: true,
             output_type: true,
+            show_export_type: true,
+
 
             pdf_button_id: 'pdf_button_id',
             csv_button_id: 'csv_button_id',
@@ -58,6 +60,9 @@ define(['jquery',
 
             table_value: true,
             pivot_value: false,
+
+            excel_value: false,
+            type_csv_value: true,
 
             callback: {
                 onDecimalSeparatorChange: null,
@@ -129,6 +134,7 @@ define(['jquery',
             period_label: translate.period,
             excel: this.CONFIG.excel_button,
             show_options: this.CONFIG.show_options,
+            show_export_type:this.CONFIG.show_options,
             null_values_label: translate.null_values,
             decimal_numbers: this.CONFIG.decimal_numbers,
             decimal_numbers_label: translate.decimal_numbers,
@@ -154,8 +160,16 @@ define(['jquery',
             pivot_label: translate.pivot,
             output_type_table_checked: this.CONFIG.table_value === true ? 'checked' : '',
             output_type_pivot_checked: this.CONFIG.pivot_value === true ? 'checked' : '',
+            output_type_excel_checked: this.CONFIG.type_excel_value === true ? 'checked' : '',
             table_value: this.CONFIG.table_value,
             pivot_value: this.CONFIG.pivot_value,
+            excel_value: this.CONFIG.excel_value,
+           // output_export_type_excel_checked: this.CONFIG.type_excel_value === true ? 'checked' : '',
+           // output_export_type_csv_checked: this.CONFIG.type_csv_value === true ? 'checked' : '',
+
+            type_excelcsv_value:this.CONFIG.type_csv_value,
+
+           // export_type_label: 'Download Data',
             none : translate.none
         };
         html = template(dynamic_data);
@@ -212,6 +226,13 @@ define(['jquery',
         });
         $('#' + this.CONFIG.prefix + 'output_type_pivot').off();
         $('#' + this.CONFIG.prefix + 'output_type_pivot').change(function () {
+            if (that.CONFIG.callback.onOutputTypeChange) {
+                that.CONFIG.callback.onOutputTypeChange($(this).is(':checked'));
+            }
+            amplify.publish(E.DOWNLOAD_SELECTION_CHANGE);
+        });
+        $('#' + this.CONFIG.prefix + 'output_type_excel').off();
+        $('#' + this.CONFIG.prefix + 'output_type_excel').change(function () {
             if (that.CONFIG.callback.onOutputTypeChange) {
                 that.CONFIG.callback.onOutputTypeChange($(this).is(':checked'));
             }
@@ -288,6 +309,7 @@ define(['jquery',
         $('#' + this.CONFIG.prefix + 'thousand_separator_period').change(function () { that.option_changed_listener(); });
         $('#' + this.CONFIG.prefix + 'output_type').change(function () { that.option_changed_listener(); });
         $('#' + this.CONFIG.prefix + 'output_type_pivot').change(function () { that.option_changed_listener(); });
+        $('#' + this.CONFIG.prefix + 'output_type_excel').change(function () { that.option_changed_listener(); });
 
     };
 
@@ -319,9 +341,14 @@ define(['jquery',
         this.CONFIG.user_selection.flags_value = $('#' + this.CONFIG.prefix + 'flags').is(':checked');
         this.CONFIG.user_selection.table_value = $('#' + this.CONFIG.prefix + 'output_type').is(':checked');
         this.CONFIG.user_selection.pivot_value = $('#' + this.CONFIG.prefix + 'output_type_pivot').is(':checked');
+        this.CONFIG.user_selection.excel_value = $('#' + this.CONFIG.prefix + 'output_type_excel').is(':checked');
         this.CONFIG.user_selection.codes_value = $('#' + this.CONFIG.prefix + 'codes').is(':checked');
         this.CONFIG.user_selection.units_value = $('#' + this.CONFIG.prefix + 'unit').is(':checked');
         this.CONFIG.user_selection.null_values_value = $('#' + this.CONFIG.prefix + 'null_values').is(':checked');
+
+
+        //this.CONFIG.user_selection.csv_value = $('#' + this.CONFIG.prefix + 'export_type_csv').is(':checked');
+
         if (output_format) {
             this.CONFIG.user_selection.origin = output_format;
             this.CONFIG.user_selection.output_format = output_format;
@@ -364,9 +391,13 @@ define(['jquery',
         this.CONFIG.user_selection.flags_value = $('#' + this.CONFIG.prefix + 'flags').is(':checked');
         this.CONFIG.user_selection.table_value = $('#' + this.CONFIG.prefix + 'output_type').is(':checked');
         this.CONFIG.user_selection.pivot_value = $('#' + this.CONFIG.prefix + 'output_type_pivot').is(':checked');
+        this.CONFIG.user_selection.excel_value = $('#' + this.CONFIG.prefix + 'output_type_excel').is(':checked');
         this.CONFIG.user_selection.codes_value = $('#' + this.CONFIG.prefix + 'codes').is(':checked');
+        this.CONFIG.user_selection.output_type_value = $('input[name="' + this.CONFIG.prefix + 'output_type"]:checked').val();
         this.CONFIG.user_selection.units_value = $('#' + this.CONFIG.prefix + 'unit').is(':checked');
         this.CONFIG.user_selection.null_values_value = $('#' + this.CONFIG.prefix + 'null_values').is(':checked');
+
+        //this.CONFIG.user_selection.csv_value = $('#' + this.CONFIG.prefix + 'export_type_csv').is(':checked');
         if (output_format) {
             this.CONFIG.user_selection.origin = output_format;
             this.CONFIG.user_selection.output_format = output_format;
@@ -375,7 +406,8 @@ define(['jquery',
 
 
         var obj = {
-            type: this.CONFIG.user_selection.table_value? 'table' : 'pivot',
+           // type: this.CONFIG.user_selection.table_value? 'table' : 'pivot',
+            type:this.CONFIG.user_selection.output_type_value.toLowerCase(),
             options: {
                 thousand_separator: this.CONFIG.user_selection.thousand_separator_value,
                 decimal_separator:  this.CONFIG.user_selection.thousand_separator_value === '.' ? ',' : '.',
@@ -404,6 +436,7 @@ define(['jquery',
         $('#' + this.CONFIG.prefix + 'flags').off();
         $('#' + this.CONFIG.prefix + 'output_type').off();
         $('#' + this.CONFIG.prefix + 'output_type_pivot').off();
+        $('#' + this.CONFIG.prefix + 'output_type_excel').off();
         $('#' + this.CONFIG.prefix + 'decimal_numbers').off();
         $('#' + this.CONFIG.prefix + 'decimal_separator').off();
         $('#' + this.CONFIG.prefix + 'decimal_separator_period').off();
