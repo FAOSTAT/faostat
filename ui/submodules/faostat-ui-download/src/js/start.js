@@ -1090,6 +1090,11 @@ define([
                 }
                 if (userEmail.trim() == "") {
                     errModal = errModal + "Email\n";
+                }else{
+                    if (!InteractiveDownload.prototype.checkEmail(userEmail.trim())) {
+                        errModal = errModal + "Icorrect Email\n";
+                    }
+
                 }
                 if (userInstitution.trim() == "") {
                     errModal = errModal + "Institution\n";
