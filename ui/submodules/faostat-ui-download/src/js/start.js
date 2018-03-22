@@ -1086,13 +1086,13 @@ define([
                 var errModal="";
 
                 if (userFullName.trim() == "") {
-                    errModal = errModal + "Full name\n";
+                    errModal = errModal + "Full Name\n";
                 }
                 if (userEmail.trim() == "") {
-                    errModal = errModal + "Email\n";
+                    errModal = errModal + "Email Address\n";
                 }else{
                     if (!InteractiveDownload.prototype.checkEmail(userEmail.trim())) {
-                        errModal = errModal + "Icorrect Email\n";
+                        errModal = errModal + "Incorrect Email Address\n";
                     }
 
                 }
