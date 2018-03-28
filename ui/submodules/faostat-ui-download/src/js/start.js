@@ -953,7 +953,11 @@ define([
                     var userFullName = $("#name").val();
                     var userEmail =  $("#email").val();
                     var userInstitution = $("#institution").val();
+                    var userTypeInstitution = $("#typeInstitution").val();//190535668
                     var readValue="";
+
+
+
                     var checkFieldsInModal=InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution);
 
                     if (checkFieldsInModal){
@@ -963,7 +967,7 @@ define([
 
                             $.ajax({
                                 url: baseURL,
-                                data: {"entry.736113539": userFullName, "entry.1981219848": userEmail ,"entry.383138043": userInstitution},
+                                data: {"entry.736113539": userFullName, "entry.1981219848": userEmail ,"entry.383138043": userInstitution, "entry.190535668": userTypeInstitution},
                                 type: "POST",
                                 //dataType: "xml",
 
