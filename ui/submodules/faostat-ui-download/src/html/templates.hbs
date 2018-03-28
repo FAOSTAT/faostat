@@ -26,11 +26,43 @@
             <br>
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
-                    <label for="institution">Institution</label>
-                    <input type="institution" class="form-control" id="institution" placeholder="Enter Institution" name="institution">
+                    <!--input type='radio' value='Table' name='{{prefix}}output_type' id='{{prefix}}output_type' {{output_type_table_checked}}-->
+                    <label for="{{prefix}}output_type">{{table_label}}</label>
+                    <label for="institution">Type Institution</label>
+                    <div>
+                    <select id="typeInstitution" style="height: 35px; width: 100%;  border-radius: 8px 8px 8px 8px; font-family: Open Sans,sans-serif;" name="institutionType" >
+
+                        <option value="Ministry">Ministry</option>
+
+                        <option value="National Statistical Office">National Statistical Office</option>
+
+                        <option value="Academia/Research Institute">Academia/Research Institute</option>
+
+                        <option value="Private Sector">Private Sector</option>
+
+                        <option value="Media">Media</option>
+
+                        <option value="NGO/CSO">NGO/CSO</option>
+
+                        <option value="FAO">FAO</option>
+
+                        <option value="Other UN Agencies">Other UN Agencies</option>
+
+                        <option value="Other International Organizations/Financial Institutions">Other International Organizations/Financial Institutions</option>
+
+                        <option value="Other">Other</option>
+                    </select>
+                    </div>
                 </div>
             </div>
             <br>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <label for="institution">Institution</label>
+                    <input type="institution" class="form-control" id="institution" placeholder="Enter Institution" name="institution">
+
+                </div>
+            </div>
             <div class="row">
                 <div class="col-xs-3 col-xs-offset-2">
                     <div id="captcha_element"></div>
