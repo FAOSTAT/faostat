@@ -571,7 +571,7 @@ define([
                                 typeDownload: type
                             };
 
-
+                            /*
                             var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
 
                             if (readValue==""){
@@ -584,31 +584,24 @@ define([
                                 }
 
                             }
+                        */
 
 
 
 
-                          /*
                           switch (type) {
 
                                 case "table":
-                           ///////////*if (!(isCookieUser)) {
-                           ///    self.setPopUpRecognizeUser(d, requestObj, options);
-                           ///    break;
-                           // }else{
-                           //     self.exportTable(d, requestObj, options);
-                           //    break;
-                           //////////// }
                                     self.exportTable(d, requestObj, options);
                                     break;
                                 case "pivot":
                                     self.exportPivot(d, requestObj, options);
                                     break;
                                 case "excel":
-                                    self.exportExcel(d, requestObj, options);
-                                    break;
+                                  //  self.exportExcel(d, requestObj, options);
+                                 //   break;
                             }
-                            */
+
                         }
 
                     }).fail(function (e) {

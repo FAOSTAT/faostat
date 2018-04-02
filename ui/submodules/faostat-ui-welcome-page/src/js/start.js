@@ -29,7 +29,8 @@ define([
             container: 'faostat_ui_welcome_page',
             domain_name: undefined,
             domain_code: undefined,
-            base_url: 'http://faostat3.fao.org/faostat-documents/',
+            //base_url: 'http://faostat333.fao.org/faostat-documents/',
+            base_url: 'http://faostat.fao.org/faostat-documents/',
 
             // TODO: move to a common download section
             sections: [
