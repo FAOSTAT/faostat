@@ -571,7 +571,7 @@ define([
                                 typeDownload: type
                             };
 
-                            /*
+
                             var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
 
                             if (readValue==""){
@@ -584,11 +584,11 @@ define([
                                 }
 
                             }
-                        */
 
 
 
 
+                             /*
                           switch (type) {
 
                                 case "table":
@@ -601,7 +601,7 @@ define([
                                   //  self.exportExcel(d, requestObj, options);
                                  //   break;
                             }
-
+                        */
                         }
 
                     }).fail(function (e) {
@@ -937,6 +937,37 @@ define([
             InteractiveDownload.prototype.bindEventListeners = function () {
 
                 var self = this;
+
+
+                $("#typeInstitution").off('change');
+                $("#typeInstitution").on('change', function () {
+
+                    var typeInstitution = $("#typeInstitution").val();
+                    var otherInstitution = $("#otherInstitution");
+                    var visibleFieldType=false;
+
+                    switch (typeInstitution) {
+                        case "Other UN Agencies":
+                            visibleFieldType=true;
+                            break;
+                        case "Other International Organizations/Financial Institutions":
+                            visibleFieldType=true;
+                            break;
+                        case "Other":
+                            visibleFieldType=true;
+                            break;
+                    }
+
+                    if (visibleFieldType){
+                        otherInstitution.show();;
+                    }else{
+                        otherInstitution.hide();
+                        otherInstitution.val("");
+                    }
+
+                });
+
+
                 $("#infoFormSubmit").off('click');
                 $("#infoFormSubmit").on('click', function () {
                     //https://docs.google.com/forms/d/140kz5_XSt-tKqT57Aj_EueZwH4UpRbCUaI0Dyh1SlIY/edit#responses
@@ -945,13 +976,16 @@ define([
                     var submitRef = '&submit=Submit';
                     var userFullName = $("#name").val();
                     var userEmail =  $("#email").val();
+                    var userCountry =  $("#CountryUser").val();
                     var userInstitution = $("#institution").val();
+                    var typeInstitution = $("#typeInstitution").val();
+                    var otherInstitution = $("#otherInstitution").val();
                     var userTypeInstitution = $("#typeInstitution").val();//190535668
                     var readValue="";
 
 
 
-                    var checkFieldsInModal=InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution);
+                    var checkFieldsInModal=InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution,userCountry,typeInstitution,otherInstitution);
 
                     if (checkFieldsInModal){
                         var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
@@ -1079,11 +1113,30 @@ define([
 
             };
 
-            InteractiveDownload.prototype.checkFields = function (userFullName, userEmail, userInstitution) {
+            InteractiveDownload.prototype.checkFields = function (userFullName, userEmail, userInstitution, userCountry, typeInstitution, otherInstitution) {
                 var errModal="";
+                var visibleFieldType=false;
+
+                switch (typeInstitution) {
+                    case "Other UN Agencies":
+                        visibleFieldType=true;
+                        break;
+                    case "Other International Organizations/Financial Institutions":
+                        visibleFieldType=true;
+                        break;
+                    case "Other":
+                        visibleFieldType=true;
+                        break;
+                }
 
                 if (userFullName.trim() == "") {
                     errModal = errModal + "Full Name\n";
+                }
+                if ((visibleFieldType)&& (otherInstitution.trim() == "")) {
+                    errModal = errModal + "Other Institution\n";
+                }
+                if (userCountry.trim() == "") {
+                    errModal = errModal + "Country\n";
                 }
                 if (userEmail.trim() == "") {
                     errModal = errModal + "Email Address\n";
