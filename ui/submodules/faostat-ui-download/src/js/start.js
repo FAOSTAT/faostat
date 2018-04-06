@@ -994,7 +994,7 @@ define([
 
                             $.ajax({
                                 url: baseURL,
-                                data: {"entry.736113539": userFullName, "entry.1981219848": userEmail ,"entry.383138043": userInstitution, "entry.190535668": userTypeInstitution},
+                                data: {"entry.736113539": userFullName, "entry.1981219848": userEmail ,"entry.383138043": userInstitution, "entry.190535668": userTypeInstitution, "entry.1226833010": userCountry, "entry.1009202517": otherInstitution},
                                 type: "POST",
                                 //dataType: "xml",
 
