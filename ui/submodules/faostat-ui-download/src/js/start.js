@@ -571,7 +571,7 @@ define([
                                 typeDownload: type
                             };
 
-
+                            /*
                             var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
 
                             if (readValue==""){
@@ -585,10 +585,10 @@ define([
 
                             }
 
+                             */
 
 
 
-                             /*
                           switch (type) {
 
                                 case "table":
@@ -601,7 +601,7 @@ define([
                                   //  self.exportExcel(d, requestObj, options);
                                  //   break;
                             }
-                        */
+
                         }
 
                     }).fail(function (e) {

@@ -7,6 +7,7 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
 
         // bulk downloads
         bulk_download: "Пакетная загрузка",
+        database_description:"Database description",
         all_faostat_data: "Все данные ФАОСТАТ",
         updated_on: "Обновлено",
 
