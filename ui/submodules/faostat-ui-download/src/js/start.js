@@ -571,7 +571,7 @@ define([
                                 typeDownload: type
                             };
 
-                            /*
+
                             var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
 
                             if (readValue==""){
@@ -585,9 +585,9 @@ define([
 
                             }
 
-                             */
 
 
+                             /*
 
                           switch (type) {
 
@@ -601,7 +601,7 @@ define([
                                   //  self.exportExcel(d, requestObj, options);
                                  //   break;
                             }
-
+                        */
                         }
 
                     }).fail(function (e) {
@@ -967,40 +967,109 @@ define([
 
                 });
 
+                $("#FirstTimeRadioYes").off('click');
+                $("#FirstTimeRadioYes").on('click', function () {
+                    $("#infoSurvey").show();
+
+                });
+
+                $("#FirstTimeRadioNo").off('click');
+                $("#FirstTimeRadioNo").on('click', function () {
+                    $("#infoSurvey").hide();
+                });
 
                 $("#infoFormSubmit").off('click');
                 $("#infoFormSubmit").on('click', function () {
+
+                    //https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/viewform?usp=pp_url&entry.736113539=massimiliano+solina&entry.1105035716=massimiliano.solina@gmail.com&entry.383138043=Italy&entry.190535668=FAO&entry.1226833010=Student/educator&entry.2069720957=Yes&entry.632860769=Strongly+Disagree&entry.1733962598=Strongly+Disagree&entry.1809401444=Strongly+Disagree&entry.950429869=Strongly+Disagree&entry.433840719=Strongly+Disagree&entry.1354653395=test&entry.1883206493=Yes
+                    https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?entry.736113539=massimiliano+solina&entry.1105035716=massimiliano.solina@gmail.com&entry.383138043=Italy&entry.190535668=FAO&entry.1226833010=Student/educator&entry.2069720957=Yes&entry.632860769=Strongly+Disagree&entry.1733962598=Strongly+Disagree&entry.1809401444=Strongly+Disagree&entry.950429869=Strongly+Disagree&entry.433840719=Strongly+Disagree&entry.1354653395=test&entry.1883206493=Yes&submit=Submit
+
+                    //https://wiki.base22.com/btg/send-data-to-google-docs-using-a-web-form-and-ajax-72942000.html
                     //https://docs.google.com/forms/d/140kz5_XSt-tKqT57Aj_EueZwH4UpRbCUaI0Dyh1SlIY/edit#responses
                     // https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?entry.736113539=aaaaaaaa&entry.1981219848=bbbbbbb&entry.383138043=ccccccccc&submit=Submit
-                    var baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?';
+                    var parametersURL ="";
+                    var baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?';//https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?';//'https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?'; //'https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?';
                     var submitRef = '&submit=Submit';
-                    var userFullName = $("#name").val();
-                    var userEmail =  $("#email").val();
-                    var userCountry =  $("#CountryUser").val();
-                    var userInstitution = $("#institution").val();
-                    var typeInstitution = $("#typeInstitution").val();
-                    var otherInstitution = $("#otherInstitution").val();
-                    var userTypeInstitution = $("#typeInstitution").val();//190535668
+                    var submitURL = '';
+
+                    var userEmail =  $("#email").val();//1105035716
+                    var userFullName = $("#name").val();//736113539
+                    var userCountry =  $("#CountryUser").val();//383138043
+                    var userInstitution = $("#institution").val();//190535668
+                    var typeInstitution = $("#typeInstitution").val();//1226833010
+
+
+                    var firstTimeRadio = $("input[name='FirstTime']:checked").val();//2069720957
+                    var QualityDim01 = $("input[name='QualityDim01']:checked").val();//632860769
+                    var QualityDim02 = $("input[name='QualityDim02']:checked").val();//1733962598
+                    var QualityDim03 = $("input[name='QualityDim03']:checked").val();//1809401444
+                    var QualityDim04 = $("input[name='QualityDim04']:checked").val();//950429869
+                    var QualityDim05 = $("input[name='QualityDim05']:checked").val();//433840719
+                    var suggestions = $("#suggestions").val();//1354653395
+                    var Thank_you = $("input[name='Thank_you']:checked").val();//1883206493
+
                     var readValue="";
 
+                    parametersURL = parametersURL +  "entry.1105035716=" + userEmail + "&"
+                    parametersURL = parametersURL +  "entry.736113539=" + userFullName + "&"
+                    parametersURL = parametersURL +  "entry.383138043=" + userCountry + "&"
+                    parametersURL = parametersURL +  "entry.190535668=" + userInstitution + "&"
+                    parametersURL = parametersURL +  "entry.1226833010=" + typeInstitution + "&"
+                    parametersURL = parametersURL +  "entry.2069720957=" + firstTimeRadio + "&"
+                    parametersURL = parametersURL +  "entry.632860769=" + QualityDim01 + "&"
+                    parametersURL = parametersURL +  "entry.1733962598=" + QualityDim02 + "&"
+                    parametersURL = parametersURL +  "entry.1809401444=" + QualityDim03 + "&"
+                    parametersURL = parametersURL +  "entry.950429869=" + QualityDim04 + "&"
+                    parametersURL = parametersURL +  "entry.433840719=" + QualityDim05 + "&"
+                    parametersURL = parametersURL +  "entry.1354653395=" + suggestions + "&"
+                    parametersURL = parametersURL +  "entry.1883206493=" + Thank_you
 
+                    submitURL = (baseURL + parametersURL + submitRef);
+                    /*if(firstTimeRadio){
+                        alert("Your are a - " + firstTimeRadio);
+                    }else{alert('no checked')}
+                    if(QualityDim01){
+                        alert("Your are a - " + QualityDim01);
+                    }else{alert('no checked')}
+                    if(QualityDim02){
+                        alert("Your are a - " + QualityDim02);
+                    }else{alert('no checked')}
+*/
 
-                    var checkFieldsInModal=InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution,userCountry,typeInstitution,otherInstitution);
+                   // var checkFieldsInModal=InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution,userCountry,typeInstitution,otherInstitution);
+                    var checkFieldsInModal=true;
 
                     if (checkFieldsInModal){
-                        var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
+                        //var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
 
                         if (readValue==""){
 
                             $.ajax({
-                                url: baseURL,
-                                data: {"entry.736113539": userFullName, "entry.1981219848": userEmail ,"entry.383138043": userInstitution, "entry.190535668": userTypeInstitution, "entry.1226833010": userCountry, "entry.1009202517": otherInstitution},
+                               url: submitURL,
+                               // data: {"entry.736113539": userFullName, "entry.1981219848": userEmail ,"entry.383138043": userInstitution, "entry.190535668": userTypeInstitution, "entry.1226833010": userCountry, "entry.1009202517": otherInstitution},
+                               // data: {"entry.736113539": userFullName, "entry.1981219848": userEmail ,"entry.383138043": userInstitution, "entry.190535668": typeInstitution, "entry.1226833010": userCountry},
+                              /* data: {
+                                    "entry.1105035716": userEmail ,
+                                    "entry.736113539": userFullName,
+                                    "entry.383138043": userCountry,
+                                    "entry.190535668": userInstitution,
+                                    "entry.1226833010": typeInstitution,
+                                    "entry.2069720957": firstTimeRadio,
+                                    "entry.632860769": QualityDim01,
+                                    "entry.1733962598": QualityDim02,
+                                    "entry.1809401444": QualityDim03,
+                                    "entry.950429869": QualityDim04,
+                                    "entry.433840719": QualityDim05,
+                                    "entry.1354653395": suggestions,
+                                    "entry.1883206493": Thank_you
+                                },*/
                                 type: "POST",
-                                //dataType: "xml",
+                                dataType: "xml",
 
                                 success: function(data) {
+                                    alert('success' + data);
                                     /*
-                                     alert('success' + data);
+
                                      self.exportTable(exp_options.d, exp_options.requestObj, exp_options.options);
                                      $("#infoForm_modal").modal('hide');
                                      */
@@ -1022,7 +1091,7 @@ define([
 
                             });
 
-                            InteractiveDownload.prototype.setCookie('myUserCookie', userEmail, 1, '/');
+                           // InteractiveDownload.prototype.setCookie('myUserCookie', userEmail, 1, '/');
                         }
 
                     }
