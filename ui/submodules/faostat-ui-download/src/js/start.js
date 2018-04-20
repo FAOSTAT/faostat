@@ -994,6 +994,8 @@ define([
                     var submitURL = '';
 
                     var userEmail =  $("#email").val();//1105035716
+                    var re_email =  $("#re_email").val();//1105035716
+
                     var userFullName = $("#name").val();//736113539
                     var userCountry =  $("#CountryUser").val();//383138043
                     var userInstitution = $("#institution").val();//190535668
@@ -1037,7 +1039,7 @@ define([
                     }else{alert('no checked')}
 */
 
-                    var checkFieldsInModal=InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution,userCountry,typeInstitution,otherInstitution);
+                    var checkFieldsInModal=InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution,userCountry,typeInstitution,re_email);
                    // var checkFieldsInModal=true;
 
                     if (checkFieldsInModal){
@@ -1183,11 +1185,11 @@ define([
 
             };
 
-            InteractiveDownload.prototype.checkFields = function (userFullName, userEmail, userInstitution, userCountry, typeInstitution, otherInstitution) {
+            InteractiveDownload.prototype.checkFields = function (userFullName, userEmail, userInstitution, userCountry, typeInstitution,re_email) {
                 var errModal="";
                 var visibleFieldType=false;
 
-                switch (typeInstitution) {
+               /* switch (typeInstitution) {
                     case "Other UN Agencies":
                         visibleFieldType=true;
                         break;
@@ -1198,13 +1200,13 @@ define([
                         visibleFieldType=true;
                         break;
                 }
-
+*/
                 if (userFullName.trim() == "") {
                     errModal = errModal + "Full Name\n";
                 }
-                if ((visibleFieldType)&& (otherInstitution.trim() == "")) {
+               /* if ((visibleFieldType)&& (otherInstitution.trim() == "")) {
                     errModal = errModal + "Other Institution\n";
-                }
+                }*/
                 if (userCountry.trim() == "") {
                     errModal = errModal + "Country\n";
                 }
@@ -1213,7 +1215,12 @@ define([
                 }else{
                     if (!InteractiveDownload.prototype.checkEmail(userEmail.trim())) {
                         errModal = errModal + "Incorrect Email Address\n";
+                    }else{
+                        if ((userEmail.trim())!=(re_email.trim())) {
+                            errModal = errModal + "Incorrect Email Address\n";
+                        }
                     }
+
 
                 }
                 if (userInstitution.trim() == "") {
