@@ -969,13 +969,14 @@ define([
 
                 $("#FirstTimeRadioYes").off('click');
                 $("#FirstTimeRadioYes").on('click', function () {
-                    $("#infoSurvey").show();
+
+                    $("#infoSurvey").hide();
 
                 });
 
                 $("#FirstTimeRadioNo").off('click');
                 $("#FirstTimeRadioNo").on('click', function () {
-                    $("#infoSurvey").hide();
+                    $("#infoSurvey").show();
                 });
 
                 $("#infoFormSubmit").off('click');
@@ -1036,11 +1037,11 @@ define([
                     }else{alert('no checked')}
 */
 
-                   // var checkFieldsInModal=InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution,userCountry,typeInstitution,otherInstitution);
-                    var checkFieldsInModal=true;
+                    var checkFieldsInModal=InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution,userCountry,typeInstitution,otherInstitution);
+                   // var checkFieldsInModal=true;
 
                     if (checkFieldsInModal){
-                        //var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
+                        var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
 
                         if (readValue==""){
 
@@ -1091,7 +1092,7 @@ define([
 
                             });
 
-                           // InteractiveDownload.prototype.setCookie('myUserCookie', userEmail, 1, '/');
+                            InteractiveDownload.prototype.setCookie('myUserCookie', userEmail, 1, '/');
                         }
 
                     }
