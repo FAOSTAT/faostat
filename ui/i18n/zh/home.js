@@ -10,6 +10,7 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
         database_description:"Database description",
         all_faostat_data: "全部粮农组织统计数据库数据",
         updated_on: "更新至",
+        url_json: "datasets_E.json",
 
         // database updates
         database_updates: "数据库更新",

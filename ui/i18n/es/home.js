@@ -41,6 +41,8 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
         database_description:"Descripción de la base de datos",
         all_faostat_data: "Todos los datos de FAOSTAT",
         updated_on: "Actualizado el",
+        url_json: "datasets_S.json",
+        url_xml: "datasets_S.xml",
 
         // database updates
         database_updates: "Actualizaciones de la base de datos",

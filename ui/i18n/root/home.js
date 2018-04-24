@@ -10,6 +10,8 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
         database_description:"Database description",
         all_faostat_data: "All FAOSTAT Data",
         updated_on: "Updated on",
+        url_json: "datasets_E.json",
+        url_xml: "datasets_E.xml",
 
         // database updates
         database_updates: "Database Updates",
