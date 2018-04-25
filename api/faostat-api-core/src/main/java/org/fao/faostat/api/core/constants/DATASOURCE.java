@@ -348,6 +348,7 @@ public enum DATASOURCE {
 
     PRODUCTION,
     INTERNAL,
+    DISSEMINATION,
     QA, // DEV-PRODUCTION
     DEV,
 
