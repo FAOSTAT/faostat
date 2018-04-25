@@ -15,7 +15,7 @@ define([
             "URL_API": "http://fenixservices.fao.org/faostat/api/v1/",
             "DATASOURCE": "production",
             "LOGLEVEL": "silent", // trace/debug/info/warn/error/silent
-            "API_LOG": false,
+            "API_LOG": true,
 
             "JIRA_COLLECTOR": {
                 "ENABLED": false
@@ -100,7 +100,7 @@ define([
         }
 
         if (_s.contains(href, "/latest/")) {
-            o.DATASOURCE = "production";
+            o.DATASOURCE = "dissemination";
         }
 
         if (_s.contains(href, "/dev/internal/")) {
