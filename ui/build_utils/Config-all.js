@@ -100,7 +100,7 @@ define([
         }
 
         if (_s.contains(href, "/latest/")) {
-            o.DATASOURCE = "dissemination";
+            o.DATASOURCE = "internal";//production dissemination
         }
 
         if (_s.contains(href, "/dev/internal/")) {
