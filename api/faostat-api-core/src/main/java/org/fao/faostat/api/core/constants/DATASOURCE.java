@@ -347,7 +347,6 @@ package org.fao.faostat.api.core.constants;
 public enum DATASOURCE {
 
     PRODUCTION,
-    DISSEMINATION,
     INTERNAL,
     QA, // DEV-PRODUCTION
     DEV,

@@ -59,12 +59,6 @@
                 <faostat_internal_url>${faostat_internal_url}</faostat_internal_url>
                 <faostat_internal_user>${faostat_internal_user}</faostat_internal_user>
 
-                <faostat_dissemination_dbname>${faostat_dissemination_dbname}</faostat_dissemination_dbname>
-                <faostat_dissemination_driver>${faostat_dissemination_driver}</faostat_dissemination_driver>
-                <faostat_dissemination_pwd>${faostat_dissemination_pwd}</faostat_dissemination_pwd>
-                <faostat_dissemination_url>${faostat_dissemination_url}</faostat_dissemination_url>
-                <faostat_dissemination_user>${faostat_dissemination_user}</faostat_dissemination_user>
-
                 <faostat_dev_dbname>${faostat_dev_dbname}</faostat_dev_dbname>
                 <faostat_dev_driver>${faostat_dev_driver}</faostat_dev_driver>
                 <faostat_dev_pwd>${faostat_dev_pwd}</faostat_dev_pwd>
