@@ -264,7 +264,7 @@ module.exports = function (grunt) {
         compress: {
             faostat: {
                 options: {
-                    archive: 'build/<%= grunt.config.get("mode") %>/faostat-ui-<%= grunt.config.get("mode") %>.tar',
+                    archive: 'prova/faostat-ui.tar',
                     mode: 'tar'
                 },
                 files: [{
