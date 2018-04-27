@@ -115,7 +115,7 @@ module.exports = function (grunt) {
                             './humans.txt',
                             'config/**',
                             'dist/**',
-                            'i18n/**',
+                            //'i18n/**',
                             'src/**',
                             'submodules/faostat-ui-download/**',
                             'submodules/faostat-ui-download-options/**',
