@@ -269,9 +269,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'prova/',
+                    cwd: 'build/<%= grunt.config.get("mode") %>/',
                     src: [
-                        './**'
+                        '**'
                     ]
                 }]
                 /* src: [
