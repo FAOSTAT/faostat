@@ -314,10 +314,10 @@ module.exports = function (grunt) {
         grunt.task.run('ru');
         grunt.task.run('zh');
         grunt.task.run('compress_dev');
-        grunt.task.run('compress_dev_internal');
-        grunt.task.run('compress_internal');
-        grunt.task.run('compress_prod');
-        grunt.task.run('compress_qa');
+        //grunt.task.run('compress_dev_internal');
+        //grunt.task.run('compress_internal');
+        //grunt.task.run('compress_prod');
+        //grunt.task.run('compress_qa');
 
     });
 
