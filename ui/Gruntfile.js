@@ -115,7 +115,7 @@ module.exports = function (grunt) {
                             './humans.txt',
                             'config/**',
                             'dist/**',
-                            //'i18n/**',
+                            'i18n/**',
                             'src/**',
                             'submodules/faostat-ui-download/**',
                             'submodules/faostat-ui-download-options/**',
@@ -313,7 +313,7 @@ module.exports = function (grunt) {
         grunt.task.run('ar');
         grunt.task.run('ru');
         grunt.task.run('zh');
-        grunt.task.run('compress_dev');
+        //grunt.task.run('compress_dev');
         //grunt.task.run('compress_dev_internal');
         //grunt.task.run('compress_internal');
         //grunt.task.run('compress_prod');
