@@ -271,7 +271,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'build/<%= grunt.config.get("mode") %>/',
                     src: [
-                        '**'
+                        './**'
                     ]
                 }]
                 /* src: [
