@@ -264,12 +264,12 @@ module.exports = function (grunt) {
         compress: {
             faostat: {
                 options: {
-                    archive: 'build/<%= grunt.config.get("mode") %>/faostat-ui-<%= grunt.config.get("mode") %>.tar',
+                    archive: 'prova/faostat-ui-.tar',
                     mode: 'tar'
                 },
                 files: [{
                     expand: true,
-                    cwd: 'build/<%= grunt.config.get("mode") %>/',
+                    cwd: 'prova/',
                     src: [
                         './**'
                     ]
@@ -313,7 +313,7 @@ module.exports = function (grunt) {
         grunt.task.run('ar');
         grunt.task.run('ru');
         grunt.task.run('zh');
-        //grunt.task.run('compress_dev');
+        grunt.task.run('compress_dev');
         //grunt.task.run('compress_dev_internal');
         //grunt.task.run('compress_internal');
         //grunt.task.run('compress_prod');
