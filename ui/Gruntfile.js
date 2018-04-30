@@ -269,7 +269,7 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'build/<%= grunt.config.get("mode") %>/ar/',
+                    cwd: 'build/<%= grunt.config.get("mode") %>/',
                     src: [
                         './**'
                     ]
