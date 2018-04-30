@@ -313,11 +313,11 @@ module.exports = function (grunt) {
         grunt.task.run('ar');
         grunt.task.run('ru');
         grunt.task.run('zh');
-        grunt.task.run('compress_dev');
-        grunt.task.run('compress_dev_internal');
-        grunt.task.run('compress_internal');
-        grunt.task.run('compress_prod');
-        grunt.task.run('compress_qa');
+        //grunt.task.run('compress_dev');
+        //grunt.task.run('compress_dev_internal');
+        //grunt.task.run('compress_internal');
+        //grunt.task.run('compress_prod');
+        //grunt.task.run('compress_qa');
 
     });
 
@@ -607,31 +607,31 @@ module.exports = function (grunt) {
     grunt.registerTask('compress_dev', 'Compress all folders', function () {
         grunt.task.run('config:dev');
         grunt.task.run('copy:redirect');
-        grunt.task.run('compress:faostat');
+        //grunt.task.run('compress:faostat');
     });
 
     grunt.registerTask('compress_dev_internal', 'Compress all folders', function () {
         grunt.task.run('config:dev_internal');
         grunt.task.run('copy:redirect');
-        grunt.task.run('compress:faostat');
+        //grunt.task.run('compress:faostat');
     });
 
     grunt.registerTask('compress_internal', 'Compress all folders', function () {
         grunt.task.run('config:internal');
         grunt.task.run('copy:redirect');
-        grunt.task.run('compress:faostat');
+        //grunt.task.run('compress:faostat');
     });
 
     grunt.registerTask('compress_prod', 'Compress all folders', function () {
         grunt.task.run('config:prod');
         grunt.task.run('copy:redirect');
-        grunt.task.run('compress:faostat');
+        //grunt.task.run('compress:faostat');
     });
 
     grunt.registerTask('compress_qa', 'Compress all folders', function () {
         grunt.task.run('config:qa');
         grunt.task.run('copy:redirect');
-        grunt.task.run('compress:faostat');
+        //grunt.task.run('compress:faostat');
     });
 
 };
