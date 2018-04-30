@@ -982,26 +982,38 @@ define([
                 $("#infoFormSubmit").off('click');
                 $("#infoFormSubmit").on('click', function () {
 
-                    //https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/viewform?usp=pp_url&entry.736113539=massimiliano+solina&entry.1105035716=massimiliano.solina@gmail.com&entry.383138043=Italy&entry.190535668=FAO&entry.1226833010=Student/educator&entry.2069720957=Yes&entry.632860769=Strongly+Disagree&entry.1733962598=Strongly+Disagree&entry.1809401444=Strongly+Disagree&entry.950429869=Strongly+Disagree&entry.433840719=Strongly+Disagree&entry.1354653395=test&entry.1883206493=Yes
-                    https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?entry.736113539=massimiliano+solina&entry.1105035716=massimiliano.solina@gmail.com&entry.383138043=Italy&entry.190535668=FAO&entry.1226833010=Student/educator&entry.2069720957=Yes&entry.632860769=Strongly+Disagree&entry.1733962598=Strongly+Disagree&entry.1809401444=Strongly+Disagree&entry.950429869=Strongly+Disagree&entry.433840719=Strongly+Disagree&entry.1354653395=test&entry.1883206493=Yes&submit=Submit
 
-                    //https://wiki.base22.com/btg/send-data-to-google-docs-using-a-web-form-and-ajax-72942000.html
-                    //https://docs.google.com/forms/d/140kz5_XSt-tKqT57Aj_EueZwH4UpRbCUaI0Dyh1SlIY/edit#responses
-                    // https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?entry.736113539=aaaaaaaa&entry.1981219848=bbbbbbb&entry.383138043=ccccccccc&submit=Submit
+                  //https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?usp=pp_url&entry.736113539=test01&entry.1105035716=test@test2eu&entry.383138043=Italy&entry.190535668=test&entry.1226833010=Agency+of+the+United+Nations&entry.2069720957=No&entry.632860769=Strongly+Disagree&entry.1733962598=Disagree&entry.1809401444=Neutral&entry.950429869=Agree&entry.433840719=No+opinion&entry.1354653395=test&entry.1883206493=No&submit=submit
+                  //  https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/viewform?usp=pp_url&entry.736113539=test01&entry.1105035716=test@test2eu&entry.383138043=Italy&entry.190535668=test&entry.1226833010=Agency+of+the+United+Nations&entry.2069720957=Yes&entry.632860769=Strongly+Disagree&entry.1733962598=Disagree&entry.1809401444=Neutral&entry.950429869=Agree&entry.433840719=No+opinion&entry.1354653395=test&entry.1883206493=Yes
+
+//https://medium.com/@dmccoy/how-to-submit-an-html-form-to-google-sheets-without-google-forms-b833952cc175
+//https://docs.google.com/forms/d/e/1FAIpQLSf-0PpwDQFgkgLKXi__zMqRiZU_IKklxj2XIkYWNgH5gvFYyg/viewform?
+// //usp=pp_url&entry.757740551=test&entry.178422565=test@tin.it
+//https://docs.google.com/forms/d/e/1FAIpQLSf-0PpwDQFgkgLKXi__zMqRiZU_IKklxj2XIkYWNgH5gvFYyg/viewform?usp=pp_url&
+// //entry.757740551=Max&entry.178422565=max@fao.org&
+// //entry.54602129=Italy&entry.1419840395=FAO&
+// //entry.1381672935=Agency+of+the+United+Nations&entry.494633034=yes
+// //&entry.408928284=Agree&
+// //entry.1569403159=Agree&
+// entry.1305525230&entry.337478665=Agree&entry.632437274=Agree
+// //&entry.740302245=kindlyInsert&entry.696514738=yes
+
+
+
                     var parametersURL ="";
-                    var baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?';//https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?';//'https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?'; //'https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?';
+                   // var baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse?';
+                    var baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLSf-0PpwDQFgkgLKXi__zMqRiZU_IKklxj2XIkYWNgH5gvFYyg/formResponse?';
                     var submitRef = '&submit=Submit';
                     var submitURL = '';
 
-                    var userEmail =  $("#email").val();//1105035716
+                    var userEmail =  $("#email").val();//1105035716 ///178422565
                     var re_email =  $("#re_email").val();//1105035716
 
-                    var userFullName = $("#name").val();//736113539
+                    var userFullName = $("#name").val();//736113539 //newtest=757740551
                     var userCountry =  $("#CountryUser").val();//383138043
                     var userInstitution = $("#institution").val();//190535668
                     var typeInstitution = $("#typeInstitution").val();//1226833010
-
-
+                    var typeInstitutionGroups =  $("#typeInstitutionGroups").val();//978257441
                     var firstTimeRadio = $("input[name='FirstTime']:checked").val();//2069720957
                     var QualityDim01 = $("input[name='QualityDim01']:checked").val();//632860769
                     var QualityDim02 = $("input[name='QualityDim02']:checked").val();//1733962598
@@ -1009,11 +1021,12 @@ define([
                     var QualityDim04 = $("input[name='QualityDim04']:checked").val();//950429869
                     var QualityDim05 = $("input[name='QualityDim05']:checked").val();//433840719
                     var suggestions = $("#suggestions").val();//1354653395
+                    var reciveInformation =  $("input[name='recive_Information']:checked").val();//213971431
                     var Thank_you = $("input[name='Thank_you']:checked").val();//1883206493
 
                     var readValue="";
 
-                    parametersURL = parametersURL +  "entry.1105035716=" + userEmail + "&"
+                    /* = parametersURL +  "entry.1105035716=" + userEmail + "&"
                     parametersURL = parametersURL +  "entry.736113539=" + userFullName + "&"
                     parametersURL = parametersURL +  "entry.383138043=" + userCountry + "&"
                     parametersURL = parametersURL +  "entry.190535668=" + userInstitution + "&"
@@ -1026,8 +1039,24 @@ define([
                     parametersURL = parametersURL +  "entry.433840719=" + QualityDim05 + "&"
                     parametersURL = parametersURL +  "entry.1354653395=" + suggestions + "&"
                     parametersURL = parametersURL +  "entry.1883206493=" + Thank_you
-
-                    submitURL = (baseURL + parametersURL + submitRef);
+                    */
+                    parametersURL = parametersURL +  "entry.178422565=" + userEmail + "&"
+                    parametersURL = parametersURL +  "entry.757740551=" + userFullName + "&"
+                    parametersURL = parametersURL +  "entry.54602129=" + userCountry + "&"
+                    parametersURL = parametersURL +  "entry.1419840395=" + userInstitution + "&"
+                    parametersURL = parametersURL +  "entry.1381672935=" + typeInstitution + "&"
+                    parametersURL = parametersURL +  "entry.978257441=" + typeInstitutionGroups + "&"
+                    parametersURL = parametersURL +  "entry.494633034=" + firstTimeRadio + "&"
+                    parametersURL = parametersURL +  "entry.408928284=" + QualityDim01 + "&"
+                    parametersURL = parametersURL +  "entry.1569403159=" + QualityDim02 + "&"
+                    parametersURL = parametersURL +  "entry.1305525230=" + QualityDim03 + "&"
+                    parametersURL = parametersURL +  "entry.337478665=" + QualityDim04 + "&"
+                    parametersURL = parametersURL +  "entry.632437274=" + QualityDim05 + "&"
+                    parametersURL = parametersURL +  "entry.740302245=" + suggestions + "&"
+                    parametersURL = parametersURL +  "entry.213971431=" + reciveInformation + "&"
+                    parametersURL = parametersURL +  "entry.696514738=" + Thank_you
+                    //alert(333)
+                    submitURL = baseURL + parametersURL + submitRef;
                     /*if(firstTimeRadio){
                         alert("Your are a - " + firstTimeRadio);
                     }else{alert('no checked')}
@@ -1046,7 +1075,7 @@ define([
                         var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
 
                         if (readValue==""){
-
+                               // submitURL="https://docs.google.com/forms/d/e/1FAIpQLSdfqTVuFwSh19Kx8xX1kveoibvNdo7zcvUOyyVTeJADy4HTZQ/formResponse";
                             $.ajax({
                                url: submitURL,
                                // data: {"entry.736113539": userFullName, "entry.1981219848": userEmail ,"entry.383138043": userInstitution, "entry.190535668": userTypeInstitution, "entry.1226833010": userCountry, "entry.1009202517": otherInstitution},
