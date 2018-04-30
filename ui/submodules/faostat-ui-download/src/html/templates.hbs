@@ -18,26 +18,33 @@
             <br>
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
-                    <label for="email">Email Address</label>
+                    <label for="name">User Name (First and Last Name)</label>
+                    <input type="name" class="form-control" id="name" placeholder="Enter full name" name="name">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <label for="email">User email address</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter email address" name="email">
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
-                    <label for="email">Please re-enter the same email address</label>
+                    <label for="email">User email address (again)</label>
                     <input type="re_email" class="form-control" id="re_email" placeholder="Enter email address" name="re_email">
                 </div>
             </div>
             <br>
+
+
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
-                    <label for="name">Name (First and Last)</label>
-                    <input type="name" class="form-control" id="name" placeholder="Enter full name" name="name">
+                    <label for="institution">Name of Institution (Please enter full name)</label>
+                    <input type="institution" class="form-control" id="institution" placeholder="Enter Institution" name="institution">
                 </div>
             </div>
-
-
 
             <br>
             <div class="row">
@@ -535,14 +542,7 @@
                     </div>
                 </div>
             </div>
-            <br>
 
-            <div class="row">
-                <div class="col-xs-8 col-xs-offset-2">
-                    <label for="institution">Name of Institution (Please enter full name)</label>
-                    <input type="institution" class="form-control" id="institution" placeholder="Enter Institution" name="institution">
-                </div>
-            </div>
 
             <br>
             <div class="row">
@@ -574,10 +574,48 @@
                         <option value="Researcher">Researcher</option>
                     </select>
 
-                        <!--input type="otherInstitution" class="form-control" id="otherInstitution" placeholder="Enter Other Institution" name="otherInstitution" style="display: none; margin-top: 20px;"-->
+                        <input type="otherInstitution" class="form-control" id="otherInstitution" placeholder="Enter Other Institution" name="otherInstitution" style="display: none; margin-top: 20px;">
                     </div>
                 </div>
             </div>
+            <br>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <label for="institution">Please select all of the FAOSTAT groups that correspond to data you have downloaded during the last year. </label>
+                    <div>
+                        <select id="typeInstitutionGroups" style="height: 35px; width: 100%;  border-radius: 8px 8px 8px 8px; font-family: Open Sans,sans-serif;" name="institutionType" >
+
+                            <option value="Production ">Production </option>
+
+                            <option value="Trade">Trade</option>
+
+                            <option value="Food Balance">Food Balance</option>
+
+                            <option value="Food security">Food security</option>
+
+                            <option value="Prices">Prices</option>
+
+                            <option value="Inputs">Inputs</option>
+
+                            <option value="Population">Population</option>
+
+                            <option value="Investment">Investment </option>
+
+                            <option value="Macro-statistics">Macro-statistics</option>
+
+                            <option value="Agri-environmental indicators">Agri-environmental indicators</option>
+
+                            <option value="Emissions – Agricultural">Emissions – Agricultural</option>
+
+                            <option value="Emissions – Land Use">Emissions – Land Use</option>
+
+                            <option value="Forestry">Forestry</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+
 
             <br>
 
@@ -793,8 +831,24 @@
                 <br>
                 <div class="row">
                     <div class="col-xs-8 col-xs-offset-2">
-                        <label for="suggestions">Kindly insert any suggestions or general comments you have about FAOSTAT, and how it can be improved.</label>
+                        <label for="suggestions">Do you have any suggestions or general comments for FAOSTAT which can be used to improve it (e.g. new features, innovations, etc.)?</label>
                         <input type="textarea" class="form-control" id="suggestions" placeholder="" name="suggestions">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xs-8 col-xs-offset-2">
+                        <label for="Thank_you">Would you like receive information regarding FAOSTAT updates via email?</label>
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <input type='radio' value='yes' name='recive_Information' id='recive_InformationYes'>
+                                <label for="recive_InformationYes">Yes</label>
+                            </li>
+                            <li>
+                                <input type='radio' value='no' name='recive_Information' id='recive_InformationNo'>
+                                <label for="recive_InformationNo">No</label>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <br>
