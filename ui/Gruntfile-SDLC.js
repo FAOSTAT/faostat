@@ -28,25 +28,14 @@ module.exports = function (grunt) {
             default: {
                 options: {}
             },
+            // configuration for AWS
             prod: {
                 options: {
                     variables: {
                         'dest': 'prod/<%= grunt.config.get("locale") %>/',
                         'url_api': 'http://fenixservices.fao.org/faostat/api/v1/',
                         'mode': 'prod',
-                        'config_file': 'build_utils/Config-prod.js',
-                        'locale_file': 'main.js',
-                        'appcache_file': 'faostat.appcache'
-                    }
-                }
-            },
-            internal: {
-                options: {
-                    variables: {
-                        'dest': 'internal/<%= grunt.config.get("locale") %>/',
-                        'url_api': 'http://fenix.fao.org/faostat/internal/api/v1/',
-                        'mode': 'internal',
-                        'config_file': 'build_utils/Config-all.js',
+                        'config_file': 'build_utils/aws/Config-prod.js',
                         'locale_file': 'main.js',
                         'appcache_file': 'faostat.appcache'
                     }
@@ -58,6 +47,31 @@ module.exports = function (grunt) {
                         'dest': 'dev/<%= grunt.config.get("locale") %>/',
                         'url_api': 'http://fenix.fao.org/faostat/dev/api/v1/',
                         'mode': 'dev',
+                        'config_file': 'build_utils/aws/Config-dev.js',
+                        'locale_file': 'main.js',
+                        'appcache_file': 'faostat.appcache'
+                    }
+                }
+            },
+            qa: {
+                options: {
+                    variables: {
+                        'dest': 'qa/<%= grunt.config.get("locale") %>/',
+                        'url_api': 'http://fenix.fao.org/faostat/qa/api/v1/',
+                        'mode': 'qa',
+                        'config_file': 'build_utils/aws/Config-qa.js',
+                        'locale_file': 'main.js',
+                        'appcache_file': 'faostat.appcache'
+                    }
+                }
+            },
+            // not used in AWS
+            internal: {
+                options: {
+                    variables: {
+                        'dest': 'internal/<%= grunt.config.get("locale") %>/',
+                        'url_api': 'http://fenix.fao.org/faostat/internal/api/v1/',
+                        'mode': 'internal',
                         'config_file': 'build_utils/Config-all.js',
                         'locale_file': 'main.js',
                         'appcache_file': 'faostat.appcache'
@@ -75,20 +89,7 @@ module.exports = function (grunt) {
                         'appcache_file': 'faostat.appcache'
                     }
                 }
-            },
-            // TODO: to be reviewed the QA
-            qa: {
-                options: {
-                    variables: {
-                        'dest': 'qa/<%= grunt.config.get("locale") %>/',
-                        'url_api': 'http://fenix.fao.org/faostat/qa/api/v1/',
-                        'mode': 'qa',
-                        'config_file': 'build_utils/Config-all.js',
-                        'locale_file': 'main.js',
-                        'appcache_file': 'faostat.appcache'
-                    }
-                }
-            },
+            }
         },
 
         clean: {
