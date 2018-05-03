@@ -162,26 +162,10 @@
                         <div class="clearfix">
                             <div class="pull-left">{{all_faostat_data}}</div>
                             <div class="pull-right" data-role="bulk_download_size"></div>
-                            <br><br>
+                            <br>
                         </div>
                     </div>
-                    <div class="card-horiz-left-text-bottom pull-left">
-                        <b class="truncate">{{database_description}} </b>
-                        <div class="clearfix">
 
-                            <div class="pull-left">
-                                <a data-link='external' href="http://fenixservices.fao.org/faostat/static/bulkdownloads/{{url_xml}}" target="_blank">
-                                    <strong>XML</strong>
-                                </a>
-                            </div>
-                            <div class="pull-right">
-                                <a data-link='external' href="http://fenixservices.fao.org/faostat/static/bulkdownloads/{{url_json}}" target="_blank">
-                                    <strong>JSON</strong>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
                     <div class="card-horiz-left-text-bottom pull-left">
                         <div class="truncate">
                             <span class="hidden-md">{{updated_on}}</span>
@@ -194,7 +178,25 @@
             </div>
 
             <br>
+            <div class="elegant-card-horizontal z-depth-1 hoverable">
 
+                <div class="panel-body">
+                        <h4 class="truncate">{{database_description}} </h4>
+                        <p>{{database_description_text}}</p>
+                    <p>
+                        <a data-link='external' href="http://fenixservices.fao.org/faostat/static/bulkdownloads/{{url_xml}}" target="_blank">
+                            <strong>XML</strong>
+                        </a>
+                        &nbsp;&nbsp;-&nbsp;&nbsp;
+                        <a data-link='external' href="http://fenixservices.fao.org/faostat/static/bulkdownloads/{{url_json}}" target="_blank">
+                            <strong>JSON</strong>&nbsp;&nbsp;
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+
+            <br>
             <div class="visible-xs"><br></div>
 
             <div class="panel panel-default hoverable">
