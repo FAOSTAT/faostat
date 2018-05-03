@@ -38,6 +38,17 @@ define(['jquery'], function ($) {
 
         DATE_UPDATE: "@@date_update",
         VERSION: "@@version",
+
+
+        // ####### External configuration #########
+        URL_BULK_DOWNLOAD_DB : "http://fenixservices.fao.org/faostat/static/bulkdownloads",
+        syb: {
+             //url: 'http://fenixservices.fao.org/faostat/static/syb/syb_{{code}}.pdf',
+             url: 'bella_max{{code}}.pdf',
+             url_world: 'http://fenixservices.fao.org/faostat/static/documents/CountryProfile/pdf/syb_5000.pdf'
+             // url_world: 'http://faostat.fao.org/static/syb/syb_5000.pdf'
+         }
+
     };
 
 });
