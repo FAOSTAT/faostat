@@ -8,6 +8,7 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
         // bulk downloads
         bulk_download: "批量下载",
         database_description:"Database description",
+        database_description_text:"database description text text zh",
         all_faostat_data: "全部粮农组织统计数据库数据",
         updated_on: "更新至",
         url_json: "datasets_E.json",

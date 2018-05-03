@@ -8,6 +8,7 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
         // bulk downloads
         bulk_download: "Données complètes",
         database_description:"Description de la base de données",
+        database_description_text:"database description text text fr",
         all_faostat_data: "Données de FAOSTAT",
         updated_on: "mis à jour le",
         url_json: "datasets_F.json",
