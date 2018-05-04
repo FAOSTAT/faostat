@@ -27,7 +27,6 @@ define([
         "GOOGLE_ANALYTICS_TRACKER":"/faostat/",
 
         // URLs
-        "URL_FAOSTAT_DOCUMENTS_BASEPATH": 'http://fenixservices.fao.org/faostat/static/documents/', //TODO change with AWS URL
         "URL_RELEASE_CALENDAR": 'http://fenixservices.fao.org/faostat/static/releasecalendar/Default.aspx',
         "URL_FEEDBACK_SYSTEM": 'http://fenixapps2.fao.org/feedbacksystem',
 
@@ -50,7 +49,18 @@ define([
         DATE_UPDATE: "@@date_update",
         VERSION: "@@version",
 
-        ALL_LANGUAGES: true
+        ALL_LANGUAGES: true,
+
+        // ####### External configuration #########
+
+        "URL_FAOSTAT_DOCUMENTS_BASEPATH": 'http://fenixservices.fao.org/faostat/static/documents/', // Related documents in data section
+
+        URL_DB_DESCRIPTION : "http://fenixservices.fao.org/faostat/static/bulkdownloads", // Db description
+
+        syb: {
+            url: 'http://faostat.fao.org/static/syb/syb_{{code}}.pdf', // Country profile download
+            url_world: 'http://fenixservices.fao.org/faostat/static/documents/CountryProfile/pdf/syb_5000.pdf' // Country world download
+        }
 
     };
 
