@@ -1,9 +1,10 @@
 /*global define*/
 define([
     'jquery',
+    'config/Config',
     'config/browse_by_country/Config',
     'i18n!nls/browse_by_country'
-], function ($, CM, i18n) {
+], function ($,C, CM, i18n) {
 
     'use strict';
 
@@ -1656,8 +1657,8 @@ define([
         syb: {
             // TODO: Refactor it and make it decent.
             title: i18n.fao_statistical_yearbook_summary, // "FAO Statistical Yearbook Summary",
-            //href: CM.syb.url, //"http://fenixservices.fao.org/faostat/static/syb/syb_{{code}}.pdf",
-            href: "http://fenixservices.fao.org/faostat/static/documents/CountryProfile/pdf/syb_{{code}}.pdf"
+            href: C.syb.url || CM.syb.url, //"http://fenixservices.fao.org/faostat/static/syb/syb_{{code}}.pdf",
+            //href: "http://fenixservices.fao.org/faostat/static/documents/CountryProfile/pdf/syb_{{code}}.pdf"
             /*icon: 'icojam_book_3',
             show_details: true,
             details: {
@@ -1668,7 +1669,7 @@ define([
         syb_world: {
             // TODO: Refactor it and make it decent.
             title:  i18n.fao_statistical_yearbook_summary_world, //"FAO Statistical Yearbook <br> World Summary",
-            href: CM.syb.url_world //"http://fenixservices.fao.org/faostat/static/syb/syb_5000.pdf",
+            href:C.syb.url_world || CM.syb.url_world //"http://fenixservices.fao.org/faostat/static/syb/syb_5000.pdf",
         },
 
        /* syb_africa: {
