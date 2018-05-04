@@ -10,7 +10,7 @@ define([
 
     var config =  {
 
-        "URL_API": "http://fenixservices.fao.org/faostat/api/v1/", //TODO change with AWS URL
+        "URL_API": "http://faostatqa.aws.fao.org/faostat/api/v1/", //TODO change with AWS URL
         "LOGLEVEL": "trace", // trace/debug/info/warn/error/silent
         "API_LOG": false,
         "DATASOURCE": "qa",
