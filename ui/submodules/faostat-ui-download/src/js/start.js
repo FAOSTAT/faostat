@@ -571,7 +571,7 @@ define([
                                 typeDownload: type
                             };
 
-
+                            /*
                             var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
 
                             if (readValue==""){
@@ -585,10 +585,7 @@ define([
 
                             }
 
-
-
-                             /*
-
+                              */
                           switch (type) {
 
                                 case "table":
@@ -601,7 +598,7 @@ define([
                                   //  self.exportExcel(d, requestObj, options);
                                  //   break;
                             }
-                        */
+
                         }
 
                     }).fail(function (e) {
@@ -1070,6 +1067,7 @@ define([
 
                     var checkFieldsInModal=InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution,userCountry,typeInstitution,re_email);
                    // var checkFieldsInModal=true;
+
 
                     if (checkFieldsInModal){
                         var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
