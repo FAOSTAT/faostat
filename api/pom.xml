@@ -241,6 +241,110 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile>
+            <id>aws-dev</id>
+            <properties>
+                <rp.build.warname>api-qa</rp.build.warname>
+                <faostat_aws_dev_dbname>${faostat_aws_dev_dbname}</faostat_aws_dev_dbname>
+                <faostat_aws_dev_driver>${faostat_aws_dev_driver}</faostat_aws_dev_driver>
+                <faostat_aws_dev_pwd>${faostat_aws_dev_pwd}</faostat_aws_dev_pwd>
+                <faostat_aws_dev_url>${faostat_aws_dev_url}</faostat_aws_dev_url>
+                <faostat_aws_dev_user>${faostat_aws_dev_user}</faostat_aws_dev_user>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.3</version>
+                        <configuration>
+                            <warName>${rp.build.warname}</warName>
+                            <webResources>
+                                <resource>
+                                    <directory>resources/default</directory>
+                                    <targetPath>WEB-INF/classes</targetPath>
+                                    <filtering>true</filtering>
+                                    <includes>
+                                        <include>*.properties</include>
+                                    </includes>
+                                </resource>
+                            </webResources>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>aws-qa</id>
+            <properties>
+                <rp.build.warname>api-qa</rp.build.warname>
+                <faostat_aws_qa_dbname>${faostat_aws_qa_dbname}</faostat_aws_qa_dbname>
+                <faostat_aws_qa_driver>${faostat_aws_qa_driver}</faostat_aws_qa_driver>
+                <faostat_aws_qa_pwd>${faostat_aws_qa_pwd}</faostat_aws_qa_pwd>
+                <faostat_aws_qa_url>${faostat_aws_qa_url}</faostat_aws_qa_url>
+                <faostat_aws_qa_user>${faostat_aws_qa_user}</faostat_aws_qa_user>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.3</version>
+                        <configuration>
+                            <warName>${rp.build.warname}</warName>
+                            <webResources>
+                                <resource>
+                                    <directory>resources/default</directory>
+                                    <targetPath>WEB-INF/classes</targetPath>
+                                    <filtering>true</filtering>
+                                    <includes>
+                                        <include>*.properties</include>
+                                    </includes>
+                                </resource>
+                            </webResources>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>aws-prod</id>
+            <properties>
+                <rp.build.warname>api-prod</rp.build.warname>
+                <faostat_aws_prod_dbname>${faostat_aws_prod_dbname}</faostat_aws_prod_dbname>
+                <faostat_aws_prod_driver>${faostat_aws_prod_driver}</faostat_aws_prod_driver>
+                <faostat_aws_prod_pwd>${faostat_aws_prod_pwd}</faostat_aws_prod_pwd>
+                <faostat_aws_prod_url>${faostat_aws_prod_url}</faostat_aws_prod_url>
+                <faostat_aws_prod_user>${faostat_aws_prod_user}</faostat_aws_prod_user>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.3</version>
+                        <configuration>
+                            <warName>${rp.build.warname}</warName>
+                            <webResources>
+                                <resource>
+                                    <directory>resources/default</directory>
+                                    <targetPath>WEB-INF/classes</targetPath>
+                                    <filtering>true</filtering>
+                                    <includes>
+                                        <include>*.properties</include>
+                                    </includes>
+                                </resource>
+                            </webResources>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
         <profile>
             <id>prod-db3</id>
             <properties>
