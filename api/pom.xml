@@ -59,7 +59,7 @@
                 <faostat_internal_url>${faostat_internal_url}</faostat_internal_url>
                 <faostat_internal_user>${faostat_internal_user}</faostat_internal_user>
 
-                <faostat_dev_dbname>${faostat_dev_dbname}</faostat_dev_dbname>
+                <faostat_dev_dbname>DB_NAME</faostat_dev_dbname>
                 <faostat_dev_driver>${faostat_dev_driver}</faostat_dev_driver>
                 <faostat_dev_pwd>${faostat_dev_pwd}</faostat_dev_pwd>
                 <faostat_dev_url>${faostat_dev_url}</faostat_dev_url>
