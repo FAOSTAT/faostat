@@ -65,6 +65,7 @@ define([
                     URL_BROWSE_BY_COUNTRY: '#' + Common.getURI(ROUTE.BROWSE_BY_COUNTRY),
                     URL_BROWSE_RANKINGS: '#' + Common.getURI(ROUTE.BROWSE_RANKINGS_CODE, ['commodities_by_country']),
                     URL_RELEASE_CALENDAR: C.URL_RELEASE_CALENDAR,
+                    URL_DB_DESCRIPTION: C.URL_DB_DESCRIPTION,
                     EMAIL_FAO_STATISTICS: C.EMAIL_FAO_STATISTICS,
                     TELEPHONE_FAO_STATISTICS: C.TELEPHONE_FAO_STATISTICS,
                     URL_DATA: '#' + Common.getURI(ROUTE.DATA),

@@ -35,7 +35,7 @@ module.exports = function (grunt) {
                         'dest': 'prod/<%= grunt.config.get("locale") %>/',
                         'url_api': 'http://fenixservices.fao.org/faostat/api/v1/',
                         'mode': 'prod',
-                        'config_file': 'build_utils/aws/Config-prod.js',
+                        'config_file': 'build_utils/aws/Config.js',
                         'locale_file': 'main.js',
                         'appcache_file': 'faostat.appcache'
                     }
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
                         'dest': 'dev/<%= grunt.config.get("locale") %>/',
                         'url_api': 'http://fenix.fao.org/faostat/dev/api/v1/',
                         'mode': 'dev',
-                        'config_file': 'build_utils/aws/Config-dev.js',
+                        'config_file': 'build_utils/aws/Config.js',
                         'locale_file': 'main.js',
                         'appcache_file': 'faostat.appcache'
                     }
@@ -59,7 +59,7 @@ module.exports = function (grunt) {
                         'dest': 'qa/<%= grunt.config.get("locale") %>/',
                         'url_api': 'http://fenix.fao.org/faostat/qa/api/v1/',
                         'mode': 'qa',
-                        'config_file': 'build_utils/aws/Config-qa.js',
+                        'config_file': 'build_utils/aws/Config.js',
                         'locale_file': 'main.js',
                         'appcache_file': 'faostat.appcache'
                     }
