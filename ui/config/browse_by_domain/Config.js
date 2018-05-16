@@ -16,6 +16,7 @@ define([
         defaultCode: 'Q',
 
         // blacklist groups/domains with no views implemented
+        //
         blacklist: ['TM'],
 
         // temporary whitelist
