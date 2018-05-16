@@ -34,7 +34,7 @@ define([
             //'AS', 'AF', 'AE',
             'X', 'FA',
             'D', 'FS',
-            'G1', 'GE', 'GM', 'GR', 'GU', 'GP', 'GA', 'GV', 'GH', 'GB', 'GN', 'GBv1', 'GBv2', //'GY'
+            'G1', 'GE', 'GM', 'GR', 'GU', 'GP', 'GA', 'GV', 'GH', 'GB', 'GN', 'GBV1', 'GBV2', //'GY'
             'G2', 'GF', 'GC', 'GG', 'GI'
         ],
 
