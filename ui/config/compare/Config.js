@@ -62,10 +62,10 @@ define([
                 'RV', 'RP', 'RT', 'RL', 'OE','RF',
                 'OA',
                 'CS', 'RM', 'RY', 'IC', 'EA',
-                'MK', 'EC', 'DBS', 'DBE',
+                'MK', 'EC',
                 'EE', 'EF', 'EL','LC', 'EK', 'EP', 'ES', 'EW', 'EM', 'EI','ET','EMN','RFN','RFB',
                 //'EE', 'EF', 'EL','EK', 'EP', 'ES', 'EW', 'EM', 'EI',
-                'GT', 'GE', 'GM', 'GR', 'GY', 'GU', 'GP', 'GA', 'GV', 'GH', 'GB', 'GN',
+                'GT', 'GE', 'GM', 'GR', 'GY', 'GU', 'GP', 'GA', 'GV', 'GH', 'GB', 'GN',, 'GBV1', 'GBV2', //'GY'
                 'GL', 'GF', 'GC', 'GG', 'GI',
                 'FO',
                 'AF', 'AE',
