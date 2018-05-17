@@ -571,7 +571,7 @@ define([
                                 typeDownload: type
                             };
 
-                            /*
+
                             var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
 
                             if (readValue==""){
@@ -585,7 +585,7 @@ define([
 
                             }
 
-                              */
+                            /*
                           switch (type) {
 
                                 case "table":
@@ -598,7 +598,7 @@ define([
                                   //  self.exportExcel(d, requestObj, options);
                                  //   break;
                             }
-
+                             */
                         }
 
                     }).fail(function (e) {
@@ -1022,21 +1022,6 @@ define([
                     var Thank_you = $("input[name='Thank_you']:checked").val();//1883206493
 
                     var readValue="";
-
-                    /* = parametersURL +  "entry.1105035716=" + userEmail + "&"
-                    parametersURL = parametersURL +  "entry.736113539=" + userFullName + "&"
-                    parametersURL = parametersURL +  "entry.383138043=" + userCountry + "&"
-                    parametersURL = parametersURL +  "entry.190535668=" + userInstitution + "&"
-                    parametersURL = parametersURL +  "entry.1226833010=" + typeInstitution + "&"
-                    parametersURL = parametersURL +  "entry.2069720957=" + firstTimeRadio + "&"
-                    parametersURL = parametersURL +  "entry.632860769=" + QualityDim01 + "&"
-                    parametersURL = parametersURL +  "entry.1733962598=" + QualityDim02 + "&"
-                    parametersURL = parametersURL +  "entry.1809401444=" + QualityDim03 + "&"
-                    parametersURL = parametersURL +  "entry.950429869=" + QualityDim04 + "&"
-                    parametersURL = parametersURL +  "entry.433840719=" + QualityDim05 + "&"
-                    parametersURL = parametersURL +  "entry.1354653395=" + suggestions + "&"
-                    parametersURL = parametersURL +  "entry.1883206493=" + Thank_you
-                    */
                     parametersURL = parametersURL +  "entry.178422565=" + userEmail + "&"
                     parametersURL = parametersURL +  "entry.757740551=" + userFullName + "&"
                     parametersURL = parametersURL +  "entry.54602129=" + userCountry + "&"
@@ -1052,20 +1037,11 @@ define([
                     parametersURL = parametersURL +  "entry.740302245=" + suggestions + "&"
                     parametersURL = parametersURL +  "entry.213971431=" + reciveInformation + "&"
                     parametersURL = parametersURL +  "entry.696514738=" + Thank_you
-                    //alert(333)
-                    submitURL = baseURL + parametersURL + submitRef;
-                    /*if(firstTimeRadio){
-                        alert("Your are a - " + firstTimeRadio);
-                    }else{alert('no checked')}
-                    if(QualityDim01){
-                        alert("Your are a - " + QualityDim01);
-                    }else{alert('no checked')}
-                    if(QualityDim02){
-                        alert("Your are a - " + QualityDim02);
-                    }else{alert('no checked')}
-*/
 
-                    var checkFieldsInModal=InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution,userCountry,typeInstitution,re_email);
+                    submitURL = baseURL + parametersURL + submitRef;
+
+
+                    var checkFieldsInModal=InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution,userCountry,typeInstitution,re_email,firstTimeRadio,QualityDim01,QualityDim02,QualityDim03,QualityDim04,QualityDim05);
                    // var checkFieldsInModal=true;
 
 
@@ -1212,22 +1188,11 @@ define([
 
             };
 
-            InteractiveDownload.prototype.checkFields = function (userFullName, userEmail, userInstitution, userCountry, typeInstitution,re_email) {
+            InteractiveDownload.prototype.checkFields = function (userFullName, userEmail, userInstitution, userCountry, typeInstitution, re_email, firstTimeRadio ,QualityDim01, QualityDim02, QualityDim03, QualityDim04, QualityDim05) {
                 var errModal="";
-                var visibleFieldType=false;
+                var checkFirstTime=false;
 
-               /* switch (typeInstitution) {
-                    case "Other UN Agencies":
-                        visibleFieldType=true;
-                        break;
-                    case "Other International Organizations/Financial Institutions":
-                        visibleFieldType=true;
-                        break;
-                    case "Other":
-                        visibleFieldType=true;
-                        break;
-                }
-*/
+
                 if (userFullName.trim() == "") {
                     errModal = errModal + "Full Name\n";
                 }
@@ -1247,9 +1212,30 @@ define([
                             errModal = errModal + "Incorrect Email Address\n";
                         }
                     }
-
-
                 }
+                if (firstTimeRadio == "no"){
+                    if (QualityDim01 === undefined) {
+                        checkFirstTime=true;
+                    }
+                    if (QualityDim02 === undefined) {
+                        checkFirstTime=true;
+                    }
+                    if (QualityDim03 === undefined) {
+                        checkFirstTime=true;
+                    }
+                    if (QualityDim04 === undefined) {
+                        checkFirstTime=true;
+                    }
+                    if (QualityDim05 === undefined) {
+                        checkFirstTime=true;
+                    }
+                }
+
+                if (checkFirstTime) {
+                    errModal = errModal + "please select at least one item of Quality Dimension\n"
+                }
+
+
                 if (userInstitution.trim() == "") {
                     errModal = errModal + "Institution\n";
                 }
