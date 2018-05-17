@@ -65,7 +65,7 @@ define([
                 'MK', 'EC',
                 'EE', 'EF', 'EL','LC', 'EK', 'EP', 'ES', 'EW', 'EM', 'EI','ET','EMN','RFN','RFB',
                 //'EE', 'EF', 'EL','EK', 'EP', 'ES', 'EW', 'EM', 'EI',
-                'GT', 'GE', 'GM', 'GR', 'GY', 'GU', 'GP', 'GA', 'GV', 'GH', 'GB', 'GN',, 'GBV1', 'GBV2', //'GY'
+                'GT', 'GE', 'GM', 'GR', 'GY', 'GU', 'GP', 'GA', 'GV', 'GH', 'GB', 'GN','GBE', 'GBS', //'GY'
                 'GL', 'GF', 'GC', 'GG', 'GI',
                 'FO',
                 'AF', 'AE',
