@@ -1202,6 +1202,11 @@ define([
                 if (userCountry.trim() == "") {
                     errModal = errModal + "Country\n";
                 }
+
+                if (typeInstitution.trim() == "") {
+                    errModal = errModal + "User group\n";
+                }
+
                 if (userEmail.trim() == "") {
                     errModal = errModal + "Email Address\n";
                 }else{
