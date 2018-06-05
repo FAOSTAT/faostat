@@ -125,7 +125,7 @@ define([
                     'survey', // HS
                     'item',
                     'element',
-                    'breakdownvar', 'breakdownsex', 'indicator', 'measure', // HS
+                    'breakdownvar', 'breakdownsex', 'indicator', 'measure', 'source', // HS
                     'purpose',
                     'year',
                     'value',
