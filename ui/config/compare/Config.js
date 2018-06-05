@@ -53,7 +53,7 @@ define([
                 'GY', // Synthetic Fertilizers
                 'PM'
             ],*/
-            whitelist: [
+    /* whitelist: [
                 'QC', 'QD', 'QA', 'QL', 'QL', 'QI', 'QV',
                 //'FS', // FS doesn't have yearly data!
                 'TP', 'TA', 'TI',
@@ -71,7 +71,7 @@ define([
                 'AF', 'AE',
                 'FA'
 
-            ]
+            ]*/
         },
 
         // this will blacklist all the IDs that should not be created as filters
@@ -100,7 +100,7 @@ define([
                     'survey', // HS
                     'item',
                     'element',
-                    'breakdownvar', 'breakdownsex', 'indicator', 'measure', // HS
+                    'breakdownvar', 'breakdownsex', 'indicator', 'measure', 'source',  // HS
                     'purpose' // ODA
 
                 ]
