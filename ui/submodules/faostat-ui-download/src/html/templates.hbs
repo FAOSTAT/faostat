@@ -8,8 +8,10 @@
                         Dear FAOSTAT user,
                         <br><br>
                         Thank you for accessing the FAOSTAT database. FAO is constantly improving its statistical services, and your feedback is important to ensure that FAOSTAT is the best it can be. Your personal information will not be shared. We would greatly appreciate <strong> 2 minutes </strong> of your time to complete the following short form to help us improve FAOSTAT.
-                        <br>
+                        <br> <br>
+                        <label  style="font-family: Open Sans,sans-serif; color: #ff0000; font-size:small">
                         Please note that if you have a cookie blocker activated for this site, you will receive this survey form every time you download data. So, please de-activate it to only receive this form one time.
+                        </label>
                         <br><br>
                         Many thanks,
                         <br><br>
@@ -43,7 +45,7 @@
 
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
-                    <label for="institution">Name of Institution (Please enter full name)<br>(Instruction: Please write “none” if you don’t belong to an institution.)</label>
+                    <label for="institution">Name of Institution / Establishment (Please enter full name)<br>(Instruction: Please write “none” if you don’t belong to an institution.)</label>
                     <input type="institution" class="form-control" id="institution" placeholder="Enter Institution" name="institution">
                 </div>
             </div>
@@ -51,7 +53,7 @@
             <br>
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
-                    <label for="Country">Country of Work place</label>
+                    <label for="Country">Country of work place</label>
                     <div>
                     <select id="CountryUser" style="height: 35px; width: 100%;  border-radius: 8px 8px 8px 8px; font-family: Open Sans,sans-serif;" name="CountryUser">
                        <option value=""></option>
@@ -733,41 +735,6 @@
                 <div class="row">
                     <div class="col-xs-8 col-xs-offset-2">
                         <label for="name">
-                            FAOSTAT statistics are timely & punctual.
-                        </label>
-                        <br>
-                        <ul class="list-unstyled list-inline">
-                            <li>
-                                <input type='radio' value='Strongly Agree' name='QualityDim03' id='Strongly_Disagree03'>
-                                <label for="Strongly_Disagree03">Strongly Agree</label>
-                            </li>
-                            <li>
-                                <input type='radio' value='Agree' name='QualityDim03' id='Disagree03'>
-                                <label for="Disagree03">Agree</label>
-                            </li>
-                            <li>
-                                <input type='radio' value='Neutral' name='QualityDim03' id='Neutral03'>
-                                <label for="Neutral03">Neutral</label>
-                            </li>
-                            <li>
-                                <input type='radio' value='Disagree' name='QualityDim03' id='Agree03'>
-                                <label for="Agree03">Disagree</label>
-                            </li>
-                            <li>
-                                <input type='radio' value='Strongly Disagree' name='QualityDim03' id='StronglyDisagree03'>
-                                <label for="StronglyDisagree03">Strongly Disagree</label>
-                            </li>
-                            <li>
-                                <input type='radio' value='No opinion' name='QualityDim03' id='No opinion03'>
-                                <label for="No opinion03">No opinion</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-8 col-xs-offset-2">
-                        <label for="name">
                             FAOSTAT statistics are consistent internally, and over time. FAOSTAT statistics are internationally comparable, and can be used in conjunction with statistics provided by other organizations
                         </label>
                         <br>
@@ -834,6 +801,54 @@
                         </ul>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-xs-8 col-xs-offset-2">
+                        <label for="name">
+                            FAOSTAT statistics are timely (i.e. time between release of statistics and reference period).
+                        </label>
+                        <br>
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <input type='radio' value='Strongly Agree' name='QualityDim03' id='Strongly_Agree03'>
+                                <label for="Strongly_Agree03">Strongly Agree</label>
+                            </li>
+                            <li>
+                                <input type='radio' value='Agree' name='QualityDim03' id='Agree03'>
+                                <label for="Disagree03">Agree</label>
+                            </li>
+                            <li>
+                                <input type='radio' value='Neutral' name='QualityDim03' id='Neutral03'>
+                                <label for="Neutral03">Neutral</label>
+                            </li>
+                            <li>
+                                <input type='radio' value='Disagree' name='QualityDim03' id='Disagree03'>
+                                <label for="Disagree03">Disagree</label>
+                            </li>
+                            <li>
+                                <input type='radio' value='Strongly Disagree' name='QualityDim03' id='StronglyDisagree03'>
+                                <label for="StronglyDisagree03">Strongly Disagree</label>
+                            </li>
+                            <li>
+                                <input type='radio' value='No opinion' name='QualityDim03' id='NoOpinion03'>
+                                <label for="NoOpinion03">No opinion</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div id ='infoSurveyStatisticsTimely' style="display: none;">
+                        <div class="col-xs-8 col-xs-offset-2">
+                            <label for="name">
+                                Kindly provide details on your response regarding the timeliness of FAOSTAT statistics to help us improve.
+                            </label>
+                            <input type="textarea" class="form-control" id="QualityDim03_Details" placeholder="" name="QualityDim03_Details">
+                        </div>
+                    </div>
+
+                </div>
+
                 <br>
                 <div class="row">
                     <div class="col-xs-8 col-xs-offset-2">

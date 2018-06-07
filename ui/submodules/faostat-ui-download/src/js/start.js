@@ -976,6 +976,36 @@ define([
                     $("#infoSurvey").show();
                 });
 
+
+                $("#Strongly_Agree03").off('click');
+                $("#Strongly_Agree03").on('click', function () {
+                    $("#infoSurveyStatisticsTimely").hide();
+                });
+                $("#Agree03").off('click');
+                $("#Agree03").on('click', function () {
+                    $("#infoSurveyStatisticsTimely").hide();
+                });
+                $("#Neutral03").off('click');
+                $("#Neutral03").on('click', function () {
+                    $("#infoSurveyStatisticsTimely").hide();
+                });
+                $("#NoOpinion03").off('click');
+                $("#NoOpinion03").on('click', function () {
+                    $("#infoSurveyStatisticsTimely").hide();
+                });
+
+                $("#Disagree03").off('click');
+                $("#Disagree03").on('click', function () {
+                    $("#infoSurveyStatisticsTimely").show();
+                });
+                $("#StronglyDisagree03").off('click');
+                $("#StronglyDisagree03").on('click', function () {
+                    $("#infoSurveyStatisticsTimely").show();
+                });
+
+
+
+
                 $("#infoFormSubmit").off('click');
                 $("#infoFormSubmit").on('click', function () {
 
@@ -1017,6 +1047,7 @@ define([
                     var QualityDim03 = $("input[name='QualityDim03']:checked").val();//1809401444
                     var QualityDim04 = $("input[name='QualityDim04']:checked").val();//950429869
                     var QualityDim05 = $("input[name='QualityDim05']:checked").val();//433840719
+                    var QualityDim03_Details =  $("#QualityDim03_Details").val();//402861372
                     var suggestions = $("#suggestions").val();//1354653395
                     var reciveInformation =  $("input[name='recive_Information']:checked").val();//213971431
                     var Thank_you = $("input[name='Thank_you']:checked").val();//1883206493
@@ -1034,6 +1065,8 @@ define([
                     parametersURL = parametersURL +  "entry.1305525230=" + QualityDim03 + "&"
                     parametersURL = parametersURL +  "entry.337478665=" + QualityDim04 + "&"
                     parametersURL = parametersURL +  "entry.632437274=" + QualityDim05 + "&"
+                    parametersURL = parametersURL +  "entry.402861372=" + QualityDim03_Details + "&"
+
                     parametersURL = parametersURL +  "entry.740302245=" + suggestions + "&"
                     parametersURL = parametersURL +  "entry.213971431=" + reciveInformation + "&"
                     parametersURL = parametersURL +  "entry.696514738=" + Thank_you
@@ -1041,7 +1074,7 @@ define([
                     submitURL = baseURL + parametersURL + submitRef;
 
 
-                    var checkFieldsInModal=InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution,userCountry,typeInstitution,re_email,firstTimeRadio,QualityDim01,QualityDim02,QualityDim03,QualityDim04,QualityDim05);
+                    var checkFieldsInModal = InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution,userCountry,typeInstitution,re_email,firstTimeRadio,QualityDim01,QualityDim02,QualityDim03,QualityDim04,QualityDim05,QualityDim03_Details);
                    // var checkFieldsInModal=true;
 
 
@@ -1188,9 +1221,33 @@ define([
 
             };
 
-            InteractiveDownload.prototype.checkFields = function (userFullName, userEmail, userInstitution, userCountry, typeInstitution, re_email, firstTimeRadio ,QualityDim01, QualityDim02, QualityDim03, QualityDim04, QualityDim05) {
+            InteractiveDownload.prototype.checkFields = function (userFullName, userEmail, userInstitution, userCountry, typeInstitution, re_email, firstTimeRadio ,QualityDim01, QualityDim02, QualityDim03, QualityDim04, QualityDim05, Quality_Details) {
                 var errModal="";
                 var checkFirstTime=false;
+
+
+
+                if (QualityDim03 !== undefined) {
+                     if ((QualityDim03.trim() == 'Disagree')){
+                         if (Quality_Details === undefined) {
+                             errModal = errModal + "Kindly provide details regarding the timeliness\n";
+                         }else{
+                             if (Quality_Details.trim() == "") {
+                                 errModal = errModal + "Kindly provide details regarding the timeliness\n";
+                             }
+                         }
+                     }
+
+                    if ((QualityDim03.trim() == 'Strongly Disagree')){
+                        if (Quality_Details === undefined) {
+                            errModal = errModal + "Kindly provide details regarding the timeliness\n";
+                        }else{
+                            if (Quality_Details.trim() == "") {
+                                errModal = errModal + "Kindly provide details regarding the timeliness\n";
+                            }
+                        }
+                    }
+                }
 
 
                 if (userFullName.trim() == "") {
