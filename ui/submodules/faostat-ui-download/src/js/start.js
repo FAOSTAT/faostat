@@ -1072,8 +1072,10 @@ define([
                     submitURL = baseURL + parametersURL + submitRef;
 
 
-                    var checkFieldsInModal = InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution,userCountry,typeInstitution,re_email,firstTimeRadio,QualityDim01,QualityDim02,QualityDim03,QualityDim04,QualityDim05,QualityDim03_Details);
+
+                    var checkFieldsInModal = InteractiveDownload.prototype.checkFields(userFullName,userEmail,userInstitution,userCountry,typeInstitution,re_email,firstTimeRadio,QualityDim01,QualityDim02,QualityDim03,QualityDim04,QualityDim05,QualityDim03_Details,reciveInformation,Thank_you);
                    // var checkFieldsInModal=true;
+
 
 
                     if (checkFieldsInModal){
@@ -1219,7 +1221,7 @@ define([
 
             };
 
-            InteractiveDownload.prototype.checkFields = function (userFullName, userEmail, userInstitution, userCountry, typeInstitution, re_email, firstTimeRadio ,QualityDim01, QualityDim02, QualityDim03, QualityDim04, QualityDim05, Quality_Details) {
+            InteractiveDownload.prototype.checkFields = function (userFullName, userEmail, userInstitution, userCountry, typeInstitution, re_email, firstTimeRadio ,QualityDim01, QualityDim02, QualityDim03, QualityDim04, QualityDim05, Quality_Details, reciveInformation, Thank_you) {
                 var errModal="";
                 var checkFirstTime=false;
 
@@ -1228,20 +1230,20 @@ define([
                 if (QualityDim03 !== undefined) {
                      if ((QualityDim03.trim() == 'Disagree')){
                          if (Quality_Details === undefined) {
-                             errModal = errModal + "Kindly provide details regarding the timeliness\n";
+                             errModal = errModal + "- Kindly provide details regarding the timeliness\n";
                          }else{
                              if (Quality_Details.trim() == "") {
-                                 errModal = errModal + "Kindly provide details regarding the timeliness\n";
+                                 errModal = errModal + "- Kindly provide details regarding the timeliness\n";
                              }
                          }
                      }
 
                     if ((QualityDim03.trim() == 'Strongly Disagree')){
                         if (Quality_Details === undefined) {
-                            errModal = errModal + "Kindly provide details regarding the timeliness\n";
+                            errModal = errModal + "- Kindly provide details regarding the timeliness\n";
                         }else{
                             if (Quality_Details.trim() == "") {
-                                errModal = errModal + "Kindly provide details regarding the timeliness\n";
+                                errModal = errModal + "- Kindly provide details regarding the timeliness\n";
                             }
                         }
                     }
@@ -1249,27 +1251,27 @@ define([
 
 
                 if (userFullName.trim() == "") {
-                    errModal = errModal + "Full Name\n";
+                    errModal = errModal + "- Full Name\n";
                 }
                /* if ((visibleFieldType)&& (otherInstitution.trim() == "")) {
                     errModal = errModal + "Other Institution\n";
                 }*/
                 if (userCountry.trim() == "") {
-                    errModal = errModal + "Country\n";
+                    errModal = errModal + "- Country\n";
                 }
 
                 if (typeInstitution.trim() == "") {
-                    errModal = errModal + "User group\n";
+                    errModal = errModal + "- User group\n";
                 }
 
                 if (userEmail.trim() == "") {
-                    errModal = errModal + "Email Address\n";
+                    errModal = errModal + "- Email Address\n";
                 }else{
                     if (!InteractiveDownload.prototype.checkEmail(userEmail.trim())) {
-                        errModal = errModal + "Incorrect Email Address\n";
+                        errModal = errModal + "- Incorrect Email Address\n";
                     }else{
                         if ((userEmail.trim())!=(re_email.trim())) {
-                            errModal = errModal + "Incorrect Email Address\n";
+                            errModal = errModal + "- Incorrect Email Address\n";
                         }
                     }
                 }
@@ -1289,6 +1291,13 @@ define([
                     if (QualityDim05 === undefined) {
                         checkFirstTime=true;
                     }
+                }
+
+                if (reciveInformation === undefined) {
+                    errModal = errModal + "- Would you like receive information regarding FAOSTAT updates via email\n";
+                }
+                if (Thank_you === undefined) {
+                    errModal = errModal + "- Would you be willing to fill out a slightly longer questionnaire ... \n";
                 }
 
                 if (checkFirstTime) {
