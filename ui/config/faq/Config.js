@@ -33,7 +33,7 @@ define([
                             answer: "The data we receive mainly from the National Statistical offices are on a Country level."
                         },
                         {
-                            question: "Why can’t i access the FAOSTAT website",
+                            question: "Why can’t I access the FAOSTAT website",
                             answer: "Please empty your cache and choose a different browser."
                         },
                         {
@@ -480,7 +480,7 @@ define([
                             answer: "The data we receive mainly from the National Statistical offices are on a Country level."
                         },
                         {
-                            question: "Why can’t i access the FAOSTAT website",
+                            question: "Why can’t I access the FAOSTAT website",
                             answer: "Please empty your cache and choose a different browser."
                         },
                         {
