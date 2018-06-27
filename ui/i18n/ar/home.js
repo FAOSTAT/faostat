@@ -7,8 +7,8 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
 
         // bulk downloads
         bulk_download: "تنزيل مقادير كبيرة من البيانات",
-        database_description:"Database description",
-        database_description_text:"Includes basic information on datasets and links to individual bulk download files.",
+        database_description:"وصف قاعدة البيانات ",
+        database_description_text:"تتضمن معلومات أساسية عن مجموعات البيانات وروابط بفرادى الملفات لتنزيلها بمقادير كبيرة.",
         all_faostat_data: "FAOSTAT جميع بيانات",
         updated_on: "تمّ تحديثها في",
         url_json: "datasets_E.json",

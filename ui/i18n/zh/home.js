@@ -7,12 +7,12 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
 
         // bulk downloads
         bulk_download: "批量下载",
-        database_description:"Database description",
-        database_description_text:"Includes basic information on datasets and links to individual bulk download files.",
+        database_description:"数据库描述",
+        database_description_text:"包含数据集基本信息和批量下载文件的单个链接。",
         all_faostat_data: "全部粮农组织统计数据库数据",
         updated_on: "更新至",
         url_json: "datasets_E.json",
-
+        url_xml: "datasets_E.xml",
         // database updates
         database_updates: "数据库更新",
 
