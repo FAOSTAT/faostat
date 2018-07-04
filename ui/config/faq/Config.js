@@ -460,6 +460,95 @@ define([
                     topic: "Topics",
                     questions: [
                         {
+                            question: "Who do I write to when I encounter discrepancies or problems related to FAOSTAT?",
+                            answer: "Please write to the FAOSTAT Help desk at <a data-link='external' href='mailto:faostat@fao.org'>faostat@fao.org</a> or call +39 06 5705 5303"
+                        },
+                        {
+                            question: "Where can I find resources and publications about FAOSTAT?",
+                            answer: "Our statistical publications can be accessed in the Statistics division <a target='_blank' href='http://www.fao.org/economic/ess/ess-home/en/'>website</a>, under publications. They are available to download in PDF."
+                        },
+                        {
+                            question: "How do I get to know when you will have future updates?",
+                            answer: "The FAOSTAT homepage shows the latest database updates."
+                        },
+                        {
+                            question: "Can I purchase FAOSTAT data and how much does it cost?",
+                            answer: "FAOSTAT data is free and available to everyone."
+                        },
+                        {
+                            question: "I was looking for statistical data on at sub-national level, but there no information, why is that?",
+                            answer: "The data we receive mainly from the National Statistical offices are on a Country level."
+                        },
+                        {
+                            question: "Why can’t I access the FAOSTAT website",
+                            answer: "Please empty your cache and choose a different browser."
+                        },
+                        {
+                            question: "Why are some items aggregated, eg. Pumpkins, Squash and Gourds?",
+                            answer: "Due to the limited amount of data, certain items are grouped together."
+                        },
+                        {
+                            question: "Do you have data on different varieties of crops?",
+                            answer: "For all the data we have on crops the data is collected as a whole. You may find further information on the National statistical websites."
+                        },
+                        {
+                            question: "I would like to copy your data and publish it, what is the procedure?",
+                            answer: "Permission for this request to reproduce FAO copyright material is granted at no charge, including the right to publish, reproduce, publicly display and distribute the whole or any part of  the material in this and all revisions and any subsequent editions of your work; in any ancillary aids that may be prepared to accompany your work, including promotion and publicity uses; and in all  forms of media now known or later developed.<br><br>Please note that:<br><ul><li>FAO remains the copyright holder of the material, and retains the right to reproduce, translate, publish, and disseminate the whole or any part of it in print and electronic formats, and to grant others the right to do the same, as well as to incorporate material derived from the material in any subsequent work.<br><br></li><li><b>The use of the official emblem or other logos of FAO is prohibited without express and prior written approval by FAO. </b><br><br></li><li>The material must not be used in any way that implies FAO’s endorsement of any companies, services or products.<br><br></li></ul>Due acknowledgement shall be made to FAO, with the source document cited and Web URL provided if applicable as follows:<br>Source: Food and Agriculture Organization of the United Nations, [year], [authors], [title of publication], [URL]. Reproduced with permission<br><br>For the data extracted from the FAOSTAT, please follow the following citation:<br><br>FAO. FAOSTAT. NAME OF DATA COLLECTION (dataset). (Latest update: DATE). Accessed DATE. URI: http://faostat3.fao.org/......."
+
+                        },
+                        {
+                            question: "How to open comma-separated values (csv) files in Excel ?",
+                            answer: "Depending on the user’s Excel, the default options for opening csv files may be different. If the results are shown in a single column in the Excel sheet, the following method will split the data by column:<ul><li>Click on the column containing the data</li><li>Under the Data tab, select Text to Columns</li><li>Choose Delimited as file type</li><li>Choose Comma as Delimiter</li><li>Then click the Finish button</li></ul>"
+                        },
+                        {
+                            question: "How do I find data?",
+                            answer: "Access our website : <a target='_blank' href='http://www.fao.org/faostat/en/#home'>http://www.fao.org/faostat/en/#home</a>  Go to explore data, then choose a domain, eg. Production>Crops. Then make selections from the listboxes for Countries, Items, Elements and Years. Then choose show data or download data."
+                        },
+                        {
+                            question: "Do you have maps?",
+                            answer: "Yes we do. Go to Country Indicators or to Explore data, choose a Domain, then select Visualize data."
+                        },
+                        {
+                            question: "I would like to see everything you have on a commodity. What do I do?",
+                            answer: "On our Homepage, please use the Search an Indicator or Commodity."
+                        },
+                        {
+                            question: "How do I download data in bulk?",
+                            answer: "From the home page you can download Bulk Download files for all domains in the one zip file. Otherwise for individual domains, go to Data, choose the domain and then select from the Bulk Downloads section. Data in the files is shown pivoted by years, except for the Normalized file which is in database format."
+                        },
+                        {
+                            question: "Do you have food consumption data?",
+                            answer: "No, but we have Food supply data. Food supply is under the Food Balance section on the Data page."
+                        },
+                        {
+                            question: "Where can I find calorie data?",
+                            answer: "Go to the Food Balance Sheets or Food supply domains."
+                        },
+                        {
+                            question: "Where can I find detailed information on Country grouping?",
+                            answer: "On our homepage, go to the Definitions and standards section and there are various options listed."
+                        },
+                        {
+                            question: "When we give figures for producing/animals slaughtered, are we talking about “tons of” or “individual animals”?",
+                            answer: "It is for individual animals."
+                        },
+                        {
+                            question: "Is yield and production for cereals calculated in fresh weight or dried weight?",
+                            answer: "Cereals are reported in terms of clean, dry weight. All details are available at:<br><a target='_blank' href='http://www.fao.org/economic/ess/ess-standards/commodity/comm-chapters/en/'>http://www.fao.org/economic/ess/ess-standards/commodity/comm-chapters/en/</a>"
+                        },
+                        {
+                            question: "Is the element 'food supply quantity in kg/capita/year' the consumption of sugar per capita?",
+                            answer: "FBS measures a food availability instead of real consumption.<br><a target='_blank' href='http://www.fao.org/faostat/en/#data/FBS'>http://www.fao.org/faostat/en/#data/FBS</a>"
+                        }
+
+                    ]
+                }
+            ]
+            /*"ar": [
+                {
+                    topic: "Topics",
+                    questions: [
+                        {
                             question: "من الجهة التي يجب مراسلتها في حال مصادفة بيانات متفاوتة أو مشاكل متصلة بموقع FAOSTAT؟",
                             answer: "0657055303" + "يرجى توجيه رسالة خطية إلى مكتب المساعدة الخاص بـ FAOSTAT على عنوان البريد الإلكتروني faostat@fao.org أو الاتصال برقم الهاتف التالي "
                         },
@@ -544,6 +633,7 @@ define([
                     ]
                 }
             ]
+            */
         }
 
     };
