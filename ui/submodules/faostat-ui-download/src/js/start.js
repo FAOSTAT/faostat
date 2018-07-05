@@ -572,7 +572,7 @@ define([
                             };
 
 
-                            var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
+                           /* var readValue = InteractiveDownload.prototype.getCookie('myUserCookie');
                             if (readValue==""){
                                 InteractiveDownload.prototype.showModal();
                             }else{
@@ -581,9 +581,9 @@ define([
                                 }else if (exp_options.typeDownload == "pivot") {
                                     self.exportPivot(exp_options.d, exp_options.requestObj, exp_options.options);
                                 }
-                            }
+                            }*/
 
-                             /*
+
                           switch (type) {
 
                                 case "table":
@@ -596,7 +596,7 @@ define([
                                   //  self.exportExcel(d, requestObj, options);
                                  //   break;
                             }
-                        */
+
                         }
 
                     }).fail(function (e) {
