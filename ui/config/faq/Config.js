@@ -45,11 +45,6 @@ define([
                             answer: "For all the data we have on crops the data is collected as a whole. You may find further information on the National statistical websites."
                         },
                         {
-                            question: "I would like to copy your data and publish it, what is the procedure?",
-                            answer: "Permission for this request to reproduce FAO copyright material is granted at no charge, including the right to publish, reproduce, publicly display and distribute the whole or any part of  the material in this and all revisions and any subsequent editions of your work; in any ancillary aids that may be prepared to accompany your work, including promotion and publicity uses; and in all  forms of media now known or later developed.<br><br>Please note that:<br><ul><li>FAO remains the copyright holder of the material, and retains the right to reproduce, translate, publish, and disseminate the whole or any part of it in print and electronic formats, and to grant others the right to do the same, as well as to incorporate material derived from the material in any subsequent work.<br><br></li><li><b>The use of the official emblem or other logos of FAO is prohibited without express and prior written approval by FAO. </b><br><br></li><li>The material must not be used in any way that implies FAO’s endorsement of any companies, services or products.<br><br></li></ul>Due acknowledgement shall be made to FAO, with the source document cited and Web URL provided if applicable as follows:<br>Source: Food and Agriculture Organization of the United Nations, [year], [authors], [title of publication], [URL]. Reproduced with permission<br><br>For the data extracted from the FAOSTAT, please follow the following citation:<br><br>FAO. FAOSTAT. NAME OF DATA COLLECTION (dataset). (Latest update: DATE). Accessed DATE. URI: http://faostat3.fao.org/......."
-
-                        },
-                        {
                             question: "How to open comma-separated values (csv) files in Excel ?",
                             answer: "Depending on the user’s Excel, the default options for opening csv files may be different. If the results are shown in a single column in the Excel sheet, the following method will split the data by column:<ul><li>Click on the column containing the data</li><li>Under the Data tab, select Text to Columns</li><li>Choose Delimited as file type</li><li>Choose Comma as Delimiter</li><li>Then click the Finish button</li></ul>"
                         },
@@ -132,10 +127,6 @@ define([
                         {
                             question: "Existe-t-il des données sur différentes variétés de végétaux cultivés?",
                             answer: "Toutes les données dont nous disposons sur les végétaux cultivés sont collectées à un niveau global. Vous trouverez peut-être des informations plus détaillées sur les sites internet des services statistiques nationaux."
-                        },
-                        {
-                            question: "Quelle est la procédure à suivre pour pouvoir copier des données et les publier?",
-                            answer: "L'autorisation de reproduire du matériel dont la FAO détient les droits d'auteur est accordée gratuitement, y compris le droit de publier, de reproduire, de diffuser auprès du public et de distribuer tout ou partie de ce matériel dans vos travaux actuels et dans toute version révisée ou édition ultérieure de ces travaux, dans tout document annexe qui pourrait être destiné à accompagner vos travaux, y compris à des fins de promotion et de publicité, et dans tous les types de médias connus actuellement ou qui pourraient être créés par la suite.<br><br>Veuillez noter ce qui suit:<ul><li>La FAO demeure titulaire des droits d'auteur sur le matériel et conserve le droit de reproduire, de traduire, de publier et de diffuser tout ou partie de ce matériel, en version papier ou électronique, et d'accorder à des tiers le droit de faire de même, ainsi que d'intégrer du contenu dérivé dudit matériel dans tout travail ultérieur.</li><li><b>L'emblème officiel et les autres logos de la FAO ne peuvent être utilisés sans que l'Organisation y ait expressément consenti au préalable et par écrit.</b></li><li>Le matériel ne peut être utilisé d'une quelconque manière qui sous-entende que la FAO approuverait les entreprises, services ou produits des utilisateurs.</li></ul>La FAO doit être dûment citée, avec la mention du document source et de l'URL, le cas échéant. Voir l'exemple ci-dessous:<br>Source: Organisation des Nations Unies pour l'alimentation et l'agriculture, [année], [auteurs], [titre de la publication], [URL]. Reproduit avec son autorisation<br><br>S'agissant des données extraites de FAOSTAT, veuillez présenter les références comme suit:<br><br>FAO. FAOSTAT. NOM DE LA COLLECTION (ensemble de données). (Dernière mise à jour: DATE). Consulté le DATE. URI: http://faostat3.fao.org/......."
                         },
                         {
                             question: "Comment ouvrir un fichier CSV dans Excel?",
@@ -222,14 +213,6 @@ define([
                             answer: "Todos los datos que tenemos sobre los cultivos se han recopilado en conjunto. Puede consultar más información en los sitios Web con estadísticas nacionales."
                         },
                         {
-                            question: "Quisiera copiar sus datos y publicarlos, ¿cuál es el procedimiento que debo seguir?",
-                            answer: "."
-                        },
-                        {
-                            question: "Quisiera copiar sus datos y publicarlos, ¿cuál es el procedimiento que debo seguir?",
-                            answer: "Se puede conceder permiso gratuitamente para reproducir material de la FAO protegido por derechos de autor, incluido el derecho de publicar, reproducir, exponer al público y distribuir la totalidad o cualquier parte del material que se incluya en esta y todas las revisiones de su trabajo y cualquier edición ulterior del mismo; en cualquier ayuda complementaria que pueda prepararse para acompañar su trabajo, incluida la utilización con fines de promoción y publicitarios, y en todos los tipos de medios de comunicación actualmente conocidos o que puedan crearse en el futuro.<br><br>Sírvase tomar nota de lo siguiente:<ul><li>La FAO no dejará de ser la titular de los derechos de autor del material y conservará el derecho de reproducir, traducir, publicar y difundir su totalidad o cualquiera de sus partes en formato impreso y electrónico y de otorgar a otros el derecho de hacer lo mismo, además de incorporar material derivado del material en cualquier trabajo posterior.</li><li><b>Está prohibido usar el emblema oficial de la FAO y otros logotipos de esta sin su aprobación previa por escrito en forma explícita.</b></li><li>No se deberá utilizar el material de forma que ello implique que la FAO aprueba alguna sociedad, servicio o producto.</li></ul>Se hará constar el debido reconocimiento a la FAO, citando el documento original e indicando la dirección Web (URL) cuando proceda, de la siguiente forma:<br>Fuente: Organización de las Naciones Unidas para la Alimentación y la Agricultura, [año],[autores], [título de la publicación], [URL]. Reproducción autorizada.<br><br>En el caso de los datos extraídos de FAOSTAT, sírvase utilizar el siguiente modelo de cita:<br><br>FAO. FAOSTAT. NOMBRE DE LA RECOPILACIÓN DE DATOS (conjunto de datos). (Última actualización: FECHA). FECHA de consulta. URL: http://faostat3.fao.org/.......",
-                        },
-                        {
                             question: "¿Cómo se pueden abrir los archivos de valores separados por coma en Excel?",
                             answer: "Dependiendo de la versión de Excel que tenga el usuario, las opciones por defecto para abrir dichos archivos pueden variar. Si se muestran los resultados en una sola columna en la hoja de Excel, el método que figura a continuación le permitirá dividir los datos por columna:<ul><li>pulse en la columna que contiene los datos;</li><li>en la pestaña “Datos”, seleccione “Texto en columnas”;</li><li>elija “Delimitados” como tipo de archivo;</li><li>elija “Coma” como “Separador”, y</li><li>luego pulse en el botón “Finalizar”.</li></ul>"
                         },
@@ -311,11 +294,6 @@ define([
                         {
                             question: "Имеются ли в наличии данные по отдельным сортам сельскохозяйственных культур?",
                             answer: "Данные агрегируются по сельскохозяйственной культуре в целом. Более подробная информация размещена на веб-сайтах национальных статистических служб."
-                        },
-                        {
-                            question: "Я хотел бы использовать ваши статистические данные в своей публикации, как получить соответствующее разрешение?",
-                            answer: "Разрешение на использование охраняемых авторским правом материалов ФАО предоставляется бесплатно, включая право на публикацию, воспроизведение, открытое использование и распространение всех или части материалов в текущей и всех будущих редакциях вашей публикации и любых сопроводительных вспомогательных материалах, подготовленных в том числе для просветительских и рекламных целей и с использованием любых существующих или будущих типов носителей информации.<br><br>Напоминание:<ul><li>за ФАО сохраняются авторские права на свои материалы и право на воспроизведение, перевод, публикацию и распространение всех или части материалов в печатном или электронном виде, а также на предоставление другим сторонам как вышеперечисленных прав, так и права на использование своих материалов в любых будущих публикациях.</li><li><b>Использование официальной эмблемы или других логотипов ФАО без специального и полученного заблаговременно письменного разрешения Организации запрещено. </b></b></li><li>Материалы ФАО запрещается использовать, если каким-либо образом предполагается, что Организация одобряет деятельность, продукты или услуги каких-либо организаций.</li></ul> При этом следует должным образом указывать ФАО в качестве источника, приводя название документа и ссылку на его веб-адрес (URL), если таковая имеется:<br>Источник: Продовольственная и сельскохозяйственная организация Объединенных Наций, [год], [авторы], [название публикации], [веб-адрес]. Воспроизводится с разрешения правообладателя <br><br> При использовании данных ФАОСТАТ просьба цитировать Организацию следующим образом:<br><br>ФАО. ФАОСТАТ. НАЗВАНИЕ КОЛЛЕКЦИИ ДАННЫХ (массива данных) (Последнее обновление: ДАТА). По состоянию на ДАТА. Веб-адрес: http://faostat3.fao.org/......."
-
                         },
                         {
                             question: "Как отрыть файлы формата csv в Excel?",
@@ -403,11 +381,6 @@ define([
                             answer: "所有数据均按作物进行整体统计。更多信息可参见国家统计网站。"
                         },
                         {
-                            question: "转载和发布粮农组织统计数据库数据需遵循什么程序？",
-                            answer: "阁下可免费获准转载粮农组织版权材料，获得许可后有权利将粮农组织版权材料的全部或部分内容进行发布、转载、公开展示和传播，用于阁下著作当前版本、所有修订版和任何后续版本；可能准备随附著作的任何辅助材料，包括推广和宣传材料；以及现在已知或以后开发的所有形式的媒体。 <br><br>请注意:<br><ul><li>粮农组织仍为材料版权所有者，并保留以印刷和电子格式全部或部分转载、翻译、发布和传播材料以及授权他人开展以上活动和将源自材料的内容整合进任一后续著作中的权利。 <br><br></li><li><b>未经粮农组织明确和事先书面批准，禁止使用粮农组织正式标志或其他标志。 </b><br><br></li><li>使用材料时不得以任何方式暗示粮农组织认可任何公司、服务或产品。<br><br></li></ul>应向粮农组织表示应有致谢，且如适用应按以下格式引用原始文献和网络统一资源地址（URL）：<br>来源：联合国粮食及农业组织，[年份]，[作者]，[出版物名称]，[链接]。许可转载<br><br>从粮农组织统计数据库中提取的数据应遵循以下引用格式：<br><br>粮农组织。粮农统计数据库。数据集名称（数据域）。（最近更新：日期）。访问日期。URI：http://faostat3.fao.org/......."
-
-                        },
-                        {
                             question: "如何在Excel中打开逗号分隔值（csv）文件？",
                             answer: "打开csv文件的默认选项因用户Excel版本可能有所不同。如果Excel工作表中结果显示在同一列，通过以下方法可以分列显示数据：<ul><li>点击数据列</li><li>在“数据”选项卡下，选择“文本分列”</li><li>选择“分隔符号”作为文件类型</li><li>选择“逗号”作为“分隔符号”</li><li>然后点击“完成”</li></ul>"
                         },
@@ -490,11 +463,6 @@ define([
                         {
                             question: "Do you have data on different varieties of crops?",
                             answer: "For all the data we have on crops the data is collected as a whole. You may find further information on the National statistical websites."
-                        },
-                        {
-                            question: "I would like to copy your data and publish it, what is the procedure?",
-                            answer: "Permission for this request to reproduce FAO copyright material is granted at no charge, including the right to publish, reproduce, publicly display and distribute the whole or any part of  the material in this and all revisions and any subsequent editions of your work; in any ancillary aids that may be prepared to accompany your work, including promotion and publicity uses; and in all  forms of media now known or later developed.<br><br>Please note that:<br><ul><li>FAO remains the copyright holder of the material, and retains the right to reproduce, translate, publish, and disseminate the whole or any part of it in print and electronic formats, and to grant others the right to do the same, as well as to incorporate material derived from the material in any subsequent work.<br><br></li><li><b>The use of the official emblem or other logos of FAO is prohibited without express and prior written approval by FAO. </b><br><br></li><li>The material must not be used in any way that implies FAO’s endorsement of any companies, services or products.<br><br></li></ul>Due acknowledgement shall be made to FAO, with the source document cited and Web URL provided if applicable as follows:<br>Source: Food and Agriculture Organization of the United Nations, [year], [authors], [title of publication], [URL]. Reproduced with permission<br><br>For the data extracted from the FAOSTAT, please follow the following citation:<br><br>FAO. FAOSTAT. NAME OF DATA COLLECTION (dataset). (Latest update: DATE). Accessed DATE. URI: http://faostat3.fao.org/......."
-
                         },
                         {
                             question: "How to open comma-separated values (csv) files in Excel ?",
