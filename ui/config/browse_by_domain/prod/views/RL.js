@@ -70,7 +70,7 @@ define([
                     },
                     "config": {
                         "dimension_id": "year",
-                        "defaultCodes": ['1994','2014'],
+                        "defaultCodes": ['1961','2014'],
                         "filter": {
                         }
                     }
@@ -159,6 +159,54 @@ define([
                         "order_by": 'area, year'
                     }
                 },
+
+                {
+                    type: 'chart',
+                    class: "col-xs-12",
+
+                    labels: {
+                        template: {
+                            title: {
+                                en: "{{item}} by continent, {{element}}",
+                                fr: "{{item}} par continent, {{element}}",
+                                es: "{{item}} por continente, {{element}}"
+                            },
+                            subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
+                        }
+                    },
+
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "pie",
+                            xDimensions: null,
+                            yDimensions: null,
+                            valueDimensions: 'value',
+                            seriesDimensions: ['area']
+                        },
+                        template: {
+                            height: '250px'
+                        },
+                        creator: {
+                            chartObj: {
+                                chart: {
+                                    type: "column"
+                                },
+                                colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6',
+                                    '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300',
+                                    '#8B0707','#329262','#5574A6','#3B3EAC']
+                            }
+                        }
+                    },
+                    allowedFilter: ['year', 'item', 'aggregation'],
+                    filter: {
+                        // TODO: remove the area (in theory should be automatically detected from the domain dimensions/schema)
+                        area: ["5100", "5200", "5300", "5400", "5500"],
+                        "group_by": 'year',
+                        "order_by": 'area'
+                    }
+                },
+
                 {
                     type: 'chart',
                     class: "col-xs-12",
@@ -195,7 +243,10 @@ define([
                             chartObj: {
                                 chart: {
                                     type: "column"
-                                }
+                                },
+                                colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6',
+                                    '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300',
+                                    '#8B0707','#329262','#5574A6','#3B3EAC']
                             }
                         }
                     },
@@ -205,55 +256,6 @@ define([
                         area: ["5000>"],
                         "group_by": 'year, item',
                         "order_by": 'value DESC',
-                        "limit": '10'
-                    }
-                },
-                {
-                    type: 'chart',
-                    class: "col-xs-12",
-
-                    // labels
-                    labels: {
-
-                        // template to be applied to the config.template for the custom object
-                        template: {
-                            title: {
-                                "en":"{{item}} - {{element}} (Bottom 10 Countries)",
-                                "fr":"{{item}} - {{element}} ((Bottom 10 Countries)",
-                                "es":"{{item}} - {{element}} ((Bottom 10 Countries)"
-                            },
-                            subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
-                        }
-                    },
-
-                    config: {
-                        adapter: {
-                            adapterType: 'faostat',
-                            type: "standard",
-                            xDimensions: ['area'],
-                            yDimensions: 'unit',
-                            valueDimensions: 'value',
-                            seriesDimensions: ['element'],
-                            decimalPlaces: 2
-                        },
-                        template: {
-                            height:'250px'
-                            // default labels to be applied
-                        },
-                        creator: {
-                            chartObj: {
-                                chart: {
-                                    type: "column"
-                                }
-                            }
-                        }
-                    },
-                    allowedFilter: ['year', 'item', 'element', 'aggregation'],
-                    deniedTemplateFilter: [],
-                    filter: {
-                        area: ["5000>"],
-                        "group_by": 'year, item',
-                        "order_by": 'value ASC',
                         "limit": '10'
                     }
                 }

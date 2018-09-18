@@ -1,7 +1,8 @@
 /*global define*/
 define([
+    'jquery',
     'config/browse_by_domain/Config'
-],function (C) {
+],function ($, C) {
 
     'use strict';
 
@@ -16,16 +17,46 @@ define([
 
             items: [
                 {
+                    "id": "item",
+                    "type": "codelist",
+                    // TODO: in theory that should come from the dimensions schema!!
+                    "parameter": "item",
+                    "componentType": {
+                        "class": "col-sm-4",
+                        "type": "dropDownList"
+                    },
+                    "config": {
+                        "dimension_id": "item",
+                        "defaultCodes": ["6610"],
+                        "filter": {}
+                    }
+                },
+                {
+                    "id": "element",
+                    "type": "codelist",
+                    "parameter": "element",
+                    "componentType": {
+                        "class": "col-sm-4",
+                        "type": "dropDownList"
+                    },
+                    "config": {
+                        "dimension_id": "element",
+                        "defaultCodes": ["7209"],
+                        "filter": {}
+                    }
+                },
+                {
                     "id": "area",
                     "type": "codelist",
                     "parameter": "area",
                     "componentType": {
-                        "class": "col-xs-6 col-sm-6 col-md-4",
-                        "type": "dropDownList"
+                        "class": "col-xs-6 col-sm-6 col-md-3",
+                        "type": "dropDownList",
+                        "multiple": false
                     },
                     "config": {
                         "dimension_id": "area",
-                        "defaultCodes": ["11"],
+                        "defaultCodes": ["5000"],
                         "filter": {}
                     }
                 },
@@ -34,16 +65,22 @@ define([
                     "type": "codelist",
                     "parameter": "year",
                     "componentType": {
-                        "class": "col-xs-4 col-sm-4 col-md-2",
+                        "class": "col-sm-2",
                         "type": "dropDownList-timerange"
                     },
                     "config": {
                         "dimension_id": "year",
-                        "defaultCodes": [],
+                        "defaultCodes": ['1961','2014'],
                         "filter": {
                         }
                     }
-                }
+                },
+                $.extend(true, {}, C.filter.aggregation, {
+                    "componentType": {
+                        "class": "hidden"
+                    },
+                    "defaultCodes": ["AVG"]
+                })
             ]
         },
 
@@ -56,54 +93,174 @@ define([
 
             items: [
                 {
-                    type: 'chart',
-                    class: "col-md-12",
+                    type: 'map',
+                    class: "col-xs-12",
 
                     // labels
                     labels: {
-                        default: {
-                            footer: {
-                                en: "<small><b>Data are expressed in formulated products for the following countries:</b><br><i>Algeria, Bahamas, Bangladesh, Bhutan, Cyprus, Fiji, Jamaica, Mauritius, Mexico, Montenegro, Occupied Palestinian Territory, Panama, Republic of Korea, Serbia and Montenegro, Slovakia, Syrian Arab Republic, Trinidad and Tobago</i></small>",
-                                fr: "<small><b>Les données sont exprimées en produits formulés pour les pays suivants:</b><br><i>Algérie, Bahamas, Bangladesh, Bhoutan, Chypre, Fidji, Jamaïque, Maurice, Mexique, Monténégro, Panama, République arabe syrienne, République de Corée, Serbie-et-Monténégro, Slovaquie, Territoire palestinien occupé, Trinité-et-Tobago</i></small>",
-                                es: "<small><b>Los datos se expresan en productos formulados para los siguientes países:</b><br><i>Argelia, Bahamas, Bangladesh, Bhután, Chipre, Eslovaquia, Fiji, Jamaica, Mauricio, México, Montenegro, Panamá, República Árabe Siria, República de Corea, Serbia y Montenegro, Territorio Palestino Ocupado, Trinidad y Tabago</i></small>",
-                            }
-                        },
 
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "Pesticides use, {{area}}",
-                                fr: "Consommation de pesticides, {{area}} ",
-                                es: "Consumo de plaguicidas, {{area}} "
+                                en: "{{item}} - {{element}} by country (%)",
+                                fr: "{{item}} - {{element}} par pays (%)",
+                                es: "{{item}} - {{element}} por países (%)"
                             },
-                            subtitle: "{{year}}",
-                            footer: "{{{footer}}}"
+                            subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
+                    },
+
+                    //height:'250px',
+                    config: {
+                        layer: {},
+                        template: {}
+                    },
+                    allowedFilter: ['item', 'year', 'element', 'aggregation'],
+                    deniedTemplateFilter: [],
+                    filter: {
+                        area: ["5000>", "351"],
+                        "group_by": 'year',
+                        "order_by": 'area'
+                    }
+                },
+                {
+                    type: 'chart',
+                    class: "col-xs-12",
+
+                    // labels?
+                    labels: {
+                        // temp[late to be applied to the config.template for the custom object
+                        template: {
+                            title: {
+                                en: "{{item}} - {{element}} (%)",
+                                fr: "{{item}} - {{element}} (%)",
+                                es: "{{item}} - {{element}} (%)"
+                            },
+                            subtitle: "{{year}}"
+                        }
+
                     },
 
                     config: {
                         adapter: {
                             adapterType: 'faostat',
                             type: "timeserie",
-                            xDimensions: 'year',
-                            yDimensions: 'unit',
+                            xDimensions: "year",
+                            yDimensions: "unit",
                             valueDimensions: 'value',
-                            seriesDimensions: ['item']
+                            seriesDimensions: ['area'],
+                            decimalPlaces: 2
                         },
-                        template: {
-                            // height:'350px'
-                            // default labels to be applied
-                        },
+                        template: {},
                         creator: {}
                     },
-                    allowedFilter: ['area', 'year'],
+                    allowedFilter: ['year', 'item', 'element','area'],
                     filter: {
-                        element: [5161],
-                        item: [1309, 1320, 1331,1357]
+                        "order_by": 'area, year'
+                    }
+                },
+
+                {
+                    type: 'chart',
+                    class: "col-xs-12",
+
+                    labels: {
+                        template: {
+                            title: {
+                                en: "{{item}} by continent, {{element}}",
+                                fr: "{{item}} par continent, {{element}}",
+                                es: "{{item}} por continente, {{element}}"
+                            },
+                            subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
+                        }
+                    },
+
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "pie",
+                            xDimensions: null,
+                            yDimensions: null,
+                            valueDimensions: 'value',
+                            seriesDimensions: ['area']
+                        },
+                        template: {
+                            height: '250px'
+                        },
+                        creator: {
+                            chartObj: {
+                                chart: {
+                                    type: "column"
+                                },
+                                colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6',
+                                    '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300',
+                                    '#8B0707','#329262','#5574A6','#3B3EAC']
+                            }
+                        }
+                    },
+                    allowedFilter: ['year', 'item', 'aggregation'],
+                    filter: {
+                        // TODO: remove the area (in theory should be automatically detected from the domain dimensions/schema)
+                        area: ["5100", "5200", "5300", "5400", "5500"],
+                        "group_by": 'year',
+                        "order_by": 'area'
+                    }
+                },
+
+                {
+                    type: 'chart',
+                    class: "col-xs-12",
+
+                    // labels
+                    labels: {
+
+                        // template to be applied to the config.template for the custom object
+                        template: {
+                            title: {
+                                "en":"{{item}} - {{element}} (Top 10 Countries)",
+                                "fr":"{{item}} - {{element}} (10 pays principaux)",
+                                "es":"{{item}} - {{element}} (los 10 países principales)"
+                            },
+                            subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
+                        }
+                    },
+
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "standard",
+                            xDimensions: ['area'],
+                            yDimensions: 'unit',
+                            valueDimensions: 'value',
+                            seriesDimensions: ['element'],
+                            decimalPlaces: 2
+                        },
+                        template: {
+                            height:'250px'
+                            // default labels to be applied
+                        },
+                        creator: {
+                            chartObj: {
+                                chart: {
+                                    type: "column"
+                                },
+                                colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6',
+                                    '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300',
+                                    '#8B0707','#329262','#5574A6','#3B3EAC']
+                            }
+                        }
+                    },
+                    allowedFilter: ['year', 'item', 'element', 'aggregation'],
+                    deniedTemplateFilter: [],
+                    filter: {
+                        area: ["5000>"],
+                        "group_by": 'year, item',
+                        "order_by": 'value DESC',
+                        "limit": '10'
                     }
                 }
             ]
         }
 
-    }
+    };
 });
