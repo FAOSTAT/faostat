@@ -70,7 +70,7 @@ define([
                     },
                     "config": {
                         "dimension_id": "year",
-                        "defaultCodes": ['1961','2015'],
+                        "defaultCodes": ['1961','2016'],
                         "filter": {
                         }
                     }
