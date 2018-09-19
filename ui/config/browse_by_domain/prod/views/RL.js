@@ -70,7 +70,7 @@ define([
                     },
                     "config": {
                         "dimension_id": "year",
-                        "defaultCodes": ['1961','2014'],
+                        "defaultCodes": ['1961','2015'],
                         "filter": {
                         }
                     }
@@ -236,7 +236,7 @@ define([
                             decimalPlaces: 2
                         },
                         template: {
-                            height:'250px'
+                            //height:'250px'
                             // default labels to be applied
                         },
                         creator: {
@@ -244,9 +244,9 @@ define([
                                 chart: {
                                     type: "column"
                                 },
-                                colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6',
-                                    '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300',
-                                    '#8B0707','#329262','#5574A6','#3B3EAC']
+                                legend: {
+                                    enabled: false
+                                }
                             }
                         }
                     },

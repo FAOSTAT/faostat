@@ -27,11 +27,25 @@ define([
                     },
                     "config": {
                         "dimension_id": "item",
-                        "defaultCodes": ["6610"],
-                        "filter": {}
+                        "defaultCodes": ["1357"],
+                        "filter": {
+                           whitelist : [
+                               1357, // Pesticides
+                               1309, // Insecticides
+                               1354, // Mineral Oils
+                               1320, // Herbicides
+                               1331, // Fungicides
+                               1352, // Seed Fungicides
+                               1353, // Seed Insecticides
+                               1356, // Plant Growth
+                               1345, // Rodentcides
+                               1358, // Disinfectants
+                               1359  // Others
+                           ]
+                        }
                     }
                 },
-                {
+                /*{
                     "id": "element",
                     "type": "codelist",
                     "parameter": "element",
@@ -44,7 +58,7 @@ define([
                         "defaultCodes": ["7209"],
                         "filter": {}
                     }
-                },
+                },*/
                 {
                     "id": "area",
                     "type": "codelist",
@@ -70,7 +84,7 @@ define([
                     },
                     "config": {
                         "dimension_id": "year",
-                        "defaultCodes": ['1961','2014'],
+                        "defaultCodes": ['1990','2016'],
                         "filter": {
                         }
                     }
@@ -236,7 +250,7 @@ define([
                             decimalPlaces: 2
                         },
                         template: {
-                            height:'250px'
+                            //height:'250px'
                             // default labels to be applied
                         },
                         creator: {
@@ -244,9 +258,9 @@ define([
                                 chart: {
                                     type: "column"
                                 },
-                                colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6',
-                                    '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300',
-                                    '#8B0707','#329262','#5574A6','#3B3EAC']
+                                legend: {
+                                    enabled: false
+                                }
                             }
                         }
                     },
