@@ -197,7 +197,13 @@ define([
                         template: {
                             height: '250px'
                         },
-                        creator: {}
+                        creator: {
+                            chartObj : {
+                                legend: {
+                                    enabled: false
+                                }
+                            }
+                        }
                     },
                     allowedFilter: ['year', 'item', 'aggregation'],
                     filter: {
@@ -234,7 +240,13 @@ define([
                         template: {
                             height: '250px'
                         },
-                        creator: {}
+                        creator: {
+                            chartObj : {
+                                legend: {
+                                    enabled: false
+                                }
+                            }
+                        }
                     },
                     allowedFilter: ['area', 'year', 'aggregation'],
                     filter: {
@@ -264,19 +276,27 @@ define([
                         adapter: {
                             adapterType: 'faostat',
                             type: "standard",
-                            xDimensions: ['element'],
+                            xDimensions: ['area'],
                             yDimensions: 'unit',
                             valueDimensions: 'value',
-                            seriesDimensions: ['area']
+                            seriesDimensions: ['element']
                         },
                         template: {
-                            height:'250px'
+
                             // default labels to be applied
                         },
                         creator: {
                             chartObj: {
                                 chart: {
                                     type: "column"
+                                },
+                                //colors: ['#2196F3','#f44336','#FF9800','#4CAF50','#673AB7','#3F51B5','#00BCD4', '#E91E63','#8BC34A','#FF5722'], // material palette
+                                //colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6', '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300', '#8B0707','#329262','#5574A6','#3B3EAC'], // Original Palette
+                                //colors: ['#f44336','#E91E63','#9C27B0','#673AB7','#3F51B5','#2196F3','#03A9F4', '#00BCD4', '#009688', '#4CAF50'], // Blueshade palette
+                                plotOptions: {
+                                    column: {
+                                        colorByPoint : true
+                                    }
                                 }
                             }
                         }

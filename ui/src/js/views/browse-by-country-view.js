@@ -530,7 +530,7 @@ define([
                 });
 
                 // added dirty baselayer
-                //this.m.map.addLayer(Esri_WorldPhysical);
+                this.m.map.addLayer(Esri_WorldPhysical);
                 this.m.map.addLayer(CartoDB_PositronOnlyLabels);
                 /// this.m.map.addLayer(Esri_WorldTopoMap);
 
