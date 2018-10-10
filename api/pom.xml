@@ -247,7 +247,7 @@
         <profile>
             <id>aws-dev</id>
             <properties>
-                <rp.build.warname>api-dev</rp.build.warname>
+                <rp.build.warname>api</rp.build.warname>
                 <faostat_dev_dbname>${faostat_aws_dev_dbname}</faostat_dev_dbname>
                 <faostat_dev_driver>${faostat_aws_dev_driver}</faostat_dev_driver>
                 <faostat_dev_pwd>${faostat_aws_dev_pwd}</faostat_dev_pwd>
@@ -295,7 +295,7 @@
         <profile>
             <id>aws-qa</id>
             <properties>
-                <rp.build.warname>api-qa</rp.build.warname>
+                <rp.build.warname>api</rp.build.warname>
                 <faostat_qa_dbname>${faostat_aws_qa_dbname}</faostat_qa_dbname>
                 <faostat_qa_driver>${faostat_aws_qa_driver}</faostat_qa_driver>
                 <faostat_qa_pwd>${faostat_aws_qa_pwd}</faostat_qa_pwd>
@@ -343,7 +343,7 @@
         <profile>
             <id>aws-prod</id>
             <properties>
-                <rp.build.warname>api-prod</rp.build.warname>
+                <rp.build.warname>api</rp.build.warname>
                 <faostat_prod_dbname>${faostat_aws_prod_dbname}</faostat_prod_dbname>
                 <faostat_prod_driver>${faostat_aws_prod_driver}</faostat_prod_driver>
                 <faostat_prod_pwd>${faostat_aws_prod_pwd}</faostat_prod_pwd>

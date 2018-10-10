@@ -162,7 +162,9 @@ define([
                             seriesDimensions: ['area', 'item', 'element']
                         },
                         template: {},
-                        creator: {}
+                        creator: {
+                            colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6', '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300', '#8B0707','#329262','#5574A6','#3B3EAC'], // Original Palette
+                        }
                     },
                     allowedFilter: ['area', 'year', 'item'],
                     deniedOnLoadFilter: ['area'],
@@ -199,6 +201,7 @@ define([
                         },
                         creator: {
                             chartObj : {
+                                colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6', '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300', '#8B0707','#329262','#5574A6','#3B3EAC'], // Original Palette
                                 legend: {
                                     enabled: false
                                 }
@@ -242,6 +245,7 @@ define([
                         },
                         creator: {
                             chartObj : {
+                                colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6', '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300', '#8B0707','#329262','#5574A6','#3B3EAC'], // Original Palette
                                 legend: {
                                     enabled: false
                                 }
@@ -291,7 +295,7 @@ define([
                                     type: "column"
                                 },
                                 //colors: ['#2196F3','#f44336','#FF9800','#4CAF50','#673AB7','#3F51B5','#00BCD4', '#E91E63','#8BC34A','#FF5722'], // material palette
-                                //colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6', '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300', '#8B0707','#329262','#5574A6','#3B3EAC'], // Original Palette
+                                colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6', '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300', '#8B0707','#329262','#5574A6','#3B3EAC'], // Original Palette
                                 //colors: ['#f44336','#E91E63','#9C27B0','#673AB7','#3F51B5','#2196F3','#03A9F4', '#00BCD4', '#009688', '#4CAF50'], // Blueshade palette
                                 plotOptions: {
                                     column: {
