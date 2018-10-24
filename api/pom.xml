@@ -248,11 +248,11 @@
             <id>aws-dev</id>
             <properties>
                 <rp.build.warname>api</rp.build.warname>
-                <faostat_dev_dbname>${faostat_aws_dev_dbname}</faostat_dev_dbname>
-                <faostat_dev_driver>${faostat_aws_dev_driver}</faostat_dev_driver>
-                <faostat_dev_pwd>${faostat_aws_dev_pwd}</faostat_dev_pwd>
-                <faostat_dev_url>${faostat_aws_dev_url}</faostat_dev_url>
-                <faostat_dev_user>${faostat_aws_dev_user}</faostat_dev_user>
+                <faostat_dev_dbname>${faostat_dev_dbname}</faostat_dev_dbname>
+                <faostat_dev_driver>${faostat_dev_driver}</faostat_dev_driver>
+                <faostat_dev_pwd>${faostat_dev_pwd}</faostat_dev_pwd>
+                <faostat_dev_url>${faostat_dev_url}</faostat_dev_url>
+                <faostat_dev_user>${faostat_dev_user}</faostat_dev_user>
             </properties>
             <build>
                 <plugins>
@@ -296,11 +296,11 @@
             <id>aws-qa</id>
             <properties>
                 <rp.build.warname>api</rp.build.warname>
-                <faostat_qa_dbname>${faostat_aws_qa_dbname}</faostat_qa_dbname>
-                <faostat_qa_driver>${faostat_aws_qa_driver}</faostat_qa_driver>
-                <faostat_qa_pwd>${faostat_aws_qa_pwd}</faostat_qa_pwd>
-                <faostat_qa_url>${faostat_aws_qa_url}</faostat_qa_url>
-                <faostat_qa_user>${faostat_aws_qa_user}</faostat_qa_user>
+                <faostat_qa_dbname>${faostat_qa_dbname}</faostat_qa_dbname>
+                <faostat_qa_driver>${faostat_qa_driver}</faostat_qa_driver>
+                <faostat_qa_pwd>${faostat_qa_pwd}</faostat_qa_pwd>
+                <faostat_qa_url>${faostat_qa_url}</faostat_qa_url>
+                <faostat_qa_user>${faostat_qa_user}</faostat_qa_user>
             </properties>
             <build>
                 <plugins>
@@ -344,11 +344,11 @@
             <id>aws-prod</id>
             <properties>
                 <rp.build.warname>api</rp.build.warname>
-                <faostat_prod_dbname>${faostat_aws_prod_dbname}</faostat_prod_dbname>
-                <faostat_prod_driver>${faostat_aws_prod_driver}</faostat_prod_driver>
-                <faostat_prod_pwd>${faostat_aws_prod_pwd}</faostat_prod_pwd>
-                <faostat_prod_url>${faostat_aws_prod_url}</faostat_prod_url>
-                <faostat_prod_user>${faostat_aws_prod_user}</faostat_prod_user>
+                <faostat_prod_dbname>${faostat_prod_dbname}</faostat_prod_dbname>
+                <faostat_prod_driver>${faostat_prod_driver}</faostat_prod_driver>
+                <faostat_prod_pwd>${faostat_prod_pwd}</faostat_prod_pwd>
+                <faostat_prod_url>${faostat_prod_url}</faostat_prod_url>
+                <faostat_prod_user>${faostat_prod_user}</faostat_prod_user>
             </properties>
             <build>
                 <plugins>
