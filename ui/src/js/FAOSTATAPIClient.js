@@ -22,65 +22,79 @@ define(['jquery', 'loglevel', 'q' , 'amplify'], function ($, log, Q) {
 
     };
 
-        FAOSTATAPIClient.prototype.rankings = function(c) {
-    var config = $.extend(true, {}, this.CONFIG, c || {});
-    config = this.apply_rankings_defaults(config);
-    if (this.is_valid_rankings(config)) {
-        var url = this.CONFIG.base_url +  config.lang + '/rankings/',
-            url_data = ['base_url','lang'],
-            compressArray = false,
-            traditional = true,
-            self = this;
+    FAOSTATAPIClient.prototype.rankings = function(c) {
 
-        // if advanced
-        var data = $.extend(true, {}, c, {
-            "datasource": config.datasource,
-            "output_type": config.output_type, "domain_codes": config.domain_codes, "List1Codes": config.List1Codes, "List2Codes": config.List2Codes, "List3Codes": config.List3Codes, "List4Codes": config.List4Codes, "List5Codes": config.List5Codes, "List6Codes": config.List6Codes, "List7Codes": config.List7Codes, "filter_list": config.filter_list, "rank_type": config.rank_type, "limit": config.limit
-});
+        var config = $.extend(true, {}, this.CONFIG, c || {});
+        config = this.apply_rankings_defaults(config);
+        if (this.is_valid_rankings(config)) {
+            var url = this.CONFIG.base_url +  config.lang + '/rankings/',
+                url_data = ['base_url','lang'],
+                compressArray = false,
+                traditional = true,
+                self = this;
 
-        for(var i=0; i < url_data.length; i++) {
-            delete data[url_data[i]];
-        }
-
-        // parse arrays to strings
-        // this will reduce the length of the URL
-        if(compressArray === true) {
-            $.each(data, function(k, v) {
-                if (Array.isArray(v)) {
-                    data[k] = v.join(",");
-                }
+            // if advanced
+            var data = $.extend(true, {}, c, {
+                "datasource": config.datasource,
+                "output_type": config.output_type,
+                "domain_codes": config.domain_codes,
+                "List1Codes": config.List1Codes,
+                "List2Codes": config.List2Codes,
+                "List3Codes": config.List3Codes,
+                "List4Codes": config.List4Codes,
+                "List5Codes": config.List5Codes,
+                "List6Codes": config.List6Codes,
+                "List7Codes": config.List7Codes,
+                "filter_list": config.filter_list,
+                "rank_type": config.rank_type,
+                "limit": config.limit
             });
-        }
 
-        if (this.CONFIG.log) {
-            log.info("API.rankings; request", data);
-        }
-
-        var key = JSON.stringify($.extend({url: url}, data));
-        var v = this.store(key);
-
-            if ( v === undefined) {
-                return Q($.ajax({
-                    url: url,
-                    // TODO: this should be an option in the schema
-                    traditional: traditional,
-                        data: data,
-                    type: 'POST'
-                })).then(function (d) {
-                    // TODO: this should be at the schema level for each request and not a global one
-                    try {
-                        self.store(key, d);
-                    }catch(e) {
-                        // catching for quota exceed
-                    }
-                    return d;
-                });
-            }else {
-                return Q.when(v);
+            for(var i=0; i < url_data.length; i++) {
+                delete data[url_data[i]];
             }
 
-    }
-    throw 400;
+            // parse arrays to strings
+            // this will reduce the length of the URL
+            if(compressArray === true) {
+                $.each(data, function(k, v) {
+                    if (Array.isArray(v)) {
+                        data[k] = v.join(",");
+                    }
+                });
+            }
+
+            if (this.CONFIG.log) {
+                log.info("API.rankings; request", data);
+            }
+
+            var key = JSON.stringify($.extend({url: url}, data));
+            var v = this.store(key);
+
+            console.log('data is ' , data);
+
+                if ( v === undefined) {
+                    return Q($.ajax({
+                        url: url,
+                        // TODO: this should be an option in the schema
+                        traditional: traditional,
+                        data: data,
+                        type: 'POST'
+                    })).then(function (d) {
+                        // TODO: this should be at the schema level for each request and not a global one
+                        try {
+                            self.store(key, d);
+                        }catch(e) {
+                            // catching for quota exceed
+                        }
+                        return d;
+                    });
+                }else {
+                    return Q.when(v);
+                }
+
+        }
+        throw 400;
 };
 
     FAOSTATAPIClient.prototype.is_valid_rankings = function(config) {
@@ -99,7 +113,7 @@ define(['jquery', 'loglevel', 'q' , 'amplify'], function ($, log, Q) {
 
 FAOSTATAPIClient.prototype.apply_rankings_defaults = function(config) {
     var i,
-        parameters = ["output_type", "lang", "domain_codes", "List1Codes", "List2Codes", "List3Codes", "List4Codes", "List5Codes", "List6Codes", "List7Codes", "filter_list", "rank_type", "limit"],
+        parameters = ["datasource", "output_type", "lang", "domain_codes", "List1Codes", "List2Codes", "List3Codes", "List4Codes", "List5Codes", "List6Codes", "List7Codes", "filter_list", "rank_type", "limit"],
         defaults = {
             "output_type": "objects", "lang": "en", "rank_type": "ASC", "limit": "5"
         },

@@ -12,13 +12,13 @@ Location: Rome, Italy
 Software Engineer: Simone Murzilli
 Contact: simone.murzilli [at] fao.org
 Contact: simone.murzilli [at] gmail.com
-Location: Rome, Italy
+Location: La Valletta, Malta
 Github: simonemurzilli
 
 Software Engineer: Guido Barbaglia
 Contact: guido.barbaglia [at] gmail.com
 From: Caserta, Italy
-Location: Rome, Italy
+Location: Melbourne, Australia
 Twitter: @Kalimaha
 Github: Kalimaha
 
@@ -30,4 +30,9 @@ Github: nicolafenix
 Software Engineer: Daniele Salvatore
 Contact: daniele.salvatore [at] fao.org
 Location: Rome, Italy
-Github: danielefenix
+Github: danielesalvatore
+
+Software Developer: Mario Triani
+Contact: mario.triani [at] fao.org
+Location: Rome, Italy
+Github: itsjustmario

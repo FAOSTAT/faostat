@@ -90,6 +90,7 @@ define([
             }
 
             log.info("MODE", C)
+            console.log("MODE", C)
         },
 
         bindEventListeners: function () {

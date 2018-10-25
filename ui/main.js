@@ -73,7 +73,8 @@ require.config({
 
 
         // TODO: move to CDN
-        faostatapiclient: 'FAOSTATAPIClient.min',
+        faostatapiclient: 'FAOSTATAPIClient',
+        //faostatapiclient: 'FAOSTATAPIClient.min',
 
         'bootstrap-table': CDN + '/js/bootstrap-table/1.9.1/bootstrap-table.min',
         'introjs': CDN + '/js/introjs/2.3.0/minified/intro.min',
