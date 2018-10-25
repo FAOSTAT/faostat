@@ -27,8 +27,7 @@ define(['jquery', 'loglevel', 'q' , 'amplify'], function ($, log, Q) {
         var config = $.extend(true, {}, this.CONFIG, c || {});
         config = this.apply_rankings_defaults(config);
         if (this.is_valid_rankings(config)) {
-            var datasource= config.datasource,
-                url = this.CONFIG.base_url +  config.lang + '/rankings/' + datasource ? ("?datasource=" + datasource ) : "",
+            var url = this.CONFIG.base_url +  config.lang + '/rankings/',
                 url_data = ['base_url','lang'],
                 compressArray = false,
                 traditional = true,
