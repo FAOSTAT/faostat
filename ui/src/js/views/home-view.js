@@ -215,6 +215,7 @@ define([
 
                 amplify.publish(E.LOADING_SHOW, {container: $TWITTER});
 
+                /*
                 setTimeout(function () {
 
                     Require(['twitter'],
@@ -239,6 +240,7 @@ define([
                         });
 
                 }, 500);
+                */
             },
 
             initBulkDownload: function () {
