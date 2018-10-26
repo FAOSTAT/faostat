@@ -1343,6 +1343,17 @@
         },
         "required": ["lang", "domain_code"]
       }
+    },
+    {
+      "href": "/ping",
+      "method": "GET",
+      "rel": "ping",
+      "title": "Ping",
+      "description": "FAOSTAT ping.",
+      "schema": {
+        "properties": {},
+        "required": []
+      }
     }
   ]
 }

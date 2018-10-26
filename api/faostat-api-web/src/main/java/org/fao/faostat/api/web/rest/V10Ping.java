@@ -361,7 +361,7 @@ public class V10Ping {
     UriInfo uri;
 
     @GET
-    public Response getSchema() {
+    public Response getPing() {
 
         try {
             return Response.ok().build();
