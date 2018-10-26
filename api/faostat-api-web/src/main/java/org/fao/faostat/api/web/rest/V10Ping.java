@@ -352,7 +352,7 @@ import javax.ws.rs.core.*;
  * */
 @Component
 @Path("/ping")
-@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+
 public class V10Ping {
 
     private static final Logger LOGGER = Logger.getLogger(V10Ping.class);
@@ -364,7 +364,7 @@ public class V10Ping {
     public Response getSchema() {
 
         try {
-            return Response.ok();
+            return Response.ok().build();
 
         } catch (WebApplicationException e) {
             LOGGER.error(uri.getRequestUri());
