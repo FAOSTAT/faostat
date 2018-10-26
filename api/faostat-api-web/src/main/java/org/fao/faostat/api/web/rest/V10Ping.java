@@ -342,10 +342,6 @@
 package org.fao.faostat.api.web.rest;
 
 import org.apache.log4j.Logger;
-import org.fao.faostat.api.core.beans.DatasourceBean;
-import org.fao.faostat.api.core.beans.MetadataBean;
-import org.fao.faostat.api.core.FAOSTATAPICore;
-import org.fao.faostat.api.core.StreamBuilder;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.*;
@@ -365,12 +361,18 @@ public class V10Ping {
     UriInfo uri;
 
     @GET
-    public Response getPing() {
+    public Response getSchema() {
 
-        JsonObject value = Json.createObjectBuilder().add("status", "pong");
+        try {
+            return Response.ok();
 
-        return Response.Ok(value, MediaType.APPLICATION_JSON).build();
-
+        } catch (WebApplicationException e) {
+            LOGGER.error(uri.getRequestUri());
+            return e.getResponse();
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage());
+            return Response.status(500).entity(e.getMessage()).build();
+        }
     }
 
 }
