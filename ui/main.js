@@ -1,5 +1,5 @@
 /*global require, window */
-var CDN = "//fenixrepo.fao.org/cdn/faostat",
+var CDN = "//s3-eu-west-1.amazonaws.com/cdn.faostat.fao.org",
     SUBMODULE = "../../submodules",
     locale = "@@locale",
     locale = (locale === "@@" + "locale")? "en" : locale;
