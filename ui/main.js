@@ -1,5 +1,5 @@
 /*global require, window */
-var CDN = "//s3-eu-west-1.amazonaws.com/cdn.faostat.fao.org",
+var CDN = "//cdn.faostat.fao.org",
     SUBMODULE = "../../submodules",
     locale = "@@locale",
     locale = (locale === "@@" + "locale")? "en" : locale;
@@ -63,14 +63,13 @@ require.config({
         Blob: CDN + '/js/blob/1.0/Blob',
         tableExport: CDN + '/js/tableExport.jquery.plugin/1.0/tableExport.min',
 
-        sigma: 'https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.1.0/sigma.min',
-        'sigma.parsers.json': 'https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.1.0/plugins/sigma.parsers.json.min',
-        'sigma.plugins.dragNodes': 'https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.1.0/plugins/sigma.plugins.dragNodes.min',
-        'sigma.plugins.relativeSize': 'https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.1.0/plugins/sigma.plugins.relativeSize.min',
-        'sigma.plugins.animate': 'https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.1.0/plugins/sigma.plugins.animate.min',
-        'sigma.plugins.neighborhoods': 'https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.1.0/plugins/sigma.plugins.neighborhoods.min',
-        'sigma.layout.forceAtlas2': 'https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.1.0/plugins/sigma.layout.forceAtlas2.min',
-
+        sigma: CDN + '/js/sigma/1.1.0/sigma.min',
+        'sigma.parsers.json': CDN + '/js/sigma/1.1.0/plugins/sigma.parsers.json.min',
+        'sigma.plugins.dragNodes': CDN + '/js/sigma/1.1.0/plugins/sigma.plugins.dragNodes.min',
+        'sigma.plugins.relativeSize': CDN + '/js/sigma/1.1.0/plugins/sigma.plugins.relativeSize.min',
+        'sigma.plugins.animate': CDN + '/js/sigma/1.1.0/plugins/sigma.plugins.animate.min',
+        'sigma.plugins.neighborhoods':CDN + '/js/sigma/1.1.0/plugins/sigma.plugins.neighborhoods.min',
+        'sigma.layout.forceAtlas2': CDN + '/js/sigma/1.1.0/plugins/sigma.layout.forceAtlas2.min',
 
         // TODO: move to CDN
         faostatapiclient: 'FAOSTATAPIClient',
