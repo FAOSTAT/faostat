@@ -547,6 +547,7 @@ define([
 
             InteractiveDownload.prototype.export = function () {
 
+
                 var requestObj = this.getRequestObject(),
                     isCookieUser=this.$CHECKCOOCKIE,
                     options = this.downloadOptions.getSelections(),
@@ -593,7 +594,7 @@ define([
                                     self.exportPivot(d, requestObj, options);
                                     break;
                                 case "excel":
-                                  //  self.exportExcel(d, requestObj, options);
+                                    self.exportExcel(d, requestObj, options);
                                  //   break;
                             }
 

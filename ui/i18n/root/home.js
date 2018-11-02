@@ -45,7 +45,7 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
 
         //Food Security
 
-        fao_food_security: "The State of Food Security and Nutrition in the World 2017",
+        fao_food_security: "The State of Food Security and Nutrition in the World 2018",
         fao_food_security_text: "The international community is committed to ending hunger and all forms of malnutrition worldwide by 2030."
     });
 
