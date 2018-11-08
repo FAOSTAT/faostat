@@ -56,6 +56,7 @@ define(function () {
             },
             
             items: [
+                /*
                 {
                     type: 'chart',
                     class: "col-md-12",
@@ -142,6 +143,77 @@ define(function () {
                     allowedFilter: ['area', 'year3'],
                     filter: {
                         item: [21010],
+                        order_by: 'year3'
+                    }
+                }
+                */
+                {
+                    type: 'chart',
+                    class: "col-md-12",
+
+                    // labels
+                    labels: {
+                        // template to be applied to the config.template for the custom object
+                        template: {
+                            title: {
+                                en: "World Total for Prevalence of undernourishment (percent) (annual value)",
+                                fr: "World Total for Prevalence of undernourishment (percent) (annual value) [FR]",
+                                es: "World Total for Prevalence of undernourishment (percent) (annual value) [ES]"
+                            },
+
+                        }
+                    },
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "standard",
+                            xDimensions: 'year3',
+                            yDimensions: 'unit',
+                            valueDimensions: 'value',
+                            seriesDimensions: ['area', 'item'],
+                            decimalPlaces: 1
+                        },
+                        creator: {},
+                        template: {}
+                    },
+                    allowedFilter: ['area', 'year3'],
+                    filter: {
+                        item: [21004],
+                        order_by: 'year3'
+                    }
+                },
+                {
+                    type: 'chart',
+                    class: "col-md-12",
+
+                    // labels
+                    labels: {
+                        // template to be applied to the config.template for the custom object
+                        template: {
+                            title: {
+                                en: "World Total for Prevalence of severe food insecurity in the total population (percent) (annual value) ",
+                                fr: "World Total for Prevalence of severe food insecurity in the total population (percent) (annual value) [FR]",
+                                es: "World Total for Prevalence of severe food insecurity in the total population (percent) (annual value) [ES]"
+                            },
+
+                        }
+                    },
+                    config: {
+                        adapter: {
+                            adapterType: 'faostat',
+                            type: "standard",
+                            xDimensions: 'year3',
+                            yDimensions: 'unit',
+                            valueDimensions: 'value',
+                            seriesDimensions: ['area', 'item'],
+                            decimalPlaces: 1
+                        },
+                        creator: {},
+                        template: {}
+                    },
+                    allowedFilter: ['area', 'year3'],
+                    filter: {
+                        item: [21040],
                         order_by: 'year3'
                     }
                 }

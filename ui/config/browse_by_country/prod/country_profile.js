@@ -455,7 +455,6 @@ define([
                             'order_by': 'year3'
                         }
                     },
-
                     {
                         type: 'chart',
                         class: "col-xs-12 col-md-6",
@@ -491,8 +490,109 @@ define([
                             "item": [21004],
                             'order_by': 'year3'
                         }
-                    }
+                    },
 
+                    // New Ones
+
+                    {
+                        type: 'chart',
+                        class: "col-xs-12 col-md-6",
+
+                        // labels
+                        labels: {
+                            // template to be applied to the config.template for the custom object
+                            template: {
+                                title: {
+                                    en: "Number of severely food insecure people (million) (3-year average) ",
+                                    fr: "Number of severely food insecure people (million) (3-year average) [FR]",
+                                    es: "Number of severely food insecure people (million) (3-year average) [ES]"
+                                }
+                            }
+                        },
+                        config: {
+                            adapter: {
+                                adapterType: 'faostat',
+                                type: "standard",
+                                xDimensions: 'year3',
+                                yDimensions: 'unit',
+                                valueDimensions: 'value',
+                                seriesDimensions: ['area', 'item']
+                            },
+                            template: {
+                                height: '300px'
+                            },
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    },
+                                    colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6', '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300', '#8B0707','#329262','#5574A6','#3B3EAC'], // Original Palette
+                                    plotOptions: {
+                                        column: {
+                                            colorByPoint : true
+                                        }
+                                    }
+                                }
+                            }
+
+                        },
+                        allowedFilter: ['area', 'year3'],
+                        filter: {
+                            "domain_code": "FS",
+                            "element": [6120],
+                            "item": [21007],
+                            'order_by': 'year3'
+                        }
+                    },
+                    {
+                        type: 'chart',
+                        class: "col-xs-12 col-md-6",
+
+                        // labels
+                        labels: {
+                            // template to be applied to the config.template for the custom object
+                            template: {
+                                title: {
+                                    en: "Prevalence of severe food insecurity in the total population (percent) (3-year average)",
+                                    fr: "Prevalence of severe food insecurity in the total population (percent) (3-year average) [FR]",
+                                    es: "Prevalence of severe food insecurity in the total population (percent) (3-year average) [ES]"
+                                }
+                            }
+                        },
+                        config: {
+                            adapter: {
+                                adapterType: 'faostat',
+                                type: "standard",
+                                xDimensions: 'year3',
+                                yDimensions: 'unit',
+                                valueDimensions: 'value',
+                                seriesDimensions: ['area', 'item']
+                            },
+                            template: {
+                                height: '300px'
+                            },
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    },
+                                    colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6', '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300', '#8B0707','#329262','#5574A6','#3B3EAC'], // Original Palette
+                                    plotOptions: {
+                                        column: {
+                                            colorByPoint : true
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        allowedFilter: ['area', 'year3'],
+                        filter: {
+                            "domain_code": "FS",
+                            "element": [6120],
+                            "item": [21040],
+                            'order_by': 'year3'
+                        }
+                    },
                 ]
 
             }
@@ -735,7 +835,7 @@ define([
                 },
 
                 items: [
-
+                    /*
                     {
                         type: 'chart',
                         class: "col-xs-12 col-md-6",
@@ -810,7 +910,6 @@ define([
                         }
                     },
 
-
                     // FORCE SPACING
                     {
                         type: 'custom',
@@ -820,7 +919,7 @@ define([
                             model: {}
                         }
                     },
-
+                    */
                     {
                         type: 'chart',
                         class: "col-xs-12 col-md-6",
@@ -867,6 +966,43 @@ define([
                             // template to be applied to the config.template for the custom object
                             template: {
                                 title: {
+                                    en: "Rail lines density (total route in km per 100 square km of land area)",
+                                    fr: "Rail lines density (total route in km per 100 square km of land area) [FR]",
+                                    es: "Rail lines density (total route in km per 100 square km of land area) [ES]",
+                                }
+                            }
+                        },
+                        config: {
+                            adapter: {
+                                adapterType: 'faostat',
+                                type: "timeserie",
+                                xDimensions: 'year3',
+                                yDimensions: 'unit',
+                                valueDimensions: 'value',
+                                seriesDimensions: ['area', 'item']
+                            },
+                            template: {
+                                height: '300px'
+                            }
+                        },
+                        allowedFilter: ['area', 'year3'],
+                        filter: {
+                            "domain_code": "FS",
+                            "element": [6120],
+                            "item": [21016],
+                            'order_by': 'year3'
+                        }
+                    },
+                    /*
+                    {
+                        type: 'chart',
+                        class: "col-xs-12 col-md-6",
+
+                        // labels
+                        labels: {
+                            // template to be applied to the config.template for the custom object
+                            template: {
+                                title: {
                                     en: "Road density (per 100 square km of land area)",
                                     fr: "Densité du réseau routier (pour 100 km carrés de surface totale du pays)",
                                     es: "Densidad de carreteras (por cada 100 km cuadrados de la superficie terrestre)"
@@ -894,7 +1030,7 @@ define([
                             'order_by': 'year3'
                         }
                     }
-
+                    */
                 ]
             }
         },
@@ -941,7 +1077,7 @@ define([
                 },
 
                 items: [
-
+                    /*
                     {
                         type: 'chart',
                         class: "col-xs-12 col-md-6",
@@ -968,13 +1104,6 @@ define([
                             },
                             template: {
                                 height: '300px'
-                            },
-                            creator: {
-                                /*chartObj: {
-                                 chart: {
-                                 type: "column"
-                                 }
-                                 }*/
                             }
                         },
                         allowedFilter: ['area', 'year3'],
@@ -1022,6 +1151,135 @@ define([
                             'order_by': 'year3'
                         }
                     }
+                    */
+
+                    {
+                        type: 'chart',
+                        class: "col-xs-12 col-md-6",
+
+                        // labels?
+                        labels: {
+                            // template to be applied to the config.template for the custom object
+                            template: {
+                                title: {
+                                    en: "Percentage of population using at least basic drinking water services (percent)",
+                                    fr: "Percentage of population using at least basic drinking water services (percent) [FR]",
+                                    es: "Percentage of population using at least basic drinking water services (percent) [ES]"
+                                }
+                            }
+                        },
+                        config: {
+                            adapter: {
+                                adapterType: 'faostat',
+                                type: "timeserie",
+                                xDimensions: 'year3',
+                                yDimensions: 'unit',
+                                valueDimensions: 'value',
+                                seriesDimensions: ['area', 'item']
+                            },
+                            template: {
+                                height: '300px'
+                            }
+                        },
+                        allowedFilter: ['area', 'year3'],
+                        filter: {
+                            "domain_code": "FS",
+                            "element": [6120],
+                            "item": [21047,21048],
+                            'order_by': 'year3'
+                        }
+                    },
+
+                    {
+                        type: 'chart',
+                        class: "col-xs-12 col-md-6",
+
+                        // labels?
+                        labels: {
+                            // template to be applied to the config.template for the custom object
+                            template: {
+                                title: {
+                                    en: "Percentage of children under 5 years of age who are overweight (percent) ",
+                                    fr: "Percentage of children under 5 years of age who are overweight (percent) [FR]",
+                                    es: "Percentage of children under 5 years of age who are overweight (percent) [ES]"
+                                }
+                            }
+                        },
+                        config: {
+                            adapter: {
+                                adapterType: 'faostat',
+                                type: "standard",
+                                xDimensions: 'year3',
+                                yDimensions: 'unit',
+                                valueDimensions: 'value',
+                                seriesDimensions: ['area', 'item']
+                            },
+                            template: {
+                                height: '300px'
+                            },
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: 'column'
+                                    },
+                                    //colors: ['#2196F3','#f44336','#FF9800','#4CAF50','#673AB7','#3F51B5','#00BCD4', '#E91E63','#8BC34A','#FF5722'], // material palette
+                                    colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6', '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300', '#8B0707','#329262','#5574A6','#3B3EAC'], // Original Palette
+                                    //colors: ['#f44336','#E91E63','#9C27B0','#673AB7','#3F51B5','#2196F3','#03A9F4', '#00BCD4', '#009688', '#4CAF50'], // Blueshade palette
+                                    plotOptions: {
+                                        column: {
+                                            stacking: 'normal'
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        allowedFilter: ['area', 'year3'],
+                        filter: {
+                            "domain_code": "FS",
+                            "element": [6120],
+                            "item": [21041,21025,21026],
+                            'order_by': 'year3'
+                        }
+                    },
+
+                    {
+                        type: 'chart',
+                        class: "col-xs-12 col-md-6",
+
+                        // labels?
+                        labels: {
+                            // template to be applied to the config.template for the custom object
+                            template: {
+                                title: {
+                                    en: "Prevalence of anemia among women of reproductive age (15-49 years)  ",
+                                    fr: "Prevalence of anemia among women of reproductive age (15-49 years)  [FR]",
+                                    es: "Prevalence of anemia among women of reproductive age (15-49 years)  [ES]"
+                                }
+                            }
+                        },
+                        config: {
+                            adapter: {
+                                adapterType: 'faostat',
+                                type: "standard",
+                                xDimensions: 'year3',
+                                yDimensions: 'unit',
+                                valueDimensions: 'value',
+                                seriesDimensions: ['area', 'item']
+                            },
+                            template: {
+                                height: '300px'
+                            },
+                            creator: { }
+                        },
+                        allowedFilter: ['area', 'year3'],
+                        filter: {
+                            "domain_code": "FS",
+                            "element": [6120],
+                            "item": [21043],
+                            'order_by': 'year3'
+                        }
+                    }
+
 
                 ]
             }

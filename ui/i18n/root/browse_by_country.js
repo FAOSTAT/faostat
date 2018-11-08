@@ -9,7 +9,7 @@ define(['jquery', 'i18n!nls/common'], function ($, I18N) {
         country_list: "Country List",
         demographics: "Demographics",
         inputs: "Inputs",
-        undernourishment: "Undernourishment",
+        undernourishment: "Hunger and food insecurity",
         food_availability: "Food availability",
         food_access: "Food access",
         food_utilization: "Food utilization",
