@@ -156,9 +156,9 @@ define(function () {
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "World Total for Prevalence of undernourishment (percent) (annual value)",
-                                fr: "World Total for Prevalence of undernourishment (percent) (annual value) [FR]",
-                                es: "World Total for Prevalence of undernourishment (percent) (annual value) [ES]"
+                                en: "Prevalence of undernourishment (percent) (annual value)",
+                                fr: "Prévalence de la sous-alimentation (%) (valeur annuelle)",
+                                es: "Prevalencia de la subalimentación (%) (valor anual)"
                             },
 
                         }
@@ -191,9 +191,9 @@ define(function () {
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "World Total for Prevalence of severe food insecurity in the total population (percent) (annual value) ",
-                                fr: "World Total for Prevalence of severe food insecurity in the total population (percent) (annual value) [FR]",
-                                es: "World Total for Prevalence of severe food insecurity in the total population (percent) (annual value) [ES]"
+                                en: "Prevalence of severe food insecurity in the total population (percent) (annual value) ",
+                                fr: "Prévalence de l’insécurité alimentaire grave – population totale (%) (valeur annuelle)",
+                                es: "Prevalencia de la inseguridad alimentaria grave en la población total (%) (valor anual)"
                             },
 
                         }

@@ -76,7 +76,7 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
 
         //Food Security
 
-        fao_food_security: "El estado de la seguridad alimentaria y la nutrición en el mundo 2017",
+        fao_food_security: "El estado de la seguridad alimentaria y la nutrición en el mundo 2018",
         fao_food_security_text: "La comunidad internacional se ha comprometido a poner fin al hambre y a todas las formas de malnutrición en el mundo para el año 2030."
 
     });

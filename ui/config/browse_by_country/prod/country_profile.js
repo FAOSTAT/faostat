@@ -503,9 +503,9 @@ define([
                             // template to be applied to the config.template for the custom object
                             template: {
                                 title: {
-                                    en: "Number of severely food insecure people (million) (3-year average) ",
-                                    fr: "Number of severely food insecure people (million) (3-year average) [FR]",
-                                    es: "Number of severely food insecure people (million) (3-year average) [ES]"
+                                    en: "Number of severely food insecure people (million) (3-year average)",
+                                    fr: "Nombre de personnes en situation d’insécurité alimentaire grave (millions) (moyenne sur 3 ans)",
+                                    es: "Número de personas que padecen inseguridad alimentaria grave (millones) (promedio de 3 años)"
                                 }
                             }
                         },
@@ -554,8 +554,8 @@ define([
                             template: {
                                 title: {
                                     en: "Prevalence of severe food insecurity in the total population (percent) (3-year average)",
-                                    fr: "Prevalence of severe food insecurity in the total population (percent) (3-year average) [FR]",
-                                    es: "Prevalence of severe food insecurity in the total population (percent) (3-year average) [ES]"
+                                    fr: "Prévalence de l’insécurité alimentaire grave – population totale (%) (moyenne sur 3 ans)",
+                                    es: "Prevalencia de la inseguridad alimentaria grave en la población total (%) (promedio de 3 años)"
                                 }
                             }
                         },
@@ -967,8 +967,8 @@ define([
                             template: {
                                 title: {
                                     en: "Rail lines density (total route in km per 100 square km of land area)",
-                                    fr: "Rail lines density (total route in km per 100 square km of land area) [FR]",
-                                    es: "Rail lines density (total route in km per 100 square km of land area) [ES]",
+                                    fr: "Densité du réseau ferroviaire (pour 100 km carrés de surface totale du pays)",
+                                    es: "Densidad de líneas de ferrocarril (por cada 100 km cuadrados de la superficie terrestre)"
                                 }
                             }
                         },
@@ -1162,9 +1162,9 @@ define([
                             // template to be applied to the config.template for the custom object
                             template: {
                                 title: {
-                                    en: "Percentage of population using at least basic drinking water services (percent)",
-                                    fr: "Percentage of population using at least basic drinking water services (percent) [FR]",
-                                    es: "Percentage of population using at least basic drinking water services (percent) [ES]"
+                                    en: "Percentage of population using at least basic drinking water services and sanitation services (percent)",
+                                    fr: "Pourcentage de la population utilisant au moins les services d'eau de base e les services d'assainissement de base (%)",
+                                    es: "Porcentaje de la población que utiliza por lo menos servicios básicos de agua potable y lo servicios básicos de saneamiento (%)"
                                 }
                             }
                         },
@@ -1199,9 +1199,9 @@ define([
                             // template to be applied to the config.template for the custom object
                             template: {
                                 title: {
-                                    en: "Percentage of children under 5 years of age who are overweight (percent) ",
-                                    fr: "Percentage of children under 5 years of age who are overweight (percent) [FR]",
-                                    es: "Percentage of children under 5 years of age who are overweight (percent) [ES]"
+                                    en: "Percentage of child malnutrition (percent)",
+                                    fr: "Pourcentage de malnutrition infantile (%)",
+                                    es: "Porcentaje de desnutrición infantil (%)"
                                 }
                             }
                         },
@@ -1225,11 +1225,7 @@ define([
                                     //colors: ['#2196F3','#f44336','#FF9800','#4CAF50','#673AB7','#3F51B5','#00BCD4', '#E91E63','#8BC34A','#FF5722'], // material palette
                                     colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6', '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300', '#8B0707','#329262','#5574A6','#3B3EAC'], // Original Palette
                                     //colors: ['#f44336','#E91E63','#9C27B0','#673AB7','#3F51B5','#2196F3','#03A9F4', '#00BCD4', '#009688', '#4CAF50'], // Blueshade palette
-                                    plotOptions: {
-                                        column: {
-                                            stacking: 'normal'
-                                        }
-                                    }
+                                    plotOptions: { }
                                 }
                             }
                         },
@@ -1251,9 +1247,9 @@ define([
                             // template to be applied to the config.template for the custom object
                             template: {
                                 title: {
-                                    en: "Prevalence of anemia among women of reproductive age (15-49 years)  ",
-                                    fr: "Prevalence of anemia among women of reproductive age (15-49 years)  [FR]",
-                                    es: "Prevalence of anemia among women of reproductive age (15-49 years)  [ES]"
+                                    en: "Prevalence of anemia among women of reproductive age (15-49 years)",
+                                    fr: "Prévalence de l'anémie chez la femme en âge de procréer (15-49 ans)",
+                                    es: "Prevalencia de la anemia entre las mujeres en edad fértil (15-49 años)"
                                 }
                             }
                         },
@@ -1276,6 +1272,43 @@ define([
                             "domain_code": "FS",
                             "element": [6120],
                             "item": [21043],
+                            'order_by': 'year3'
+                        }
+                    },
+
+                    {
+                        type: 'chart',
+                        class: "col-xs-12 col-md-6",
+
+                        // labels?
+                        labels: {
+                            // template to be applied to the config.template for the custom object
+                            template: {
+                                title: {
+                                    en: "Prevalence of obesity in the adult population (18 years and older)",
+                                    fr: "Prévalence de l'obésité chez l'adulte (18 ans ou plus)",
+                                    es: "Prevalencia de la obesidad entre la población adulta (18 años y más)"
+                                }
+                            }
+                        },
+                        config: {
+                            adapter: {
+                                adapterType: 'faostat',
+                                type: "timeserie",
+                                xDimensions: 'year3',
+                                yDimensions: 'unit',
+                                valueDimensions: 'value',
+                                seriesDimensions: ['area', 'item']
+                            },
+                            template: {
+                                height: '300px'
+                            }
+                        },
+                        allowedFilter: ['area', 'year3'],
+                        filter: {
+                            "domain_code": "FS",
+                            "element": [6120],
+                            "item": [21042],
                             'order_by': 'year3'
                         }
                     }

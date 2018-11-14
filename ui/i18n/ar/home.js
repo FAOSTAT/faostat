@@ -43,7 +43,7 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
 
         //Food Security
 
-        fao_food_security: " 2017حااللة غاذلأائمين وا في لاتلغعذاية لم",
+        fao_food_security: " 2018حااللة غاذلأائمين وا في لاتلغعذاية لم",
         fao_food_security_text: "2030يلتزم المجتمع الدولي بالقضاء على الجوع وجميع أشكال سوء التغذية في العالم بحلول عام"
 
     });

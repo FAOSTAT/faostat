@@ -42,7 +42,7 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
 
         //Food Security
 
-        fao_food_security: "L’État de la sécurité alimentaire et de la nutrition dans le monde 2017",
+        fao_food_security: "L’État de la sécurité alimentaire et de la nutrition dans le monde 2018",
         fao_food_security_text: "La communauté internationale s’est engagée à éliminer la faim et toute forme de malnutrition dans le monde d’ici à 2030."
 
     });

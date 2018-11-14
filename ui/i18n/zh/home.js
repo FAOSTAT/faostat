@@ -43,7 +43,7 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
 
         //Food Security
 
-        fao_food_security: "世界粮食安全和营养状况 2017",
+        fao_food_security: "世界粮食安全和营养状况 2018",
         fao_food_security_text: "国际社会正致力于到2030年在全球范围内消除饥饿和一切形式的营养不良。"
 
     });
