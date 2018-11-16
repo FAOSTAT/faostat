@@ -509,8 +509,15 @@ define([
 
                         if (row[valueIndex] !== undefined && row[valueIndex] !== null && index !== -1) {
 
-                            //serie.data[index] = isNaN(row[valueIndex]) ? row[valueIndex] : parseFloat(row[valueIndex].replace(",", ""));
-                            serie.data[index] = parseFloat(row[valueIndex].toFixed(decimalPlaces));
+                            console.log('TYPEOF', typeof row[valueIndex]);
+
+
+                            if (typeof row[valueIndex] == "string") {
+                                serie.data[index] = isNaN(row[valueIndex]) ? row[valueIndex] : parseFloat(row[valueIndex].replace(",", ""));
+                            } else {
+                                serie.data[index] = parseFloat(row[valueIndex].toFixed(decimalPlaces));
+                            }
+
                             // Add serie to series
                             series = this._addSerie(series, serie, index);
 
