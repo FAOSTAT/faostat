@@ -165,7 +165,8 @@ define([
 
                 var $v = $(td),
                     // TODO: check if  innerText is always working
-                    text = self.sanitizeLabel($v.context.innerText),
+                    //text = self.sanitizeLabel($v.context.innerText),
+                    text = ($v.context.innerText),
                     rowSpan = $v[0].rowSpan || 1,
                     colSpan = $v[0].colSpan || 1;
 

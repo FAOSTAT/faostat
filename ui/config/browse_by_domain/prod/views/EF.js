@@ -112,9 +112,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "{{item}} - {{aggregation}} use per area of cropland",
-                                fr: "{{item}} - {{aggregation}} use per area of cropland",
-                                es: "{{item}} - {{aggregation}} use per area of cropland"
+                                en: "{{item}} - Use per area of cropland",
+                                fr: "{{item}} - Use per area of cropland",
+                                es: "{{item}} - Use per area of cropland"
                             },
                             subtitle: "{{year}}"
                         }
@@ -132,13 +132,17 @@ define([
                             decimalPlaces: 2
                         },
                         template: {},
-                        creator: {}
+                        creator: {
+                            chartObj: {
+                                colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6', '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300', '#8B0707','#329262','#5574A6','#3B3EAC'], // Original Palette
+                            }
+                        }
                     },
                     allowedFilter: ['year', 'item','area'],
                     deniedOnLoadFilter: ['area'],
                     filter: {
-                        area: ["5100", "5200", "5300", "5400", "5500"],
-                        year: ["2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014"],
+                        area: ["5000","5100", "5200", "5300", "5400", "5500"],
+                        year: ["2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016"],
                         "order_by": 'area, year'
                     }
                 },
@@ -175,6 +179,12 @@ define([
                             chartObj: {
                                 chart: {
                                     type: "column"
+                                },
+                                colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6', '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300', '#8B0707','#329262','#5574A6','#3B3EAC'], // Original Palette
+                                plotOptions: {
+                                    column: {
+                                        colorByPoint : true
+                                    }
                                 }
                             }
                         }
@@ -221,7 +231,14 @@ define([
                             chartObj: {
                                 chart: {
                                     type: "column"
+                                },
+                                colors: ['#1976D2','#D32F2F','#FFA000','#388E3C','#5E35B1','#303F9F','#0099C6', '#DD4477','#66AA00','#B82E2E','#316395','#994499','#22AA99','#AAAA11','#6633CC','#E67300', '#8B0707','#329262','#5574A6','#3B3EAC'], // Original Palette
+                                plotOptions: {
+                                    column: {
+                                        colorByPoint : true
+                                    }
                                 }
+
                             }
                         }
                     },
