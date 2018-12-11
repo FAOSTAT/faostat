@@ -34,11 +34,37 @@
             <id>dev</id>
             <properties>
                 <rp.build.warname>api-dev</rp.build.warname>
+
+                <faostat_db3_dbname>${faostat_db3_dbname}</faostat_db3_dbname>
+                <faostat_db3_driver>${faostat_db3_driver}</faostat_db3_driver>
+                <faostat_db3_pwd>${faostat_db3_pwd}</faostat_db3_pwd>
+                <faostat_db3_url>${faostat_db3_url}</faostat_db3_url>
+                <faostat_db3_user>${faostat_db3_user}</faostat_db3_user>
+
+                <faostat_db4_dbname>${faostat_db4_dbname}</faostat_db4_dbname>
+                <faostat_db4_driver>${faostat_db4_driver}</faostat_db4_driver>
+                <faostat_db4_pwd>${faostat_db4_pwd}</faostat_db4_pwd>
+                <faostat_db4_url>${faostat_db4_url}</faostat_db4_url>
+                <faostat_db4_user>${faostat_db4_user}</faostat_db4_user>
+
+                <faostat_qa_dbname>${faostat_qa_dbname}</faostat_qa_dbname>
+                <faostat_qa_driver>${faostat_qa_driver}</faostat_qa_driver>
+                <faostat_qa_pwd>${faostat_qa_pwd}</faostat_qa_pwd>
+                <faostat_qa_url>${faostat_qa_url}</faostat_qa_url>
+                <faostat_qa_user>${faostat_qa_user}</faostat_qa_user>
+
+                <faostat_internal_dbname>${faostat_internal_dbname}</faostat_internal_dbname>
+                <faostat_internal_driver>${faostat_internal_driver}</faostat_internal_driver>
+                <faostat_internal_pwd>${faostat_internal_pwd}</faostat_internal_pwd>
+                <faostat_internal_url>${faostat_internal_url}</faostat_internal_url>
+                <faostat_internal_user>${faostat_internal_user}</faostat_internal_user>
+
                 <faostat_dev_dbname>DB_NAME</faostat_dev_dbname>
                 <faostat_dev_driver>${faostat_dev_driver}</faostat_dev_driver>
                 <faostat_dev_pwd>${faostat_dev_pwd}</faostat_dev_pwd>
                 <faostat_dev_url>${faostat_dev_url}</faostat_dev_url>
                 <faostat_dev_user>${faostat_dev_user}</faostat_dev_user>
+
             </properties>
             <build>
                 <plugins>
@@ -81,11 +107,43 @@
             <id>internal</id>
             <properties>
                 <rp.build.warname>api-internal</rp.build.warname>
+
+                <faostat_production_dbname>${faostat_db3_dbname}</faostat_production_dbname>
+                <faostat_production_driver>${faostat_db3_driver}</faostat_production_driver>
+                <faostat_production_pwd>${faostat_db3_pwd}</faostat_production_pwd>
+                <faostat_production_url>${faostat_db3_url}</faostat_production_url>
+                <faostat_production_user>${faostat_db3_user}</faostat_production_user>
+
+                <faostat_db3_dbname>${faostat_db3_dbname}</faostat_db3_dbname>
+                <faostat_db3_driver>${faostat_db3_driver}</faostat_db3_driver>
+                <faostat_db3_pwd>${faostat_db3_pwd}</faostat_db3_pwd>
+                <faostat_db3_url>${faostat_db3_url}</faostat_db3_url>
+                <faostat_db3_user>${faostat_db3_user}</faostat_db3_user>
+
+                <faostat_db4_dbname>${faostat_db4_dbname}</faostat_db4_dbname>
+                <faostat_db4_driver>${faostat_db4_driver}</faostat_db4_driver>
+                <faostat_db4_pwd>${faostat_db4_pwd}</faostat_db4_pwd>
+                <faostat_db4_url>${faostat_db4_url}</faostat_db4_url>
+                <faostat_db4_user>${faostat_db4_user}</faostat_db4_user>
+
+                <faostat_qa_dbname>${faostat_qa_dbname}</faostat_qa_dbname>
+                <faostat_qa_driver>${faostat_qa_driver}</faostat_qa_driver>
+                <faostat_qa_pwd>${faostat_qa_pwd}</faostat_qa_pwd>
+                <faostat_qa_url>${faostat_qa_url}</faostat_qa_url>
+                <faostat_qa_user>${faostat_qa_user}</faostat_qa_user>
+
                 <faostat_internal_dbname>${faostat_internal_dbname}</faostat_internal_dbname>
                 <faostat_internal_driver>${faostat_internal_driver}</faostat_internal_driver>
                 <faostat_internal_pwd>${faostat_internal_pwd}</faostat_internal_pwd>
                 <faostat_internal_url>${faostat_internal_url}</faostat_internal_url>
                 <faostat_internal_user>${faostat_internal_user}</faostat_internal_user>
+
+                <faostat_dev_dbname>${faostat_dev_dbname}</faostat_dev_dbname>
+                <faostat_dev_driver>${faostat_dev_driver}</faostat_dev_driver>
+                <faostat_dev_pwd>${faostat_dev_pwd}</faostat_dev_pwd>
+                <faostat_dev_url>${faostat_dev_url}</faostat_dev_url>
+                <faostat_dev_user>${faostat_dev_user}</faostat_dev_user>
+
             </properties>
             <build>
                 <plugins>
@@ -128,11 +186,37 @@
             <id>qa</id>
             <properties>
                 <rp.build.warname>api-qa</rp.build.warname>
+
+
+                <faostat_db3_dbname>${faostat_db3_dbname}</faostat_db3_dbname>
+                <faostat_db3_driver>${faostat_db3_driver}</faostat_db3_driver>
+                <faostat_db3_pwd>${faostat_db3_pwd}</faostat_db3_pwd>
+                <faostat_db3_url>${faostat_db3_url}</faostat_db3_url>
+                <faostat_db3_user>${faostat_db3_user}</faostat_db3_user>
+
+                <faostat_db4_dbname>${faostat_db4_dbname}</faostat_db4_dbname>
+                <faostat_db4_driver>${faostat_db4_driver}</faostat_db4_driver>
+                <faostat_db4_pwd>${faostat_db4_pwd}</faostat_db4_pwd>
+                <faostat_db4_url>${faostat_db4_url}</faostat_db4_url>
+                <faostat_db4_user>${faostat_db4_user}</faostat_db4_user>
+
                 <faostat_qa_dbname>${faostat_qa_dbname}</faostat_qa_dbname>
                 <faostat_qa_driver>${faostat_qa_driver}</faostat_qa_driver>
                 <faostat_qa_pwd>${faostat_qa_pwd}</faostat_qa_pwd>
                 <faostat_qa_url>${faostat_qa_url}</faostat_qa_url>
                 <faostat_qa_user>${faostat_qa_user}</faostat_qa_user>
+
+                <faostat_internal_dbname>${faostat_internal_dbname}</faostat_internal_dbname>
+                <faostat_internal_driver>${faostat_internal_driver}</faostat_internal_driver>
+                <faostat_internal_pwd>${faostat_internal_pwd}</faostat_internal_pwd>
+                <faostat_internal_url>${faostat_internal_url}</faostat_internal_url>
+                <faostat_internal_user>${faostat_internal_user}</faostat_internal_user>
+
+                <faostat_dev_dbname>${faostat_dev_dbname}</faostat_dev_dbname>
+                <faostat_dev_driver>${faostat_dev_driver}</faostat_dev_driver>
+                <faostat_dev_pwd>${faostat_dev_pwd}</faostat_dev_pwd>
+                <faostat_dev_url>${faostat_dev_url}</faostat_dev_url>
+                <faostat_dev_user>${faostat_dev_user}</faostat_dev_user>
             </properties>
             <build>
                 <plugins>
@@ -157,6 +241,155 @@
                 </plugins>
             </build>
         </profile>
+
+        <!-- AWS profiles -->
+
+        <profile>
+            <id>aws-dev</id>
+            <properties>
+                <rp.build.warname>api</rp.build.warname>
+                <faostat_dev_dbname>${faostat_dev_dbname}</faostat_dev_dbname>
+                <faostat_dev_driver>${faostat_dev_driver}</faostat_dev_driver>
+                <faostat_dev_pwd>${faostat_dev_pwd}</faostat_dev_pwd>
+                <faostat_dev_url>${faostat_dev_url}</faostat_dev_url>
+                <faostat_dev_user>${faostat_dev_user}</faostat_dev_user>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-resources</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>faostat-api-web/src/main/resources</outputDirectory>
+                                    <resources>
+                                        <resource>
+                                            <directory>faostat-api-web/resources/default</directory>
+                                            <filtering>true</filtering>
+                                            <includes>
+                                                <include>*.properties</include>
+                                            </includes>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.3</version>
+                        <configuration>
+                            <warName>${rp.build.warname}</warName>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>aws-qa</id>
+            <properties>
+                <rp.build.warname>api</rp.build.warname>
+                <faostat_qa_dbname>${faostat_qa_dbname}</faostat_qa_dbname>
+                <faostat_qa_driver>${faostat_qa_driver}</faostat_qa_driver>
+                <faostat_qa_pwd>${faostat_qa_pwd}</faostat_qa_pwd>
+                <faostat_qa_url>${faostat_qa_url}</faostat_qa_url>
+                <faostat_qa_user>${faostat_qa_user}</faostat_qa_user>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-resources</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>faostat-api-web/src/main/resources</outputDirectory>
+                                    <resources>
+                                        <resource>
+                                            <directory>faostat-api-web/resources/default</directory>
+                                            <filtering>true</filtering>
+                                            <includes>
+                                                <include>*.properties</include>
+                                            </includes>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.3</version>
+                        <configuration>
+                            <warName>${rp.build.warname}</warName>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>aws-prod</id>
+            <properties>
+                <rp.build.warname>api</rp.build.warname>
+                <faostat_prod_dbname>${faostat_prod_dbname}</faostat_prod_dbname>
+                <faostat_prod_driver>${faostat_prod_driver}</faostat_prod_driver>
+                <faostat_prod_pwd>${faostat_prod_pwd}</faostat_prod_pwd>
+                <faostat_prod_url>${faostat_prod_url}</faostat_prod_url>
+                <faostat_prod_user>${faostat_prod_user}</faostat_prod_user>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-resources</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>faostat-api-web/src/main/resources</outputDirectory>
+                                    <resources>
+                                        <resource>
+                                            <directory>faostat-api-web/resources/default</directory>
+                                            <filtering>true</filtering>
+                                            <includes>
+                                                <include>*.properties</include>
+                                            </includes>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.3</version>
+                        <configuration>
+                            <warName>${rp.build.warname}</warName>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- END of AWS profiles -->
+
         <profile>
             <id>prod-db3</id>
             <properties>
@@ -263,13 +496,11 @@
             <name>Java.net Repository for Maven</name>
             <url>http://download.java.net/maven/2/</url>
         </repository>
-        <!--
         <repository>
             <id>maven2-maven.lib.umd.edu</id>
             <name>mvn alternative</name>
             <url>https://maven.lib.umd.edu/maven2/</url>
         </repository>
-        -->
         <repository>
             <id>mvnrepository</id>
             <name>mvnrepository</name>
