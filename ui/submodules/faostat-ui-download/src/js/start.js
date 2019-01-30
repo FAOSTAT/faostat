@@ -269,13 +269,12 @@ define([
                             switch (type) {
                                 case "table":
                                     self.previewTable(d, requestObj, options);
-
                                     break;
                                 case "pivot":
                                     self.previewPivot(d, requestObj, options);
                                     break;
                                 case "excel":
-
+                                    self.previewTable(d, requestObj, options);
                             }
                         }
 
@@ -682,7 +681,7 @@ define([
 
             InteractiveDownload.prototype.exportExcel = function (d, requestObj, options) {
                 //amplify.publish(E.WAITING_HIDE);
-                var paramToSend =''
+                var paramToSend ='';
 
                 log.info(" InteractiveDownload.exportEXCEL size:", d);
 
@@ -699,10 +698,10 @@ define([
                 if(querySizeCheck) {
                     paramToSend = "?domain_code=" + requestObj.domain_code + "&area_cs=" + requestObj.area_cs + "&area=" + requestObj.area + "&element=" +  requestObj.element + "&item=" + requestObj.item + "&year=" + requestObj.year + "&item_cs=" + requestObj.item_cs + "&null_values=" + requestObj.null_values + "&show_codes=" + requestObj.show_codes + "&show_flags=" + requestObj.show_flags + "&show_unit=" + requestObj.show_unit
 
-
                     log.info('InteractiveDownload.exportEXCEL; ', requestObj);
 
                     var winExcel = window.open("http://www.fao.org/faostat/service/excel/" + paramToSend,"_blank");
+                    log.info('InteractiveDownload.exportEXCEL URL : ' + "http://www.fao.org/faostat/service/excel/" + paramToSend)
                    /* amplify.publish(E.EXPORT_EXCEL,
                        requestObj,
                         { waitingText: 'Please wait<br> The download could require some time'}

@@ -63,6 +63,7 @@ define([
                     URL_FAOSTAT_DATABASE_ZIP: C.URL_FAOSTAT_DATABASE_ZIP,
                     URL_COUNTRY_PROFILES: C.URL_COUNTRY_PROFILES,
                     URL_BROWSE_BY_COUNTRY: '#' + Common.getURI(ROUTE.BROWSE_BY_COUNTRY),
+                    URL_COMPARE: '#' + Common.getURI(ROUTE.COMPARE),
                     URL_BROWSE_RANKINGS: '#' + Common.getURI(ROUTE.BROWSE_RANKINGS_CODE, ['commodities_by_country']),
                     URL_RELEASE_CALENDAR: C.URL_RELEASE_CALENDAR,
                     URL_DB_DESCRIPTION: C.URL_DB_DESCRIPTION,
@@ -129,15 +130,16 @@ define([
                 API.groupsanddomains().then(function (d) {
 
                     self.$DATABASE_UPDATES.html(t(self._prepareDatabaseUpdates(d)));
-
+                    /*
                     self.o.database_updates = new Swiper('.swiper-container-updates', {
                         scrollbar: '.swiper-scrollbar',
                         direction: 'vertical',
                         slidesPerView: 'auto',
                         mousewheelControl: true,
+                        grabCursor: true,
                         freeMode: true
                     });
-
+                    */
                     // add analytics
                     self.$DATABASE_UPDATES.find('a').on('click', function () {
 

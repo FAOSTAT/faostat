@@ -7,9 +7,13 @@
         <div>
             <h2>{{{explore_data_title}}}</h2>
             <p style="font-size:16px;">{{{explore_data_text}}}</p>
-            <a data-link='interanl' href='{{URL_DATA}}' class="btn btn-lg btn-primary waves-effect truncate">
-                {{explore_data}}
-            </a>
+            <!--
+            <a data-link='interanl' href='{{URL_COMPARE}}' class="btn btn-lg btn-primary waves-effect truncate"> {{compare_data}} </a>
+            -->
+            <a data-link='interanl' href='{{URL_DATA}}' class="btn btn-lg btn-primary waves-effect truncate"> {{explore_data}} </a>
+            <!--
+            <a data-link='interanl' href='{{URL_BROWSE_BY_COUNTRY}}' class="btn btn-lg btn-primary waves-effect truncate"> {{country_indicators}} </a>
+            -->
         </div>
     </div>
 
@@ -36,7 +40,7 @@
                             <h3>{{database_updates}}</h3>
 
                             <div class="swiper-container-updates">
-                                <div class="swiper-wrapper">
+                                <div class="swiper-wrapper" style="overflow: hidden scroll;">
                                     <div class="swiper-slide">
                                         <ul id="fs_home_database_updates" class="list-unstyled"></ul>
                                     </div>

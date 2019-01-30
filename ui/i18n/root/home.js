@@ -43,6 +43,7 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
         explore_data_text: "FAOSTAT provides free access to food and agriculture data for over 245 countries and territories and covers all FAO regional groupings <br> from 1961 to the most recent year available.",
 
 
+
         //Food Security
 
         fao_food_security: "The State of Food Security and Nutrition in the World 2018",
