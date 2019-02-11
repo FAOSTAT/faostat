@@ -50,7 +50,7 @@ define({
     data: 'data',
     topics: 'topics',
     compare_data: 'Compare Data',
-    country_indicators: 'Country Indicators',
+    country_indicators: 'Selected Indicators',
     feedback_system: "Feedback System",
     release_calendar: "Release Calendar",
     download_excel: "Download to Excel",

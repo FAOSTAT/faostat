@@ -1960,7 +1960,7 @@ define([
         syb_world: {
             // TODO: Refactor it and make it decent.
             title:  i18n.fao_statistical_yearbook_summary_world, //"FAO Statistical Yearbook <br> World Summary",
-            href:C.syb.url_world || CM.syb.url_world //"http://fenixservices.fao.org/faostat/static/syb/syb_5000.pdf",
+            href: C.syb.url_world || CM.syb.url_world //"http://fenixservices.fao.org/faostat/static/syb/syb_5000.pdf",
         },
 
        /* syb_africa: {

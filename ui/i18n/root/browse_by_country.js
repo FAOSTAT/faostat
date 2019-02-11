@@ -5,8 +5,8 @@ define(['jquery', 'i18n!nls/common'], function ($, I18N) {
 
     return $.extend(true, {}, I18N, {
 
-        back_to_country_list: "Back to countries",
-        country_list: "Country List",
+        back_to_country_list: "Back to Selected Indicators",
+        country_list: "Regions and Countries List",
         demographics: "Demographics",
         inputs: "Inputs",
         undernourishment: "Hunger and food insecurity",
@@ -21,6 +21,11 @@ define(['jquery', 'i18n!nls/common'], function ($, I18N) {
         fao_statistical_yearbook_summary: 'FAO Statistical Yearbook - Country',
         fao_statistical_yearbook_summary_world:  'FAO Statistical Yearbook - World',
         world: "World",
+        africa: "Africa",
+        americas: "Americas",
+        asia: "Asia",
+        europe: "Europe",
+        oceania: "Oceania",
         regions: "Regions"
 
     });

@@ -7,7 +7,7 @@ define(['jquery', 'i18n!nls/common'], function ($, I18N) {
 
 
         back_to_country_list: "Volver a la lista de países",
-        country_list: "Lista de países",
+        country_list: "Indicadores Específicos",
         demographics: "Datos demográficos",
         inputs: "Insumos",
         undernourishment: "Malnutrición",
@@ -22,6 +22,11 @@ define(['jquery', 'i18n!nls/common'], function ($, I18N) {
         fao_statistical_yearbook_summary: "Anuario estadístico de la FAO - País",
         fao_statistical_yearbook_summary_world: "Anuario estadístico de la FAO - Mundo",
         world: "Mundo",
+        africa: "África",
+        americas: "Américas",
+        asia: "Asia",
+        europe: "Europe",
+        oceania: "Oceania",
         regions: "Regiones"
 
     });

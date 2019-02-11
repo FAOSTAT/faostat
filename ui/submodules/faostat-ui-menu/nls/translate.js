@@ -3,7 +3,7 @@ define({
     root: {
         home: 'Home',
         data: 'Data',
-        country_indicators: 'Country Indicators',
+        country_indicators: 'Selected Indicators',
         compare: 'Compare Data',
         definitions_and_standards: "Definitions and Standards",
         faq: 'FAQ',

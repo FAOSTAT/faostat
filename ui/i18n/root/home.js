@@ -22,8 +22,8 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
         fao_statistical_yearbooks_text: "The FAO Statistical Yearbook provides a selection of indicators on food and agriculture by country. <br><br> The first part of the book includes thematic spreads with data visualizations (graphs, charts, and maps) with basic text. The second part has country-level tables for a selected number of indicators.",
 
         // country indicators
-        country_indicators: "Country Indicators",
-        country_indicators_text: "Country indicators provide an overview of key indicators and charts by country.",
+        country_indicators: "Selected Indicators",
+        country_indicators_text: "Selected indicators provide an overview of key indicators and charts by country.",
 
         // Rankings
         rankings: "Rankings",

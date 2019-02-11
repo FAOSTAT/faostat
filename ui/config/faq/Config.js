@@ -54,7 +54,7 @@ define([
                         },
                         {
                             question: "Do you have maps?",
-                            answer: "Yes we do. Go to Country Indicators or to Explore data, choose a Domain, then select Visualize data."
+                            answer: "Yes we do. Go to Selected Indicators or to Explore data, choose a Domain, then select Visualize data."
                         },
                         {
                             question: "I would like to see everything you have on a commodity. What do I do?",
@@ -138,7 +138,7 @@ define([
                         },
                         {
                             question: "Y a-t-il des cartes?",
-                            answer: "Oui. Choisir un domaine dans l'onglet «Données» puis cliquer sur «Visualiser les données» ou cliquer sur l'onglet «Indicateurs de pays» et sélectionner un pays."
+                            answer: "Oui. Choisir un domaine dans l'onglet «Données» puis cliquer sur «Visualiser les données» ou cliquer sur l'onglet «Quelques indicateurs» et sélectionner un pays."
                         },
                         {
                             question: "Comment obtenir toutes les informations sur un produit qui sont disponibles dans FAOSTAT?",
@@ -222,7 +222,7 @@ define([
                         },
                         {
                             question: "¿Tienen mapas?",
-                            answer: "Sí. Vaya a “Indicadores por país” o a “Acceder a los datos”, elija un dominio y luego seleccione “Visualizar Datos”."
+                            answer: "Sí. Vaya a “Indicadores Específicos” o a “Acceder a los datos”, elija un dominio y luego seleccione “Visualizar Datos”."
                         },
                         {
                             question: "Quisiera consultar toda la información que tienen sobre un producto. ¿Cómo puedo obtenerla?",
@@ -474,7 +474,7 @@ define([
                         },
                         {
                             question: "Do you have maps?",
-                            answer: "Yes we do. Go to Country Indicators or to Explore data, choose a Domain, then select Visualize data."
+                            answer: "Yes we do. Go to Selected Indicators or to Explore data, choose a Domain, then select Visualize data."
                         },
                         {
                             question: "I would like to see everything you have on a commodity. What do I do?",

@@ -180,8 +180,18 @@ define([
                     country_list: i18nLabels.country_list,
                     data: d,
                     url_syb_world: CM.syb.url_world,
+                    url_syb_africa: CM.syb.url_africa,
+                    url_syb_americas: CM.syb.url_americas,
+                    url_syb_asia: CM.syb.url_asia,
+                    url_syb_europe: CM.syb.url_europe,
+                    url_syb_oceania: CM.syb.url_oceania,
                     world: i18nLabels.world,
-                    regions: i18nLabels.regions,
+                    africa: i18nLabels.africa,
+                    americas: i18nLabels.americas,
+                    asia: i18nLabels.asia,
+                    europe: i18nLabels.europe,
+                    oceania: i18nLabels.oceania,
+                    regions: i18nLabels.regions
                 }));
 
 
@@ -297,8 +307,8 @@ define([
                         self.countryListFilter.destroy();
                     }
 
-                    self.countryListFilter = new FilterBox(),
-                        config = {
+                    self.countryListFilter = new FilterBox();
+                        var config = {
                             container: self.$COUNTRY_LIST_MODAL_CONTENT,
                             filter: {
                                 items: [

@@ -50,7 +50,8 @@ define([
 
             syb: {
                 url: 'http://faostat.fao.org/static/syb/syb_{{code}}.pdf', // Country profile download
-                url_world: 'http://fenixservices.fao.org/faostat/static/documents/CountryProfile/pdf/syb_5000.pdf' // Country world download
+                //url_world: 'http://fenixservices.fao.org/faostat/static/documents/CountryProfile/pdf/syb_5000.pdf'
+                url_world: 'http://faostat.fao.org/static/syb/syb_5000.pdf' // Country world download
             }
 
         };

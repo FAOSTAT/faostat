@@ -3,6 +3,8 @@
 /* Masonry-like patch for columns */
 .country-list-container {
 
+  color: red !important;
+
   .row-mason {
     -moz-column-width: 18em;
     -webkit-column-width: 18em;
@@ -32,6 +34,10 @@
   .country-list {
       margin-bottom: 10px;
   }
+
+}
+
+.region-spacer {
 
 }
 

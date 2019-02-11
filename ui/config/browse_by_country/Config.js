@@ -15,8 +15,13 @@ define([
         syb: {
             //url: 'http://fenixservices.fao.org/faostat/static/syb/syb_{{code}}.pdf',
             url: 'http://faostat.fao.org/static/syb/syb_{{code}}.pdf',
-            url_world: 'http://fenixservices.fao.org/faostat/static/documents/CountryProfile/pdf/syb_5000.pdf'
-            // url_world: 'http://faostat.fao.org/static/syb/syb_5000.pdf'
+            //url_world: 'http://fenixservices.fao.org/faostat/static/documents/CountryProfile/pdf/syb_5000.pdf'
+            url_world: 'http://faostat.fao.org/static/syb/syb_5000.pdf',
+            url_africa: 'http://faostat.fao.org/static/syb/syb_5100.pdf',
+            url_americas: 'http://faostat.fao.org/static/syb/syb_5200.pdf',
+            url_asia: 'http://faostat.fao.org/static/syb/syb_5300.pdf',
+            url_europe: 'http://faostat.fao.org/static/syb/syb_5400.pdf',
+            url_oceania: 'http://faostat.fao.org/static/syb/syb_5500.pdf'
         },
 
         // default Domain Code used to cmd
