@@ -2,7 +2,7 @@
 define({
     home: 'Página inicial',
     data: 'Datos',
-    country_indicators: 'Indicadores por País',
+    country_indicators: 'Indicadores Específicos',
     compare: 'Comparar Datos',
     definitions_and_standards: "Definiciones y Estándares",
     faq: 'Preguntas Frecuentes',

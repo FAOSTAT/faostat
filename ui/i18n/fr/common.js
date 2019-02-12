@@ -53,7 +53,7 @@ define({
     data: 'Données',
     topics: 'Sujets',
     compare_data: 'Comparer des données',
-    country_indicators: 'Indicateurs de pays',
+    country_indicators: 'Quelques indicateurs',
     definitions_and_standards: "Définitions et Standards",
     feedback_system: "Feedback System",
     release_calendar: "Calendrier de diffusion",

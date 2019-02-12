@@ -49,7 +49,7 @@ define({
     data: 'Datos',
     topics: 'Temas',
     compare_data: 'Comparar datos',
-    country_indicators: 'Indicadores por País',
+    country_indicators: 'Indicadores Específicos',
     definitions_and_standards: "Definiciones y Estándares",
     feedback_system: "Comentarios y sugerencias",
     release_calendar: "Calendario de difusión",
