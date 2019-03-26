@@ -102,9 +102,9 @@ define([
                         // template to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "{{item}} - {{element}} by country (%)",
-                                fr: "{{item}} - {{element}} par pays (%)",
-                                es: "{{item}} - {{element}} por países (%)"
+                                en: "{{item}} - {{element}} by country (1000 ha)",
+                                fr: "{{item}} - {{element}} par pays (1000 ha)",
+                                es: "{{item}} - {{element}} por países (1000 ha)"
                             },
                             subtitle: "{{#isMultipleYears year aggregation}}{{/isMultipleYears}}{{year}}"
                         }
@@ -132,9 +132,9 @@ define([
                         // temp[late to be applied to the config.template for the custom object
                         template: {
                             title: {
-                                en: "{{item}} - {{element}} (%)",
-                                fr: "{{item}} - {{element}} (%)",
-                                es: "{{item}} - {{element}} (%)"
+                                en: "{{item}} - {{element}} (1000 ha)",
+                                fr: "{{item}} - {{element}} (1000 ha)",
+                                es: "{{item}} - {{element}} (1000 ha)"
                             },
                             subtitle: "{{year}}"
                         }
