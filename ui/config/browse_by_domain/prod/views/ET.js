@@ -128,10 +128,10 @@ define([
                         },
                         template: {}
                     },
-                    allowedFilter: ['item','year'],
+                    allowedFilter: ['item'],
                     deniedTemplateFilter: [],
                     filter: {
-                        year:'2017',
+                        year:'2018',
                         area: ["5000>", "351"],
                        // area: ["5000", "5100", "5200", "5300", "5400", "5500"],
                         //"group_by": 'year',

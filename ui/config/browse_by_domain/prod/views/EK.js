@@ -92,7 +92,7 @@ define([
             //data base filter
             defaultFilter: {
                 domain_code: ['EK'],
-                element: ["7213"],
+                element: ["72130"],
             },
 
             // labels
