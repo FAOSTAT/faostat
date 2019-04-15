@@ -209,16 +209,14 @@ define(['jquery',
                     clearInterval(interval);
                     if (that.CONFIG.show_codes) {
                         for (i = 0; i < Object.keys(that.CONFIG.label2code_map).length; i += 1) {
-                            key = Object.keys(that.CONFIG.label2code_map)[i].toString().replace(/\s/g, '_').replace(/,/g, '').replace(/\(|\)/g, '').replace(/'/g, '');
+                            key = Object.keys(that.CONFIG.label2code_map)[i].toString().replace(/\s/g, '_').replace(/,/g, '').replace(/\(|\)/g, '').replace(/(\/)/g, '').replace(/'/g, '');
                             selector = $('.' + key);
                             if (selector !== undefined) {
                                 lbl = that.CONFIG.label2code_map[key];
                                 // trimming the flag codes because they are two digits.
                                 // TODO: this should be already performed in the DB.
                                 lbl = _s.trim(lbl);
-                                if (lbl.length > 0) {
-                                    selector.html(' [' + lbl + ']');
-                                }
+                                if (lbl.length > 0) selector.html(' [' + lbl + ']');
                             }
                         }
                     }
@@ -238,10 +236,8 @@ define(['jquery',
         for (i = 0; i < this.CONFIG.data.length; i += 1) {
             for (j = 0; j < label_indices.length; j += 1) {
                 label = this.CONFIG.data[i][label_indices[j]];
-                code = this.CONFIG.label2code_map[label.replace(/\s/g, '_').replace(/,/g, '').replace(/\(|\)/g, '').replace(/'/g, '')];
-                if (code !== undefined) {
-                    this.CONFIG.data[i][label_indices[j]] = label + ' [' + code + ']';
-                }
+                code = this.CONFIG.label2code_map[label.replace(/\s/g, '_').replace(/,/g, '').replace(/\(|\)/g, '').replace(/(\/)/g, '').replace(/'/g, '')];
+                if (code !== undefined) this.CONFIG.data[i][label_indices[j]] = label + ' [' + code + ']';
             }
         }
     };

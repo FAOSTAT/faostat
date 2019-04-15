@@ -16,6 +16,7 @@ define([
 
     function GoogleAnalyticsManager() {
 
+
         // GA trackers. This will handle multiple GOOGLE ANALYTICS instances
         //https://developers.google.com/analytics/devguides/collection/analyticsjs/creating-trackers#working_with_multiple_trackers
         _.each(C.GOOGLE_ANALYTICS, function(analytics) {
@@ -93,36 +94,38 @@ define([
 
         //var self = this;
         var pageToSet = C.GOOGLE_ANALYTICS_TRACKER + Common.getLocale() + "/#" + this.CURRENT_PAGE;
-        _.each(ga.getAll(), function(tracker) {
-            try {
-                tracker.set({
-                    page: pageToSet,
-                    title: pageToSet
-                    //page: self.CURRENT_PAGE,
-                    //title: self.CURRENT_PAGE
-                });
-            }catch (error) {
-                // Handle lack of GA if needed
-            }
 
-        });
-
+        try {
+            _.each(ga.getAll(), function(tracker) {
+                    tracker.set({
+                        page: pageToSet,
+                        title: pageToSet
+                        //page: self.CURRENT_PAGE,
+                        //title: self.CURRENT_PAGE
+                    });
+            });
+        } catch (error) {
+            // Handle lack of GA if needed
+        }
         return countPageView;
-
     };
 
    GoogleAnalyticsManager.prototype.pageView = function () {
 
        if (this.checkAndSetCurrentPage()) {
           // ga('send', 'pageview');
-           _.each(ga.getAll(), function(tracker) {
-               try {
-                   tracker.send('pageview');
-               }catch (error) {
-                   // Handle lack of GA if needed
-               }
+           try {
+               _.each(ga.getAll(), function(tracker) {
+                   try {
+                       tracker.send('pageview');
+                   }catch (error) {
+                       // Handle lack of GA if needed
+                   }
 
-           });
+               });
+           }catch (error) {
+               // Handle lack of GA if needed
+           }
        }
 
     };

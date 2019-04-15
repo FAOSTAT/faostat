@@ -4,7 +4,6 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-clean');
     //grunt.loadNpmTasks('grunt-zip');
-    grunt.loadNpmTasks('grunt-contrib-compress');
     //grunt.loadNpmTasks('grunt-contrib-rename');
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-config');
@@ -299,11 +298,11 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('build', 'Run all my build tasks.', function () {
-
+        /*
         grunt.log.writeln('\n\n\n\n\n\n----------THINGS TO BE CHECKED--------\n');
         grunt.log.writeln('2) Did you check the appcache?');
         grunt.log.writeln('\n--------------------------------------\n\n\n\n\n\n');
-
+        */
         // defaults
         grunt.task.run('clean:dist');
 
@@ -604,6 +603,8 @@ module.exports = function (grunt) {
 
     });
 
+
+
     grunt.registerTask('compress_dev', 'Compress all folders', function () {
         grunt.task.run('config:dev');
         grunt.task.run('copy:redirect');
@@ -633,5 +634,7 @@ module.exports = function (grunt) {
         grunt.task.run('copy:redirect');
         grunt.task.run('compress:faostat');
     });
+
+    grunt.loadNpmTasks('grunt-contrib-compress');
 
 };

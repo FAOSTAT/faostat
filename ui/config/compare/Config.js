@@ -5,6 +5,8 @@ define([
 
     'use strict';
 
+    var theyear = new Date().getFullYear()-2;
+
     return {
 
         timerange: {
@@ -24,7 +26,7 @@ define([
                 min: 1961,
                 max: 2050,
                 from: 1961,
-                to: 2014,
+                to: theyear,
                 //grid: true,
                 grid_num: 10,
                 step: 1,

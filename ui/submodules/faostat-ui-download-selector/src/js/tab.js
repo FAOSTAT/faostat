@@ -281,9 +281,13 @@ define([
 
         _.each(selected, function(s) {
 
-            var node = self.$TREE.jstree(true).get_node(s);
 
-            values.push(node.li_attr);
+            if (self.$TREE.jstree(true)) {
+
+                var node = self.$TREE.jstree(true).get_node(s);
+
+                values.push(node.li_attr);
+            }
 
         });
 

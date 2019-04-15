@@ -192,7 +192,7 @@ define([
 
             // TODO: escaping the ", there should be a check on the character before the " to check if it is not already escaped
             //return '"' + _s.replaceAll(text, '"', "'") + '"';
-            return (text)? '"' + text.toString().replace(/"/g, '""') + '"' : '""';
+            return (text)? '"' + text.toString().replace(/[\n\r]/g, '').replace(/"/g, '""') + '"' : '""';
 
         }
 
