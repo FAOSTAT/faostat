@@ -8,10 +8,11 @@ define([
     'faostatapiclient',
     'i18n!nls/common',
     'bowser',
+    'xlsx',
     'FileSaver',
     'tableExport',
     'amplify'
-], function ($, log, _, A, E, API, i18nLabels, bowser) {
+], function ($, log, _, A, E, API, i18nLabels, bowser, XLSX) {
 
     'use strict';
 
@@ -32,6 +33,8 @@ define([
 
     Export.prototype.exportData = function (request, options) {
 
+        log.info('Export.exportData', request, options);
+
         var start = new Date();
 
         // TODO: check better the requestType!
@@ -39,15 +42,17 @@ define([
             name = options ? options.name || this.o.name : this.o.name,
             waitingText = options ? (options.waitingText) || null : null,
             self = this,
-            r = $.extend(true, {}, request);
+            r = $.extend(true, {}, request),
+            out = options.options.file;
+
+        if (!r.hasOwnProperty('output_type')) r.output_type = this.o.output_type;
 
         //log.info("Export.exportData;", request);
         //log.info("Export.exportData;", options);
-        log.info("Export.exportData;", r, requestType, options, name, request);
+        log.info("Export.exportData;", r, requestType, options, name, request, out);
 
-        if (!r.hasOwnProperty('output_type')) {
-            r.output_type = this.o.output_type;
-        }
+
+
 
         // waiting
         amplify.publish(E.WAITING_SHOW, { text: waitingText });
@@ -68,7 +73,7 @@ define([
                 log.info("Export.exportData; Execution query time: ", (time - start) / 1000 + "s");
 
                 // export
-                self._exportResult(data, name);
+                self._exportResult(data, name, out);
 
                 // analytics
                 self._analyticsExportData(r, new Date() - start);
@@ -88,28 +93,50 @@ define([
 
     };
 
-    Export.prototype._exportResult = function (result, name) {
+    Export.prototype._exportResult = function (result, name, type) {
 
         log.info("Export.browser;", bowser);
-        log.info('EXPORT._exportResult;');
+        log.info('EXPORT._exportResult;', result);
 
-        var start = new Date();
+        if (type == "csv") {
 
-        var blob = new Blob([result], {type: "text/csv"}),
-            d = new Date(),
-            filename = name + "_" + (d.getMonth() + 1) + '-' + d.getDate() + '-' + d.getFullYear() + '.csv';
+            var start = new Date();
 
-        log.info('EXPORT.saveAs;');
+            var blob = new Blob([result], {type: "text/csv"}),
+                d = new Date(),
+                filename = name + "_" + (d.getMonth() + 1) + '-' + d.getDate() + '-' + d.getFullYear() + '.csv';
 
-        saveAs(blob, filename);
+            log.info('EXPORT.saveAs;');
 
-        var time = new Date();
+            saveAs(blob, filename);
 
-        // save memory?
-        result = null;
-        blob = null;
+            var time = new Date();
 
-        log.info("Export.saveAs; Execution saveAs time: ", (time - start) / 1000 + "s");
+            // save memory?
+            result = null;
+            blob = null;
+
+            log.info("Export.saveAs [CSV]; Execution saveAs time: ", (time - start) / 1000 + "s");
+
+        } else {
+
+            var start = new Date();
+
+            var d = new Date(),
+                filename = name + "_" + (d.getMonth() + 1) + '-' + d.getDate() + '-' + d.getFullYear() + '.xls';
+
+            var workbook = XLSX.read(result, {type: "string"});
+            XLSX.writeFile(workbook, filename);
+
+            var time = new Date();
+
+            // save memory?
+            result = null;
+            blob = null;
+
+            log.info("Export.saveAs [XLS]; Execution saveAs time: ", (time - start) / 1000 + "s");
+
+        }
 
     };
 
@@ -155,18 +182,34 @@ define([
 
         log.info('EXPORT.exportMatrix; options: ', options);
 
-        var csv = ConvertToCSV(options.data);
-
-        //var blob = new Blob([csv], this.isExportSupported()? {type: "data:application/csv;charset=utf-8;"} : {type: "text/plain;"}),
-        var blob = new Blob([csv], {type: "text/csv;"}),
+        var csv = ConvertToCSV(options.data),
             d = new Date(),
             filename = (options.name) || this.o.name + "_" + (d.getMonth() + 1) + '-' + d.getDate() + '-' + d.getFullYear();
 
-        // adding the extension
-        filename += ".csv";
+        if (options.file == "csv") {
 
-        saveAs(blob, filename);
-        
+            //var blob = new Blob([csv], this.isExportSupported()? {type: "data:application/csv;charset=utf-8;"} : {type: "text/plain;"}),
+            var blob = new Blob([csv], {type: "text/csv;"})
+            // adding the extension
+            filename += ".csv";
+
+            saveAs(blob, filename);
+
+        } else {
+
+            var start = new Date();
+            // adding the extension
+            filename += ".xls";
+
+            var workbook = XLSX.read(csv, {type: "string"});
+            XLSX.writeFile(workbook, filename);
+
+            var time = new Date();
+
+            log.info("Export.exportMatrix [XLS]; Execution saveAs time: ", (time - start) / 1000 + "s");
+
+        }
+
         function ConvertToCSV(objArray) {
             var array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
             var str = '';
@@ -192,7 +235,7 @@ define([
 
             // TODO: escaping the ", there should be a check on the character before the " to check if it is not already escaped
             //return '"' + _s.replaceAll(text, '"', "'") + '"';
-            return (text)? '"' + text.toString().replace(/[\n\r]/g, '').replace(/"/g, '""') + '"' : '""';
+            return (text) ? '"' + text.toString().replace(/[\n\r]/g, '').replace(/"/g, '""') + '"' : '""';
 
         }
 

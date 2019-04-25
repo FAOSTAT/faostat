@@ -63,6 +63,9 @@ require.config({
         Blob: CDN + '/js/blob/1.0/Blob',
         tableExport: CDN + '/js/tableExport.jquery.plugin/1.0/tableExport.min',
 
+        //Excel export
+        xlsx: 'https://unpkg.com/xlsx@0.14.2/dist/xlsx.full.min',
+
         sigma: CDN + '/js/sigma/1.1.0/sigma.min',
         'sigma.parsers.json': CDN + '/js/sigma/1.1.0/plugins/sigma.parsers.json.min',
         'sigma.plugins.dragNodes': CDN + '/js/sigma/1.1.0/plugins/sigma.plugins.dragNodes.min',

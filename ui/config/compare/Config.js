@@ -103,8 +103,8 @@ define([
                     'item',
                     'element',
                     'breakdownvar', 'breakdownsex', 'indicator', 'measure', 'source',  // HS
-                    'purpose' // ODA
-
+                    'purpose', // ODA
+                    'month' // ET
                 ]
             },
             template: {

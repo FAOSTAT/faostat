@@ -12,6 +12,7 @@ define({
     null_values: 'Datos no disponibles',
     output_type: 'Salida de datos',
     table: 'Tabla',
-    pivot: 'Tabla dinámica'
+    pivot: 'Tabla dinámica',
+    file_type : 'Tipo de archivo'
 
 });

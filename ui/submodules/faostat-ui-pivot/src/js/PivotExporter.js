@@ -60,12 +60,31 @@ define([
 
     PIVOTEXPORTER.prototype.csv = function () {
 
+        log.info('!PIVOTEXPORTER')
+
         var matrix = this.getMatrix();
 
         // TODO: test properly if the matrix is valid
         if (matrix) {
             amplify.publish(E.EXPORT_MATRIX_DATA, {
-                data: matrix
+                data: matrix,
+                file: 'csv'
+            });
+        }
+
+    };
+
+    PIVOTEXPORTER.prototype.xls = function () {
+
+        log.info('!PIVOTEXPORTER2')
+
+        var matrix = this.getMatrix();
+
+        // TODO: test properly if the matrix is valid
+        if (matrix) {
+            amplify.publish(E.EXPORT_MATRIX_DATA, {
+                data: matrix,
+                file: 'xls'
             });
         }
 

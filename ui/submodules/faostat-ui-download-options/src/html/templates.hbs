@@ -1,10 +1,9 @@
 <script type='text/x-handlebars-template' id='options_panel'>
     <div class='row'>
         {{#if output_type}}
-            <div class='col-sm-3 col-md-3'>
+            <div class='col-sm-2 col-md-2'>
                 <h5 class="fs-download-option-title truncate">{{output_type_label}}</h5>
                 <hr>
-
                 <ul class="list-unstyled list-inline">
                     <li>
                         <input type='radio' value='Table' name='{{prefix}}output_type' id='{{prefix}}output_type' {{output_type_table_checked}}>
@@ -14,12 +13,22 @@
                         <input type='radio' value='Pivot' name='{{prefix}}output_type' id='{{prefix}}output_type_pivot' {{output_type_pivot_checked}}>
                         <label for="{{prefix}}output_type_pivot">{{pivot_label}}</label>
                     </li>
-                    <!--
+                </ul>
+            </div>
+        {{/if}}
+        {{#if file_type}}
+            <div class='col-sm-2 col-md-2'>
+                <h5 class="fs-download-option-title truncate">{{file_type_label}}</h5>
+                <hr>
+                <ul class="list-unstyled list-inline">
                     <li>
-                        <input type='radio' value='Excel' name='{{prefix}}output_type' id='{{prefix}}output_type_excel' {{output_type_excel_checked}}>
-                        <label for="{{prefix}}output_type_excel">Excel</label>
+                        <input type='radio' value='csv' name='{{prefix}}file_type' id='{{prefix}}file_type' {{file_type_csv_checked}}>
+                        <label for="{{prefix}}file_type">CSV</label>
                     </li>
-                    -->
+                    <li>
+                        <input type='radio' value='xls' name='{{prefix}}file_type' id='{{prefix}}file_type_excel' {{file_type_excel_checked}}>
+                        <label for="{{prefix}}file_type_excel">XLS</label>
+                    </li>
                 </ul>
             </div>
         {{/if}}
@@ -51,7 +60,7 @@
         {{/if}}
 
         {{#if show_options}}
-            <div class='col-sm-5 col-md-5'>
+            <div class='col-sm-4 col-md-4'>
                 <h5 class="fs-download-option-title truncate">{{show_label}}</h5>
                 <hr>
                 <ul class="list-unstyled list-inline">

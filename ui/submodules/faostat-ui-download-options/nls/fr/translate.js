@@ -10,6 +10,8 @@ define({
     null_values: 'Values nulles',
     output_type: "Type d’output",
     table: 'Table',
-    pivot: 'Pivot'
+    pivot: 'Pivot',
+    file_type : 'Type de fichier',
+
 
 });

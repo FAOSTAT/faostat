@@ -26,7 +26,8 @@ define([
               SelectorManager,
               DownloadOptions,
               Table,
-              FAOSTATPivot, PivotExporter,
+              FAOSTATPivot,
+              PivotExporter,
               API,
               Handlebars,
               _
@@ -273,8 +274,6 @@ define([
                                 case "pivot":
                                     self.previewPivot(d, requestObj, options);
                                     break;
-                                case "excel":
-                                    self.previewTable(d, requestObj, options);
                             }
                         }
 
@@ -321,6 +320,8 @@ define([
 
                 // check if data size is right
                 if(querySizeCheck) {
+
+                    log.info("InteractiveDownload.previewTable; r", r);
 
                     // Table
                     API.data(r).then(function(d) {
@@ -512,7 +513,8 @@ define([
                                             filename: 'FAOSTAT'
                                         });
 
-                                        pivotExporter.csv();
+                                        log.info('exportPivot.options', options);
+                                        (options.file == "csv") ? pivotExporter.csv() : pivotExporter.xls();
 
                                     }
                                 }, 100);
@@ -563,6 +565,8 @@ define([
                         no_records: true
                     })).then(function (d) {
 
+                        log.info('options', options);
+
                         if (self.checkDataSize(d)) {
                             exp_options = {
                                 d: d,
@@ -592,9 +596,11 @@ define([
                                 case "pivot":
                                     self.exportPivot(d, requestObj, options);
                                     break;
+                                    /*
                                 case "excel":
                                     self.exportExcel(d, requestObj, options);
-                                 //   break;
+                                    break;
+                                    */
                             }
 
                         }
@@ -612,7 +618,7 @@ define([
 
             };
 
-            InteractiveDownload.prototype.exportTable = function (d, requestObj) {
+            InteractiveDownload.prototype.exportTable = function (d, requestObj, options) {
 
                 log.info(" InteractiveDownload.exportTable size:", d);
 
@@ -632,7 +638,7 @@ define([
 
                     amplify.publish(E.EXPORT_DATA,
                         requestObj,
-                        { waitingText: 'Please wait<br> The download could require some time'}
+                        { waitingText: 'Please wait<br> The download could require some time', options: options }
                     );
 
                 }
@@ -655,7 +661,9 @@ define([
                         filename: 'FAOSTAT'
                     });
 
-                    pivotExporter.csv();
+                    log.info('exportPivot.options', options);
+
+                    (options.file == "csv") ? pivotExporter.csv() : pivotExporter.xls();
 
                     if(this.checkDataSize(d)) {
                         this.analyticsPivotDownload({
@@ -672,6 +680,39 @@ define([
 
             };
 
+        InteractiveDownload.prototype.exportExcel = function (d, requestObj, options) {
+
+            log.info(" InteractiveDownload.exportExcel size:", d);
+
+            var rowsNumber = d.data[0].NoRecords,
+                querySizeCheck = rowsNumber <= this.o.TABLE.MAX_ROWS;
+
+            // analytics
+            this.analyticsTableDownload({
+                querySizeCheck: querySizeCheck,
+                querySize: rowsNumber
+            });
+
+            // check if data size is right
+            if(querySizeCheck) {
+
+                requestObj.file_type = "xls";
+
+                log.info('InteractiveDownload.exportExcel; ', requestObj);
+
+                amplify.publish(E.EXPORT_DATA,
+                    requestObj,
+                    { waitingText: 'Please wait<br> The download could require some time'}
+                );
+
+            }
+            else {
+                this.suggestBulkDownloadsOrTable();
+            }
+
+
+        };
+
             InteractiveDownload.prototype.checkIfPivotRendered = function() {
 
                 log.info(this.$OUTPUT_CONTENT.find(s.PIVOT_TABLE).length, this.$OUTPUT_CONTENT.find(s.PIVOT_TABLE));
@@ -679,46 +720,8 @@ define([
                 return (this.$OUTPUT_CONTENT.find(s.PIVOT_TABLE).length > 0)? true : false;
             };
 
-            InteractiveDownload.prototype.exportExcel = function (d, requestObj, options) {
-                //amplify.publish(E.WAITING_HIDE);
-                var paramToSend ='';
-
-                log.info(" InteractiveDownload.exportEXCEL size:", d);
-
-                var rowsNumber = d.data[0].NoRecords,
-                    querySizeCheck = rowsNumber <= this.o.TABLE.MAX_ROWS;
-
-                // analytics
-                this.analyticsTableDownload({
-                    querySizeCheck: querySizeCheck,
-                    querySize: rowsNumber
-                });
-
-                // check if data size is right
-                if(querySizeCheck) {
-                    paramToSend = "?domain_code=" + requestObj.domain_code + "&area_cs=" + requestObj.area_cs + "&area=" + requestObj.area + "&element=" +  requestObj.element + "&item=" + requestObj.item + "&year=" + requestObj.year + "&item_cs=" + requestObj.item_cs + "&null_values=" + requestObj.null_values + "&show_codes=" + requestObj.show_codes + "&show_flags=" + requestObj.show_flags + "&show_unit=" + requestObj.show_unit
-
-                    log.info('InteractiveDownload.exportEXCEL; ', requestObj);
-
-                    var winExcel = window.open("http://www.fao.org/faostat/service/excel/" + paramToSend,"_blank");
-                    log.info('InteractiveDownload.exportEXCEL URL : ' + "http://www.fao.org/faostat/service/excel/" + paramToSend)
-                   /* amplify.publish(E.EXPORT_EXCEL,
-                       requestObj,
-                        { waitingText: 'Please wait<br> The download could require some time'}
-                    );*/
-
-                }
-                else {
-                    //this.suggestBulkDownloadsOrTable();
-
-                }
-                amplify.publish(E.WAITING_HIDE);
-
-
-            };
-
             InteractiveDownload.prototype.setPopUpRecognizeUser = function (d, requestObj, options) {
-    //************ funxiona con windows open **********
+                //************ funxiona con windows open **********
                  var w = 350;
                  var h = 150;
                  var left = Number((screen.width/2)-(w/2));
