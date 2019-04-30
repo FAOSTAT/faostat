@@ -449,6 +449,7 @@ define(['jquery',
            // type: this.CONFIG.user_selection.table_value? 'table' : 'pivot',
             type: this.CONFIG.user_selection.output_type_value.toLowerCase(),
             file: this.CONFIG.user_selection.file_type_value.toLowerCase(),
+            //file: 'csv',
             options: {
                 thousand_separator: this.CONFIG.user_selection.thousand_separator_value,
                 decimal_separator:  this.CONFIG.user_selection.thousand_separator_value === '.' ? ',' : '.',

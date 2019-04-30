@@ -126,6 +126,22 @@ define([
                 filename = name + "_" + (d.getMonth() + 1) + '-' + d.getDate() + '-' + d.getFullYear() + '.xls';
 
             var workbook = XLSX.read(result, {type: "string"});
+
+            var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+            var range = XLSX.utils.decode_range(worksheet['!ref']);
+            var ItemCodeHeader = worksheet[XLSX.utils.encode_cell({r: 0, c: 6})];
+            if (ItemCodeHeader.v == "Item Code") for (var rowNum = range.s.r; rowNum <= range.e.r; rowNum++) {
+                var cellRef = XLSX.utils.encode_cell({r: rowNum, c: 6});
+                var ItemCode = worksheet[cellRef];
+                console.log("<",ItemCode);
+                if(!ItemCode || ItemCode.t == 'n') {
+                    ItemCode.z = "@";
+                    ItemCode.t = "s";
+                    ItemCode.v = ItemCode.w;
+                    worksheet[cellRef] = ItemCode;
+                }
+            }
+
             XLSX.writeFile(workbook, filename);
 
             var time = new Date();

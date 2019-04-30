@@ -130,12 +130,16 @@ define([
 
                 //log.info("Table.FAOSTAT_Adapter.formattedData; index, value", index, d[valueKey], isNaN(d[valueKey]));
 
-                if (d[valueKey].length > 0 && d[valueKey] !== undefined && d[valueKey] !== null && !isNaN(d[valueKey])) {
-                    // TODO: check if parseFloat works in all cases
-                    //d[valueKey] = numeral(parseFloat(d[valueKey])).format(formatter);
-                    d[valueKey] = numeral(parseFloat(d[valueKey])).format(formatter);
-                }else{
-                    log.warn("Table.FAOSTAT_Adapter.formattedData;", d[valueKey], "not valid or already formatted.");
+                if (d[valueKey] !== undefined) {
+                    if (d[valueKey].length > 0 && d[valueKey] !== null && !isNaN(d[valueKey])) {
+                        // TODO: check if parseFloat works in all cases
+                        //d[valueKey] = numeral(parseFloat(d[valueKey])).format(formatter);
+                        d[valueKey] = numeral(parseFloat(d[valueKey])).format(formatter);
+                    } else {
+                        log.warn("Table.FAOSTAT_Adapter.formattedData;", d[valueKey], "not valid or already formatted.");
+                    }
+                } else {
+                    log.warn("Table.FAOSTAT_Adapter.formattedData;", d[valueKey], "d[valueKey] seems undefined.");
                 }
 
             });
