@@ -21,7 +21,7 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
         contact_us: "与联系我们",
         terms_and_conditions: "条款和条件",
         scam_alert: "欺诈邮件",
-        report_fraud: "欺诈举报",
+        report_fraud: "报告不当行为",
 
         employment: "就业",
         procurement: "采购",
@@ -31,6 +31,7 @@ define(['jquery', 'i18n!nls/common'], function ($, Common) {
         legal_and_ethics_office: "法律及道德问题办公室",
 
         agriculture_and_consumer_protection: "农业及消费者保护",
+        climate_biodiversity_land_water: "气候、生物多样性、土地及水利部",
         economic_and_social_development: "经济及社会发展",
         fisheries_and_aquaculture: "渔业及水产养殖",
         forestry: "林业",

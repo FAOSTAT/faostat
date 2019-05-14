@@ -246,6 +246,9 @@ define(['jquery',
             amplify.publish(E.DOWNLOAD_SELECTION_CHANGE);
         });
         */
+
+        /*
+        // AS AMANDA REQUESTED!
         $('#' + this.CONFIG.prefix + 'file_type').off();
         $('#' + this.CONFIG.prefix + 'file_type').change(function () {
             if (that.CONFIG.callback.onFileTypeChange) {
@@ -260,7 +263,7 @@ define(['jquery',
             }
             amplify.publish(E.DOWNLOAD_SELECTION_CHANGE);
         });
-
+        */
 
         $('#' + this.CONFIG.prefix + 'decimal_numbers').off();
         $('#' + this.CONFIG.prefix + 'decimal_numbers').change(function () {
